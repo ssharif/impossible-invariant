@@ -249,3 +249,7 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+# other
+*.jpeg
+*.jpg
