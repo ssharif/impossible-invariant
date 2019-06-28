@@ -1,0 +1,431 @@
+\documentclass{amsart}
+\usepackage{amsmath, amsthm, amscd, amssymb,latexsym,enumerate}
+\usepackage{url}
+\usepackage{array}
+\usepackage[all]{xy}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{6in}
+\hoffset -.5in
+\setlength{\textheight}{8.25in}
+\voffset -.1in
+
+
+\newenvironment{psmallmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+  
+\newcommand{\norm}{\operatorname{Norm}}
+\def\id{\mathrm{id}}
+\def\i{\mathrm{i}}
+\def\Idem{\mathrm{Id}}
+\def\Im{\mathrm{Im}}
+\def\Ker{\mathrm{Ker}}
+\def\B{\mathbf{B}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\F{\mathbb{F}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\p{{\mathfrak{p}}}
+\def\q{{\mathfrak{q}}}
+\def\proj{\mathrm{proj}}
+\def\r{{r}}
+\def\h{{h}}
+\def\yy{{\alpha}}
+\def\g{{f_0}}
+\def\ddd{{\delta}}
+\def\SS{{\mathcal S}}
+\def\D{{\mathcal D}}
+\def\P{\mathbb{P}}
+\def\NN{{\mathcal N}}
+\def\FF{{\mathcal F}}
+\def\BB{{\mathcal B}}
+\def\CC{{\mathbf C}}
+\def\ee{{\varepsilon}}
+\def\eee{{\tilde{\varepsilon}}}
+\def\G{{G}}
+\def\A{{\mathbb A}}
+\def\AA{{\mathcal A}}
+\def\N{\mathrm{N}}
+\def\Spec{\mathrm{Spec}}
+\def\coker{\mathrm{coker}}
+\def\Sym{\mathrm{Sym}}
+\def\minspec{\mathrm{minspec}}
+\def\tr{\mathrm{tr}}
+\def\Gal{\mathrm{Gal}}
+\def\End{\mathrm{End}}
+\def\Aut{\mathrm{Aut}}
+\def\tor{\mathrm{tor}}
+\def\tors{\mathrm{tors}}
+\def\M{\mathrm{M}}
+\def\im{\mathrm{im}}
+\def\invar{\mathrm{inv}}
+\def\Hom{\mathrm{Hom}}
+\def\Isom{\mathrm{Isom}}
+\def\fchar{\mathrm{char}}
+\def\GL{\mathrm{GL}}
+\def\SL{\mathrm{SL}}
+\def\Sp{\mathrm{Sp}}
+\def\GSp{\mathrm{GSp}}
+\def\dim{\mathrm{dim}}
+\def\exp{\mathrm{exp}}
+\def\lcm{\mathrm{lcm}}
+\def\log{\mathrm{log}}
+\def\det{\mathrm{det}}
+\def\rk{\mathrm{rank}}
+\def\rank{\mathrm{rank}}
+\def\I{{\mathcal I}}
+\def\Id{\mathrm{Id}}
+\def\ord{\mathrm{ord}}
+\def\O{{\mathcal O}}
+\def\Zp{\Z_p}
+\def\bmu{{\boldsymbol\mu}}
+\def\rr{{\mathbf r}}
+\def\ss{{\mathbf s}}
+\def\m{{\mathfrak m}}
+\def\mm{{\mathfrak m}}
+\def\ff{{\mathfrak f}}
+\def\jj{{\mathfrak j}}
+\def\kk{{\mathfrak k}}
+\def\nn{{\mathfrak n}}
+\def\a{{\mathfrak a}}
+\def\b{{\mathfrak b}}
+\def\cc{{\mathfrak c}}
+\def\sf#1{s({#1})}
+\def\pile#1#2{\genfrac{}{}{0pt}{1}{#1}{#2}}
+\def\bij{\varphi}
+\def\T{{\mathbb T}}
+\def\H{{\mathcal H}}
+\def\X{{\mathcal X}}
+\def\cA{{\mathcal A}}
+\def\cT{{\mathbb T}}
+\def\cG{{\mathcal G}}
+\def\FFF{{\mathcal F}}
+\def\cX{{\mathbb X}}
+\def\n{{n}}
+\def\e{{e}}
+\def\F{{\mathbb F}}
+\def\Fp{\F_p}
+\def\Fq{\F_q}
+\def\Fqn{\F_{q^n}}
+\def\Tr{\mathrm{Tr}}
+\def\Trace{\mathrm{Tr}}
+\def\trace{\mathrm{Tr}}
+\def\empt{~}
+\def\secmult#1{{\alpha_{#1}}}
+\def\Frob{{\mathrm{Frob}}}
+\def\FF{{\mathcal{F}}}
+\def\ks{k_s}
+\def\Res{\mathrm{Res}}
+\def\Gm{\G_m}
+\def\ch#1{\widehat{#1}}
+\def\map#1{\;\xrightarrow{#1}\;}
+\def\isomap{\map{\,\sim\,}}
+\def\too{\longrightarrow}
+\def\hookto{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+\def\dirsum#1{\underset{#1}{\textstyle\bigoplus}}
+\def\sym#1{\sigma_{#1}}
+\def\symt#1{\tilde{\sigma}_{#1}}
+\def\Sig#1{\Sigma_{#1}}
+\def\Sigp#1{\Sigma'_{#1}}
+\def\bS#1{\mathbf{S}_{#1}}
+\def\K{\mathcal{K}}
+\def\Qb{\bar{\Q}}
+\def\shortoverline#1{\hskip 5pt\overline{\hskip -5pt #1 \hskip-9pt} \hskip 9pt}
+\def\isom{\xrightarrow{\sim}}
+\newcommand{\hookdoubleheadrightarrow}{%
+  \hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow
+}
+
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{\rm(\roman{enumi})}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\rm(\alph{enumii})}
+
+\numberwithin{equation}{section}
+
+\date{June 14, 2019}
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{prob}[thm]{Problem}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{algorithm}[thm]{Algorithm}
+\newtheorem{quest}[thm]{Question}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{exs}[thm]{Examples}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+
+
+
+\title
+[]
+{}
+%\author[E.\ Rains]{E.\ Rains}
+%\address{}
+%\email{}
+%\author[?]{?}
+%\address{}
+%\email{}
+%\author[A.\ Silverberg]{A.\ Silverberg}
+%\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
+%\email{asilverb@uci.edu}
+%\subjclass[2010]{??}
+%\keywords{abelian varieties}
+%\thanks{Support for the research was provided by the Alfred P.~Sloan Foundation
+%and the National Science Foundation.}
+
+\begin{document}
+
+
+%\begin{abstract} 
+%\end{abstract}
+
+
+
+\maketitle
+
+\section{Introduction}
+
+Let $\AA_g$ denote the moduli space of principally polarized abelian varieties of dimension $g$. 
+
+\begin{thm}
+\label{mainthm}
+Every rational function on $\AA_g$ that is constant on every isomorphism class of unpolarized abelian varieties is constant on every product of elliptic curves.
+\end{thm}
+
+
+\section{Definitions and notation}
+
+\begin{defn}
+Let $\SS_g$ denote the set of $(A,B) \in \AA_g \times \AA_g$ such that $A$ and $B$ are isomorphic as unpolarized abelian varieties.
+
+
+
+Let $\SS_{2,1} = S_2 \cap \AA_1^4$, i.e., $\SS_{2,1}$ is the set of $(E_1,E_2,E_3,E_4) \in \AA_1^4$ such that $E_1\times E_2$ and $E_3\times E_4$ are isomorphic as unpolarized abelian varieties.
+\end{defn}
+
+\begin{defn}
+For us, a {\em supersingular} elliptic curve will mean that its endomorphism algebra is a quaternion algebra.
+\end{defn}
+
+\begin{defn}
+If $p$ is a prime, let $SS_p$ denote the set of supersingular points in $\AA_1^4$ (over $\overline{\F}_p$).
+
+Let $SS \subset \AA_1^4$ denote the union of the sets $SS_p$, as the prime $p$ varies.
+\end{defn}
+
+\begin{defn}
+If $p$ is a prime, let $T_p \subset \SS_{2,1} \subset \AA_1^4$ denote the set of $(E_1,E_2,E_3,E_4) \in \SS_{2,1} = S_2 \cap \AA_1^4$ such that the $E_i$ are ordinary (over $\overline{\F}_p$) and isogenous.
+Let $T \subset \SS_{2,1} \subset \AA_1^4$ denote the union of the sets $T_p$, as the prime $p$ varies.
+
+\end{defn}
+
+\begin{defn}
+Suppose that $m$ and $n$ are relatively prime positive integers.
+Let $X_0(mn)$, as usual, be the moduli space of pairs $(E,\phi)$ such that $E \in \AA_1$
+and $\phi$ is an isogeny on $E$ whose kernel is a cyclic group of order $mn$. 
+View $X_0(mn)$ as a subset of $\AA_1^4$ via the map 
+$(E,\phi) \mapsto (E,E/m\ker \phi,E/n\ker \phi,E/\ker \phi)$.
+
+If $p$ is a prime, let $Y_p \subset \AA_1^4$ denote the union of the sets $X_0(mn) \subset \AA_1^4$, running over relatively prime positive integers $m$ and $n$ that are prime to $p$.
+\end{defn}
+
+Note that $Y_p \subset \SS_2$ via the map 
+$$(E,E/m\ker \phi,E/n\ker \phi,E/\ker \phi) \mapsto (E \times (E/\ker \phi),(E/m\ker \phi) \times (E/n\ker \phi)).$$
+
+If $X$ is a subset of $\AA_g^k$ for some positive integers $g$ and $k$, write $\overline{X}$ for the Zariski closure of $X$ in $\AA_g^k$.
+
+\begin{defn}
+By a {\bf square} we mean $(E,E_A,E_B,E_AB) \in \AA_1^4$ and a commutative diagram
+$$
+\xymatrix@C=15pt{
+& E \ar[ld]_{\varphi_A}  \ar[rd]^{\varphi_B}  \\
+E_A \ar[rd]_{\psi_B}  & &  \ar[ld]^{\psi_A} E_B \\
+ & E_{AB}
+}
+$$
+where  
+the maps  
+$\varphi_A$, $\varphi_B$, $\psi_A$, and $\psi_B$
+are isogenies such that 
+\begin{enumerate}
+\item
+$(\deg(\varphi_A),\deg(\varphi_B)) = 1$,
+\item
+$\ker \psi_B = \varphi_A(\ker \varphi_B)$,
+\item
+$\ker \psi_A = \varphi_B(\ker \varphi_A)$.
+\end{enumerate}
+\end{defn}
+
+
+
+\section{Some background}
+
+\begin{thm}[Deligne]
+\label{DeligneSSthm}
+If $g \ge 2$ and $E_1,\ldots,E_g,E_1',\ldots,E_g'$ are supersingular elliptic curves in characteristic $p$, then $E_1\times\cdots\times E_g$ and $E_1'\times\cdots\times E_g'$ are isomorphic over every extension over which all the endomorphisms are defined.
+\end{thm}
+
+
+
+\section{Some density results}
+
+\begin{conj}
+If $g > 1$, then the set $\SS_g$ is Zariski-dense in $\AA_g \times \AA_g$.
+\end{conj}
+
+The strategy for showing density (of $T$ in $\AA_1^4$?) is to first show that the CM points are dense in $X_0(mn)(\overline{\Q})$ for all relatively prime positive integers $m$ and $n$. (Perhaps the finite field case suffices?) Then show that the union of the images of the sets $X_0(mn)$ is dense (and thus CM points in there are dense). Note that the union of the sets $X_0(p)$ is dense in $(\P^1)^2$ since it's a hypersurface of degree that goes to infinity, so the set of tuples $(E,E/p\ker \phi,E/q\ker \phi)$ is dense in $(\P^1)^3$ (the closure of the union has dimension at least 3, since it's dense or a hypersurface).
+
+
+
+
+\begin{prop}
+\label{S2A2}
+\begin{enumerate}
+\item
+$\overline{SS} = \AA_1^4$.
+\item
+$\overline{\SS_2} = \AA_2 \times \AA_2$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+The key point is that anything that vanishes on $SS_p$ has multidegree at least ${\frac{p-1}{12}}$ on each factor.
+Then vary $p$ to get that $\overline{SS} = \AA_1^4$.
+
+We have $SS_p \subset \SS_{2,1}$, and the set $SS_p$ has multidegree ${\frac{p-1}{12}}$ (in the stacky sense, i.e., adjoin level 5 and level 7 structure, or any level $\ell$ structure for $\ell \ge 5$; then the number of points is ${\frac{p-1}{12}}|\Sp_2(\F_\ell)|$; this number might not be an integer, but that's OK since it's a Deligne-Mumford stack so it's nice...).
+It follows that any function that vanishes on $\SS_{2,1}$ has multidegree at least ${\frac{p-1}{12}}$. This holds for all primes $p$. Over $\Z$, this gives a lower bound on the degree of any function $f$ that vanishes on $\SS_{2,1}$.
+Varying $p$ shows that no such function exists, giving that $\SS_2$ is Zariski-dense in $\AA_2 \times \AA_2$.
+\end{proof}
+
+
+
+
+\begin{prop}
+\label{TYp}
+$\overline{T_p} = \overline{Y_p}$.
+\end{prop}
+
+\begin{proof}
+It suffices to show that $X_0(mn) \cap T_p$ is dense in $X_0(mn)$.
+This holds since if $x \in X_0(mn)(\bar{k})$ is such that the corresponding elliptic curve $E$ is not supersingular, then $x\in T$ (since $T$ consists of ordinary elliptic curves). If $x \in X_0(mn)(\bar{k})$ is geometrically CM (to avoid supersingular), then the $mn$ isogeny comes from an ideal $\a_{mn}$. If $\gcd(m,n)=1$, then $\a_{mn}=\a_{m} \times \a_{n}$. This gives the square. So $x \in T$. 
+Can construct a square from any point in $X_0(mn)$. A CM point in $X_0(mn)$ comes nominally from $T$. 
+
+The point is that if $x \in X_0(mn)({\F_q})$, this gives a cyclic $mn$-isogeny whose domain is CM, since it's over $\F_q$ (if you exclude the finitely many supersingular points). Isogenies correspond to ideals in $\End(E)$ (modulo whether $\End(E)$ is maximal...). Thus $x \in T(\F_q) \subset T_p$.
+
+These $x$ are dense (since they're all but finitely many of the points in $\overline{\F_q}$).
+
+We now have that $X_0(mn) \cap \overline{T_p}$ is the fiber over $p$ of the $\Z$-scheme $X_0(mn)$.
+
+The above shows that $\overline{T_p} = \overline{Y_p}$.
+\end{proof}
+
+
+
+\begin{prop}
+\label{SSYp}
+$SS_p \subset \overline{Y_p}$.
+\end{prop}
+
+\begin{proof}
+\end{proof}
+
+\begin{prop}
+\label{TA1}
+$\overline{T} = \AA_1^4$.
+\end{prop}
+
+\begin{proof}
+Suppose $p$ is a prime and $h$ is an algebraic function that vanishes on $T_p$.
+Then $h$ vanishes on $\overline{T_p}$, so $h$ vanishes on $\overline{Y_p}$ by Proposition \ref{TYp}, so $h$ vanishes on $SS_p \subset \overline{Y_p}$ by Proposition \ref{SSYp}, giving that $h$ has multidegree at least ${\frac{p-1}{12}}$ on each factor.
+Varying $p$ and applying Proposition \ref{S2A2}(i) gives the desired result.
+\end{proof}
+
+(The next result isn't used in the proof of the main results.)
+
+\begin{cor}
+\label{SS21A14}
+$\overline{\SS_{2,1}} = \AA_1^4$.
+\end{cor}
+
+\begin{proof}
+This follows from Proposition \ref{S2A2}(i) since $SS \subset \SS_{2,1}$.
+\end{proof}
+
+
+\section{Proof of Theorem \ref{mainthm}}
+
+
+One can hopefully reduce everything to the case $n=2$.
+
+The next result (which isn't really used) says that if $\invar(E_1,\ldots,E_g)$ is an isomorphism invariant and is ``algebraic'', then $\invar$ factors through $j$.
+
+\begin{prop}
+Suppose $\invar(E_1,\ldots,E_g)$ is an isomorphism invariant and is ``algebraic''. Then there exists $F \in k(x_1,...,x_g)^{S_g}$ such that
+$$
+\invar(E_1,\ldots,E_g) = F(j(E_1),\ldots,j(E_g))
+$$
+for {\em all} tuples $(E_1,\ldots,E_g)$ of elliptic curves over $k$.
+\end{prop}
+
+\begin{proof}
+If $\invar(E_1,\ldots,E_g)$ is an isomorphism invariant and is ``algebraic'', then it will work for all tuples $(E_1,\ldots,E_g)$ (not just ordinary isogenous ones). For generic $E_1,\ldots,E_g$, the product $E_1\times \ldots\times E_g$ has a unique principal polarization, so $E_1\times \ldots\times E_g$ and $E_1'\times \ldots\times E_g'$ are isomorphic if and only if the unordered sets $\{ E_1,\ldots,E_g\}$ and $\{ E_1',\ldots,E_g'\}$ are the same.
+\end{proof}
+
+So for ordinary isogenous elliptic curves, if $E_1\times E_2$ and $E_1'\times E_2'$ are isomorphic (as unpolarized abelian varieties), then 
+$$
+F(j(E_1),j(E_2),j(E_3),\ldots,j(E_g)) = F(j(E_1'),j(E_2'),j(E_3),\ldots,j(E_g)).
+$$
+However over $\overline{\Q}$, the sets $\{ \{ j(E_1),j(E_2)\},\{j(E_3),j(E_4)\} : E_1\times E_2 \cong E_3\times E_4 \}$
+are Zariski-dense in $\Sym^2(\P^2)$.
+
+(We will consider $F(x,y)-F(z,w)$ as a function on $(\P^1)^2 \times (\P^1)^2$. It vanishes on a dense set, so it is the zero map, so $h$ is constant.)
+
+
+Theorem \ref{mainthm} in the case $g=2$ is an immediate consequence of the following result.
+
+\begin{thm}
+\label{mainthmT}
+If $\invar : \AA_g \to \P^1$ is a rational function that is constant on each isomorphism class of unpolarized abelian varieties of the form $\prod_{i=1}^g E_i$ for which the $E_i$ are isogenous and ordinary, then $\invar$ is constant on $\AA_1^g$.
+\end{thm}
+
+\begin{proof}
+(This is just for $g=2$.)
+Define $h : \AA_1^4 \to \P^1$ by
+$$
+h(E_1,E_2,E_3,E_4) = \invar(E_1\times E_2)-\invar(E_3\times E_4).
+$$
+The hypotheses imply that $h$ vanishes on $T$. So $h$ vanishes on $\AA_1^4$, by Proposition \ref{TA1}. Thus, $\invar$ is constant on $\AA_1^2 \subset \AA_2$.
+\end{proof}
+
+
+
+
+%\begin{thebibliography}{99}
+%	\bibitem{?}
+%\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
