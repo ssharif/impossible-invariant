@@ -71,6 +71,51 @@ There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will impl
 \label{sec:matr-dens-results}
 
 \begin{lemma}
-  
+  $\tclos{\Sl_g(\Z[1/\ell])} = \Sl_g(\R)$.
 \end{lemma}
+
+\begin{definition}
+  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
+\end{definition}
+
+\begin{lemma}
+  If $G \in \Sl_g(\Z[1/\ell])$, then for some $n \in \N$,
+  \[
+    \ell^n GG^t \in \detl.
+  \]
+\end{lemma}
+
+\begin{definition}
+  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
+\end{definition}
+
+\begin{lemma}
+  $\permat = \{GG^t | G \in \Sl_g(\R)\}$.
+\end{lemma}
+
+\begin{proposition}
+  $\tclos{\{A/(\det A)^{\frac{1}{g}} | g \in \detl\}} = \permat$.
+\end{proposition}
+
+\begin{lemma}
+  $\hclos{\{ irM | M \in \permat, r > 0\}} = \hh_g$.
+\end{lemma}
+
+\begin{lemma}
+  \[
+    \hclos{\bigcup_{N \in \detl} \psi_N(i\R)} = \hh_g.
+  \]
+\end{lemma}
+
+\begin{lemma}
+  \[
+    \hclos{\bigcup_{N \in \detl} \im \psi_N} = \hh_g.
+  \]
+\end{lemma}
+
+\begin{proposition}
+  \[
+    \zclos{\bigcup_{N \in \detl} \im \psinmod} = \ag.
+  \]
+\end{proposition}
 \end{document}
