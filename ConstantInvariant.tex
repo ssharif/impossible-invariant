@@ -4,6 +4,7 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{invariant}
+\usepackage{xcolor}
 
 \title{Algebraic invariants constant on unpolarized isomorphism classes of abelian varieties}
 
@@ -55,8 +56,8 @@ Then we will show the following.
 
 The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct maps $X_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that
 \begin{enumerate}
-    \item $\overline{\cup X_i} = \ag$ and
-    \item for all $i,j$, $\overline{S_g \cap (X_i \times X_j)} = X_i \times X_j$.
+    \item\label{i:curves-dense} $\overline{\cup X_i} = \ag$ and
+    \item\label{i:Sg-dense} for all $i,j$, $\overline{S_g \cap (X_i \times X_j)} = X_i \times X_j$.
 \end{enumerate}
 Here, the bar denotes Zariski closure. From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
 \[
@@ -66,6 +67,77 @@ Here, the bar denotes Zariski closure. From these two properties, Theorem~\ref{t
   }
 \]
 There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will imply that, viewed as functors, the latter map factors through $\sg$. Since the functor $\sg$ is ``dense'' in the sense of Theorem~\ref{thm:sg-c-dense}, we will have $\df = \ag \times \ag$, whence the claim follows.
+
+
+\section{Constructing curves on $\ag$}
+\label{sec:curves-on-Ag}
+
+Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $X_0(\ell^n) \to \ag$ whose images $X_i$ are curves in $\ag$. These curves will be used in the steps outlined in Section~\ref{sec:introduction}.
+
+We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove step~\ref{i:Sg-dense}, and the complex analysis version to prove step~\ref{i:curves-dense}. \textcolor{red}{TODO: explain that the latter does not carry to characteristic $p$}
+
+\subsection{Geometric description}
+
+For any vector $\vec{n} = (n_1,\dots,n_g)$ with $1 \leq n_1 \leq \cdots \leq n_g \leq n$, and any generic polarization $\lambda$\textcolor{red}{TODO: explain why choosing $\lambda$ is equivalent to choosing a matrix}, we construct a map $\psi_{\vec{n},\lambda}: X_0(\ell^n) \to \ag$ as follows. Given an elliptic curve $E$ and a cyclic $\ell^n$-isogeny $\varphi$, we can uniquely decompose $\varphi$ as a sequence of $\ell$-isogenies
+\[
+  E = E_0 \xrightarrow{\ell} E_1 \cdots E_{n-1} \xrightarrow{\ell} E_n.
+\]
+We take $\psi_{\vec{n},\lambda}(E,\varphi)$ to be the abelian variety $E_{n_1} \times \cdots \times E_{n_g}$ with the principal polarization determined by $\lambda$, i.e.
+\begin{equation}\label{def:psi-n-lambda}
+  \psi_{\vec{n},\lambda}(E,\varphi) = (E_{n_1} \times \cdots \times E_{n_g}, \lambda).
+\end{equation}
+
+\subsection{Analytic description}
+
+For any symmetric, positive definite matrix $A \in M_{g \times g}(\Z)$ with $\det A = \ell^m$ for some $m$, we define a map $\psi_A: \hh \to \hh_g$\textcolor{red}{TODO: make sure Siegel spaces have been defined} as follows.
+\[
+  \psi_A(\tau) = \tau A
+\]
+There is a natural map $\Gamma_0(\ell^n) \to \Sp_{2g}(\Z)$ given by ???\textcolor{red}{TODO: describe map}
+Therefore $\psi_A$ descends to a map
+\begin{equation}\label{def:psi-A-n}
+  \psi_{A,n}: \hh/\Gamma_0(N) \to \hh_g/\Sp_{2g}(\Z).
+\end{equation}
+Thus $\psi_{A,n}$ induces a map $X_0(\ell^n) \to \ag$, which we also denote by $\psi_{A,n}$.
+
+\subsection{Equivalence of descriptions}
+
+\textcolor{red}{TODO: explain why $\psi_{\vec{n},\lambda}$ and $\psi_{A,n}$ are really the same map}
+
+\newpage
+
+\section{Step 1}
+
+In this section, we focus on Step~\ref{i:curves-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
+\[
+  \bigcup_{A} \im\left(\psi_{A,n}\right) \text{ is Zariski dense in } \ag,
+\]
+where $A$ ranges over all symmetric positive definite matrices whose determinent is a power of $\ell$. Recall that $\ell$ and $n$ are fixed.\textcolor{red}{TODO: reference where fixing of $\ell$ and $n$ occurs}
+
+We will actually show the slightly stronger claim that $\cup_{A} \psi_{A,n}(i\R)$ is holomorphically dense. That is, if any holomorphic function $f$ on $\ag$ vanishes on $\cup_{A} \psi_{A,n}(i\R)$, then $f$ vanishes everywhere.
+
+For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite matrices in $\Sl_g(R)$. Recall that for any $A \in \Sympd_g(\Z[1/\ell])$, the map $\psi_{A,n}$ is induced from the map $\psi_A: \hh \to \hh_g$ given by $\tau \mapsto \tau A$. Therefore
+\[
+  \bigcup_{A \in \Sympd_g(\Z[1/\ell])} \psi_A(i\R) = i\R\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right).
+\]
+
+\begin{lemma}
+  $\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right)$ is holomorphically dense in $\Sympd_g(\R)$.
+\end{lemma}
+\begin{proof}
+  \textcolor{red}{TODO}
+\end{proof}
+
+\begin{lemma}
+  $i\R\Sympd_g(\R)$ is holomorphically dense in $\hh_g$.
+\end{lemma}
+\begin{proof}
+  \textcolor{red}{TODO}
+\end{proof}
+
+It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
+
+
 
 \section{Matrix density results}
 \label{sec:matr-dens-results}
