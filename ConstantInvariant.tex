@@ -1,0 +1,53 @@
+\documentclass{amsart}
+\usepackage{amsmath, amsthm, amssymb,latexsym,enumerate,mathrsfs}
+\usepackage[all]{xy}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{invariant}
+
+\title{Algebraic invariants constant on unpolarized isomorphism classes of abelian varieties}
+
+%\author[E.\ Rains]{E.\ Rains}
+%\address{}
+%\email{}
+%\author[?]{?}
+%\address{}
+%\email{}
+%\author[A.\ Silverberg]{A.\ Silverberg}
+%\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
+%\email{asilverb@uci.edu}
+%\subjclass[2010]{??}
+%\keywords{abelian varieties}
+%\thanks{Support for the research was provided by the Alfred P.~Sloan Foundation
+%and the National Science Foundation.}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+Let $\ag$ be the moduli space of principally polarized abelian varieties. If $A, B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
+\begin{theorem}\label{thm:invariant-c-constant}
+  Suppose $f: \ag \to X$ be a morphism of schemes over $\C$. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+\end{theorem}
+We will also show that the theorem holds when $\C$ is replaced by either $\Q$ or $\Z$. We will deduce the theorem as a corollary of another result, stated below.
+
+Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$ to be the set
+\[
+  \dlim_{T/R} S(T)
+\]
+where the union is over all $R$-schemes $T$. Let
+\[
+  \sg: \rschemes \to \mathcal{P}((\ag \times \ag)[R])
+\]
+be the functor from $R$-schemes to the power set of $(\ag \times \ag)[R]$ which, for $T$ an $R$-scheme, gives the set
+\[
+  \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
+\]
+Then we will show the following.
+\begin{theorem}\label{thm:sg-c-dense}
+  $\sg(\C)$ is Zariski dense in $\ag \times \ag$.
+\end{theorem}
+\end{document}
