@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage{invariant}
 \usepackage{xcolor}
+\usepackage{tikz-cd}
 
 \title{Algebraic invariants constant on unpolarized isomorphism classes of abelian varieties}
 
@@ -77,6 +78,7 @@ Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraint
 We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove step~\ref{i:Sg-dense}, and the complex analysis version to prove step~\ref{i:curves-dense}. \textcolor{red}{TODO: explain that the latter does not carry to characteristic $p$}
 
 \subsection{Geometric description}
+\label{sec:geo-desc}
 
 For any vector $\vec{n} = (n_1,\dots,n_g)$ with $1 \leq n_1 \leq \cdots \leq n_g \leq n$, and any generic polarization $\lambda$\textcolor{red}{TODO: explain why choosing $\lambda$ is equivalent to choosing a matrix}, we construct a map $\psi_{\vec{n},\lambda}: X_0(\ell^n) \to \ag$ as follows. Given an elliptic curve $E$ and a cyclic $\ell^n$-isogeny $\varphi$, we can uniquely decompose $\varphi$ as a sequence of $\ell$-isogenies
 \[
@@ -88,8 +90,9 @@ We take $\psi_{\vec{n},\lambda}(E,\varphi)$ to be the abelian variety $E_{n_1} \
 \end{equation}
 
 \subsection{Analytic description}
+\label{sec:ana-desc}
 
-For any symmetric, positive definite matrix $A \in M_{g \times g}(\Z)$ with $\det A = \ell^m$ for some $m$, we define a map $\psi_A: \hh \to \hh_g$\textcolor{red}{TODO: make sure Siegel spaces have been defined} as follows.
+For any symmetric, positive definite matrix $A \in M_{g \times g}(\Z[1/\ell])$ with $\det A = \ell^m$ for some $m$, we define a map $\psi_A: \hh \to \hh_g$\textcolor{red}{TODO: make sure Siegel spaces have been defined} as follows.
 \[
   \psi_A(\tau) = \tau A
 \]
@@ -107,6 +110,7 @@ Thus $\psi_{A,n}$ induces a map $X_0(\ell^n) \to \ag$, which we also denote by $
 \newpage
 
 \section{Step 1}
+\label{sec:step-1}
 
 In this section, we focus on Step~\ref{i:curves-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
 \[
@@ -136,6 +140,102 @@ For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite 
 \end{proof}
 
 It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
+
+\section{Step 2}
+\label{sec:step-2}
+
+In this section, we focus on Step~\ref{i:Sg-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
+\[
+  \zclos{S_g \cap (X_i \times X_j)} = X_i \times X_j.
+\]
+Here $X_i$ and $X_j$ are images of two maps of the form $\psi_{\vec{n},\lambda}$ from Section~\ref{sec:geo-desc} (see Equation~\ref{def:psi-A-n}).
+
+We will prove the claim using the following lemma.
+
+\begin{lemma}\label{lem:lim-degree}
+  Let $\psi = \psi_{\vec{n},\lambda}$ and $\psi' = \psi_{\vec{n}',\lambda'}$ be two of the maps $X_0(\ell^n) \to \ag$ defined as in Equation~\ref{def:psi-A-n}. Then there exists a sequence $x_i \in X_0(\ell^n)$ such that
+  \[
+    \lim_{i \to \infty}\#\left\{ y \in X_0(\ell^n) \colon \text{ $\psi(x_i)$ and $\psi'(y)$ are weakly isomorphic} \right\} = \infty.
+  \]
+\end{lemma}
+
+Before we prove Lemma~\ref{lem:lim-degree}, we will show how to finish the argument.
+
+\begin{corollary}
+  Let $\psi$ and $\psi'$ be as in Lemma~\ref{lem:lim-degree}, and let $X$ and $X'$ be their images in $\ag$. Then
+  \[
+    \zclos{S_g \cap (X \times X')} = X \times X'.
+  \]
+\end{corollary}
+\begin{proof}
+  By Lemma~\ref{lem:lim-degree}, the left hand side has infinite number of points \textcolor{red}{TODO: do we need to know what ``kind'' of points?}. This implies that $\dim \zclos{S_g \cap (X \times X')} \geq 1$. Consider the projection $\pi_X: \zclos{S_g \cap (X \times X')} \to X$. Lemma~\ref{lem:lim-degree} says that this map has unbounded degree. Therefore $\dim \zclos{S_g \cap (X \times X')} \geq 2$.\textcolor{red}{TODO: deal with possible vertical components}
+\end{proof}
+
+We now return to the proof of Lemma~\ref{lem:lim-degree}.
+
+\begin{proof}[Proof of Lemma~\ref{lem:lim-degree}]
+  Choose a quadratic imaginary field $K$, principal prime $\varphi\sO_K$ over $\ell$, and rational primes $c_i$ as in Lemma~\ref{lem:K-exists} below. Let $E$ be an elliptic curve with CM by $\sO_K$.\textcolor{red}{TODO: where does $E$ live? Can do over $\C$ or $\overline{\fp}$}
+
+  Let $\sC$ denote a cyclic subgroup of $E$ with order prime to $\ell$. Then the set of subgroups $\sC_i, \varphi(\sC), \dots, \varphi^n(\sC)$ give a set of $\ell$-isogenies from $E$. Note that $\varphi$ induces a map $E/\varphi^j(\sC) \to E/\varphi^{j+1}(\sC)$ \textcolor{red}{TODO: should we describe the kernel?}. Thus we have the following diagram
+  \[
+    \begin{tikzcd}
+      \sC \arrow[d,"\varphi"] \arrow[r] & E \arrow[d,"\varphi"] \arrow[r] & E/\sC \arrow[d]
+      \\
+      \varphi(\sC) \arrow[d,"\varphi"] \arrow[r] & E \arrow[d,"\varphi"] \arrow[r] & E/\varphi(\sC) \arrow[d]
+      \\
+      \vdots \arrow[d,"\varphi"] & \vdots \arrow[d,"\varphi"] & \vdots \arrow[d]
+      \\
+      \varphi^n(\sC) \arrow[r] & E \arrow[r] & E/\varphi^{n}(\sC).
+    \end{tikzcd}
+  \]
+  Let $\varphi^{\ast}(\sC)$ denote the composition $E/\sC \to \cdots \to E/\varphi^n(\sC)$. This is an $\ell^n$-isogeny, so the pair $(E/\sC,\varphi^{\ast}(\sC))$ defines a point in $X_0(\ell^n)$.
+
+  For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $c_i$. We will define $x_1 = (E/\sC_1,\varphi^{\ast}(\sC_1))$. Before defining $x_2,x_3,\dots$, we will first describe a set of $y$ such that $\psi(x_1) = \psi'(y)$.
+
+  Recall from Section~\ref{sec:geo-desc} the description of $\psi = \psi_{\vec{n},\lambda}$. Because we have the decomposition of $\varphi^{\ast}(\sC_1)$ into a sequence of $\ell$-isogenies, the geometric description allows us to evaluate
+  \[
+    \psi(E/\sC_1,\varphi^{\ast}(\sC_1)) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
+  \]
+  The set of $c_1$-torsion subgroups of $E$ is a $\F_{c_1^2}^\times/\F_{c_1}^\times$ torser. This follows from the fact that $E[c_1] \cong \sO_K/c_1\sO_K \cong \F_{c_1^2}$ as $\sO_K$-modules \textcolor{red}{TODO: cite somewhere for this?}. Recall from our construction of the $c_i$, that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
+
+  The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}(\beta\sC_1))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
+  \[
+    E/(\gamma^g)^{n_1}(\sC_1) \times \cdots \times E/(\gamma^g)^{n_g}(\sC_1)
+    \cong
+    E/(\gamma^g)^{n_1'}(\beta\sC_1) \times \cdots \times E/(\gamma^g)^{n_g'}(\beta\sC_1).
+  \]
+  By Lemma~???\textcolor{red}{TODO: state prove this lemma}, this holds if and only if
+  \[
+    (\gamma^{n_1 + \cdots + n_g})^g = \beta^g(\gamma^{n_1' + \cdots n_g'})^g.
+  \]
+  The hypothesis on the $c_i$ implies that $\mu_g \subseteq \F_{c_i^2}^\times$, so there are precisely $g$ solutions $\beta$ to this equation. This gives us $g$ points $y \in X_0(\ell^n)$ with $\psi(x_1) = \psi'(y)$.
+
+  For $x_2$, we repeat much of the same construction except that instead of using $\sC_2$, we use $\sC_1\sC_2$ and liberally apply the Chinese remainder theorem. The set of subgroups of $E$ with order $c_1c_2$ is a torser over $(\F_{c_1^2}^\times/\F_{c_1}^\times) \times (\F_{c_2^2}^\times/\F_{c_2}^\times)$. Then we are searching for $\beta \in \sO_K/c_1c_2\sO_K$ such that
+  \[
+    E/\varphi^{n_1}(\sC_1\sC_2) \times \cdots \times E/\varphi^{n_g}(\sC_1\sC_2)
+    \cong
+    E/\varphi^{n_1'}(\beta\sC_1\sC_2) \times \cdots \times E/\varphi^{n_g'}(\beta\sC_1\sC_2).
+  \]
+  Again this reduces to counting the number of solutions $\beta$ to an equation of the form $(\gamma^{g})^{n_1 + \cdots + n_g} = \beta^g(\gamma^g)^{n_1' + \cdots n_g'}$, except that this equation is modulo $c_1c_2$. So by a similar argument, this gives $g^2$ points $y \in X_0(\ell^n)$ such that $\psi(x_2) = \psi'(y)$.
+
+  Continuing in the same fashion shows that for each $x_i$, there are at least $g^i$ points $y \in X_0(\ell_n)$ such that $\psi(x_i) = \psi'(y)$.
+\end{proof}
+
+\begin{lemma}\label{lem:K-exists}
+  Let $g$ be a positive integer and $\ell$ a prime. Then there exists a quadratic imaginary field $K$ such that
+  \begin{enumerate}
+    \item $\ell$ splits in $K$ into principal primes $(\alpha)(\overline{\alpha})$
+    \item There is an infinite number of rational primes $c_i$ such that
+    \begin{enumerate}
+      \item $c_i$ is inert in $K$
+      \item $c_i \equiv -1 \mod{g}$ and inert in $K$
+      \item $\varphi \mod c_i\sO_K \in \sO_K/c_i\sO_K$ is a $g$th power.
+    \end{enumerate}
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  \textcolor{red}{TODO: prove}
+\end{proof}
 
 
 
