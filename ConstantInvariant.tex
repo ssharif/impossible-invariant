@@ -267,6 +267,71 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
   The Galois group $\Gal(L/\Q)$ is isomorphic to $(\Z/g\Z \times \Z/g\Z) \rtimes ((\Z/g\Z)^\times \times \Z/2\Z)$ \textcolor{red}{TODO: explain why}. Then the element $\sigma = ((0,0),(-1,-1))$ has the required property. Note that every conjugate also works. \textcolor{red}{TODO: is there an easier way to get existence without computing the full Galois group?}
 \end{proof}
 
+\begin{lemma}
+  Let $E$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$. Let $c$ be a prime not equal to the characteristic of the base field. Then the set of $c$-torsion subgroups of $E$ form a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$ torsor. Moreover, if $\sC$ is a $c$-torsion subgroup and $\alpha_1,\beta_1,\dots,\beta_d,\alpha_d \in (\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$, then
+  \[
+    \prod E/\alpha_i(\sC)
+    \cong
+    \prod E/\beta_i(\sC)
+    \quad\Leftrightarrow\quad
+    \prod \alpha_i = \prod \beta_i.
+  \]
+  Here the left isomorphism is as unpolarized abelian varieties.
+\end{lemma}
+\begin{proof}
+  The first claim follows from the fact that $E[c] \cong \sO_K/c\sO_K$ as an $\sO_K$-module.\textcolor{red}{TODO: more details}.
+
+  It remains to prove the second claim. We start with the case of $d = 2$. Consider the matrix $\overline{\gamma} \in \begin{bmatrix} \alpha_1^{-1} & 0 \\ 0 & \alpha_1 \end{bmatrix} \in \Sl_2{\sO_K/c\sO_K}$. By Lemma~\ref{lem:quot-surj-SL2}, $\overline{\gamma}$ lifts to some $\gamma \in \Sl_2{\sO_K}$. This corresponds to an automorphism of $E \times E$ sending $\alpha_1(\sC) \times \alpha_2(\sC)$ to $\sC \times \alpha_1\alpha_2(\sC)$. Therefore we have\textcolor{red}{TODO: emphasize that all isomorphisms are as unpolarized AV}
+  \[
+    E/\alpha_1(\sC) \times E/\alpha_2(\sC)
+    \cong
+    E/\beta_1(\sC) \times E/\beta_2(\sC)
+  \]
+  if and only if
+  \[
+    E/\sC \times E/\alpha_1\alpha_2(\sC)
+    \cong
+    E/\sC \times E/\beta_1\beta_2(\sC).
+  \]
+
+  \textcolor{red}{TODO: somehow cancel out the copy of E on the left}
+
+  It remains to show that $E/\alpha_1\alpha_2(\sC) \cong E/\beta_1\beta_2(\sC)$ if and only if $\alpha_1\alpha_2 = \beta_1\beta_2$. By the hypothesis on $\sO_K^\times \cong \Aut E$, we know that $E/\sC_1 \cong E/\sC_2$ if and only if $\sC_1 = \sC_2$ for any finite subgroups $\sC_1,\sC_2$ of $E$. That is, because $\Aut E$ is trivial, distinct subgroups have distinct quotients. Therefore $E/\alpha_1\alpha_2(\sC) \cong E/\beta_1\beta_2(\sC)$ if and only if $\alpha_1\alpha_2(\sC) = \beta_1\beta_2(\sC)$ if and only if $\alpha_1\alpha_2 = \beta_1\beta_2$ because $c$-torsion subgroups form a torsor over $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
+
+  \textcolor{red}{TODO: finish the $d > 2$ case}
+\end{proof}
+
+
+\begin{lemma}\label{lem:quot-surj-SL2}
+  Let $R$ be a Dedekind domain and $\alpha \in R$. Then the natural map $\Sl_2(R) \to \Sl_2(R/\alpha R)$ is surjective.
+\end{lemma}
+\begin{proof}
+  % See Thm.~3.2 https://kconrad.math.uconn.edu/blurbs/grouptheory/SL(2,Z).pdf
+  % Diamond and Shurman exercise 1.2.2b
+  This proof follows\textcolor{red}{TODO: cite Diamond and Shurman Ex~1.2.2b}
+
+  \textcolor{red}{TODO: is this true if we replace $\alpha$ with an arbitrary ideal $I$?}
+
+  We will assume that $\alpha \neq 0$ as otherwise the claim is trivial.
+
+  Let $\begin{bmatrix} \overline{a} & \overline{b} \\ \overline{c} & \overline{d} \end{bmatrix} \in \Sl_2(R/\alpha R)$ and choose any lift $\begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \mathrm{M}_2(R)$ with $c \neq 0$.
+
+  First we claim that $(c) + (d) + (\alpha) = R$. This follows from the fact that $(a)d + (-b)c = 1 + (e)\alpha$ for some $e \in R$.
+
+  Next we claim that we can replace $d$ with $d' \in R$ such that $d' \equiv d \mod{\alpha}$, and $(c) + (d') = R$. It is sufficient to find $x \in R$ such that $d + \alpha x \not\equiv 0 \mod{\frak{p}}$ over all primes $\frak{p} \mid (c)$ (here we are using that $c \neq 0$). Note that this equation always has at least one solution except possibly when $\alpha \equiv 0 \mod{\frak{p}}$. But then $d \not\equiv 0 \mod{\frak{p}}$ by the previous claim. Therefore by the Chinese remainder theorem, we can find a solution $k \in R$ such that $d + k\alpha \not\equiv 0 \mod{\frak{p}}$ for all $\frak{p} \mid c$.
+
+  Now we will finish the proof. By the previous claim, we can find $s,t \in R$ such that $sd' - tc = 1$.  By hypothesis, $ad' - bc = 1 + m\alpha$ for some $m \in R$. Then set $a' = a - mt\alpha$ and $b' = b - mt\alpha$. Then
+  \[
+    (a - ms\alpha)d' - (b - mt\alpha)c
+    =
+    ad' - bc - m\alpha(sd' - tc)
+    =
+    1 + m\alpha - m\alpha
+    =
+    1.
+  \]
+\end{proof}
+
 
 
 \section{Matrix density results}
