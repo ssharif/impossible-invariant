@@ -3,3 +3,6 @@
   ie check what the U, V do to the principal polarization
 * Complete iqf argument
 * Characteristic p stuff
+* for surjectivity of SL_2, see http://www.numdam.org/article/PMIHES_1964__22__5_0.pdf PDF page 15, cor. 5.2
+* for E/C x E/alpha*C = E/C x E/beta*C, see https://link.springer.com/content/pdf/10.1007%2Fs13348-010-0029-1.pdf. Proposition 65 (use n=1 case to bootstrap n=2 without computing the lattices directly)
+
