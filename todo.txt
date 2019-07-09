@@ -1,0 +1,5 @@
+
+* Show that ψ_A descends to a map on moduli in general
+  ie check what the U, V do to the principal polarization
+* Complete iqf argument
+* Characteristic p stuff
