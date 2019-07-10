@@ -121,6 +121,24 @@ and that
 
 \textcolor{red}{TODO: is it ok to remove the $n$ subscript we had before?}
 
+\textcolor{red}{TODO: is the following lemma necessary at all?}
+The following shows that the image of $\psi_A$ in $\ag$ is weakly isomorphic to $\psi_{UAV}$ for any $U,V \in \Gl_g(\Z)$.
+
+\begin{lemma}\label{lem:A-UAV-weakly-isom}
+  Let $A$ be as above. If $U,V \in \Gl_g(\Z)$, then $\psi_{A}(\tau)$ is weakly isomorphic to $\psi_{UAV}(\tau)$ for all $\tau \in \hh$.
+\end{lemma}
+\begin{proof}
+  We need to show that the lattices spanned by the columns of $\begin{bmatrix} I & A\tau \end{bmatrix}$ and $\begin{bmatrix} I & UAV\tau \end{bmatrix}$ are isomorphic. Note that the column span of $\begin{bmatrix} I & A\tau \end{bmatrix}$ is the same as that of the product
+  \[
+    \begin{bmatrix} U^{-1} & A\tau \end{bmatrix}\begin{bmatrix} I & 0 \\ 0 & V \end{bmatrix}
+    =
+    \begin{bmatrix} U^{-1} & AV\tau \end{bmatrix}.
+  \]
+  Multiplication on the left by $U$ gives an isomorphism between this lattice and $\begin{bmatrix} I & UAV\tau \end{bmatrix}$.
+\end{proof}
+
+
+
 \subsection{Equivalence of descriptions}
 
 Write $\Omega$ for $\tau I$, where $I$ is the $g \times g$ identity matrix. The period matrix for $\psi_{I,n}(\tau)$ is
