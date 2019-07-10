@@ -94,16 +94,32 @@ We take $\psi_{\vec{n},\lambda}(E,\varphi)$ to be the abelian variety $E_{n_1} \
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-For any symmetric, positive definite matrix $A \in M_{g \times g}(\Z[1/\ell])$ with $\det A = \ell^m$ for some $m$, we define a map $\psi_A: \hh \to \hh_g$\textcolor{red}{TODO: make sure Siegel spaces have been defined} as follows.
+Suppose that $A \in M_{g \times g}$ is symmetric, positive definite, and has non-zero determinant $\det A = N$. Then there is map $\psi_A: \hh \to \hh_g$ given by
 \[
-  \psi_A(\tau) = \tau A
+  \psi_A(\tau) = \tau A.
 \]
-There is a natural map $\Gamma_0(\ell^n) \to \Sp_{2g}(\Z)$ given by ???\textcolor{red}{TODO: describe map}
-Therefore $\psi_A$ descends to a map
+This descends to a map
 \begin{equation}\label{def:psi-A-n}
-  \psi_{A,n}: \hh/\Gamma_0(N) \to \hh_g/\Sp_{2g}(\Z).
+  \hh/\Gamma_0(N) \to \hh_g/\Sp_{2g}(\Z).
 \end{equation}
-Thus $\psi_{A,n}$ induces a map $X_0(\ell^n) \to \ag$, which we also denote by $\psi_{A,n}$.
+which gives a map $X_0(N) \to \ag$, which we also denote by $\psi_{A}$.
+
+To see this, let $\sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N)$ and let $\tau \in \hh$. A direct computation shows that the matrix $M = \begin{bmatrix} aI & bA \\ cA^{-1} & dI \end{bmatrix}$ lies in $\Sp_{2g}(\Z)$
+% it is integral because \det(A) | c, so cA^{-1} is integral.
+% M is in Sp because then M^t*\Omega*M = M
+% where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
+and that
+\[
+  \sigma(\tau)A
+  =
+  \frac{a\tau + b}{c\tau + d} A
+  =
+  \left(a(\tau A) + bI\right)\left(cA^{-1}(\tau A) + dI\right)^{-1}
+  =
+  M(\tau A).
+\]
+
+\textcolor{red}{TODO: is it ok to remove the $n$ subscript we had before?}
 
 \subsection{Equivalence of descriptions}
 
