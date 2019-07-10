@@ -380,62 +380,133 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
 \section{Matrix density results}
 \label{sec:matr-dens-results}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
   $\tclos{\Sl_g(\Z[1/\ell])} = \Sl_g(\R)$.
 \end{lemma}
+
+\begin{proof}
+  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
+  \[
+    G = E_n \cdots E_2 E_1
+  \]
+  where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
+\end{proof}
+
+\begin{proof}[Alternative proof]
+  Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
+  \[
+    \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
+  \]
+  Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
+\end{proof}
+
+% \begin{proof}
+%   The group scheme $\Sl_g$ is a connected reductive group, and hence is unirational. (???cite) Since $\Z[1/\ell]$ is topologically dense in $\R$, the claim follows.
+
+%   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then 
+% \end{proof}
 
 \begin{definition}
   For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:ggt-spd-detl}
   If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
   \[
     \ell^n GG^t \in \detl.
   \]
 \end{lemma}
 
+\begin{proof}
+  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
+\end{proof}
+
+
 \begin{definition}
   Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:ggt-periodmatrices}
   $\permat = \{GG^t | G \in \Sl_g(\R)\}$.
 \end{lemma}
+
+\begin{proof}
+  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
+  \[
+    G = O
+    \begin{bmatrix}
+      \sqrt{d_1} & & & \\
+      & \sqrt{d_2} & & \\
+      & & \ddots & \\
+      & & & \sqrt{d_{g}} 
+    \end{bmatrix}.
+\]
+Then $A = GG^t$ and $G \in \Sl_g(\R)$.
+\end{proof}
 
 \begin{proposition}\label{prop:A-over-detA}
   $\tclos{\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}} = \permat$.
 \end{proposition}
 
 \begin{proof}
-  Use previous three lemmas.
+  In the set
+  \[
+    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
+  \]
+  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
+  \[
+    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
+  \]
+  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
+Let $\R^+$ denote the set of positive real numbers.
 \begin{lemma}\label{lemma:holomorphic-closure-irM}
-  $\hclos{\{ irM | M \in \permat, r \in \R, r > 0\}} = \hh_g$.
+  $\hclos{\{ irM | M \in \permat, r \in \R^+\}} = \hh_g$.
 \end{lemma}
+
+\begin{proof}
+  This is a standard result in multivariable complex analysis, which we are all completely familiar with.
+\end{proof}
 
 \begin{lemma}
   \[
-    \hclos{\bigcup_{N \in \detl} \psi_N(i\R)} = \hh_g.
+    \hclos{\bigcup_{A \in \detl} \psi_A(i\R^+)} = \hh_g.
   \]
 \end{lemma}
 
 \begin{proof}
-  Combine Proposition~\ref{prop:A-over-detA} and Lemma~\ref{lemma:holomorphic-closure-irM}.
+  Observe that if $X$ is a subset of a complex manifold, then $\tclos{X} \subset \hclos{X}$. Now
+  \begin{align*}
+    \cup \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
+               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \det l\}.
+  \end{align*}
+  By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
+  \[
+    \{irM | r \in \R^+, M \in \permat\}.
+  \]
+  The result now follows from Lemma~\ref{lemma:holomorphic-closure-irM}.
 \end{proof}
 
 \begin{lemma}
   \[
-    \hclos{\bigcup_{N \in \detl} \im \psi_N} = \hh_g.
+    \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
   \]
 \end{lemma}
 
+\begin{proof}
+  Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
+\end{proof}
+
 \begin{proposition}
   \[
-    \zclos{\bigcup_{N \in \detl} \im \psinmod} = \ag.
+    \zclos{\bigcup_{A \in \detl} \im \psinmod} = \ag.
   \]
 \end{proposition}
+
+\begin{proof}
+  By definition of $\psinmod$, the $\im \psinmod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so its image in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense.
+\end{proof}
 
 \section{Characteristic $p$}
 \label{sec:characteristic-p}

@@ -1,7 +1,7 @@
 
+* Prove 5.7.
 * Show that ψ_A descends to a map on moduli in general
   ie check what the U, V do to the principal polarization
-* Flesh out §5 proofs
 * Complete iqf argument
 * Characteristic p stuff
 ** Eric's 7/2 idea for A₁ᵍ
