@@ -275,7 +275,7 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \[
     \psi(E/\sC_1,\varphi^{\ast}(\sC_1)) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
   \]
-  The set of $c_1$-torsion subgroups of $E$ is a $\F_{c_1^2}^\times/\F_{c_1}^\times$ torser. This follows from the fact that $E[c_1] \cong \sO_K/c_1\sO_K \cong \F_{c_1^2}$ as $\sO_K$-modules \textcolor{red}{TODO: cite somewhere for this?}. Recall from our construction of the $c_i$, that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
+  The set of $c_1$-torsion subgroups of $E$ is a $\F_{c_1^2}^\times/\F_{c_1}^\times$ torser. This follows from the fact that $E[c_1] \cong \sO_K/c_1\sO_K \cong \F_{c_1^2}$ as $\sO_K$-modules, see see Lemma~\ref{c-subgps-torsor}. Recall from our construction of the $c_i$, that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
 
   The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}(\beta\sC_1))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
   \[
@@ -283,7 +283,7 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
     \cong
     E/(\gamma^g)^{n_1'}(\beta\sC_1) \times \cdots \times E/(\gamma^g)^{n_g'}(\beta\sC_1).
   \]
-  By Lemma~???\textcolor{red}{TODO: state prove this lemma, key fact: $\Sl_g(\sO_K) \to \Sl_g(\sO_K/c\sO_K)$ surjective?}, this holds if and only if
+  By Lemma~\ref{c-subgps-torsor}, this holds if and only if
   \[
     (\gamma^{n_1 + \cdots + n_g})^g = \beta^g(\gamma^{n_1' + \cdots n_g'})^g.
   \]
@@ -345,7 +345,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
   %The Galois group $\Gal(L/\Q)$ is isomorphic to $(\Z/g\Z \times \Z/g\Z) \rtimes ((\Z/g\Z)^\times \times \Z/2\Z)$ \textcolor{red}{TODO: explain why}. Then the element $\sigma = ((0,0),(-1,-1))$ has the required property. Note that every conjugate also works.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{c-subgps-torsor}
   Let $E$ be an ordinary elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$. Let $c$ be a prime not equal to the characteristic of the base field. Then the set of $c$-torsion subgroups of $E$ form a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$ torsor. Moreover, if $\sC$ is a $c$-torsion subgroup and $\alpha_i, \beta_i \in (\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$ for $1 \leq i \leq d$, then
   \[
     \prod E/\alpha_i(\sC)
@@ -482,7 +482,7 @@ In the special case where $A = E$ is an elliptic curve and $\End E$ is an order 
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
 
-We will show $\cup \im \psivec$ is dense in $\ao^g$. Choose a sequence of elliptic curves $(E_i)$ over $\fpbar$ as follows. Fix an ordinary curve $E_0$ with a cyclic $\ell$-isogeny $E_0 \to E_1$ so that the endomorphism rings are different. Repeat with $E_i$. Then $\overline{\{E_i\}} = \ao$, and hence
+We will show $\cup \im \psivec$ is dense in $\ao^g$. Choose a sequence of elliptic curves $(E_i)$ over $\fpbar$ as follows. Fix an ordinary curve $E_0$ with a cyclic $\ell$-isogeny $E_0 \to E_1$ so that the endomorphism rings are different. Repeat with $E_i$\textcolor{red}{Travis: I think we want to avoid going back, so we could say the endomorphism ring is strictly smaller}. Then $\overline{\{E_i\}} = \ao$, and hence
 \[
   \overline{\{E_{i_1} \times \cdots \times E_{i_g}\}} = \ao^g.
 \]
