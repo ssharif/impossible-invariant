@@ -83,14 +83,56 @@ We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the mo
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-For any vector $\vec{n} = (n_1,\dots,n_g)$ with $1 \leq n_1 \leq \cdots \leq n_g \leq n$, and any generic polarization $\lambda$\textcolor{red}{TODO: explain why choosing $\lambda$ is equivalent to choosing a matrix}, we construct a map $\psi_{\vec{n},\lambda}: X_0(\ell^n) \to \ag$ as follows. Given an elliptic curve $E$ and a cyclic $\ell^n$-isogeny $\varphi$, we can uniquely decompose $\varphi$ as a sequence of $\ell$-isogenies
+% For any vector $\vec{n} = (n_1,\dots,n_g)$ with $1 \leq n_1 \leq \cdots \leq n_g \leq n$, and any generic polarization $\lambda$\textcolor{red}{TODO: explain why choosing $\lambda$ is equivalent to choosing a matrix}, we construct a map $\psi_{\vec{n},\lambda}: X_0(\ell^n) \to \ag$ as follows. Given an elliptic curve $E$ and a cyclic $\ell^n$-isogeny $\varphi$, we can uniquely decompose $\varphi$ as a sequence of $\ell$-isogenies
+% \[
+%   E = E_0 \xrightarrow{\ell} E_1 \cdots E_{n-1} \xrightarrow{\ell} E_n.
+% \]
+% We take $\psi_{\vec{n},\lambda}(E,\varphi)$ to be the abelian variety $E_{n_1} \times \cdots \times E_{n_g}$ with the principal polarization determined by $\lambda$, i.e.
+% \begin{equation}\label{def:psi-n-lambda}
+%   \psi_{\vec{n},\lambda}(E,\varphi) = (E_{n_1} \times \cdots \times E_{n_g}, \lambda).
+% \end{equation}
+
+Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $N \mid \det A$; say $\det A = M$. The matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Our choice of $A$ implies that $\rho_A$ corresponds to a polarization $\lambda_A$ of degree $M^2$---namely, it is $\lambda_{\Pi}\rho_A$, where $\lambda_\Pi$ is the principal product polarization. Let $K(A) \subset E^g$ be $\ker \lambda_A \cap C^g$.
+
+\begin{lemma}
+  $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
+\end{lemma}
+
+Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by [Milne, AV, Prop. 16.8], there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
+
+We define $\psimod: X_0(N) \to \ag$ by
 \[
-  E = E_0 \xrightarrow{\ell} E_1 \cdots E_{n-1} \xrightarrow{\ell} E_n.
+  \psimod(E,C) = (B,\lambda).
 \]
-We take $\psi_{\vec{n},\lambda}(E,\varphi)$ to be the abelian variety $E_{n_1} \times \cdots \times E_{n_g}$ with the principal polarization determined by $\lambda$, i.e.
-\begin{equation}\label{def:psi-n-lambda}
-  \psi_{\vec{n},\lambda}(E,\varphi) = (E_{n_1} \times \cdots \times E_{n_g}, \lambda).
-\end{equation}
+
+\begin{proposition}
+  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in X_0(N)$, let $E_i = E/(N/d_i)C$. If $\psimod(E,C) = (B,\lambda)$, then
+  \[
+    B \approx E_1 \times \cdots \times E_g.
+  \]
+\end{proposition}
+
+\begin{proof}
+  Let
+   \[
+     D =
+    \begin{bmatrix}
+      {d_1} & & & \\
+      & {d_2} & & \\
+      & & \ddots & \\
+      & & & {d_{g}}
+    \end{bmatrix}
+  \]
+  be the Smith normal form of $A$. Then there are matrices $U,V \in \Gl_g(\Z)$ such that $A = UDV$. Each of these matrices induces a natural endomorphism of $E^g$; we use $\rho_M$ to denote the endomorphism corresponding to the matrix $M$. We have $\rho_A = \rho_U \rho_D \rho_V$, and $\rho_U, \rho_V$ are isomorphisms. We also have that
+  \begin{align*}
+    \ker \rho_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
+  \end{align*}
+  and so $\ker \rho_D \cap H = (N/d_1)C \times \cdots \times (N/d_g)C$. Furthermore, $\rho_V(H) = H$, and so
+  \[
+    \rho_V(\ker \rho_A \cap H) = \ker \rho_D \cap H.
+  \]
+  Therefore the quotients of $E^g$ by the $\ker \rho_A \cap H$ and $\ker \rho_D \cap H$ 
+\end{proof}
 
 \subsection{Analytic description}
 \label{sec:ana-desc}
