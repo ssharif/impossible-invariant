@@ -6,6 +6,7 @@
 \usepackage{invariant}
 \usepackage{xcolor}
 \usepackage{tikz-cd}
+\usepackage{verbatim}
 \usepackage{lineno}
 \linenumbers
 
@@ -28,6 +29,7 @@
 \begin{document}
 
 \today
+\tableofcontents
 \maketitle
 
 \section{Introduction}
@@ -83,15 +85,6 @@ We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the mo
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-% For any vector $\vec{n} = (n_1,\dots,n_g)$ with $1 \leq n_1 \leq \cdots \leq n_g \leq n$, and any generic polarization $\lambda$\textcolor{red}{TODO: explain why choosing $\lambda$ is equivalent to choosing a matrix}, we construct a map $\psi_{\vec{n},\lambda}: X_0(\ell^n) \to \ag$ as follows. Given an elliptic curve $E$ and a cyclic $\ell^n$-isogeny $\varphi$, we can uniquely decompose $\varphi$ as a sequence of $\ell$-isogenies
-% \[
-%   E = E_0 \xrightarrow{\ell} E_1 \cdots E_{n-1} \xrightarrow{\ell} E_n.
-% \]
-% We take $\psi_{\vec{n},\lambda}(E,\varphi)$ to be the abelian variety $E_{n_1} \times \cdots \times E_{n_g}$ with the principal polarization determined by $\lambda$, i.e.
-% \begin{equation}\label{def:psi-n-lambda}
-%   \psi_{\vec{n},\lambda}(E,\varphi) = (E_{n_1} \times \cdots \times E_{n_g}, \lambda).
-% \end{equation}
-
 Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $N \mid \det A$; say $\det A = M$. The matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Our choice of $A$ implies that $\rho_A$ corresponds to a polarization $\lambda_A$ of degree $M^2$---namely, it is $\lambda_{\Pi}\rho_A$, where $\lambda_\Pi$ is the principal product polarization. Let $K(A) \subset E^g$ be $\ker \lambda_A \cap C^g$.
 
 \begin{lemma}
@@ -131,7 +124,7 @@ We define $\psimod: X_0(N) \to \ag$ by
   \[
     \rho_V(\ker \rho_A \cap H) = \ker \rho_D \cap H.
   \]
-  Therefore the quotients of $E^g$ by the $\ker \rho_A \cap H$ and $\ker \rho_D \cap H$ 
+  Therefore the quotients of $E^g$ by the $\ker \rho_A \cap H$ and $\ker \rho_D \cap H$
 \end{proof}
 
 \subsection{Analytic description}
@@ -287,9 +280,9 @@ Before we prove Lemma~\ref{lem:lim-degree}, we will show how to finish the argum
 We now return to the proof of Lemma~\ref{lem:lim-degree}.
 
 \begin{proof}[Proof of Lemma~\ref{lem:lim-degree}]
-  Choose a quadratic imaginary field $K$, principal prime $\varphi\sO_K$ over $\ell$, and rational primes $c_i$ as in Lemma~\ref{lem:K-exists} below. Let $E$ be an elliptic curve with CM by $\sO_K$.\textcolor{red}{TODO: where does $E$ live? Can do over $\C$ or $\overline{\fp}$}
+  Choose a quadratic imaginary field $K$, principal prime $\varphi\sO_K$ over $\ell$, and rational primes $c_i$ as in Lemma~\ref{lem:K-exists} below. Let $E$ be an elliptic curve over an algebraically closed field with CM by $\sO_K$.
 
-  Let $\sC$ denote a cyclic subgroup of $E$ with order prime to $\ell$. Then the set of subgroups $\sC_i, \varphi(\sC), \dots, \varphi^n(\sC)$ give a set of $\ell$-isogenies from $E$. Note that $\varphi$ induces a map $E/\varphi^j(\sC) \to E/\varphi^{j+1}(\sC)$ \textcolor{red}{TODO: should we describe the kernel?}. Thus we have the following diagram
+  Let $\sC$ denote a cyclic subgroup of $E$ with order prime to $\ell$. Then the set of subgroups $\sC_i, \varphi(\sC), \dots, \varphi^n(\sC)$ give a set of $\ell$-isogenies from $E$. Note that $\varphi$ induces a map $E/\varphi^j(\sC) \to E/\varphi^{j+1}(\sC)$. Thus we have the following diagram
   \[
     \begin{tikzcd}
       \sC \arrow[d,"\varphi"] \arrow[r] & E \arrow[d,"\varphi"] \arrow[r] & E/\sC \arrow[d]
@@ -301,17 +294,17 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
       \varphi^n(\sC) \arrow[r] & E \arrow[r] & E/\varphi^{n}(\sC).
     \end{tikzcd}
   \]
-  Let $\varphi^{\ast}(\sC)$ denote the composition $E/\sC \to \cdots \to E/\varphi^n(\sC)$. This is an $\ell^n$-isogeny, so the pair $(E/\sC,\varphi^{\ast}(\sC))$ defines a point in $X_0(\ell^n)$.
+  Let $\varphi^{\ast}_\sC$ denote the composition $E/\sC \to \cdots \to E/\varphi^n(\sC)$. This is an $\ell^n$-isogeny, so the pair $(E/\sC,\varphi^{\ast}_\sC)$ defines a point in $X_0(\ell^n)$.
 
-  For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $c_i$. We will define $x_1 = (E/\sC_1,\varphi^{\ast}(\sC_1))$. Before defining $x_2,x_3,\dots$, we will first describe a set of $y$ such that $\psi(x_1) = \psi'(y)$.
+  For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $c_i$. We will define $x_1 = (E/\sC_1,\varphi^{\ast}_{\sC_1})$. Before defining $x_2,x_3,\dots$, we will first describe a set of $y$ such that $\psi(x_1) = \psi'(y)$.
 
-  Recall from Section~\ref{sec:geo-desc} the description of $\psi = \psi_{\vec{n},\lambda}$. Because we have the decomposition of $\varphi^{\ast}(\sC_1)$ into a sequence of $\ell$-isogenies, the geometric description allows us to evaluate
+  Recall from Section~\ref{sec:geo-desc} the description of $\psi = \psi_{\vec{n},\lambda}$. Because we have the decomposition of $\varphi^{\ast}_{\sC_1}$ into a sequence of $\ell$-isogenies, the geometric description allows us to evaluate
   \[
-    \psi(E/\sC_1,\varphi^{\ast}(\sC_1)) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
+    \psi(E/\sC_1,\varphi^{\ast}_{\sC_1}) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
   \]
-  The set of $c_1$-torsion subgroups of $E$ is a $\F_{c_1^2}^\times/\F_{c_1}^\times$ torser. This follows from the fact that $E[c_1] \cong \sO_K/c_1\sO_K \cong \F_{c_1^2}$ as $\sO_K$-modules, see see Lemma~\ref{c-subgps-torsor}. Recall from our construction of the $c_i$, that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
+  The set of $c_1$-torsion subgroups of $E$ is a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times \cong \F_{c_1^2}^\times/\F_{c_1}^\times$ torser by Lemma~\ref{c-torsor}. Recall from our construction of the $c_i$ that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
 
-  The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}(\beta\sC_1))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
+  The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}_{\beta\sC_1}))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
   \[
     E/(\gamma^g)^{n_1}(\sC_1) \times \cdots \times E/(\gamma^g)^{n_g}(\sC_1)
     \cong
@@ -321,15 +314,15 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \[
     (\gamma^{n_1 + \cdots + n_g})^g = \beta^g(\gamma^{n_1' + \cdots n_g'})^g.
   \]
-  The hypothesis on the $c_i$ implies that $g$ divides $\#(\F_{c_i^2}^\times/\F_{c_i}^\times) = c_i + 1$, so there are $g$ solutions $\beta \in \F_{c_i^2}^\times/\F_{c_i}^\times$ to this equation.\footnote{Note that these solutions are not the solutions in $\F_{c_i^2}$ reduced mod $\F_{c_i}$. For example, $\beta^4 = 1$ has $4$ solutions in $\F_9$, but modulo $\F_3^\times$ these give only $2$ distinct solutions. On the other hand, $\beta^4 = 1$ has $4$ distinct solutions in $\F_9/\F_3$, namely $1+i$ and $(1+i)^3$, because $1+i$ is a generator for $\F_9^\times$ as a cyclic group.} This gives us $g$ points $y \in X_0(\ell^n)$ with $\psi(x_1) = \psi'(y)$.
+  The hypothesis on the $c_i$ implies that $g$ divides $\#(\F_{c_i^2}^\times/\F_{c_i}^\times) = c_i + 1$, so there are $g$ distinct solutions $\beta \in \F_{c_i^2}^\times/\F_{c_i}^\times$ to this equation.\footnote{Note that these solutions are not the solutions in $\F_{c_i^2}$ reduced mod $\F_{c_i}$. For example, $\beta^4 = 1$ has $4$ solutions in $\F_9$, but modulo $\F_3^\times$ these give only $2$ distinct solutions. On the other hand, $\beta^4 = 1$ has $4$ distinct solutions in $\F_9/\F_3$, namely $1+i$ and $(1+i)^3$, because $1+i$ is a generator for $\F_9^\times$ as a cyclic group.} This gives us $g$ points $y \in X_0(\ell^n)$ with $\psi(x_1) = \psi'(y)$.
 
   For $x_2$, we repeat much of the same construction except that instead of using $\sC_2$, we use $\sC_1\sC_2$ and liberally apply the Chinese remainder theorem. The set of subgroups of $E$ with order $c_1c_2$ is a torser over $(\F_{c_1^2}^\times/\F_{c_1}^\times) \times (\F_{c_2^2}^\times/\F_{c_2}^\times)$. Then we are searching for $\beta \in \sO_K/c_1c_2\sO_K$ such that
   \[
     E/\varphi^{n_1}(\sC_1\sC_2) \times \cdots \times E/\varphi^{n_g}(\sC_1\sC_2)
     \cong
-    E/\varphi^{n_1'}(\beta\sC_1\sC_2) \times \cdots \times E/\varphi^{n_g'}(\beta\sC_1\sC_2).
+    E/\varphi^{n_1'}(\beta(\sC_1\sC_2)) \times \cdots \times E/\varphi^{n_g'}(\beta(\sC_1\sC_2)).
   \]
-  Again this reduces to counting the number of solutions $\beta$ to an equation of the form $(\gamma^{g})^{n_1 + \cdots + n_g} = \beta^g(\gamma^g)^{n_1' + \cdots n_g'}$, except that this equation is modulo $c_1c_2\sO_K$. So by a similar argument, this gives $g^2$ points $y \in X_0(\ell^n)$ such that $\psi(x_2) = \psi'(y)$.
+  Again this reduces to counting the number of solutions $\beta$ to an equation of the form $(\gamma^{g})^{n_1 + \cdots + n_g} = \beta^g(\gamma^g)^{n_1' + \cdots n_g'}$, except that this equation is modulo $c_1c_2\sO_K$. By a similar argument, we can find $g^2$ points $y \in X_0(\ell^n)$ such that $\psi(x_2) = \psi'(y)$.
 
   Continuing in the same fashion shows that for each $x_i$, there are $g^i$ points $y \in X_0(\ell_n)$ such that $\psi(x_i) = \psi'(y)$.
 \end{proof}
@@ -438,25 +431,23 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
     \leftrightarrow
     \left\{ f \in \End E \colon \ker f \supseteq \ker \alpha \text{ and } f(\sC) = \sC \right\}.
   \]
-  Note that $f \supseteq \alpha \Leftrightarrow f = g\alpha$ for some $g \in \End E$. Identifying $\End E \cong \sO_K$, this means $f \in \alpha\sO_K$. The condition $f(\sC) = \sC$ means that $f \in \sO$.
-\end{proof}
-
-\begin{lemma}\label{lem:map-to-O-idls}
-  Let $\sO_K,\sO,\alpha$ be as in Lemma~\ref{lem:c-idl-sbgp}. Then $\alpha\sO_K \cap \sO$ is a principal $\sO$ ideal if and only if $\alpha \in \sO$.
-\end{lemma}
-\begin{proof}
-  One direction is clear. We want to show that if $\alpha\sO_K \cap \sO$ is principal, then $\alpha \in \sO$. We will prove that if $\gamma \in \sO$ is prime to $c$, then $\gamma\sO = \gamma\sO_K \cap \sO$. If this holds, then \textcolor{red}{TODO: explain why this is enough: $\Rightarrow \alpha\sO_K \cap \sO = \gamma\sO = \gamma\sO_K \cap \sO \Rightarrow \alpha\sO_K = \gamma\sO_K$}
-
-  It is clear that $\gamma\sO \subseteq \gamma\sO_K \cap \sO$, so we will prove the other direction. Let $\beta \in \sO_K$ such that $\gamma\beta \in \sO$. We want to show that $\beta \in \sO$. Write $\beta = a_1 + b_1\omega$ and $\gamma = a_2 + b_2c\omega$ for some $a_i,b_i \in \Z$ and $\omega$ such that $\sO_K = \Z[\omega]$. Then $\gamma\beta = \ast + (a_1b_2c + a_2b_1)\omega$. As $\gamma\beta \in \sO$, we must have that $c \mid a_2b_1$. But $\gamma$ is prime to $c$, so $c \not\mid b_1$. Therefore $c \mid b_1$ so $\beta \in \sO$.
+  Note that $f \supseteq \alpha \Leftrightarrow f = g\alpha$ for some $g \in \End E$. Identifying $\End E \cong \sO_K$, this means $f \in \alpha\sO_K$. The condition $f(\sC) = \sC$ means that $f \in \sO$. Thus we may identify the set
+  \[
+    \left\{ f \in \End E \colon \ker f \supseteq \ker \alpha \text{ and } f(\sC) = \sC \right\}
+  \]
+  with the set
+  \[
+    \left\{ f \in \alpha\sO_K \colon f \in \sO \right\} = \alpha\sO_K \cap \sO.
+  \]
 \end{proof}
 
 \begin{lemma}\label{lem:ideal-equiv}
   Let $\sO_K,\sO,c$ be as in Lemma~\ref{lem:c-idl-sbgp}. If $\alpha,\beta \in \sO_K$ are prime to $c$, then $\alpha\sO_K \cap \sO \cong \beta\sO_K \cap \sO$ as $\sO$ ideals if and only if $\alpha \equiv \beta$ in $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
 \end{lemma}
 \begin{proof}
-  First suppose that $\beta$ is an integer. Then $\alpha\sO_K \cap \sO$ is principal if and only if $\alpha \in \sO$ by Lemma~\ref{lem:map-to-O-idls}. This holds if and only if $\alpha \equiv n \mod{c\sO_K}$ for some integer $n$, which is equivalent to $\alpha \equiv 1$ in $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
+  Let $I_c(\sO_K)$ denote the monoid of $\sO_K$-ideals prime to $c$. The map $\psi: I_c(\sO_K) \to I_c(\sO)$ sending $\frak{a} \mapsto \frak{a} \cap \sO_K$ is an isomorphism by \cite[Prop.~7.20]{cox2011primes}. The inverse map is $\psi^{-1}(\frak{b}) = \frak{b}\sO_K$.
 
-  For the general case, we will show that multiplication by $\overline{\beta}$ reduces to the case where $\beta$ is an integer. \textcolor{red}{TODO: finish}
+  After multiplying both sides by $\overline{\beta}$, it is enough to consider the case where $\beta = 1$. That is, we want to show that $\alpha\sO_K \cap \sO$ is principal if and only if $\alpha$ is an integer modulo $c\sO_K$. The latter is equivalent to $\alpha \in \sO$. By applying $\psi^{-1}$, we see that $\alpha\sO_K \cap \sO = \gamma\sO$ for some $\gamma \in \sO$ if and only if $\alpha\sO_K = \gamma\sO_K$. By our hypothesis that $\sO_K^\times = \{\pm 1\}$, this is equivalent to $\alpha = \pm \gamma$, i.e. $\alpha \in \sO$.
 \end{proof}
 
 \begin{lemma}\label{lem:prod-equiv-torsor}
@@ -481,9 +472,10 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
   \end{equation}
   where the isomorphism is as $\sO$-ideals.
 
-  If $n = 1$ then we are done by Lemma~\ref{lem:ideal-equiv}. It remains to reduce the general case to this one. Consider the $n \times n$ diagonal matrix $M$ with diagonal entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M$ modulo $c\sO_K$ lies in $\Sl_n(\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, $M \equiv M' \mod{c\sO_K}$ for some $M' \in \Sl_n(\sO_K)$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC \times \cdots \times \sC \times \left(\prod \alpha_i\right)(\sC)$. Repeating the same construction with the $\beta_i$ reduces us to the case where $\alpha_i = \beta_i = 1$ for all $1 \leq i \leq n-1$. Hence there is at most one non-trivial ideal on each side of Equation~\ref{eq:ideals-eq?}. The claim then follows from the $n=1$ case.
+  If $n = 1$ then we are done by Lemma~\ref{lem:ideal-equiv}. It remains to reduce the general case to this one. Consider the $n \times n$ diagonal matrix $M$ with diagonal entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M\mod{c\sO_K} \in \Sl_n(\sO_K/c\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_n(\sO_K)$ such that $M \equiv M' \mod{c\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC \times \cdots \times \sC \times \left(\prod \alpha_i\right)(\sC)$. Hence it is sufficient to consider the case where $\alpha_i = \beta_i = 1$ for all $1 \leq i \leq n-1$, or equivalently, the case where $n = 1$. This case follows from Lemma~\ref{lem:ideal-equiv}.
 \end{proof}
 
+\begin{comment}
 \subsection{Kernel ideals and ideal subgroups}\label{sec:kani}
 
 \begin{definition}[{\cite[Sec.~2]{kani2011products}}]
@@ -526,6 +518,7 @@ In the special case where $A = E$ is an elliptic curve and $\End E$ is an order 
     \prod I(\ker\varphi_i').
   \]
 \end{lemma}
+\end{comment}
 
 \section{Matrix density results}
 \label{sec:matr-dens-results}
@@ -661,11 +654,31 @@ Let $\R^+$ denote the set of positive real numbers.
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
 
-We will show $\cup \im \psivec$ is dense in $\ao^g$. Choose a sequence of elliptic curves $(E_i)$ over $\fpbar$ as follows. Fix an ordinary curve $E_0$ with a cyclic $\ell$-isogeny $E_0 \to E_1$ so that the endomorphism rings are different. Repeat with $E_i$\textcolor{red}{Travis: I think we want to avoid going back, so we could say the endomorphism ring is strictly smaller}. Then $\overline{\{E_i\}} = \ao$, and hence
-\[
-  \overline{\{E_{i_1} \times \cdots \times E_{i_g}\}} = \ao^g.
-\]
-Furthermore, each element in the left-hand set above is in the image of $\psivec$ for some $\vec{n}$.
+\begin{theorem}
+  Let $\psivec: X_0(\ell^n) \to \ao^g$ be the map defined in Section~\ref{sec:geo-desc}. Then $\bigcup\im\psivec$ is dense in $\ao^g$.
+\end{theorem}
+\begin{proof}
+  Let $E_0$ be an ordinary elliptic curve with CM by $\sO_K$ for some quadratic imaginary field $K$. Choose a prime $\ell$ inert in $K$ and fix an $\ell$-torsion subgroup $\sC_0$ of $E_0$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that since $\sC_0$ is not a kernel ideal of $E_0$, we must have that $\End E_1 \cong \Z + \ell\sO_K$.
+
+  We can continue this construction recursively. Let $\sC_i$ be any $\ell$-torsion subgroup of $E_i$ other than $\pi_{i-1}(\sC_{i-1})$. Then let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$ by \textcolor{red}{TODO: cite Kani?}.
+
+  The composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$ because \textcolor{red}{TODO: there is no backtracking}.
+
+  Note that the set $\{E_i\}$ is an infinite set of distinct elliptic curves, so it is dense in $\ao$. Therefore the product $\{E_i\} \times \cdots \times \{E_i\}$ is dense in $\ao^g$. It remains to show that this set lies in $\bigcup\im\psivec$.
+
+  Let $E_{n_1},\dots,E_{n_g} \in E$. Choose $n > \max\{n_i\}$. Then let $A$ be the diagonal matrix with entries $\ell^{n_1},\dots,\ell^{n_g}$. Consider the point $(E_0,\pi^{(n)}) \in X_0(\ell^n)$. By construction,
+  \[
+    \psivec(E_0,\pi^{(n)}) \cong E_{n_1} \times \cdots \times E_{n_g}.
+  \]
+\end{proof}
+
+
+
+%We will show $\cup \im \psivec$ is dense in $\ao^g$. Choose a sequence of elliptic curves $(E_i)$ over $\fpbar$ as follows. Fix an ordinary curve $E_0$ with a cyclic $\ell$-isogeny $E_0 \to E_1$ so that the endomorphism rings are different. Repeat with $E_i$\textcolor{red}{Travis: I think we want to avoid going back, so we could say the endomorphism ring is strictly smaller}. Then $\overline{\{E_i\}} = \ao$, and hence
+%\[
+%  \overline{\{E_{i_1} \times \cdots \times E_{i_g}\}} = \ao^g.
+%\]
+%Furthermore, each element in the left-hand set above is in the image of $\psivec$ for some $\vec{n}$.
 
 \bibliographystyle{alpha}
 \bibliography{./references}
