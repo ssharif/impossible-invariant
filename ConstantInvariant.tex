@@ -296,13 +296,13 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \]
   Let $\varphi^{\ast}_\sC$ denote the composition $E/\sC \to \cdots \to E/\varphi^n(\sC)$. This is an $\ell^n$-isogeny, so the pair $(E/\sC,\varphi^{\ast}_\sC)$ defines a point in $X_0(\ell^n)$.
 
-  For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $c_i$. We will define $x_1 = (E/\sC_1,\varphi^{\ast}_{\sC_1})$. Before defining $x_2,x_3,\dots$, we will first describe a set of $y$ such that $\psi(x_1) = \psi'(y)$.
+  For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $c_i$. Define $x_1$ to be $(E/\sC_1,\varphi^{\ast}_{\sC_1})$. Before defining $x_2,x_3,\dots$, we will first describe a set of $y$ such that $\psi(x_1) = \psi'(y)$.
 
-  Recall from Section~\ref{sec:geo-desc} the description of $\psi = \psi_{\vec{n},\lambda}$. Because we have the decomposition of $\varphi^{\ast}_{\sC_1}$ into a sequence of $\ell$-isogenies, the geometric description allows us to evaluate
+  Recall from Section~\ref{sec:geo-desc} the description of $\psi = \psi_{\vec{n},\lambda}$. Because we have the decomposition of $\varphi^{\ast}_{\sC_1}$ into a sequence of $\ell$-isogenies, we have
   \[
     \psi(E/\sC_1,\varphi^{\ast}_{\sC_1}) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
   \]
-  The set of $c_1$-torsion subgroups of $E$ is a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times \cong \F_{c_1^2}^\times/\F_{c_1}^\times$ torser by Lemma~\ref{c-torsor}. Recall from our construction of the $c_i$ that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
+  The set of $c_1$-torsion subgroups of $E$ is a $(\sO_K/c_1\sO_K)^\times/(\Z/c_1\Z)^\times \cong \F_{c_1^2}^\times/\F_{c_1}^\times$ torser by Lemma~\ref{c-torsor}. Recall from our construction of the $c_i$ that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
 
   The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}_{\beta\sC_1}))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
   \[
