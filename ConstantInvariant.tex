@@ -302,7 +302,7 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \[
     \psi(E/\sC_1,\varphi^{\ast}_{\sC_1}) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
   \]
-  The set of $c_1$-torsion subgroups of $E$ is a $(\sO_K/c_1\sO_K)^\times/(\Z/c_1\Z)^\times \cong \F_{c_1^2}^\times/\F_{c_1}^\times$ torser by Lemma~\ref{c-torsor}. Recall from our construction of the $c_i$ that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
+  The set of $c_1$-torsion subgroups of $E$ is a $(\sO_K/c_1\sO_K)^\times/(\Z/c_1\Z)^\times \cong \F_{c_1^2}^\times/\F_{c_1}^\times$ torser by Lemma~\ref{lem:c-torsor}. Recall from our construction of the $c_i$ that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
 
   The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}_{\beta\sC_1}))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
   \[
@@ -325,6 +325,55 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   Again this reduces to counting the number of solutions $\beta$ to an equation of the form $(\gamma^{g})^{n_1 + \cdots + n_g} = \beta^g(\gamma^g)^{n_1' + \cdots n_g'}$, except that this equation is modulo $c_1c_2\sO_K$. By a similar argument, we can find $g^2$ points $y \in X_0(\ell^n)$ such that $\psi(x_2) = \psi'(y)$.
 
   Continuing in the same fashion shows that for each $x_i$, there are $g^i$ points $y \in X_0(\ell_n)$ such that $\psi(x_i) = \psi'(y)$.
+\end{proof}
+
+\begin{lemma}\label{lem:c-torsor}
+  Let $E$ be an ordinary elliptic curve over an algebraically closed field with CM by $\sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $c$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of $c$-torsion subgroups of $E$ form a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$ torsor.
+\end{lemma}
+\begin{proof}
+  To prove the claim, we will show that $E[c] \cong \sO_K/c\sO_K$ as an $\sO_K$-module. Note that if the base field is $\C$, then $E \cong \C/I$ for some ideal $I$ of $\sO_K$. Since $\C/I \cong \C/J$ for any $J$ in the same ideal class as $I$, we may assume $I$ is coprime to $c$. Then $E[c] \cong \frac{1}{c}I/I \cong I/cI \cong \sO_K/c\sO_K$ as $\sO_K$ modules. If the base field is $\overline{\F}_p$, then we can find a model of $E$ over a finite field $\F_q$ with $E[c] \subseteq E(\F_q)$. By \cite[Thm.~1]{complex1996lenstra}, $E(\F_q) \cong \End_{\F_q}(E) / (\pi - 1)$ as $\End_{\F_q}(E)$ modules. Here $\pi$ is the $q$th power Frobenius. As $E$ is ordinary, $\End_{\F_q}(E) \cong \sO_K$. Moreover, $E[c] \subseteq E(\F_q)$ implies that $c \mid \Nm(\pi - 1) \Rightarrow c\sO_K \supseteq (\pi - 1)$. Hence $E[c] \cong (\sO_K/(\pi - 1))/(c\sO_K/(\pi - 1)) \cong \sO_K/((c) + (\pi - 1)) \cong \sO_K/c\sO_K$.
+\end{proof}
+
+\begin{lemma}\label{lem:prod-equiv-torsor}
+  Let $E,K,c$ be as in Lemma~\ref{lem:c-torsor}. Let $\sC$ be a $c$-torsion subgroup of $E$. If $\alpha_1,\dots,\alpha_n,\beta_1,\dots,\beta_n \in \sO_K$ are prime to $c$, then
+  \[
+    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
+    \quad\Leftrightarrow\quad
+    \prod \alpha_i \equiv \prod \beta_i,
+  \]
+  where the first isomorphism is as unpolarized abelian varieties, and the second equivalence is as elements of $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
+\end{lemma}
+\begin{proof}
+  First we will reduce to the case where $\alpha_i = \beta_i = 1$ for $i < n$. Consider the $n \times n$ diagonal matrix $M$ with entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M\mod{c\sO_K} \in \Sl_n(\sO_K/c\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_n(\sO_K)$ such that $M \equiv M' \mod{c\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC^{n-1} \times \left(\prod \alpha_i\right)(\sC)$. This shows that
+  \[
+    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
+    \quad\Leftrightarrow\quad
+    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \cong \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
+  \]
+  where $\alpha = \prod\alpha_i$ and $\beta = \prod \beta_i$. Next we will apply the results from \cite{kani2011products} to ``cancel out'' the $E/\sC$ on both sides of the isomorphism on the right.
+
+  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. We claim that $\ker\tilde{\alpha}$ is not an ideal subgroup\footnote{See \cite[Sec.~2, Pg.~302]{kani2011products} for the definition of ideal subgroup and kernel ideal.}. Let $\sO$ be an order in $K$ isomorphic to $\End E/\sC$. Recall that since $E \to E/\sC$ is an isogeny of prime degree $c$, we have that $[\sO_K : \sO] \mid c$ \cite[Prop.~5]{kohel1996endomorphism}. Because $c$ is inert in $K$, $\sO_K$ has no ideals of norm $c$. So by \cite[Thm.~20b]{kani2011products}, $\sC$ is not an ideal subgroup of $E$ and $\End E/\sC \not\cong \End E$. Hence $[\sO_K : \sO] = c$. This argument holds for any $c$-torsion subgroup, so it shows that $\End E/\sC \cong \End E/\alpha(\sC) \cong \sO$. Thus by \cite[Thm.~20b]{kani2011products}, $\ker\tilde{\alpha}$ is an ideal subgroup. The same holds for $\beta$ as well.
+
+  For any isogeny $\phi$ with domain $E/\sC$, let $I(\phi)$ denote the kernel ideal of the subgroup $\ker\phi$.
+  %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
+  By \cite[Thm.~46]{kani2011products},
+  \begin{align*}
+    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \cong \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
+    \\
+    \Leftrightarrow
+    \left(\bigoplus_{i=1}^{n-1} I(\tilde{id})\right) \oplus I(\tilde{\alpha}) \cong \left(\bigoplus_{i=1}^{n-1} I(\tilde{id})\right) \oplus I(\tilde{\beta}).
+  \end{align*}
+  where $id$ is the identity map on $E/\sC$. By \cite[Thm.~48]{kani2011products}, the latter isomorphism is equivalent to
+  \[
+    I(\tilde{id})^{n-1}I(\tilde{\alpha}) \cong I(\tilde{id})^{n-1}I(\tilde{\beta}).
+  \]
+  But $I(\tilde{id}) = \End E/\sC$, so this is equivalent to $I(\tilde{\alpha}) \cong I(\tilde{\alpha})$. Appyling \cite[Thm.~46]{kani2011products} to these two ideals shows that
+  \[
+    I(\tilde{\alpha}) \cong I(\tilde{\beta})
+    \quad\Leftrightarrow\quad
+    E/\alpha(\sC) \cong E/\beta(\sC).
+  \]
+  Because $\sO_K^\times \cong \Aut E = \{\pm 1\}$, the last isomorphism holds if and only if $\alpha(\sC) = \beta(\sC)$. The conclusion then follows by Lemma~\ref{lem:c-torsor}.
 \end{proof}
 
 \begin{lemma}\label{lem:silly}
@@ -375,150 +424,7 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
 Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \cong \F_{c^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $\F_{c^2}$. Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. So by Chebotarev's density theorem, it remains to show there exists some $\sigma \in \Gal(L/\Q)$ such that $\sigma$ has order $2$ and restricts to complex multiplication in $K$ and $\Q(\zeta_g)$.
 
   Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
-  %The Galois group $\Gal(L/\Q)$ is isomorphic to $(\Z/g\Z \times \Z/g\Z) \rtimes ((\Z/g\Z)^\times \times \Z/2\Z)$ \textcolor{red}{TODO: explain why}. Then the element $\sigma = ((0,0),(-1,-1))$ has the required property. Note that every conjugate also works.
 \end{proof}
-
-\begin{lemma}\label{c-torsor}
-  Let $E$ be an ordinary elliptic curve over any algebraically closed field with CM by $\sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $c$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of $c$-torsion subgroups of $E$ form a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$ torsor.
-\end{lemma}
-\begin{proof}
-  To prove the claim, we will show that $E[c] \cong \sO_K/c\sO_K$ as an $\sO_K$-module. Note that if the base field is $\C$, then $E \cong \C/I$ for some ideal $I$ of $\sO_K$. Since $\C/I \cong \C/J$ for any $J$ in the same ideal class as $I$, we may assume $I$ is coprime to $c$. Then $E[c] \cong \frac{1}{c}I/I \cong I/cI \cong \sO_K/c\sO_K$ as $\sO_K$ modules. If the base field is $\overline{\F}_p$, then we can find a model of $E$ over a finite field $\F_q$ with $E[c] \subseteq E(\F_q)$. By \cite[Thm.~1]{complex1996lenstra}, $E(\F_q) \cong \End_{\F_q}(E) / (\pi - 1)$ as $\End_{\F_q}(E)$ modules. Here $\pi$ is the $q$th power Frobenius. As $E$ is ordinary, $\End_{\F_q}(E) \cong \sO_K$. Moreover, $E[c] \subseteq E(\F_q)$ implies that $c \mid \Nm(\pi - 1) \Rightarrow c\sO_K \supseteq (\pi - 1)$. Hence $E[c] \cong (\sO_K/(\pi - 1))/(c\sO_K/(\pi - 1)) \cong \sO_K/((c) + (\pi - 1)) \cong \sO_K/c\sO_K$.
-\end{proof}
-
-\begin{lemma}\label{lem:end-E/C}
-  Let $E,K,c$ be as in Lemma~\ref{c-torsor}, and let $\sC$ be a subgroup of order $c$ in $E$. Then $\End E/\sC \cong \sO := \Z + c\sO_K$.
-\end{lemma}
-\begin{proof}
-  Note that $\sC$ cannot be a ideal subgroup because $c$ is inert in $K$. So by \cite[Thm.~20b]{kani2011products}, $\End E/\sC$ must be a stricly smaller order than $\End E$. Since $[\End E : \End E/\sC]$ divides $c$, we must have that $\End E/\sC \cong \Z + c\sO_K$.
-
-  In detail, the isomorphism $\End E/\sC \cong \sO$ sends $\phi$ to $\pi^\vee\phi\pi\otimes\frac{1}{c} \in \End E \otimes \Q$ which we identify with $K$ using the isomorphism $\End E \cong \sO_K$.
-  \[
-    \End E/\sC \to (\End E/\sC) \otimes \Q \to (\End E) \otimes \Q \cong K.
-  \]
-  As $\sO \subseteq \sO_K$, we can view $\End E/\sC$ as a subring of $\End E$. An element $f \in \End E$ lies in this subring if and only if $f(\sC) = \sC$.
-\end{proof}
-
-\begin{lemma}\label{lem:c-idl-sbgp}
-  Let $E,K,c,\sC,\sO$ be as in Lemma~\ref{lem:end-E/C}. If $\alpha \in \sO_K$ is prime to $c$, then $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ and the kernel ideal $I(\ker\tilde{\alpha})$ is $\alpha\sO_K \cap \sO$ under the isomorphism of $\End E/\sC \cong \sO$
-\end{lemma}
-\begin{proof}
-  By definition,
-  \begin{align*}
-    I(\ker\tilde{\alpha})
-    &=
-    \left\{\tilde{f} \in \End E/\sC \colon \ker\tilde{f} \supseteq \ker\tilde{\alpha} \right\}
-  \end{align*}
-  Note that because $\pi$ is surjective, for any $f \in \End E/\sC$ we have
-  \begin{align*}
-    \ker\tilde{f} \supseteq \ker\tilde{\alpha}
-    &\Leftrightarrow
-    \pi^{-1}\ker\tilde{f} \supseteq \pi^{-1}\ker\tilde{\alpha}
-    \\
-    &\Leftrightarrow
-    \sC + \ker f \supseteq \sC + \ker\alpha
-    \\
-    &\Leftrightarrow
-    \ker f \supseteq \ker\alpha
-  \end{align*}
-  The last step is because $\alpha$ is prime to $c$.
-  % ker alpha + C subseteq ker f + C
-  % c(ker alpha + C) subseteq c(ker f + C)
-  % and
-  % c(ker alpha + C) = ker alpha
-  Recall that if $f \in \End E$ then $\tilde{f} \in \End E/\sC$ if and only if $f(\sC) = \sC$. Therefore we have a bijection
-  \[
-    I(\ker\tilde{\alpha})
-    \leftrightarrow
-    \left\{ f \in \End E \colon \ker f \supseteq \ker \alpha \text{ and } f(\sC) = \sC \right\}.
-  \]
-  Note that $f \supseteq \alpha \Leftrightarrow f = g\alpha$ for some $g \in \End E$. Identifying $\End E \cong \sO_K$, this means $f \in \alpha\sO_K$. The condition $f(\sC) = \sC$ means that $f \in \sO$. Thus we may identify the set
-  \[
-    \left\{ f \in \End E \colon \ker f \supseteq \ker \alpha \text{ and } f(\sC) = \sC \right\}
-  \]
-  with the set
-  \[
-    \left\{ f \in \alpha\sO_K \colon f \in \sO \right\} = \alpha\sO_K \cap \sO.
-  \]
-\end{proof}
-
-\begin{lemma}\label{lem:ideal-equiv}
-  Let $\sO_K,\sO,c$ be as in Lemma~\ref{lem:c-idl-sbgp}. If $\alpha,\beta \in \sO_K$ are prime to $c$, then $\alpha\sO_K \cap \sO \cong \beta\sO_K \cap \sO$ as $\sO$ ideals if and only if $\alpha \equiv \beta$ in $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
-\end{lemma}
-\begin{proof}
-  Let $I_c(\sO_K)$ denote the monoid of $\sO_K$-ideals prime to $c$. The map $\psi: I_c(\sO_K) \to I_c(\sO)$ sending $\frak{a} \mapsto \frak{a} \cap \sO_K$ is an isomorphism by \cite[Prop.~7.20]{cox2011primes}. The inverse map is $\psi^{-1}(\frak{b}) = \frak{b}\sO_K$.
-
-  After multiplying both sides by $\overline{\beta}$, it is enough to consider the case where $\beta = 1$. That is, we want to show that $\alpha\sO_K \cap \sO$ is principal if and only if $\alpha$ is an integer modulo $c\sO_K$. The latter is equivalent to $\alpha \in \sO$. By applying $\psi^{-1}$, we see that $\alpha\sO_K \cap \sO = \gamma\sO$ for some $\gamma \in \sO$ if and only if $\alpha\sO_K = \gamma\sO_K$. By our hypothesis that $\sO_K^\times = \{\pm 1\}$, this is equivalent to $\alpha = \pm \gamma$, i.e. $\alpha \in \sO$.
-\end{proof}
-
-\begin{lemma}\label{lem:prod-equiv-torsor}
-  Let $E,K,c,\sC,\sO$ be as in Lemma~\ref{lem:end-E/C}. Suppose that $\alpha_i,\beta_i \in \sO_K$ for $1 \leq i \leq n$ are all prime to $c$. Then
-  \[
-    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
-    \quad\Leftrightarrow\quad
-    \prod \alpha_i \equiv \prod \beta_i,
-  \]
-  where the left isomorphism is as unpolarized varieties and the right is equivalent in $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
-\end{lemma}
-\begin{proof}
-  Note that $\alpha_i$ induces an isogeny $\tilde{\alpha}_i: E/\sC \to E/\alpha_i(\sC)$. The kernel is an ideal subgroup by Lemma~\ref{lem:c-idl-sbgp} and \cite[Thm.~20b]{kani2011products}. So by \cite[Rem.~49]{kani2011products},
-  \[
-    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
-    \quad\Leftrightarrow\quad
-    \prod I(\tilde{\alpha}_i) \equiv \prod I(\tilde{\beta}_i).
-  \]
-  By Lemma~\ref{lem:c-idl-sbgp}, this is equivalent to
-  \begin{equation}\label{eq:ideals-eq?}
-    \prod \alpha_i\sO_K \cap \sO \cong \prod \beta_i\sO_K \cap \sO,
-  \end{equation}
-  where the isomorphism is as $\sO$-ideals.
-
-  If $n = 1$ then we are done by Lemma~\ref{lem:ideal-equiv}. It remains to reduce the general case to this one. Consider the $n \times n$ diagonal matrix $M$ with diagonal entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M\mod{c\sO_K} \in \Sl_n(\sO_K/c\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_n(\sO_K)$ such that $M \equiv M' \mod{c\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC \times \cdots \times \sC \times \left(\prod \alpha_i\right)(\sC)$. Hence it is sufficient to consider the case where $\alpha_i = \beta_i = 1$ for all $1 \leq i \leq n-1$, or equivalently, the case where $n = 1$. This case follows from Lemma~\ref{lem:ideal-equiv}.
-\end{proof}
-
-\begin{comment}
-\subsection{Kernel ideals and ideal subgroups}\label{sec:kani}
-
-\begin{definition}[{\cite[Sec.~2]{kani2011products}}]
-  Let $A$ be an abelian variety over a field $K$. Given a regular left-ideal $I$ of $\End A$, let $H(I) = \cap_{\phi \in I}\ker \phi$. A finite subgroup scheme $H$ is a \emph{ideal subgroup} if $H = H(I)$ for some $I$. Symmetrically, given such an $H$, let $I(H) = \{\phi \in \End A \colon H \subseteq \ker\phi\}$. We say $I$ is a \emph{kernel ideal} if it is the form $I(H)$ for some $H$.
-\end{definition}
-
-
-\begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]
-  Let $E/K$ be a CM elliptic curve and $H$ a finite subgroup scheme of $E$. Then $H$ is a kernel ideal if and only if there is an inclusion $\End E \hookrightarrow \End E/H$.
-  %$f_{E_H} \mid f_E$
-\end{theorem}
-
-\begin{theorem}[{\cite[Thm.~46]{kani2011products}}]
-  Suppose $A$ is an abelian variety over a field $K$. If $H_1,\dots,H_n$ and $H_1',\dots,H_n'$ are ideal subgroups of $A$, then
-  \[
-    A/H_1 \times \cdots \times A/H_n
-    \cong
-    A/H_1' \times \cdots A/H_n'
-  \]
-  if and only if
-  \[
-    I(H_1) \oplus \cdots \oplus I(H_n)
-    \cong
-    I(H_1') \oplus \cdots \oplus I(H_n').
-  \]
-  The isomorphism below is as $M_n(\End A)$-modules.
-\end{theorem}
-
-In the special case where $A = E$ is an elliptic curve and $\End E$ is an order $\sO$ in a quadratic imaginary field, then this last condition holds if and only if $\prod I(H_i) \cong \prod I(H_i')$ as ideals in $\sO$, see \cite[Rem.~49]{kani2011products}. Moreover, if $\varphi: E \to E'$ is an isogeny, then $\ker\varphi$ is an ideal subgroup if and only if the order $\sO' \cong \End E'$ contains $E$. A special case of this is the following.
-
-\begin{lemma}\label{lem:prod-idls}
-  Let $E$ be an elliptic curve over a field $K$ such that $\End E$ is isomorphic to an order $\sO$ in an imaginary quadratic field. Suppose that $\varphi_i: E \to E_i$ and $\varphi_i': E \to E_i'$ for $1 \leq i \leq d$ are isogenies with $\End E_i \cong \End E_i' \cong \sO$. Then
-  \[
-    \prod E_i
-    \cong
-    \prod E_i'
-    \quad\text{if and only if}\quad
-    \prod I(\ker\varphi_i)
-    \cong
-    \prod I(\ker\varphi_i').
-  \]
-\end{lemma}
-\end{comment}
 
 \section{Matrix density results}
 \label{sec:matr-dens-results}
