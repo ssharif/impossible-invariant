@@ -85,7 +85,7 @@ We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the mo
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $N \mid \det A$; say $\det A = M$. The matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Our choice of $A$ implies that $\rho_A$ corresponds to a polarization $\lambda_A$ of degree $M^2$---namely, it is $\lambda_{\Pi}\rho_A$, where $\lambda_\Pi$ is the principal product polarization. Let $K(A) \subset E^g$ be $\ker \lambda_A \cap C^g$.
+Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $N \mid \det A$; say $\det A = M$. The matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Our choice of $A$ implies that $\rho_A$ corresponds to a polarization $\lambda_A$ \textcolor{red}{Clarify that polarization is an isogeny} of degree $M^2$---namely, it is $\lambda_{\Pi}\rho_A$, where $\lambda_\Pi$ is the principal product polarization. Let $K(A) \subset E^g$ be $\ker \lambda_A \cap C^g$.
 
 \begin{lemma}
   $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
@@ -341,11 +341,11 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
 \begin{lemma}\label{lem:prod-equiv-torsor}
   Let $E,K,c$ be as in Lemma~\ref{lem:c-torsor}. Let $\sC$ be a $c$-torsion subgroup of $E$. If $\alpha_1,\dots,\alpha_n,\beta_1,\dots,\beta_n \in \sO_K$ are prime to $c$, then
   \[
-    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
+    \prod_{i=1}^n E/\alpha_i(\sC) \approx \prod_{i=1}^n E/\beta_i(\sC)
     \quad\Leftrightarrow\quad
-    \prod \alpha_i \equiv \prod \beta_i,
+    \prod_{i=1}^n \alpha_i \equiv \prod_{i=1}^n \beta_i,
   \]
-  where the first isomorphism is as unpolarized abelian varieties, and the second equivalence is as elements of $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
+  where the second equivalence is as elements of $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
 \end{lemma}
 \begin{proof}
   First we will reduce to the case where $\alpha_i = \beta_i = 1$ for $i < n$. Consider the $n \times n$ diagonal matrix $M$ with entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M\mod{c\sO_K} \in \Sl_n(\sO_K/c\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_n(\sO_K)$ such that $M \equiv M' \mod{c\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC^{n-1} \times \left(\prod \alpha_i\right)(\sC)$. This shows that
