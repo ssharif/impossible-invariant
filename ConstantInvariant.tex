@@ -278,7 +278,7 @@ Before we prove Lemma~\ref{lem:lim-degree}, we will show how to finish the argum
   \]
 \end{corollary}
 \begin{proof}
-  By Lemma~\ref{lem:lim-degree}, the left hand side has infinite number of points \textcolor{red}{TODO: do we need to know what ``kind'' of points?}. This implies that $\dim \zclos{S_g \cap (X \times X')} \geq 1$. Consider the projection $\pi_X: \zclos{S_g \cap (X \times X')} \to X$. Lemma~\ref{lem:lim-degree} says that this map has unbounded degree. Therefore $\dim \zclos{S_g \cap (X \times X')} \geq 2$.\textcolor{red}{TODO: deal with possible vertical components}
+  By Lemma~\ref{lem:lim-degree}, $S_g \cap (X \times X')$ has an infinite number of geometric points. This implies that $\dim \zclos{S_g \cap (X \times X')} \geq 1$. Suppose the dimension equals $1$, so that $\zclos{S_g \cap (X \times X')}$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim \zclos{S_g \cap (X \times X')} \geq 2$, whence the claim follows.
 \end{proof}
 
 We now return to the proof of Lemma~\ref{lem:lim-degree}.

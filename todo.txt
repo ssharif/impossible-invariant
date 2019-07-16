@@ -1,8 +1,5 @@
 
 * Move matrix results to §2
-* Deal with Corollary 4.2
-* Show that ψ_A descends to a map on moduli in general
-  ie check what the U, V do to the principal polarization
 * Prove 5.7.
 * for E/C x E/alpha*C = E/C x E/beta*C, see https://link.springer.com/content/pdf/10.1007%2Fs13348-010-0029-1.pdf. Proposition 65 (use n=1 case to bootstrap n=2 without computing the lattices directly)
 ** Show that I(α-tilde) = χ(α)
