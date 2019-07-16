@@ -356,22 +356,23 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \]
   where $\alpha = \prod\alpha_i$ and $\beta = \prod \beta_i$. Next we will apply the results from \cite{kani2011products} to ``cancel out'' the $E/\sC$ on both sides of the isomorphism on the right.
 
-  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. We claim that $\ker\tilde{\alpha}$ is not an ideal subgroup\footnote{See \cite[Sec.~2, Pg.~302]{kani2011products} for the definition of ideal subgroup and kernel ideal.}. Let $\sO$ be an order in $K$ isomorphic to $\End E/\sC$. Recall that since $E \to E/\sC$ is an isogeny of prime degree $c$, we have that $[\sO_K : \sO] \mid c$ \cite[Prop.~5]{kohel1996endomorphism}. Because $c$ is inert in $K$, $\sO_K$ has no ideals of norm $c$. So by \cite[Thm.~20b]{kani2011products}, $\sC$ is not an ideal subgroup of $E$ and $\End E/\sC \not\cong \End E$. Hence $[\sO_K : \sO] = c$. This argument holds for any $c$-torsion subgroup, so it shows that $\End E/\sC \cong \End E/\alpha(\sC) \cong \sO$. Thus by \cite[Thm.~20b]{kani2011products}, $\ker\tilde{\alpha}$ is an ideal subgroup. The same holds for $\beta$ as well.
+  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. % We claim that $\sC$ is not an ideal subgroup\footnote{See \cite[Sec.~2, Pg.~302]{kani2011products} for the definition of ideal subgroup and kernel ideal.}.
+  Let $\sO$ be an order in $K$ isomorphic to $\End E/\sC$. Recall that since $E \to E/\sC$ is an isogeny of prime degree $c$, we have that $[\sO_K : \sO] \mid c$ \cite[Prop.~5]{kohel1996endomorphism}. Because $c$ is inert in $K$, $\sO_K$ has no ideals of norm $c$. So by \cite[Thm.~20b]{kani2011products}, $\sC$ is not an ideal subgroup of $E$ and $\End E/\sC \not\cong \End E$. Hence $[\sO_K : \sO] = c$. This argument holds for any $c$-torsion subgroup, so it shows that $\End E/\sC \cong \End E/\alpha(\sC) \cong \sO$. Thus by \cite[Thm.~20b]{kani2011products}, $\ker\tilde{\alpha}$ is an ideal subgroup. The same holds for $\beta$ as well.
 
   For any isogeny $\phi$ with domain $E/\sC$, let $I(\phi)$ denote the kernel ideal of the subgroup $\ker\phi$.
   %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
   By \cite[Thm.~46]{kani2011products},
   \begin{align*}
-    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \cong \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
+    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
     \\
     \Leftrightarrow
-    \left(\bigoplus_{i=1}^{n-1} I(\tilde{id})\right) \oplus I(\tilde{\alpha}) \cong \left(\bigoplus_{i=1}^{n-1} I(\tilde{id})\right) \oplus I(\tilde{\beta}).
+    \left(\bigoplus_{i=1}^{n-1} I(id)\right) \oplus I(\tilde{\alpha}) \cong \left(\bigoplus_{i=1}^{n-1} I(id)\right) \oplus I(\tilde{\beta}).
   \end{align*}
-  where $id$ is the identity map on $E/\sC$. By \cite[Thm.~48]{kani2011products}, the latter isomorphism is equivalent to
+  where $id$ is the identity map on $E/\sC$ and the second isomorphism is as $\sO$-modules. By \cite[Thm.~48]{kani2011products}, the latter isomorphism is equivalent to
   \[
-    I(\tilde{id})^{n-1}I(\tilde{\alpha}) \cong I(\tilde{id})^{n-1}I(\tilde{\beta}).
+    I(id)^{n-1}I(\tilde{\alpha}) \cong I(id)^{n-1}I(\tilde{\beta}).
   \]
-  But $I(\tilde{id}) = \End E/\sC$, so this is equivalent to $I(\tilde{\alpha}) \cong I(\tilde{\alpha})$. Appyling \cite[Thm.~46]{kani2011products} to these two ideals shows that
+  But $I(id) = \End E/\sC$, so this is equivalent to $I(\tilde{\alpha}) \cong I(\tilde{\beta})$. Applying \cite[Thm.~46]{kani2011products} to these two ideals shows that
   \[
     I(\tilde{\alpha}) \cong I(\tilde{\beta})
     \quad\Leftrightarrow\quad

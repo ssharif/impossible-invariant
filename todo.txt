@@ -7,5 +7,9 @@
 * Define different closure notations.
 * Number equations by section.
 * Change "n-torsion" to "cyclic subgroup of order n" where appropriate.
+* Change all dimensions to g.
+* Put in defns of kernel ideal and ideal subgroup.
+* Change I(α) to I_α.
 * for E/C x E/alpha*C = E/C x E/beta*C, see https://link.springer.com/content/pdf/10.1007%2Fs13348-010-0029-1.pdf. Proposition 65 (use n=1 case to bootstrap n=2 without computing the lattices directly)
 ** Show that I(α-tilde) = χ(α)
+** Finish proof of 4.4.
