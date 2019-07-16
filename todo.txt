@@ -1,9 +1,10 @@
 
 Shahed
-* Show agreement of ψ_A and ψ_A mod.
-* Prove main theorems.
 * Streamline §5 proofs.
 * Replace §2 with §5.
+* Show agreement of ψ_A and ψ_A mod.
+* Prove main theorems.
+* Remove functor formalism—*maybe* it will come up in the proof of main theorem.
 * Delete closure notations, use words.
 * Number equations by section.
 * Fix Theorem 6.1 statement, state in introduction
