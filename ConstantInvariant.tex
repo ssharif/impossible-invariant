@@ -80,7 +80,7 @@ There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will impl
 
 Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $X_0(\ell^n) \to \ag$ whose images $X_i$ are curves in $\ag$. These curves will be used in the steps outlined in Section~\ref{sec:introduction}.
 
-We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove step~\ref{i:Sg-dense}, and the complex analysis version to prove step~\ref{i:curves-dense}. \textcolor{red}{TODO: explain that the latter does not carry to characteristic $p$}
+We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove step~\ref{i:Sg-dense}, and the complex analytic version to prove step~\ref{i:curves-dense}. \textcolor{red}{TODO: explain that the latter does not carry to characteristic $p$}
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
@@ -90,6 +90,10 @@ Fix a positive integer $N$ not divisible by the characteristic of our base field
 \begin{lemma}
   $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
 \end{lemma}
+
+\begin{proof}
+  Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda^{(C)} \subset C^g$ is isotropic. The claim follows.
+\end{proof}
 
 Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by [Milne, AV, Prop. 16.8], there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
 
@@ -124,7 +128,7 @@ We define $\psimod: X_0(N) \to \ag$ by
   \[
     \rho_V(\ker \rho_A \cap H) = \ker \rho_D \cap H.
   \]
-  Therefore the quotients of $E^g$ by the $\ker \rho_A \cap H$ and $\ker \rho_D \cap H$
+  Therefore the quotients of $E^g$ by $\ker \rho_A \cap H$ and $\ker \rho_D \cap H$ respectively are (weakly) isomorphic. The claim follows.
 \end{proof}
 
 \subsection{Analytic description}
