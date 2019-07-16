@@ -37,9 +37,9 @@
 
 Let $\ag$ be the moduli space of principally polarized abelian varieties. If $A, B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose $f: \ag \to X$ be a morphism of schemes over $\C$. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+  Suppose $f: \ag \to X$ be a morphism of schemes over $R$, where $R = \Z, \Q,$ or $\C$. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
 \end{theorem}
-We will also show that the theorem holds when $\C$ is replaced by either $\Q$ or $\Z$. We will deduce the theorem as a corollary of another result, stated below.
+Since a scheme over $\C$ is also scheme over $\Q$ (and $\Z$), it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of another result, stated below.
 
 Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$ to be the set
 \[
@@ -445,13 +445,13 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
   where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
 \end{proof}
 
-\begin{proof}[Alternative proof]
-  Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
-  \[
-    \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
-  \]
-  Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
-\end{proof}
+% \begin{proof}[Alternative proof]
+%   Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
+%   \[
+%     \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
+%   \]
+%   Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
+% \end{proof}
 
 % \begin{proof}
 %   The group scheme $\Sl_g$ is a connected reductive group, and hence is unirational. (???cite) Since $\Z[1/\ell]$ is topologically dense in $\R$, the claim follows.
