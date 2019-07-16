@@ -37,35 +37,44 @@
 
 Let $\ag$ be the moduli space of principally polarized abelian varieties. If $A, B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose $f: \ag \to X$ be a morphism of schemes over $R$, where $R = \Z, \Q,$ or $\C$. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+  Suppose $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
 \end{theorem}
-Since a scheme over $\C$ is also scheme over $\Q$ (and $\Z$), it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of another result, stated below.
+Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of another result, stated below.
 
 Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$ to be the set
 \[
   \dlim_{T/R} S(T)
 \]
-where the union is over all $R$-schemes $T$. Let
+where the limit is over all $R$-schemes $T$. Let
 \[
   \sg: \rschemes \to \mathcal{P}((\ag \times \ag)[R])
 \]
-be the functor from $R$-schemes to the power set of $(\ag \times \ag)[R]$ which, for $T$ an $R$-scheme, gives the set
+be the functor from $R$-schemes to the power set of $(\ag \times \ag)[R]$ that sends an $R$-scheme $T$ to the set
 \[
   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
 \]
 Then we will show the following.
 \begin{theorem}\label{thm:sg-c-dense}
-  $\sg(\C)$ is Zariski dense in $\ag \times \ag$.
+  If $R$ is a subring of $\C$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
+As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case where $R = \C$.
 
 \paragraph{Overview.}
 
-The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct maps $X_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that
+The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct morphisms $\psi_A: Y_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that \textcolor{red}{Restate below as theorems.}
+
+\begin{theorem}\label{thm:curves-dense}
+  The Zariski closure of ${\cup X_i}$ is $\ag$
+\end{theorem}
+
+\begin{theorem}\label{thm:Sg-dense}
+  for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
+\end{theorem}
 \begin{enumerate}
-    \item\label{i:curves-dense} $\overline{\cup X_i} = \ag$ and
-    \item\label{i:Sg-dense} for all $i,j$, $\overline{S_g \cap (X_i \times X_j)} = X_i \times X_j$.
+    \item\label{i:curves-dense} The Zariski closure of ${\cup X_i}$ is $\ag$ and
+    \item\label{i:Sg-dense} for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
 \end{enumerate}
-Here, the bar denotes Zariski closure. From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
+From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
 \[
   \xymatrix{
     \df \ar[r] \ar[d] & \ag \ar[d]^f \\
@@ -92,7 +101,7 @@ Fix a positive integer $N$ not divisible by the characteristic of our base field
 \end{lemma}
 
 \begin{proof}
-  Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda^{(C)} \subset C^g$ is isotropic. The claim follows.
+  Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda_A^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda_A^{(C)} \subset C^g$ is isotropic. The claim follows.
 \end{proof}
 
 Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by [Milne, AV, Prop. 16.8], there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
@@ -256,7 +265,7 @@ It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{
 
 In this section, we focus on Step~\ref{i:Sg-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
 \[
-  \zclos{S_g \cap (X_i \times X_j)} = X_i \times X_j.
+  \zclos{\sg \cap (X_i \times X_j)} = X_i \times X_j.
 \]
 Here $X_i$ and $X_j$ are images of two maps of the form $\psi_{\vec{n},\lambda}$ from Section~\ref{sec:geo-desc} (see Equation~\ref{def:psi-A-n}).
 
@@ -274,11 +283,11 @@ Before we prove Lemma~\ref{lem:lim-degree}, we will show how to finish the argum
 \begin{corollary}
   Let $\psi$ and $\psi'$ be as in Lemma~\ref{lem:lim-degree}, and let $X$ and $X'$ be their images in $\ag$. Then
   \[
-    \zclos{S_g \cap (X \times X')} = X \times X'.
+    \zclos{\sg \cap (X \times X')} = X \times X'.
   \]
 \end{corollary}
 \begin{proof}
-  By Lemma~\ref{lem:lim-degree}, $S_g \cap (X \times X')$ has an infinite number of geometric points. This implies that $\dim \zclos{S_g \cap (X \times X')} \geq 1$. Suppose the dimension equals $1$, so that $\zclos{S_g \cap (X \times X')}$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim \zclos{S_g \cap (X \times X')} \geq 2$, whence the claim follows.
+  By Lemma~\ref{lem:lim-degree}, $\sg \cap (X \times X')$ has an infinite number of geometric points. This implies that $\dim \zclos{\sg \cap (X \times X')} \geq 1$. Suppose the dimension equals $1$, so that $\zclos{\sg \cap (X \times X')}$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim \zclos{\sg \cap (X \times X')} \geq 2$, whence the claim follows.
 \end{proof}
 
 We now return to the proof of Lemma~\ref{lem:lim-degree}.

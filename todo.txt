@@ -1,14 +1,24 @@
 
-* Move matrix results to §2
+Shahed
+* Show agreement of ψ_A and ψ_A mod.
+* Prove main theorems.
+* Streamline §5 proofs.
+* Replace §2 with §5.
+* Delete closure notations, use words.
+* Number equations by section.
+* Fix Theorem 6.1 statement, state in introduction
+* Change X₀(ℓⁿ) to Y₀
+** Define Y₀
+** Notation: (E, C) or (E, ϕ)
+Travis
+* Prove the "Step 1" and "Step 2" theorems.
 * Prove 5.7.
 * Set N = det A.
 * Simplify proof of torsor result (4.3).
-* Streamline §5 proofs.
-* Define different closure notations.
-* Number equations by section.
 * Change "n-torsion" to "cyclic subgroup of order n" where appropriate.
 * Change all dimensions to g.
 * Put in defns of kernel ideal and ideal subgroup.
+** And Theorem 20b
 * Change I(α) to I_α.
 * for E/C x E/alpha*C = E/C x E/beta*C, see https://link.springer.com/content/pdf/10.1007%2Fs13348-010-0029-1.pdf. Proposition 65 (use n=1 case to bootstrap n=2 without computing the lattices directly)
 ** Show that I(α-tilde) = χ(α)
