@@ -237,28 +237,158 @@ In this section, we focus on Step~\ref{i:curves-dense} outlined in Section~\ref{
 \]
 where $A$ ranges over all symmetric positive definite integer matrices whose determinant is a power of $\ell$. Recall that $\ell$ is fixed.\textcolor{red}{TODO: reference where fixing of $\ell$ occurs}
 
-We will actually show the slightly stronger claim that $\cup_{A} \psi_{A,n}(i\R)$ is holomorphically dense, where $A$ ranges over ???. That is, if any holomorphic function $f$ on $\ag$ vanishes on $\cup_{A} \psi_{A,n}(i\R)$, then $f$ vanishes everywhere.
+\begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
+  The topological closure of $\Sl_g(\Z[1/\ell])$ is $\Sl_g(\R)$.
+\end{lemma}
+Here, the topology is the one induced by the Euclidean metric on the entries.
 
-For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite matrices in $\Sl_g(R)$. Recall that for any $A \in \Sympd_g(\Z[1/\ell])$, the map $\psi_{A,n}$ is induced from the map $\psi_A: \hh \to \hh_g$ given by $\tau \mapsto \tau A$. Therefore
-\[
-  \bigcup_{A \in \Sympd_g(\Z[1/\ell])} \psi_A(i\R) = i\R\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right).
+\begin{proof}
+  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
+  \[
+    G = E_n \cdots E_2 E_1
+  \]
+  where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
+\end{proof}
+
+% \begin{proof}[Alternative proof]
+%   Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
+%   \[
+%     \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
+%   \]
+%   Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
+% \end{proof}
+
+% \begin{proof}
+%   The group scheme $\Sl_g$ is a connected reductive group, and hence is unirational. (???cite) Since $\Z[1/\ell]$ is topologically dense in $\R$, the claim follows.
+
+%   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
+% \end{proof}
+
+\begin{definition}
+  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
+\end{definition}
+
+\begin{lemma}\label{lemma:ggt-spd-detl}
+  If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
+  \[
+    \ell^n GG^t \in \detl.
+  \]
+\end{lemma}
+
+\begin{proof}
+  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
+\end{proof}
+
+
+\begin{definition}
+  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
+\end{definition}
+
+\begin{lemma}\label{lemma:ggt-periodmatrices}
+  $\permat = \{GG^t | G \in \Sl_g(\R)\}$.
+\end{lemma}
+
+\begin{proof}
+  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
+  \[
+    G = O
+    \begin{bmatrix}
+      \sqrt{d_1} & & & \\
+      & \sqrt{d_2} & & \\
+      & & \ddots & \\
+      & & & \sqrt{d_{g}}
+    \end{bmatrix}.
 \]
-
-\begin{lemma}
-  $\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right)$ is holomorphically dense in $\Sympd_g(\R)$.
-\end{lemma}
-\begin{proof}
-  \textcolor{red}{TODO}
+Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
-\begin{lemma}
-  $i\R\Sympd_g(\R)$ is holomorphically dense in $\hh_g$.
-\end{lemma}
+\begin{proposition}\label{prop:A-over-detA}
+  The topological closure of ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is $\permat$.
+\end{proposition}
+
 \begin{proof}
-  \textcolor{red}{TODO}
+  In the set
+  \[
+    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
+  \]
+  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
+  \[
+    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
+  \]
+  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
-It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
+Let $\R^+$ denote the set of positive real numbers.
+\begin{lemma}\label{lemma:holomorphic-closure-irM}
+  The holomorphic closure of ${\{ irM | M \in \permat, r \in \R^+\}}$ is $\hh_g$.
+\end{lemma}
+Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$ containing $X$ for which any holomorphic function that vanishes on $X$ also vanishes on $\overline{X}$. Observe that the Euclidean topology is a refinement of the holomorphic topology, which is a refinement of the Zariski topology.
+
+\begin{proof}
+  This is a standard result in multivariable complex analysis, which we are all completely familiar with.
+\end{proof}
+
+% \begin{lemma}
+%   The holomorphic closure of ${\bigcup_{A \in \detl} \psi_A(i\R^+)}$ is $\hh_g$.
+% \end{lemma}
+
+% \begin{proof}
+% \end{proof}
+
+% \begin{lemma}
+%   \[
+%     \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
+%   \]
+% \end{lemma}
+
+% \begin{proof}
+%   Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
+% \end{proof}
+
+\begin{theorem}
+  The Zariski closure of
+  \[
+    {\bigcup_{A \in \detl} \im \psimod}
+  \]
+  is $\ag$.
+\end{theorem}
+
+\begin{proof}
+  Observe that if $X$ is a subset of a complex manifold, then its topological closure is contained in its holomorphic closure. Now
+  \begin{align*}
+    \cup_A \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
+               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \detl\}.
+  \end{align*}
+  By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
+  \[
+    \{irM | r \in \R^+, M \in \permat\}.
+  \]
+  By Lemma~\ref{lemma:holomorphic-closure-irM}, the holomorphic closure of $\cup_A \psi_A(i\R^+)$ is $\hh_g$. Therefore the holomorphic closure of $\cup_A \im \psi_A$ is also $\hh_g$. Passing to the quotient, if we consider $\ag$ as a complex manifold, we have that $\cup_A \im \psimod$ is holomorphically dense in $\ag$.
+
+  By definition of $\psimod$,  $\im \psimod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so the image of $\psimod$ in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense, and the claim follows.
+\end{proof}
+% We will actually show the slightly stronger claim that $\cup_{A} \psi_{A,n}(i\R)$ is holomorphically dense, where $A$ ranges over ???. That is, if any holomorphic function $f$ on $\ag$ vanishes on $\cup_{A} \psi_{A,n}(i\R)$, then $f$ vanishes everywhere.
+
+% For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite matrices in $\Sl_g(R)$. Recall that for any $A \in \Sympd_g(\Z[1/\ell])$, the map $\psi_{A,n}$ is induced from the map $\psi_A: \hh \to \hh_g$ given by $\tau \mapsto \tau A$. Therefore
+% \[
+%   \bigcup_{A \in \Sympd_g(\Z[1/\ell])} \psi_A(i\R) = i\R\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right).
+% \]
+
+% \begin{lemma}
+%   $\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right)$ is holomorphically dense in $\Sympd_g(\R)$.
+% \end{lemma}
+% \begin{proof}
+%   \textcolor{red}{TODO}
+% \end{proof}
+
+% \begin{lemma}
+%   $i\R\Sympd_g(\R)$ is holomorphically dense in $\hh_g$.
+% \end{lemma}
+% \begin{proof}
+%   \textcolor{red}{TODO}
+% \end{proof}
+
+% It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
 
 \section{Step 2}
 \label{sec:step-2}
@@ -438,140 +568,6 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
 Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \cong \F_{c^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $\F_{c^2}$. Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. So by Chebotarev's density theorem, it remains to show there exists some $\sigma \in \Gal(L/\Q)$ such that $\sigma$ has order $2$ and restricts to complex multiplication in $K$ and $\Q(\zeta_g)$.
 
   Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
-\end{proof}
-
-\section{Matrix density results}
-\label{sec:matr-dens-results}
-
-\begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
-  The topological closure of $\Sl_g(\Z[1/\ell])$ is $\Sl_g(\R)$.
-\end{lemma}
-Here, the topology is the one induced by the Euclidean metric on the entries.
-
-\begin{proof}
-  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
-  \[
-    G = E_n \cdots E_2 E_1
-  \]
-  where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
-\end{proof}
-
-% \begin{proof}[Alternative proof]
-%   Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
-%   \[
-%     \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
-%   \]
-%   Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
-% \end{proof}
-
-% \begin{proof}
-%   The group scheme $\Sl_g$ is a connected reductive group, and hence is unirational. (???cite) Since $\Z[1/\ell]$ is topologically dense in $\R$, the claim follows.
-
-%   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
-% \end{proof}
-
-\begin{definition}
-  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
-\end{definition}
-
-\begin{lemma}\label{lemma:ggt-spd-detl}
-  If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
-  \[
-    \ell^n GG^t \in \detl.
-  \]
-\end{lemma}
-
-\begin{proof}
-  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
-\end{proof}
-
-
-\begin{definition}
-  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
-\end{definition}
-
-\begin{lemma}\label{lemma:ggt-periodmatrices}
-  $\permat = \{GG^t | G \in \Sl_g(\R)\}$.
-\end{lemma}
-
-\begin{proof}
-  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
-  \[
-    G = O
-    \begin{bmatrix}
-      \sqrt{d_1} & & & \\
-      & \sqrt{d_2} & & \\
-      & & \ddots & \\
-      & & & \sqrt{d_{g}}
-    \end{bmatrix}.
-\]
-Then $A = GG^t$ and $G \in \Sl_g(\R)$.
-\end{proof}
-
-\begin{proposition}\label{prop:A-over-detA}
-  The topological closure of ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is $\permat$.
-\end{proposition}
-
-\begin{proof}
-  In the set
-  \[
-    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
-  \]
-  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
-  \[
-    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
-  \]
-  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
-\end{proof}
-
-Let $\R^+$ denote the set of positive real numbers.
-\begin{lemma}\label{lemma:holomorphic-closure-irM}
-  The holomorphic closure of ${\{ irM | M \in \permat, r \in \R^+\}}$ is $\hh_g$.
-\end{lemma}
-Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$ containing $X$ for which any holomorphic function that vanishes on $X$ also vanishes on $\overline{X}$. Observe that the Euclidean topology is a refinement of the holomorphic topology, which is a refinement of the Zariski topology.
-
-\begin{proof}
-  This is a standard result in multivariable complex analysis, which we are all completely familiar with.
-\end{proof}
-
-% \begin{lemma}
-%   The holomorphic closure of ${\bigcup_{A \in \detl} \psi_A(i\R^+)}$ is $\hh_g$.
-% \end{lemma}
-
-% \begin{proof}
-% \end{proof}
-
-% \begin{lemma}
-%   \[
-%     \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
-%   \]
-% \end{lemma}
-
-% \begin{proof}
-%   Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
-% \end{proof}
-
-\begin{proposition}
-  The Zariski closure of
-  \[
-    {\bigcup_{A \in \detl} \im \psimod}
-  \]
-  is $\ag$.
-\end{proposition}
-
-\begin{proof}
-  Observe that if $X$ is a subset of a complex manifold, then its topological closure is contained in its holomorphic closure. Now
-  \begin{align*}
-    \cup_A \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
-               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \detl\}.
-  \end{align*}
-  By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
-  \[
-    \{irM | r \in \R^+, M \in \permat\}.
-  \]
-  By Lemma~\ref{lemma:holomorphic-closure-irM}, the holomorphic closure of $\cup_A \psi_A(i\R^+)$ is $\hh_g$. Therefore the holomorphic closure of $\cup_A \im \psi_A$ is also $\hh_g$. Passing to the quotient, if we consider $\ag$ as a complex manifold, we have that $\cup_A \im \psimod$ is holomorphically dense in $\ag$.
-
-  By definition of $\psimod$,  $\im \psimod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so the image of $\psimod$ in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense, and the claim follows.
 \end{proof}
 
 \section{Characteristic $p$}
