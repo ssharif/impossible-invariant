@@ -37,11 +37,11 @@
 
 Let $\ag$ be the moduli space of principally polarized abelian varieties. If $A, B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+  Suppose that $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
 \end{theorem}
 Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of another result, stated below.
 
-Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$ to be the set
+Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
 \[
   \dlim_{T/R} S(T)
 \]
@@ -59,29 +59,64 @@ Then we will show the following.
 \end{theorem}
 As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case where $R = \C$.
 
-\paragraph{Overview.}
+\subsection{Overview}
 
-The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct morphisms $\psi_A: Y_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that \textcolor{red}{Restate below as theorems.}
+Let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinate is a power of a prime $\ell$ (see Definition~\ref{def:detl}). For any $A \in \detl$, we will define a map $\psi_A: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}). For $A \in \detl$, let $X_A$ denote the image of the map $\psi_A: Y_0(\det(A)) \to \ag$.
+
+In Section~\ref{sec:step-1} we prove the following theorem.
 
 \begin{theorem}\label{thm:curves-dense}
-  The Zariski closure of ${\cup X_i}$ is $\ag$
+  The Zariski closure of $\bigcup_{A \in \detl} X_A$ is $\ag$.
 \end{theorem}
 
+In Section~\ref{sec:step-2} we prove the following theorem.
+
 \begin{theorem}\label{thm:Sg-dense}
-  for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
+  If $A,A' \in \detl$, then $\sg \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
-\begin{enumerate}
-    \item\label{i:curves-dense} The Zariski closure of ${\cup X_i}$ is $\ag$ and
-    \item\label{i:Sg-dense} for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
-\end{enumerate}
-From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
-\[
-  \xymatrix{
-    \df \ar[r] \ar[d] & \ag \ar[d]^f \\
-    \ag \ar[r]^f & X.
-  }
-\]
-There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will imply that, viewed as functors, the latter map factors through $\sg$. Since the functor $\sg$ is ``dense'' in the sense of Theorem~\ref{thm:sg-c-dense}, we will have $\df = \ag \times \ag$, whence the claim follows.
+
+\textcolor{red}{TODO: introduce/move}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
+  For two subsets $X,Y$ of $\ag \times \ag$, we write $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
+  \begin{align*}
+    \sg
+    &\supseteq
+    \sg \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
+    \\
+    &=
+    \bigcup_{A,A'} \sg \cap (X_A \times X_{A'})
+    \\
+    &\prec
+    \bigcup_{A,A'} X_{A} \times X_{A'}
+    &&\text{By Theorem~\ref{thm:sg-c-dense}}
+    \\
+    &=
+    \left(\bigcup_{A} X_A\right) \times \left(\bigcup_{A'} X_{A'}\right)
+    \\
+    &\prec
+    \ag \times \ag
+    &&\text{By Theorem~\ref{thm:Sg-dense}}.
+  \end{align*}
+\end{proof}
+
+\textcolor{red}{TODO: introduce/move}
+
+\begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
+  Let $f: \ag \to X$ be a morphism of $R$-schemes. Consider the diagonal $\df$ determined by the diagram
+  \[
+  \begin{tikzcd}
+    \df \arrow[r] \arrow[d] & \ag \arrow[d,"f"]
+    \\
+    \ag \arrow[r,"f"] & X.
+  \end{tikzcd}
+  \]
+  There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will imply that, viewed as functors, the latter map factors through $\sg$.
+  Assume $f$ is separated \textcolor{red}{TODO: is this necessary?}.
+  % https://ncatlab.org/nlab/show/separated+morphism+of+schemes
+  Then $\df$ is closed in $\ag \times \ag$. By Theorem~\ref{thm:sg-c-dense}, this implies that $\df = \ag \times \ag$, whence the claim follows.\textcolor{red}{TODO: whence? I think this needs more.}
+\end{proof}
+
 
 
 \section{Constructing curves on $\ag$}
@@ -110,6 +145,7 @@ We define $\psimod: X_0(N) \to \ag$ by
 \[
   \psimod(E,C) = (B,\lambda).
 \]
+
 
 \begin{proposition}\label{prop:psimod-weakly-isomorphic-to-product}
   Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in X_0(N)$, let $E_i = E/(N/d_i)C$. If $\psimod(E,C) = (B,\lambda)$, then
@@ -312,7 +348,7 @@ Here, the topology is the one induced by the Euclidean metric on the entries.
 %   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
 % \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:detl}
   For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
 \end{definition}
 
@@ -438,135 +474,42 @@ Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$
 
 % It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Step 2}
 \label{sec:step-2}
 
-In this section, we focus on Step~\ref{i:Sg-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
-\[
-  \zclos{\sg \cap (X_i \times X_j)} = X_i \times X_j.
-\]
-Here $X_i$ and $X_j$ are images of two maps of the form $\psi_{\vec{n},\lambda}$ from Section~\ref{sec:geo-desc} (see Equation~\ref{def:psi-A-n}).
+The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
 
-We will prove the claim using the following lemma.
-
-\begin{lemma}\label{lem:lim-degree}
-  Let $\psi = \psi_{\vec{n},\lambda}$ and $\psi' = \psi_{\vec{n}',\lambda'}$ be two of the maps $X_0(\ell^n) \to \ag$ defined as in Equation~\ref{def:psi-A-n}. Then there exists a sequence $x_i \in X_0(\ell^n)$ such that
-  \[
-    \lim_{i \to \infty}\#\left\{ y \in X_0(\ell^n) \colon \text{ $\psi(x_i)$ and $\psi'(y)$ are weakly isomorphic} \right\} = \infty.
-  \]
-\end{lemma}
-
-Before we prove Lemma~\ref{lem:lim-degree}, we will show how to finish the argument.
-
-\begin{corollary}
-  Let $\psi$ and $\psi'$ be as in Lemma~\ref{lem:lim-degree}, and let $X$ and $X'$ be their images in $\ag$. Then
-  \[
-    \zclos{\sg \cap (X \times X')} = X \times X'.
-  \]
-\end{corollary}
-\begin{proof}
-  By Lemma~\ref{lem:lim-degree}, $\sg \cap (X \times X')$ has an infinite number of geometric points. This implies that $\dim \zclos{\sg \cap (X \times X')} \geq 1$. Suppose the dimension equals $1$, so that $\zclos{\sg \cap (X \times X')}$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim \zclos{\sg \cap (X \times X')} \geq 2$, whence the claim follows.
-\end{proof}
-
-We now return to the proof of Lemma~\ref{lem:lim-degree}.
-
-\begin{proof}[Proof of Lemma~\ref{lem:lim-degree}]
-  Choose a quadratic imaginary field $K$, principal prime $\varphi\sO_K$ over $\ell$, and rational primes $c_i$ as in Lemma~\ref{lem:K-exists} below. Let $E$ be an elliptic curve over an algebraically closed field with CM by $\sO_K$.
-
-  Let $\sC$ denote a cyclic subgroup of $E$ with order prime to $\ell$. Then the set of subgroups $\sC_i, \varphi(\sC), \dots, \varphi^n(\sC)$ give a set of $\ell$-isogenies from $E$. Note that $\varphi$ induces a map $E/\varphi^j(\sC) \to E/\varphi^{j+1}(\sC)$. Thus we have the following diagram
-  \[
-    \begin{tikzcd}
-      \sC \arrow[d,"\varphi"] \arrow[r] & E \arrow[d,"\varphi"] \arrow[r] & E/\sC \arrow[d]
-      \\
-      \varphi(\sC) \arrow[d,"\varphi"] \arrow[r] & E \arrow[d,"\varphi"] \arrow[r] & E/\varphi(\sC) \arrow[d]
-      \\
-      \vdots \arrow[d,"\varphi"] & \vdots \arrow[d,"\varphi"] & \vdots \arrow[d]
-      \\
-      \varphi^n(\sC) \arrow[r] & E \arrow[r] & E/\varphi^{n}(\sC).
-    \end{tikzcd}
-  \]
-  Let $\varphi^{\ast}_\sC$ denote the composition $E/\sC \to \cdots \to E/\varphi^n(\sC)$. This is an $\ell^n$-isogeny, so the pair $(E/\sC,\varphi^{\ast}_\sC)$ defines a point in $X_0(\ell^n)$.
-
-  For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $c_i$. Define $x_1$ to be $(E/\sC_1,\varphi^{\ast}_{\sC_1})$. Before defining $x_2,x_3,\dots$, we will first describe a set of $y$ such that $\psi(x_1) = \psi'(y)$.
-
-  Recall from Section~\ref{sec:geo-desc} the description of $\psi = \psi_{\vec{n},\lambda}$. Because we have the decomposition of $\varphi^{\ast}_{\sC_1}$ into a sequence of $\ell$-isogenies, we have
-  \[
-    \psi(E/\sC_1,\varphi^{\ast}_{\sC_1}) = (E/\varphi^{n_1}(\sC_1) \times \cdots \times E/\varphi^{n_g}(\sC_1),\lambda).
-  \]
-  The set of $c_1$-torsion subgroups of $E$ is a $(\sO_K/c_1\sO_K)^\times/(\Z/c_1\Z)^\times \cong \F_{c_1^2}^\times/\F_{c_1}^\times$ torser by Lemma~\ref{lem:c-torsor}. Recall from our construction of the $c_i$ that $\varphi \mod{c_i\sO_K}$ is a $g$th power. So we can find some $\gamma \in \F_{c_1^2}^\times$ such that $\varphi \equiv \gamma^g \mod{c_1\sO_K}$. In particular, $\varphi(\sC_1) = \gamma^g(\sC_1)$.
-
-  The set of $y$ we will construct will be of the form $\psi'(E/\beta\sC_1,\varphi^{\ast}_{\beta\sC_1}))$ for some $\beta \in \F_{c_1^2}^\times/\F_{c_1}^\times$. We need to ensure that $\psi(x_i) \cong \psi'(y)$ as unpolarized abelian varieties. This means that we need to find $\beta$ such that
-  \[
-    E/(\gamma^g)^{n_1}(\sC_1) \times \cdots \times E/(\gamma^g)^{n_g}(\sC_1)
-    \cong
-    E/(\gamma^g)^{n_1'}(\beta\sC_1) \times \cdots \times E/(\gamma^g)^{n_g'}(\beta\sC_1).
-  \]
-  By Lemma~\ref{lem:prod-equiv-torsor}, this holds if and only if
-  \[
-    (\gamma^{n_1 + \cdots + n_g})^g = \beta^g(\gamma^{n_1' + \cdots n_g'})^g.
-  \]
-  The hypothesis on the $c_i$ implies that $g$ divides $\#(\F_{c_i^2}^\times/\F_{c_i}^\times) = c_i + 1$, so there are $g$ distinct solutions $\beta \in \F_{c_i^2}^\times/\F_{c_i}^\times$ to this equation.\footnote{Note that these solutions are not the solutions in $\F_{c_i^2}$ reduced mod $\F_{c_i}$. For example, $\beta^4 = 1$ has $4$ solutions in $\F_9$, but modulo $\F_3^\times$ these give only $2$ distinct solutions. On the other hand, $\beta^4 = 1$ has $4$ distinct solutions in $\F_9/\F_3$, namely $1+i$ and $(1+i)^3$, because $1+i$ is a generator for $\F_9^\times$ as a cyclic group.} This gives us $g$ points $y \in X_0(\ell^n)$ with $\psi(x_1) = \psi'(y)$.
-
-  For $x_2$, we repeat much of the same construction except that instead of using $\sC_2$, we use $\sC_1\sC_2$ and liberally apply the Chinese remainder theorem. The set of subgroups of $E$ with order $c_1c_2$ is a torser over $(\F_{c_1^2}^\times/\F_{c_1}^\times) \times (\F_{c_2^2}^\times/\F_{c_2}^\times)$. Then we are searching for $\beta \in \sO_K/c_1c_2\sO_K$ such that
-  \[
-    E/\varphi^{n_1}(\sC_1\sC_2) \times \cdots \times E/\varphi^{n_g}(\sC_1\sC_2)
-    \cong
-    E/\varphi^{n_1'}(\beta(\sC_1\sC_2)) \times \cdots \times E/\varphi^{n_g'}(\beta(\sC_1\sC_2)).
-  \]
-  Again this reduces to counting the number of solutions $\beta$ to an equation of the form $(\gamma^{g})^{n_1 + \cdots + n_g} = \beta^g(\gamma^g)^{n_1' + \cdots n_g'}$, except that this equation is modulo $c_1c_2\sO_K$. By a similar argument, we can find $g^2$ points $y \in X_0(\ell^n)$ such that $\psi(x_2) = \psi'(y)$.
-
-  Continuing in the same fashion shows that for each $x_i$, there are $g^i$ points $y \in X_0(\ell_n)$ such that $\psi(x_i) = \psi'(y)$.
-\end{proof}
-
-\begin{lemma}\label{lem:c-torsor}
-  Let $E$ be an ordinary elliptic curve over an algebraically closed field with CM by $\sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $c$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of $c$-torsion subgroups of $E$ form a $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$ torsor.
-\end{lemma}
-\begin{proof}
-  To prove the claim, we will show that $E[c] \cong \sO_K/c\sO_K$ as an $\sO_K$-module. Note that if the base field is $\C$, then $E \cong \C/I$ for some ideal $I$ of $\sO_K$. Since $\C/I \cong \C/J$ for any $J$ in the same ideal class as $I$, we may assume $I$ is coprime to $c$. Then $E[c] \cong \frac{1}{c}I/I \cong I/cI \cong \sO_K/c\sO_K$ as $\sO_K$ modules. If the base field is $\overline{\F}_p$, then we can find a model of $E$ over a finite field $\F_q$ with $E[c] \subseteq E(\F_q)$. By \cite[Thm.~1]{complex1996lenstra}, $E(\F_q) \cong \End_{\F_q}(E) / (\pi - 1)$ as $\End_{\F_q}(E)$ modules. Here $\pi$ is the $q$th power Frobenius. As $E$ is ordinary, $\End_{\F_q}(E) \cong \sO_K$. Moreover, $E[c] \subseteq E(\F_q)$ implies that $c \mid \Nm(\pi - 1) \Rightarrow c\sO_K \supseteq (\pi - 1)$. Hence $E[c] \cong (\sO_K/(\pi - 1))/(c\sO_K/(\pi - 1)) \cong \sO_K/((c) + (\pi - 1)) \cong \sO_K/c\sO_K$.
-\end{proof}
-
-\begin{lemma}\label{lem:prod-equiv-torsor}
-  Let $E,K,c$ be as in Lemma~\ref{lem:c-torsor}. Let $\sC$ be a $c$-torsion subgroup of $E$. If $\alpha_1,\dots,\alpha_n,\beta_1,\dots,\beta_n \in \sO_K$ are prime to $c$, then
-  \[
-    \prod_{i=1}^n E/\alpha_i(\sC) \approx \prod_{i=1}^n E/\beta_i(\sC)
-    \quad\Leftrightarrow\quad
-    \prod_{i=1}^n \alpha_i \equiv \prod_{i=1}^n \beta_i,
-  \]
-  where the second equivalence is as elements of $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
-\end{lemma}
-\begin{proof}
-  First we will reduce to the case where $\alpha_i = \beta_i = 1$ for $i < n$. Consider the $n \times n$ diagonal matrix $M$ with entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M\mod{c\sO_K} \in \Sl_n(\sO_K/c\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_n(\sO_K)$ such that $M \equiv M' \mod{c\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC^{n-1} \times \left(\prod \alpha_i\right)(\sC)$. This shows that
-  \[
-    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
-    \quad\Leftrightarrow\quad
-    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \cong \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
-  \]
-  where $\alpha = \prod\alpha_i$ and $\beta = \prod \beta_i$. Next we will apply the results from \cite{kani2011products} to ``cancel out'' the $E/\sC$ on both sides of the isomorphism on the right.
-
-  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. % We claim that $\sC$ is not an ideal subgroup\footnote{See \cite[Sec.~2, Pg.~302]{kani2011products} for the definition of ideal subgroup and kernel ideal.}.
-  Let $\sO$ be an order in $K$ isomorphic to $\End E/\sC$. Recall that since $E \to E/\sC$ is an isogeny of prime degree $c$, we have that $[\sO_K : \sO] \mid c$ \cite[Prop.~5]{kohel1996endomorphism}. Because $c$ is inert in $K$, $\sO_K$ has no ideals of norm $c$. So by \cite[Thm.~20b]{kani2011products}, $\sC$ is not an ideal subgroup of $E$ and $\End E/\sC \not\cong \End E$. Hence $[\sO_K : \sO] = c$. This argument holds for any $c$-torsion subgroup, so it shows that $\End E/\sC \cong \End E/\alpha(\sC) \cong \sO$. Thus by \cite[Thm.~20b]{kani2011products}, $\ker\tilde{\alpha}$ is an ideal subgroup. The same holds for $\beta$ as well.
-
-  For any isogeny $\phi$ with domain $E/\sC$, let $I(\phi)$ denote the kernel ideal of the subgroup $\ker\phi$.
-  %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
-  By \cite[Thm.~46]{kani2011products},
-  \begin{align*}
-    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
-    \\
-    \Leftrightarrow
-    \left(\bigoplus_{i=1}^{n-1} I(id)\right) \oplus I(\tilde{\alpha}) \cong \left(\bigoplus_{i=1}^{n-1} I(id)\right) \oplus I(\tilde{\beta}).
-  \end{align*}
-  where $id$ is the identity map on $E/\sC$ and the second isomorphism is as $\sO$-modules. By \cite[Thm.~48]{kani2011products}, the latter isomorphism is equivalent to
-  \[
-    I(id)^{n-1}I(\tilde{\alpha}) \cong I(id)^{n-1}I(\tilde{\beta}).
-  \]
-  But $I(id) = \End E/\sC$, so this is equivalent to $I(\tilde{\alpha}) \cong I(\tilde{\beta})$. Applying \cite[Thm.~46]{kani2011products} to these two ideals shows that
-  \[
-    I(\tilde{\alpha}) \cong I(\tilde{\beta})
-    \quad\Leftrightarrow\quad
-    E/\alpha(\sC) \cong E/\beta(\sC).
-  \]
-  Because $\sO_K^\times \cong \Aut E = \{\pm 1\}$, the last isomorphism holds if and only if $\alpha(\sC) = \beta(\sC)$. The conclusion then follows by Lemma~\ref{lem:c-torsor}.
-\end{proof}
+\textcolor{red}{TODO: introduce lemmas}
 
 \begin{lemma}\label{lem:silly}
   Let $\ell$ be a prime. Then there is a quadratic imaginary field $K$ such that $\ell$ splits into principal primes in $K$ and $\sO_K^\times = \{\pm 1\}$.
@@ -580,43 +523,184 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \begin{enumerate}
     \item $\sO_K^\times = \{\pm 1\}$
     \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$
-    \item There is an infinite number of rational primes $c$ such that
+    \item There is an infinite number of rational primes $q$ such that
     \begin{enumerate}
-      \item $c$ is inert in $K$
-      \item $c \equiv -1 \mod{g}$
-      \item $\alpha \mod c\sO_K \in \sO_K/c\sO_K$ is a $g$th power.
+      \item $q$ is inert in $K$
+      \item $q \equiv -1 \mod{g}$
+      \item $\alpha \mod q\sO_K \in \sO_K/q\sO_K$ is a $g$th power.
     \end{enumerate}
   \end{enumerate}
 \end{lemma}
 \begin{proof}
-  By Lemma~\ref{lem:silly}, we can find a $K$ satisfying the first two properties. Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$.
-  %The fields can be visualized in the following tower.
-  %\[
-  %\begin{tikzcd}
-  %  &
-  %  L
-  %  \arrow[d,-]
-  %  \\
-  %  &
-  %  K(\zeta_g)
-  %  \arrow[dl,-] \arrow[dr,-]
-  %  \\
-  %  \Q(\zeta_g)
-  %  \arrow[dr,-]
-  %  &&
-  %  K
-  %  \arrow[dl,-]
-  %  \\
-  %  &
-  %  \Q
-  %\end{tikzcd}
-  %\]
-  Let $\frak{c}$ be a prime of $L$ lying over a prime $c$ of $\Q$. Let $\sigma = \mathrm{Frob}(\frak{c}) \in \Gal(L/\Q)$. Note that $c$ is inert in $K$ if and only if $\sigma|_K$ is complex conjugation. Similarly, $c \equiv -1 \mod{g}$ if and only if $\sigma|_{\Q(\zeta_g)}$ is complex conjugation.
-%To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{c} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
-Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \cong \F_{c^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $\F_{c^2}$. Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. So by Chebotarev's density theorem, it remains to show there exists some $\sigma \in \Gal(L/\Q)$ such that $\sigma$ has order $2$ and restricts to complex multiplication in $K$ and $\Q(\zeta_g)$.
+  By Lemma~\ref{lem:silly}, we can find a $K$ satisfying the first two properties. Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. Let $\frak{q}$ be a prime of $L$ lying over a prime $q$ of $\Q$. Let $\sigma = \mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$. Note that $q$ is inert in $K$ if and only if $\sigma|_K$ is complex conjugation. Similarly, $q \equiv -1 \mod{g}$ if and only if $\sigma|_{\Q(\zeta_g)}$ is complex conjugation.
+%To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
+Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $\F_{q^2}$. Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. So by Chebotarev's density theorem, it remains to show there exists some $\sigma \in \Gal(L/\Q)$ such that $\sigma$ has order $2$ and restricts to complex multiplication in $K$ and $\Q(\zeta_g)$.
 
   Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
+
+\textcolor{red}{TODO: introduce lemmas}
+
+\begin{definition}
+  If $K$ is a quadratic imaginary field $K$, then we let $\Gt_q$ denote the group $(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times$. The field $K$ should be clear from context.
+\end{definition}
+
+\begin{lemma}\label{lem:c-torsor}
+  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of subgroups of $E$ with order $c$ form a $\Gt_q$ torsor.
+\end{lemma}
+\begin{proof}
+  Note that $E[q]$ is an $\sO_K/q\sO_K \cong \F_{q^2}$ module of size $q^2$. Therefore it is isomorphic to $\F_{q^2}$ as an $\F_{q^2}$ vector space. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the $1$ dimensional $\F_q$-submodules.
+\end{proof}
+
+\begin{definition}[{\cite[Sec.~2]{kani2011products}}]\label{def:ker-idl}
+  Let $A$ be an abelian variety over a field $K$. Given a regular left-ideal $I$ of $\End A$, let $H(I) = \cap_{\phi \in I}\ker \phi$. A finite subgroup scheme $H$ is a \emph{ideal subgroup} if $H = H(I)$ for some $I$. Symmetrically, given such an $H$, let $I(H) = \{\phi \in \End A \colon \phi(H) = 0\}$. We say $I$ is a \emph{kernel ideal} if it is the form $I(H)$ for some $H$.
+\end{definition}
+
+\begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]\label{thm:kani-20b}
+  Let $E$ be a CM elliptic curve over an algebraically closed field, and $H$ a finite subgroup scheme of $E$. Then $H$ is a kernel ideal if and only if there is an inclusion $\End E \hookrightarrow \End E/H$. Moreover, if $H_1,H_2$ are ideal subgroups of $E$, then $E/H_1 \approx E/H_2$ if and only if $I(H_1)$ is isomorphic to $I(H_2)$ as $\End(E)$ modules.
+  %$f_{E_H} \mid f_E$
+\end{theorem}
+
+\begin{lemma}\label{lem:c-end}
+  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a product of primes not equal to the characteristic of the base field and inert in $K$. If $\sC$ is a subgroup of $E$ of order $q$, then $\End(E/\sC) \cong \Z + q\sO_K$. In particular, every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
+\end{lemma}
+\begin{proof}
+  Factor $q = \prod_{i=1}^n q_i$, where each $q_i$ is a prime not equal to the characteristic of the base field, and is inert in $K$. We can write $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of order $q_i$.
+
+  The isogeny $\pi: E \to E/\sC$ factors into a chain of isogenies
+  \[
+    E
+    \xrightarrow{\pi_1}
+    E/\sC_1
+    \xrightarrow{\pi_2}
+    E/(\sC_1 + \sC_2)
+    \xrightarrow{\pi_3}
+    \cdots
+    \xrightarrow{\pi_n}
+    E/\sum_{i=1}^n\sC_i.
+  \]
+  Let $E_j = E/\sum_{i=1}^j\sC_i$ so $\pi_j: E_{j-1} \to E_j$. Recall that $\End(E_j)$ is isomorphic to an order in $K$, say $\sO_j$. Because $\pi_j$ has degree $c_j$, we know that $[\sO_j : \sO_{j-1}] = q_j$, $[\sO_{j-1} : \sO_j] = q_j$, or $\sO_{j-1} = \sO_j$ \cite[Prop.~5]{kohel1996endomorphism}. Therefore the index of $\sO_j$ in $\sO_K$ divides $\prod_{i=1}^{j}q_i$. Recall from \cite[Prop.~7.20]{cox2011primes} that ideals of $\sO_j$ that are prime to $f_j$ are in bijection with primes of $\sO_K$ avoiding $f_j$. In particular, there is no prime of $\sO_{j-1}$ of norm $q_j$. So $\ker\pi_j$ is not an ideal subgroup \cite[Prop.~23]{kani2011products}. Then by Theorem~\ref{thm:kani-20b}, $[\sO_{j-1} : \sO_j] = q_j$. It follows that $[\sO_K : \sO_n] = \prod_{i=1}^n q_i$ as required.
+\end{proof}
+
+\begin{lemma}\label{lem:c-subgps-distinct-quotients}
+  Let $E$ be an elliptic curve over an algebraically closed field with $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
+\end{lemma}
+\begin{proof}
+  Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so up to replacing $\sC$ with $\beta(\sC)$ and $\alpha$ with $\alpha\overline{\beta}$, it is enough to prove the claim for $\beta = 1$.
+
+  If $\alpha(\sC) = \sC$, then it is clear that $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the other direction. Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. We want to show that $\sC = \alpha(\sC)$.
+
+  Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\sC}\circ\alpha$. This shows that $\deg(\alpha) = \deg(\alpha')$\textcolor{red}{TODO: do we need $\alpha$ prime to be separable?}. Because $\alpha$ and $\alpha'$ are prime to $q$,
+  \[
+    \sC \times \ker(\alpha')
+    \cong
+    \ker(\pi_{\sC} \circ \alpha')
+    =
+    \ker(\tilde{u}\circ\pi_{\sC}\circ\alpha)
+    =
+    \ker(\pi_{\sC}\circ\alpha)
+    \cong
+    \sC \times \ker(\alpha).
+  \]
+  Therefore $\ker(\alpha) = \ker(\alpha')$, so $\alpha' = \alpha\circ u$ for some $u \in \sO_K^\times$. By hypothesis, $u = \pm 1$. So $\alpha(\sC) = \pm\alpha'(\sC) = \pm\sC = \sC$.
+
+  %Alternate proof of existence of u: $E/\alpha(\sC)$ and $E/\sC$ have a unique ascending isogeny. As $\tilde{u}$ is an isomorphism, it must send the ascending kernel of $E/\alpha(\sC)$ to that of $E/\sC$. The ascending kernel is the image of $E[c]$ under the quotient. Therefore $\pi^{\vee}\circ\tilde{u}\circ\pi_{\alpha(\sC)}$ is divisible by $c$, and so factors through an automorphism of $E$.
+\end{proof}
+
+\begin{lemma}\label{lem:prod-equiv-torsor}
+  Let $E$ be an elliptic curve over an algebraically closed field with $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Let $\sC$ be a subgroup of $E$ of order $q$. If $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, then
+  \[
+    \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
+    \,\Leftrightarrow\,
+    \prod_{i=1}^g \alpha_i \equiv \prod_{i=1}^g \beta_i \text{ in } \Gt_q.
+  \]
+\end{lemma}
+\begin{proof}
+  Let $\alpha = \prod_{i=1}^g\alpha_i$ and $\beta = \prod_{i=1}^g\beta_i$. Let $M$ be the diagonal matrix with diagonal entries $\alpha_1^{-1},\dots,\alpha_{g-1}^{-1}, \alpha_g^{-1}\alpha$. Note that $M\mod{c\sO_K} \in \Sl_g(\sO_K/q\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_g(\sO_K)$ such that $M \equiv M' \mod{q\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^g$ sending $\prod_{i=1}^g \alpha_i(\sC)$ to $\sC^{g-1} \times \left(\prod_{i=1}^g \alpha_i\right)(\sC)$. A similar construction with $\beta$ shows that
+  \[
+    \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
+    \,\Leftrightarrow\,
+    \left(E/\sC\right)^{g-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{g-1} \times E/\beta(\sC).
+  \]
+
+  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. Let $\sO = \Z + q\sO_K$, which by Lemma~\ref{lem:c-end} is isomorphic to $\End(E/\sC)$, $\End(E/\alpha(\sC))$, and $\End(E/\beta(\sC))$. Thus $\ker\tilde{\alpha}$ is an ideal subgroup by Theorem~\ref{thm:kani-20b}. The same holds for $\beta$ as well.
+
+  %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
+  For an isogeny $\phi$ with domain $E/\sC$, let $I_\phi$ denote the kernel ideal of $\ker(\phi)$, i.e. $I_\phi = \{f \in \End(E/\sC) \colon f(\ker(\phi)) = 0\}$.
+  By \cite[Thm.~46]{kani2011products},
+  \begin{align*}
+    \left(E/\sC\right)^{g-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{g-1} \times E/\beta(\sC)
+    \\
+    \Leftrightarrow
+    \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\alpha}} \cong \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\beta}},
+  \end{align*}
+  where the second isomorphism is as $\sO$-modules. By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products}), the latter isomorphism is equivalent to $I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}$.
+  By Theorem~\ref{thm:kani-20b},
+  \[
+    I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}
+    \,\Leftrightarrow\,
+    E/\alpha(\sC) \approx E/\beta(\sC).
+  \]
+  By Lemma~\ref{lem:c-subgps-distinct-quotients},
+  \[
+    E/\alpha(\sC) \approx E/\beta(\sC)
+    \,\Leftrightarrow\,
+    \alpha(\sC) = \beta(\sC).
+  \]
+  By Lemma~\ref{lem:c-torsor}, $\alpha(\sC) = \beta(\sC)$ if and only if $\alpha \equiv \beta$ in $\Gt_q$.
+\end{proof}
+
+\begin{lemma}\label{lem:lim-degree}
+  Let $A,A' \in M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$. Then there exists a sequence $x_i \in Y_0(\ell^n)$ such that
+  \[
+    \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
+  \]
+\end{lemma}
+\begin{proof}
+  Choose a quadratic imaginary field $K$, principal prime $\alpha\sO_K$ lying over $\ell$, and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for any $i$. Let $E$ be an elliptic curve over an algebraically closed field with endomorphism ring $\End(E) \cong \sO_K$.
+
+  If $\sC$ is a cyclic subgroup of $E$ with order prime to $\ell$, then $\alpha$ induces a chain of isogenies
+  \[
+    E/\sC \to E/\alpha(\sC) \to \cdots \to E/\alpha^n(\sC).
+  \]
+  Let $\alpha_{\sC,n}: E/\sC \to \cdots \to E/\alpha^n(\sC)$ be the composition of this chain. Then $\alpha_{\sC,n}$ is a cyclic $\ell^n$-isogeny, so the pair $(E/\sC,\alpha_{\sC,n})$ defines a point in $Y_0(\ell^n)$.
+
+    For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and similarly for $x_i$. Note that the $x_i$ are distinct points, as the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
+
+    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Proposition~\ref{prop:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$. By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
+    \[
+      \psi_{A}(x_1) \approx E/\gamma^{gn_1}(\sC_1) \times \cdots \times E/\gamma^{gn_g}(\sC_1).
+    \]
+    Let $\ell^{n_1'},\dots,\ell^{n_g'}$ be the invariant factors of $A'$, and let $S$ denote a set of representatives $\beta \in \sO_K$ of the solutions to the equation
+    \[
+      \left(\gamma^{n_1 + \cdots + n_g}\right)^g \equiv \beta^g\left(\gamma^{n_1' + \cdots + n_g'}\right)^g
+      \text{ in } \Gt_{q_1}.
+    \]
+    Note that $\#S = g$ because $g$ divides $q_1 + 1$, the order of $\Gt_{q_1}$. For any $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Proposition~\ref{prop:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\gamma^{gn_1'}(\beta(\sC_1)) \times \cdots \times E/\gamma^{gn_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
+
+  For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta$ such that
+  \[
+    \psi_{A}(x_2) \approx \psi_{A'}\left(E/\beta(\sC_1+\sC_2),\alpha_{\beta(\sC_1+\sC_2),m}\right)
+  \]
+  reduces to finding solutions $\beta$ to the equation
+  \[
+    \left(\gamma^{n_1 + \cdots + n_g}\right)^g \equiv \beta^g\left(\gamma^{n_1' + \cdots + n_g'}\right)^g
+    \text{ in } \Gt_{q_1} \times \Gt_{q_2}.
+  \]
+  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$. There are precisely $g^2$ solutions $\beta$ to this equation. Continuing this construction for $i=3,4,\dots$, we find that for $x_i$ there are $g^i$ points $y \in Y_0(\ell^m)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
+\end{proof}
+
+\textcolor{red}{TODO: introduce proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
+  Let $S$ denote the Zariski closure of $\sg \cap (X_A \times X_{A'})$ \textcolor{red}{TODO: should this be $\sg(F)$ for some alg. closed field $F$?}. By Lemma~\ref{lem:lim-degree}, $\sg \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$, whence the claim follows.
+\end{proof}
+
+
+
+
+
+
 
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
