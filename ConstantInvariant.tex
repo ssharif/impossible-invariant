@@ -37,11 +37,11 @@
 
 Let $\ag$ be the moduli space of principally polarized abelian varieties. If $A, B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+  Suppose that $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
 \end{theorem}
 Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of another result, stated below.
 
-Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$ to be the set
+Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
 \[
   \dlim_{T/R} S(T)
 \]
@@ -59,29 +59,64 @@ Then we will show the following.
 \end{theorem}
 As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case where $R = \C$.
 
-\paragraph{Overview.}
+\subsection{Overview}
 
-The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct morphisms $\psi_A: Y_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that \textcolor{red}{Restate below as theorems.}
+Let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinate is a power of a prime $\ell$ (see Definition~\ref{def:detl}). For any $A \in \detl$, we will define a map $\psi_A: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}). For $A \in \detl$, let $X_A$ denote the image of the map $\psi_A: Y_0(\det(A)) \to \ag$.
+
+In Section~\ref{sec:step-1} we prove the following theorem.
 
 \begin{theorem}\label{thm:curves-dense}
-  The Zariski closure of ${\cup X_i}$ is $\ag$
+  The Zariski closure of $\bigcup_{A \in \detl} X_A$ is $\ag$.
 \end{theorem}
 
+In Section~\ref{sec:step-2} we prove the following theorem.
+
 \begin{theorem}\label{thm:Sg-dense}
-  for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
+  If $A,A' \in \detl$, then $\sg \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
-\begin{enumerate}
-    \item\label{i:curves-dense} The Zariski closure of ${\cup X_i}$ is $\ag$ and
-    \item\label{i:Sg-dense} for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
-\end{enumerate}
-From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
-\[
-  \xymatrix{
-    \df \ar[r] \ar[d] & \ag \ar[d]^f \\
-    \ag \ar[r]^f & X.
-  }
-\]
-There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will imply that, viewed as functors, the latter map factors through $\sg$. Since the functor $\sg$ is ``dense'' in the sense of Theorem~\ref{thm:sg-c-dense}, we will have $\df = \ag \times \ag$, whence the claim follows.
+
+\textcolor{red}{TODO: introduce/move}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
+  For two subsets $X,Y$ of $\ag \times \ag$, we write $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
+  \begin{align*}
+    \sg
+    &\supseteq
+    \sg \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
+    \\
+    &=
+    \bigcup_{A,A'} \sg \cap (X_A \times X_{A'})
+    \\
+    &\prec
+    \bigcup_{A,A'} X_{A} \times X_{A'}
+    &&\text{By Theorem~\ref{thm:sg-c-dense}}
+    \\
+    &=
+    \left(\bigcup_{A} X_A\right) \times \left(\bigcup_{A'} X_{A'}\right)
+    \\
+    &\prec
+    \ag \times \ag
+    &&\text{By Theorem~\ref{thm:Sg-dense}}.
+  \end{align*}
+\end{proof}
+
+\textcolor{red}{TODO: introduce/move}
+
+\begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
+  Let $f: \ag \to X$ be a morphism of $R$-schemes. Consider the diagonal $\df$ determined by the diagram
+  \[
+  \begin{tikzcd}
+    \df \arrow[r] \arrow[d] & \ag \arrow[d,"f"]
+    \\
+    \ag \arrow[r,"f"] & X.
+  \end{tikzcd}
+  \]
+  There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will imply that, viewed as functors, the latter map factors through $\sg$.
+  Assume $f$ is separated \textcolor{red}{TODO: is this necessary?}.
+  % https://ncatlab.org/nlab/show/separated+morphism+of+schemes
+  Then $\df$ is closed in $\ag \times \ag$. By Theorem~\ref{thm:sg-c-dense}, this implies that $\df = \ag \times \ag$, whence the claim follows.\textcolor{red}{TODO: whence? I think this needs more.}
+\end{proof}
+
 
 
 \section{Constructing curves on $\ag$}
@@ -290,7 +325,7 @@ Here, the topology is the one induced by the Euclidean metric on the entries.
 %   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
 % \end{proof}
 
-\begin{definition}
+\begin{definition}\label{def:detl}
   For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
 \end{definition}
 
