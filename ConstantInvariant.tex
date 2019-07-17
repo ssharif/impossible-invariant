@@ -444,8 +444,9 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
 \label{sec:matr-dens-results}
 
 \begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
-  $\tclos{\Sl_g(\Z[1/\ell])} = \Sl_g(\R)$.
+  The topological closure of $\Sl_g(\Z[1/\ell])$ is $\Sl_g(\R)$.
 \end{lemma}
+Here, the topology is the one induced by the Euclidean metric on the entries.
 
 \begin{proof}
   Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
@@ -508,7 +509,7 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
 \begin{proposition}\label{prop:A-over-detA}
-  $\tclos{\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}} = \permat$.
+  The topological closure of ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is $\permat$.
 \end{proposition}
 
 \begin{proof}
@@ -525,50 +526,52 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 
 Let $\R^+$ denote the set of positive real numbers.
 \begin{lemma}\label{lemma:holomorphic-closure-irM}
-  $\hclos{\{ irM | M \in \permat, r \in \R^+\}} = \hh_g$.
+  The holomorphic closure of ${\{ irM | M \in \permat, r \in \R^+\}}$ is $\hh_g$.
 \end{lemma}
+Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$ containing $X$ for which any holomorphic function that vanishes on $X$ also vanishes on $\overline{X}$. Observe that the Euclidean topology is a refinement of the holomorphic topology, which is a refinement of the Zariski topology.
 
 \begin{proof}
   This is a standard result in multivariable complex analysis, which we are all completely familiar with.
 \end{proof}
 
-\begin{lemma}
+% \begin{lemma}
+%   The holomorphic closure of ${\bigcup_{A \in \detl} \psi_A(i\R^+)}$ is $\hh_g$.
+% \end{lemma}
+
+% \begin{proof}
+% \end{proof}
+
+% \begin{lemma}
+%   \[
+%     \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
+%   \]
+% \end{lemma}
+
+% \begin{proof}
+%   Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
+% \end{proof}
+
+\begin{proposition}
+  The Zariski closure of
   \[
-    \hclos{\bigcup_{A \in \detl} \psi_A(i\R^+)} = \hh_g.
+    {\bigcup_{A \in \detl} \im \psimod}
   \]
-\end{lemma}
+  is $\ag$.
+\end{proposition}
 
 \begin{proof}
-  Observe that if $X$ is a subset of a complex manifold, then $\tclos{X} \subset \hclos{X}$. Now
+  Observe that if $X$ is a subset of a complex manifold, then its topological closure is contained in its holomorphic closure. Now
   \begin{align*}
-    \cup \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
-               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \det l\}.
+    \cup_A \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
+               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \detl\}.
   \end{align*}
   By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
   \[
     \{irM | r \in \R^+, M \in \permat\}.
   \]
-  The result now follows from Lemma~\ref{lemma:holomorphic-closure-irM}.
-\end{proof}
+  By Lemma~\ref{lemma:holomorphic-closure-irM}, the holomorphic closure of $\cup_A \psi_A(i\R^+)$ is $\hh_g$. Therefore the holomorphic closure of $\cup_A \im \psi_A$ is also $\hh_g$. Passing to the quotient, if we consider $\ag$ as a complex manifold, we have that $\cup_A \im \psimod$ is holomorphically dense in $\ag$.
 
-\begin{lemma}
-  \[
-    \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
-  \]
-\end{lemma}
-
-\begin{proof}
-  Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
-\end{proof}
-
-\begin{proposition}
-  \[
-    \zclos{\bigcup_{A \in \detl} \im \psimat} = \ag.
-  \]
-\end{proposition}
-
-\begin{proof}
-  By definition of $\psimat$, the $\im \psimat \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so its image in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense.
+  By definition of $\psimod$,  $\im \psimod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so the image of $\psimod$ in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense, and the claim follows.
 \end{proof}
 
 \section{Characteristic $p$}
