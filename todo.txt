@@ -1,5 +1,29 @@
 
-* Move matrix results to §2
+Shahed
+* DONE Streamline §5 proofs.
+* DONE Replace §2 with §5.
+* DONE Set N = det A.
+* Show agreement of ψ_A and ψ_A mod.
+* Reference Eric's paper in ψ_A business.
+* Prove main theorems.
+* Remove functor formalism—*maybe* it will come up in the proof of main theorem.
+* Delete closure notations, use words.
+* DONE Number equations by section.
+* Fix Theorem 6.1 statement, state in introduction
+* Cryptographic motivation
+* Change X₀(ℓⁿ) to Y₀
+** Define Y₀
+** Notation: (E, C) or (E, ϕ)
+Travis
+* Prove the "Step 1" and "Step 2" theorems.
 * Prove 5.7.
+* Simplify proof of torsor result (4.3).
+* Change "n-torsion" to "cyclic subgroup of order n" where appropriate.
+* Change all dimensions to g.
+* Put in defns of kernel ideal and ideal subgroup.
+** And Theorem 20b
+* Change I(α) to I_α.
 * for E/C x E/alpha*C = E/C x E/beta*C, see https://link.springer.com/content/pdf/10.1007%2Fs13348-010-0029-1.pdf. Proposition 65 (use n=1 case to bootstrap n=2 without computing the lattices directly)
 ** Show that I(α-tilde) = χ(α)
+** Finish proof of 4.4.
+* Change c to q

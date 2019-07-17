@@ -37,35 +37,44 @@
 
 Let $\ag$ be the moduli space of principally polarized abelian varieties. If $A, B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose $f: \ag \to X$ be a morphism of schemes over $\C$. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+  Suppose $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
 \end{theorem}
-We will also show that the theorem holds when $\C$ is replaced by either $\Q$ or $\Z$. We will deduce the theorem as a corollary of another result, stated below.
+Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of another result, stated below.
 
 Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$ to be the set
 \[
   \dlim_{T/R} S(T)
 \]
-where the union is over all $R$-schemes $T$. Let
+where the limit is over all $R$-schemes $T$. Let
 \[
   \sg: \rschemes \to \mathcal{P}((\ag \times \ag)[R])
 \]
-be the functor from $R$-schemes to the power set of $(\ag \times \ag)[R]$ which, for $T$ an $R$-scheme, gives the set
+be the functor from $R$-schemes to the power set of $(\ag \times \ag)[R]$ that sends an $R$-scheme $T$ to the set
 \[
   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
 \]
 Then we will show the following.
 \begin{theorem}\label{thm:sg-c-dense}
-  $\sg(\C)$ is Zariski dense in $\ag \times \ag$.
+  If $R$ is a subring of $\C$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
+As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case where $R = \C$.
 
 \paragraph{Overview.}
 
-The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct maps $X_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that
+The idea is as follows. Choose a prime $\ell$. For $n$ an integer, we will construct morphisms $\psi_A: Y_0(\ell^n) \to \ag$. For each such map, the image of a point $(E, \phi)$ will be an abelian variety isogenous to $E^g$. As $n$ and the choice of maps vary, we obtain a sequence of curves $X_i \subset \ag$. We will show that \textcolor{red}{Restate below as theorems.}
+
+\begin{theorem}\label{thm:curves-dense}
+  The Zariski closure of ${\cup X_i}$ is $\ag$
+\end{theorem}
+
+\begin{theorem}\label{thm:Sg-dense}
+  for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
+\end{theorem}
 \begin{enumerate}
-    \item\label{i:curves-dense} $\overline{\cup X_i} = \ag$ and
-    \item\label{i:Sg-dense} for all $i,j$, $\overline{S_g \cap (X_i \times X_j)} = X_i \times X_j$.
+    \item\label{i:curves-dense} The Zariski closure of ${\cup X_i}$ is $\ag$ and
+    \item\label{i:Sg-dense} for all $i,j$, the Zariski closure of $\sg \cap (X_i \times X_j)$ is $X_i \times X_j$.
 \end{enumerate}
-Here, the bar denotes Zariski closure. From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
+From these two properties, Theorem~\ref{thm:sg-c-dense} will follow. To obtain Theorem~\ref{thm:invariant-c-constant}, construct the fiber product
 \[
   \xymatrix{
     \df \ar[r] \ar[d] & \ag \ar[d]^f \\
@@ -80,22 +89,22 @@ There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will impl
 
 Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $X_0(\ell^n) \to \ag$ whose images $X_i$ are curves in $\ag$. These curves will be used in the steps outlined in Section~\ref{sec:introduction}.
 
-We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove step~\ref{i:Sg-dense}, and the complex analytic version to prove step~\ref{i:curves-dense}. \textcolor{red}{TODO: explain that the latter does not carry to characteristic $p$}
+We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Unfortunately, the latter result does not directly carry over to positive characteristic, so we will need a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $N \mid \det A$; say $\det A = M$. The matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Our choice of $A$ implies that $\rho_A$ corresponds to a polarization $\lambda_A$ of degree $M^2$---namely, it is $\lambda_{\Pi}\rho_A$, where $\lambda_\Pi$ is the principal product polarization. Let $K(A) \subset E^g$ be $\ker \lambda_A \cap C^g$.
+Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
 
 \begin{lemma}
   $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
 \end{lemma}
 
 \begin{proof}
-  Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda^{(C)} \subset C^g$ is isotropic. The claim follows.
+  Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda_A^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda_A^{(C)} \subset C^g$ is isotropic. The claim follows.
 \end{proof}
 
-Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by [Milne, AV, Prop. 16.8], there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
+Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
 
 We define $\psimod: X_0(N) \to \ag$ by
 \[
@@ -124,11 +133,11 @@ We define $\psimod: X_0(N) \to \ag$ by
   \begin{align*}
     \ker \rho_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
   \end{align*}
-  and so $\ker \rho_D \cap H = (N/d_1)C \times \cdots \times (N/d_g)C$. Furthermore, $\rho_V(H) = H$, and so
+  and so $(\ker \rho_D) \cap H = (N/d_1)C \times \cdots \times (N/d_g)C$. Furthermore, $\rho_V(H) = H$, and so
   \[
-    \rho_V(\ker \rho_A \cap H) = \ker \rho_D \cap H.
+    \rho_V((\ker \rho_A) \cap H) = (\ker \rho_D) \cap H.
   \]
-  Therefore the quotients of $E^g$ by $\ker \rho_A \cap H$ and $\ker \rho_D \cap H$ respectively are (weakly) isomorphic. The claim follows.
+  Therefore the quotients of $E^g$ by $(\ker \rho_A) \cap H$ and $(\ker \rho_D) \cap H$ respectively are (weakly) isomorphic. The claim follows.
 \end{proof}
 
 \subsection{Analytic description}
@@ -228,35 +237,165 @@ In this section, we focus on Step~\ref{i:curves-dense} outlined in Section~\ref{
 \]
 where $A$ ranges over all symmetric positive definite integer matrices whose determinant is a power of $\ell$. Recall that $\ell$ is fixed.\textcolor{red}{TODO: reference where fixing of $\ell$ occurs}
 
-We will actually show the slightly stronger claim that $\cup_{A} \psi_{A,n}(i\R)$ is holomorphically dense, where $A$ ranges over ???. That is, if any holomorphic function $f$ on $\ag$ vanishes on $\cup_{A} \psi_{A,n}(i\R)$, then $f$ vanishes everywhere.
+\begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
+  The topological closure of $\Sl_g(\Z[1/\ell])$ is $\Sl_g(\R)$.
+\end{lemma}
+Here, the topology is the one induced by the Euclidean metric on the entries.
 
-For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite matrices in $\Sl_g(R)$. Recall that for any $A \in \Sympd_g(\Z[1/\ell])$, the map $\psi_{A,n}$ is induced from the map $\psi_A: \hh \to \hh_g$ given by $\tau \mapsto \tau A$. Therefore
-\[
-  \bigcup_{A \in \Sympd_g(\Z[1/\ell])} \psi_A(i\R) = i\R\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right).
+\begin{proof}
+  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
+  \[
+    G = E_n \cdots E_2 E_1
+  \]
+  where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
+\end{proof}
+
+% \begin{proof}[Alternative proof]
+%   Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
+%   \[
+%     \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
+%   \]
+%   Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
+% \end{proof}
+
+% \begin{proof}
+%   The group scheme $\Sl_g$ is a connected reductive group, and hence is unirational. (???cite) Since $\Z[1/\ell]$ is topologically dense in $\R$, the claim follows.
+
+%   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
+% \end{proof}
+
+\begin{definition}
+  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
+\end{definition}
+
+\begin{lemma}\label{lemma:ggt-spd-detl}
+  If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
+  \[
+    \ell^n GG^t \in \detl.
+  \]
+\end{lemma}
+
+\begin{proof}
+  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
+\end{proof}
+
+
+\begin{definition}
+  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
+\end{definition}
+
+\begin{lemma}\label{lemma:ggt-periodmatrices}
+  $\permat = \{GG^t | G \in \Sl_g(\R)\}$.
+\end{lemma}
+
+\begin{proof}
+  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
+  \[
+    G = O
+    \begin{bmatrix}
+      \sqrt{d_1} & & & \\
+      & \sqrt{d_2} & & \\
+      & & \ddots & \\
+      & & & \sqrt{d_{g}}
+    \end{bmatrix}.
 \]
-
-\begin{lemma}
-  $\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right)$ is holomorphically dense in $\Sympd_g(\R)$.
-\end{lemma}
-\begin{proof}
-  \textcolor{red}{TODO}
+Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
-\begin{lemma}
-  $i\R\Sympd_g(\R)$ is holomorphically dense in $\hh_g$.
-\end{lemma}
+\begin{proposition}\label{prop:A-over-detA}
+  The topological closure of ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is $\permat$.
+\end{proposition}
+
 \begin{proof}
-  \textcolor{red}{TODO}
+  In the set
+  \[
+    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
+  \]
+  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
+  \[
+    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
+  \]
+  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
-It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
+Let $\R^+$ denote the set of positive real numbers.
+\begin{lemma}\label{lemma:holomorphic-closure-irM}
+  The holomorphic closure of ${\{ irM | M \in \permat, r \in \R^+\}}$ is $\hh_g$.
+\end{lemma}
+Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$ containing $X$ for which any holomorphic function that vanishes on $X$ also vanishes on $\overline{X}$. Observe that the Euclidean topology is a refinement of the holomorphic topology, which is a refinement of the Zariski topology.
+
+\begin{proof}
+  This is a standard result in multivariable complex analysis, which we are all completely familiar with.
+\end{proof}
+
+% \begin{lemma}
+%   The holomorphic closure of ${\bigcup_{A \in \detl} \psi_A(i\R^+)}$ is $\hh_g$.
+% \end{lemma}
+
+% \begin{proof}
+% \end{proof}
+
+% \begin{lemma}
+%   \[
+%     \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
+%   \]
+% \end{lemma}
+
+% \begin{proof}
+%   Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
+% \end{proof}
+
+\begin{theorem}
+  The Zariski closure of
+  \[
+    {\bigcup_{A \in \detl} \im \psimod}
+  \]
+  is $\ag$.
+\end{theorem}
+
+\begin{proof}
+  Observe that if $X$ is a subset of a complex manifold, then its topological closure is contained in its holomorphic closure. Now
+  \begin{align*}
+    \cup_A \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
+               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \detl\}.
+  \end{align*}
+  By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
+  \[
+    \{irM | r \in \R^+, M \in \permat\}.
+  \]
+  By Lemma~\ref{lemma:holomorphic-closure-irM}, the holomorphic closure of $\cup_A \psi_A(i\R^+)$ is $\hh_g$. Therefore the holomorphic closure of $\cup_A \im \psi_A$ is also $\hh_g$. Passing to the quotient, if we consider $\ag$ as a complex manifold, we have that $\cup_A \im \psimod$ is holomorphically dense in $\ag$.
+
+  By definition of $\psimod$,  $\im \psimod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so the image of $\psimod$ in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense, and the claim follows.
+\end{proof}
+% We will actually show the slightly stronger claim that $\cup_{A} \psi_{A,n}(i\R)$ is holomorphically dense, where $A$ ranges over ???. That is, if any holomorphic function $f$ on $\ag$ vanishes on $\cup_{A} \psi_{A,n}(i\R)$, then $f$ vanishes everywhere.
+
+% For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite matrices in $\Sl_g(R)$. Recall that for any $A \in \Sympd_g(\Z[1/\ell])$, the map $\psi_{A,n}$ is induced from the map $\psi_A: \hh \to \hh_g$ given by $\tau \mapsto \tau A$. Therefore
+% \[
+%   \bigcup_{A \in \Sympd_g(\Z[1/\ell])} \psi_A(i\R) = i\R\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right).
+% \]
+
+% \begin{lemma}
+%   $\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right)$ is holomorphically dense in $\Sympd_g(\R)$.
+% \end{lemma}
+% \begin{proof}
+%   \textcolor{red}{TODO}
+% \end{proof}
+
+% \begin{lemma}
+%   $i\R\Sympd_g(\R)$ is holomorphically dense in $\hh_g$.
+% \end{lemma}
+% \begin{proof}
+%   \textcolor{red}{TODO}
+% \end{proof}
+
+% It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
 
 \section{Step 2}
 \label{sec:step-2}
 
 In this section, we focus on Step~\ref{i:Sg-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
 \[
-  \zclos{S_g \cap (X_i \times X_j)} = X_i \times X_j.
+  \zclos{\sg \cap (X_i \times X_j)} = X_i \times X_j.
 \]
 Here $X_i$ and $X_j$ are images of two maps of the form $\psi_{\vec{n},\lambda}$ from Section~\ref{sec:geo-desc} (see Equation~\ref{def:psi-A-n}).
 
@@ -274,11 +413,11 @@ Before we prove Lemma~\ref{lem:lim-degree}, we will show how to finish the argum
 \begin{corollary}
   Let $\psi$ and $\psi'$ be as in Lemma~\ref{lem:lim-degree}, and let $X$ and $X'$ be their images in $\ag$. Then
   \[
-    \zclos{S_g \cap (X \times X')} = X \times X'.
+    \zclos{\sg \cap (X \times X')} = X \times X'.
   \]
 \end{corollary}
 \begin{proof}
-  By Lemma~\ref{lem:lim-degree}, $S_g \cap (X \times X')$ has an infinite number of geometric points. This implies that $\dim \zclos{S_g \cap (X \times X')} \geq 1$. Suppose the dimension equals $1$, so that $\zclos{S_g \cap (X \times X')}$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim \zclos{S_g \cap (X \times X')} \geq 2$, whence the claim follows.
+  By Lemma~\ref{lem:lim-degree}, $\sg \cap (X \times X')$ has an infinite number of geometric points. This implies that $\dim \zclos{\sg \cap (X \times X')} \geq 1$. Suppose the dimension equals $1$, so that $\zclos{\sg \cap (X \times X')}$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim \zclos{\sg \cap (X \times X')} \geq 2$, whence the claim follows.
 \end{proof}
 
 We now return to the proof of Lemma~\ref{lem:lim-degree}.
@@ -341,11 +480,11 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
 \begin{lemma}\label{lem:prod-equiv-torsor}
   Let $E,K,c$ be as in Lemma~\ref{lem:c-torsor}. Let $\sC$ be a $c$-torsion subgroup of $E$. If $\alpha_1,\dots,\alpha_n,\beta_1,\dots,\beta_n \in \sO_K$ are prime to $c$, then
   \[
-    \prod E/\alpha_i(\sC) \cong \prod E/\beta_i(\sC)
+    \prod_{i=1}^n E/\alpha_i(\sC) \approx \prod_{i=1}^n E/\beta_i(\sC)
     \quad\Leftrightarrow\quad
-    \prod \alpha_i \equiv \prod \beta_i,
+    \prod_{i=1}^n \alpha_i \equiv \prod_{i=1}^n \beta_i,
   \]
-  where the first isomorphism is as unpolarized abelian varieties, and the second equivalence is as elements of $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
+  where the second equivalence is as elements of $(\sO_K/c\sO_K)^\times/(\Z/c\Z)^\times$.
 \end{lemma}
 \begin{proof}
   First we will reduce to the case where $\alpha_i = \beta_i = 1$ for $i < n$. Consider the $n \times n$ diagonal matrix $M$ with entries $\alpha_1^{-1},\alpha_2^{-1},\dots,\alpha_{n-1}^{-1}, (\alpha_1 \cdots \alpha_{n-1})$. Note that $M\mod{c\sO_K} \in \Sl_n(\sO_K/c\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_n(\sO_K)$ such that $M \equiv M' \mod{c\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^n$ sending $\prod \alpha_i(\sC)$ to $\sC^{n-1} \times \left(\prod \alpha_i\right)(\sC)$. This shows that
@@ -356,22 +495,23 @@ We now return to the proof of Lemma~\ref{lem:lim-degree}.
   \]
   where $\alpha = \prod\alpha_i$ and $\beta = \prod \beta_i$. Next we will apply the results from \cite{kani2011products} to ``cancel out'' the $E/\sC$ on both sides of the isomorphism on the right.
 
-  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. We claim that $\ker\tilde{\alpha}$ is not an ideal subgroup\footnote{See \cite[Sec.~2, Pg.~302]{kani2011products} for the definition of ideal subgroup and kernel ideal.}. Let $\sO$ be an order in $K$ isomorphic to $\End E/\sC$. Recall that since $E \to E/\sC$ is an isogeny of prime degree $c$, we have that $[\sO_K : \sO] \mid c$ \cite[Prop.~5]{kohel1996endomorphism}. Because $c$ is inert in $K$, $\sO_K$ has no ideals of norm $c$. So by \cite[Thm.~20b]{kani2011products}, $\sC$ is not an ideal subgroup of $E$ and $\End E/\sC \not\cong \End E$. Hence $[\sO_K : \sO] = c$. This argument holds for any $c$-torsion subgroup, so it shows that $\End E/\sC \cong \End E/\alpha(\sC) \cong \sO$. Thus by \cite[Thm.~20b]{kani2011products}, $\ker\tilde{\alpha}$ is an ideal subgroup. The same holds for $\beta$ as well.
+  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. % We claim that $\sC$ is not an ideal subgroup\footnote{See \cite[Sec.~2, Pg.~302]{kani2011products} for the definition of ideal subgroup and kernel ideal.}.
+  Let $\sO$ be an order in $K$ isomorphic to $\End E/\sC$. Recall that since $E \to E/\sC$ is an isogeny of prime degree $c$, we have that $[\sO_K : \sO] \mid c$ \cite[Prop.~5]{kohel1996endomorphism}. Because $c$ is inert in $K$, $\sO_K$ has no ideals of norm $c$. So by \cite[Thm.~20b]{kani2011products}, $\sC$ is not an ideal subgroup of $E$ and $\End E/\sC \not\cong \End E$. Hence $[\sO_K : \sO] = c$. This argument holds for any $c$-torsion subgroup, so it shows that $\End E/\sC \cong \End E/\alpha(\sC) \cong \sO$. Thus by \cite[Thm.~20b]{kani2011products}, $\ker\tilde{\alpha}$ is an ideal subgroup. The same holds for $\beta$ as well.
 
   For any isogeny $\phi$ with domain $E/\sC$, let $I(\phi)$ denote the kernel ideal of the subgroup $\ker\phi$.
   %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
   By \cite[Thm.~46]{kani2011products},
   \begin{align*}
-    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \cong \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
+    \left(E/\sC\right)^{n-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{n-1} \times E/\beta(\sC)
     \\
     \Leftrightarrow
-    \left(\bigoplus_{i=1}^{n-1} I(\tilde{id})\right) \oplus I(\tilde{\alpha}) \cong \left(\bigoplus_{i=1}^{n-1} I(\tilde{id})\right) \oplus I(\tilde{\beta}).
+    \left(\bigoplus_{i=1}^{n-1} I(id)\right) \oplus I(\tilde{\alpha}) \cong \left(\bigoplus_{i=1}^{n-1} I(id)\right) \oplus I(\tilde{\beta}).
   \end{align*}
-  where $id$ is the identity map on $E/\sC$. By \cite[Thm.~48]{kani2011products}, the latter isomorphism is equivalent to
+  where $id$ is the identity map on $E/\sC$ and the second isomorphism is as $\sO$-modules. By \cite[Thm.~48]{kani2011products}, the latter isomorphism is equivalent to
   \[
-    I(\tilde{id})^{n-1}I(\tilde{\alpha}) \cong I(\tilde{id})^{n-1}I(\tilde{\beta}).
+    I(id)^{n-1}I(\tilde{\alpha}) \cong I(id)^{n-1}I(\tilde{\beta}).
   \]
-  But $I(\tilde{id}) = \End E/\sC$, so this is equivalent to $I(\tilde{\alpha}) \cong I(\tilde{\alpha})$. Appyling \cite[Thm.~46]{kani2011products} to these two ideals shows that
+  But $I(id) = \End E/\sC$, so this is equivalent to $I(\tilde{\alpha}) \cong I(\tilde{\beta})$. Applying \cite[Thm.~46]{kani2011products} to these two ideals shows that
   \[
     I(\tilde{\alpha}) \cong I(\tilde{\beta})
     \quad\Leftrightarrow\quad
@@ -430,165 +570,25 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{c} \cong \sO_K/c\sO_K \con
   Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
 
-\section{Matrix density results}
-\label{sec:matr-dens-results}
-
-\begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
-  $\tclos{\Sl_g(\Z[1/\ell])} = \Sl_g(\R)$.
-\end{lemma}
-
-\begin{proof}
-  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
-  \[
-    G = E_n \cdots E_2 E_1
-  \]
-  where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
-\end{proof}
-
-\begin{proof}[Alternative proof]
-  Let $G = [g_{ij}] \in \Sl_g(\R)$. Let $X = [x_{ij}]$ be a matrix of $g^2$ variables, and consider the determinant map $\det: \R[\{x_{ij}\}] \to \R$. Choose $r,s$ so that
-  \[
-    \frac{\partial \det}{\partial x_{rs}}(G) \neq 0.
-  \]
-  Since $\Z[1/\ell]$ is dense in $\R$, for $(i,j) \neq (r,s)$ we can find $a_{ij} \in \Z[1/\ell]$ which is arbitrarily close to $g_{ij}$. By our hypotheses on $(r,s)$, there exists $a_{rs} \in \R$ such that $\det [a_{ij}] = 1$. Clearly $a_{rs} \in \Z[1/\ell]$. The determinant is continuous, so $a_{rs}$ must also be close to $g_{rs}$.
-\end{proof}
-
-% \begin{proof}
-%   The group scheme $\Sl_g$ is a connected reductive group, and hence is unirational. (???cite) Since $\Z[1/\ell]$ is topologically dense in $\R$, the claim follows.
-
-%   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
-% \end{proof}
-
-\begin{definition}
-  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
-\end{definition}
-
-\begin{lemma}\label{lemma:ggt-spd-detl}
-  If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
-  \[
-    \ell^n GG^t \in \detl.
-  \]
-\end{lemma}
-
-\begin{proof}
-  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
-\end{proof}
-
-
-\begin{definition}
-  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
-\end{definition}
-
-\begin{lemma}\label{lemma:ggt-periodmatrices}
-  $\permat = \{GG^t | G \in \Sl_g(\R)\}$.
-\end{lemma}
-
-\begin{proof}
-  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
-  \[
-    G = O
-    \begin{bmatrix}
-      \sqrt{d_1} & & & \\
-      & \sqrt{d_2} & & \\
-      & & \ddots & \\
-      & & & \sqrt{d_{g}}
-    \end{bmatrix}.
-\]
-Then $A = GG^t$ and $G \in \Sl_g(\R)$.
-\end{proof}
-
-\begin{proposition}\label{prop:A-over-detA}
-  $\tclos{\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}} = \permat$.
-\end{proposition}
-
-\begin{proof}
-  In the set
-  \[
-    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
-  \]
-  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
-  \[
-    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
-  \]
-  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
-\end{proof}
-
-Let $\R^+$ denote the set of positive real numbers.
-\begin{lemma}\label{lemma:holomorphic-closure-irM}
-  $\hclos{\{ irM | M \in \permat, r \in \R^+\}} = \hh_g$.
-\end{lemma}
-
-\begin{proof}
-  This is a standard result in multivariable complex analysis, which we are all completely familiar with.
-\end{proof}
-
-\begin{lemma}
-  \[
-    \hclos{\bigcup_{A \in \detl} \psi_A(i\R^+)} = \hh_g.
-  \]
-\end{lemma}
-
-\begin{proof}
-  Observe that if $X$ is a subset of a complex manifold, then $\tclos{X} \subset \hclos{X}$. Now
-  \begin{align*}
-    \cup \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
-               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \det l\}.
-  \end{align*}
-  By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
-  \[
-    \{irM | r \in \R^+, M \in \permat\}.
-  \]
-  The result now follows from Lemma~\ref{lemma:holomorphic-closure-irM}.
-\end{proof}
-
-\begin{lemma}
-  \[
-    \hclos{\bigcup_{A \in \detl} \im \psi_A} = \hh_g.
-  \]
-\end{lemma}
-
-\begin{proof}
-  Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
-\end{proof}
-
-\begin{proposition}
-  \[
-    \zclos{\bigcup_{A \in \detl} \im \psimat} = \ag.
-  \]
-\end{proposition}
-
-\begin{proof}
-  By definition of $\psimat$, the $\im \psimat \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so its image in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense.
-\end{proof}
-
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
 
 \begin{theorem}
-  Let $\psivec: X_0(\ell^n) \to \ao^g$ be the map defined in Section~\ref{sec:geo-desc}. Then $\bigcup\im\psivec$ is dense in $\ao^g$.
+ Let $\psivec: Y_0(\ell^n) \to \ao^g$ be the map defined in Section~\ref{sec:geo-desc}. Then $\bigcup\im\psivec$ is dense in $\ao^g$.
 \end{theorem}
 \begin{proof}
-  Let $E_0$ be an ordinary elliptic curve with CM by $\sO_K$ for some quadratic imaginary field $K$. Choose a prime $\ell$ inert in $K$ and fix an $\ell$-torsion subgroup $\sC_0$ of $E_0$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that since $\sC_0$ is not a kernel ideal of $E_0$, we must have that $\End E_1 \cong \Z + \ell\sO_K$.
+ Let $E_0$ be an ordinary elliptic curve with CM by $\sO_K$ for some quadratic imaginary field $K$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Kani (give ref), since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
 
-  We can continue this construction recursively. Let $\sC_i$ be any $\ell$-torsion subgroup of $E_i$ other than $\pi_{i-1}(\sC_{i-1})$. Then let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$ by \textcolor{red}{TODO: cite Kani?}.
+ For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$ by \textcolor{red}{TODO: cite Kani?}.
 
-  The composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$ because \textcolor{red}{TODO: there is no backtracking}.
+ For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$ because \textcolor{red}{TODO: there is no backtracking}.
 
-  Note that the set $\{E_i\}$ is an infinite set of distinct elliptic curves, so it is dense in $\ao$. Therefore the product $\{E_i\} \times \cdots \times \{E_i\}$ is dense in $\ao^g$. It remains to show that this set lies in $\bigcup\im\psivec$.
-
-  Let $E_{n_1},\dots,E_{n_g} \in E$. Choose $n > \max\{n_i\}$. Then let $A$ be the diagonal matrix with entries $\ell^{n_1},\dots,\ell^{n_g}$. Consider the point $(E_0,\pi^{(n)}) \in X_0(\ell^n)$. By construction,
-  \[
-    \psivec(E_0,\pi^{(n)}) \cong E_{n_1} \times \cdots \times E_{n_g}.
-  \]
+ Let $S = \{E_i\}_{i=0}^\infty$. Let $(E_{n_1},\dots,E_{n_g}) \in S$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
+ \[
+   \psivec(E_0,\pi^{(n)}) \cong E_{n_1} \times \cdots \times E_{n_g}.
+ \]
+(Doesn't one need equality, not isomorphism, in the above? Also, one needs a map to $\ao^g$, not a map to $A_g$.)  Thus, $S \subset \bigcup\psivec(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
-
-
-
-%We will show $\cup \im \psivec$ is dense in $\ao^g$. Choose a sequence of elliptic curves $(E_i)$ over $\fpbar$ as follows. Fix an ordinary curve $E_0$ with a cyclic $\ell$-isogeny $E_0 \to E_1$ so that the endomorphism rings are different. Repeat with $E_i$\textcolor{red}{Travis: I think we want to avoid going back, so we could say the endomorphism ring is strictly smaller}. Then $\overline{\{E_i\}} = \ao$, and hence
-%\[
-%  \overline{\{E_{i_1} \times \cdots \times E_{i_g}\}} = \ao^g.
-%\]
-%Furthermore, each element in the left-hand set above is in the image of $\psivec$ for some $\vec{n}$.
 
 \bibliographystyle{alpha}
 \bibliography{./references}
