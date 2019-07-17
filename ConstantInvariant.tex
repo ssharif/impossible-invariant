@@ -575,21 +575,20 @@ Let $\R^+$ denote the set of positive real numbers.
 \label{sec:characteristic-p}
 
 \begin{theorem}
-  Let $\psivec: X_0(\ell^n) \to \ao^g$ be the map defined in Section~\ref{sec:geo-desc}. Then $\bigcup\im\psivec$ is dense in $\ao^g$.
+  Let $\psivec: Y_0(\ell^n) \to \ao^g$ be the map defined in Section~\ref{sec:geo-desc}. Then $\bigcup\im\psivec$ is dense in $\ao^g$.
 \end{theorem}
 \begin{proof}
-  Let $E_0$ be an ordinary elliptic curve with CM by $\sO_K$ for some quadratic imaginary field $K$. Choose a prime $\ell$ inert in $K$ and fix an $\ell$-torsion subgroup $\sC_0$ of $E_0$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that since $\sC_0$ is not a kernel ideal of $E_0$, we must have that $\End E_1 \cong \Z + \ell\sO_K$.
+  Let $E_0$ be an ordinary elliptic curve with CM by $\sO_K$ for some quadratic imaginary field $K$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Kani (give ref), since $\sC_0$ is not a kernel ideal of $E_0$, we must have that $\End E_1 \cong \Z + \ell\sO_K$.
 
   We can continue this construction recursively. Let $\sC_i$ be any $\ell$-torsion subgroup of $E_i$ other than $\pi_{i-1}(\sC_{i-1})$. Then let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$ by \textcolor{red}{TODO: cite Kani?}.
 
   The composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$ because \textcolor{red}{TODO: there is no backtracking}.
 
-  Note that the set $\{E_i\}$ is an infinite set of distinct elliptic curves, so it is dense in $\ao$. Therefore the product $\{E_i\} \times \cdots \times \{E_i\}$ is dense in $\ao^g$. It remains to show that this set lies in $\bigcup\im\psivec$.
-
-  Let $E_{n_1},\dots,E_{n_g} \in E$. Choose $n > \max\{n_i\}$. Then let $A$ be the diagonal matrix with entries $\ell^{n_1},\dots,\ell^{n_g}$. Consider the point $(E_0,\pi^{(n)}) \in X_0(\ell^n)$. By construction,
+  Let $S = \{E_i\}_{i=1}^g$. Let $(E_{n_1},\dots,E_{n_g}) \in S$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
   \[
     \psivec(E_0,\pi^{(n)}) \cong E_{n_1} \times \cdots \times E_{n_g}.
   \]
+Thus, $S \subset \bigcup\psivec(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
 
 
