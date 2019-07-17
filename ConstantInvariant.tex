@@ -94,7 +94,7 @@ We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the mo
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $N \mid \det A$; say $\det A = M$. The matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Our choice of $A$ implies that $\rho_A$ corresponds to a polarization $\lambda_A$ \textcolor{red}{Clarify that polarization is an isogeny} of degree $M^2$---namely, it is $\lambda_{\Pi}\rho_A$, where $\lambda_\Pi$ is the principal product polarization. Let $K(A) \subset E^g$ be $\ker \lambda_A \cap C^g$.
+Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
 
 \begin{lemma}
   $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
@@ -104,7 +104,7 @@ Fix a positive integer $N$ not divisible by the characteristic of our base field
   Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda_A^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda_A^{(C)} \subset C^g$ is isotropic. The claim follows.
 \end{proof}
 
-Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by [Milne, AV, Prop. 16.8], there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
+Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
 
 We define $\psimod: X_0(N) \to \ag$ by
 \[
