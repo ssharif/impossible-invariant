@@ -676,9 +676,15 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
 
+Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write $\psidiag: Y_0(N) \to \ao^g$ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldots, d_g$ and for $(E, C) \in Y_0(N)$, we define $E_i$ to be $E/(N/d_i)C$, then
+\[
+  \psidiag(E,C) = E_1 \times \cdots \times E_g.
+\]
+
 \begin{theorem}
- Let $\psivec: Y_0(\ell^n) \to \ao^g$ be the map defined in Section~\ref{sec:geo-desc}. Then $\bigcup\im\psivec$ is dense in $\ao^g$.
+  With notation as above,  $\bigcup_A \im\psidiag$ is dense in $\ao^g$.
 \end{theorem}
+
 \begin{proof}
  Let $E_0$ be an ordinary elliptic curve with CM by $\sO_K$ for some quadratic imaginary field $K$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Kani (give ref), since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
 
@@ -686,11 +692,11 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 
  For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$ because \textcolor{red}{TODO: there is no backtracking}.
 
- Let $S = \{E_i\}_{i=0}^\infty$. Let $(E_{n_1},\dots,E_{n_g}) \in S$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
+ Let $S = \{E_i\}_{i=0}^\infty$. Let $(E_{n_1},\dots,E_{n_g}) \in S$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$, and let $\sC = \ker \pi^{(n)}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
  \[
-   \psivec(E_0,\pi^{(n)}) \cong E_{n_1} \times \cdots \times E_{n_g}.
+   \psidiag(E_0,\sC) = E_{n_1} \times \cdots \times E_{n_g}.
  \]
-(Doesn't one need equality, not isomorphism, in the above? Also, one needs a map to $\ao^g$, not a map to $A_g$.)  Thus, $S \subset \bigcup\psivec(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
+Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
 
 \bibliographystyle{alpha}
