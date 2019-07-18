@@ -59,6 +59,12 @@ Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theor
 \end{theorem}
 As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case where $R = \C$.
 
+In positive characteristic, we have a slightly weaker result:
+\begin{theorem}
+  Suppose that $k$ is a finite field. Let $f: \ao^g \to X$ be a morphism of $k$-schemes. If $f(A) = f(B)$ whenever $A \cong B$, then $f$ is constant.
+\end{theorem}
+
+
 \subsection{Overview}
 
 Let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinate is a power of a prime $\ell$ (see Definition~\ref{def:detl}). For a positive integer $N$, let $Y_0(N)$ be the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. For any $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}). For $A \in \detl$, let $X_A$ denote the image of the map $\psimod: Y_0(\det(A)) \to \ag$.
@@ -122,14 +128,16 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \section{Constructing curves on $\ag$}
 \label{sec:curves-on-Ag}
 
-Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $Y_0(\ell^n) \to \ag$ whose images $X_i$ are curves in $\ag$. These curves will be used in the steps outlined in Section~\ref{sec:introduction}.
+Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $Y_0(\ell^n) \to \ag$ whose images are the curves $X_A \subset \ag$ mentioned in Section~\ref{sec:introduction}.
 
 We will describe the maps $Y_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Unfortunately, the latter result does not directly carry over to positive characteristic, so we will need a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
+
+For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in Y_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
+Fix a positive integer $N$ not divisible by the characteristic of our base; later we will set $N = \ell^n$. Let $(E, C) \in Y_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
 
 \begin{lemma}
   $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
@@ -179,12 +187,12 @@ We define $\psimod: Y_0(N) \to \ag$ by
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Define a map $\psi_A: \hh \to \hh_g$ by
+In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Define a map $\psi_A: \hh \to \hh_g$ by
 \[
   \psi_A(\tau) = \tau A.
 \]
 \begin{proposition}
-The map $\psi_A$ descends to a map
+The map $\psi_A$ descends to a morphism
 \begin{equation}\label{def:psi-A-n}
   \psimodt: Y_0(N) \longrightarrow \ag.
 \end{equation}
@@ -212,7 +220,7 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
 \end{proposition}
 
 \begin{proof}
-  If $(E, C) \in Y_0(N)$ corresponds to the point $\tau \in \hh$, then we may take $E = \C/\langle 1, \tau \rangle$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
+  If $(E, C) \in Y_0(N)$ is represented by the point $\tau \in \hh$, then we may take $E = \C/\langle 1, \tau \rangle$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
 
   Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Observe that $\C^g/\Lambda = E^g$, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. Let
   \[
@@ -226,7 +234,7 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
   \[
     \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
   \]
-  Furthermore, $\Lambda_A \subset A$, so we have a natural isogeny
+  Furthermore, $\Lambda \subset \Lambda_A$, so we have a natural isogeny
   \[
     \rho: E^g = \C^g/\Lambda \to \C^g/\Lambda_A.
   \]
@@ -236,19 +244,27 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
   \[
     \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda.
   \]
-  This is the same isogeny $\rho_A$ as given in the proof of Prop.~\ref{prop:psimod-weakly-isomorphic-to-product}; that is, it is the natural isogeny $E^g \to E^g$. Then $\ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}$. Recall, with our identification $E = \C/(\Z + \tau\Z)$, that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that $\ker \rho = (\ker \rho_A) \cap C^g = K(A)$. Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
+  This is the same isogeny $\rho_A$ as given in the proof of Prop.~\ref{prop:psimod-weakly-isomorphic-to-product}; that is, it is the natural isogeny $E^g \to E^g$ given by the matrix $A$. Then 
+\[
+\ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
+\]
+With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that 
+\[
+\ker \rho = (\ker \rho_A) \cap C^g = K(A).
+\]
+Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
-  To specify a polarization on a $g$-dimensional complex abelian variety, one can either given an isogeny from the abelian variety to its dual, or one can give an appropriate Riemann form $H$ on $\C^g$; see, for example, \cite{rosen-avc} for this and other relevant background. The data of the form $H$ can be deduced from the correpsonding \emph{alternating Riemann form} $E$; more precisely, $H(u,v) = E(iu,v) + i E(u,v)$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
+  To specify a polarization on a $g$-dimensional complex abelian variety, either one can give an isogeny from the abelian variety to its dual, or one can give an appropriate Riemann form $H$ on $\C^g$; see, for example, \cite{rosen-avc} for this and other relevant background. The data of the form $H$ can be deduced from the correpsonding \emph{alternating Riemann form} $E$; more precisely, $H(u,v) = E(iu,v) + i E(u,v)$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
 \[
 \C^g/(\Z^g + \Omega \Z^g),
 \]
-and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call such a form the \emph{Siegel form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel form corresponds to the product principal polarization.
+and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form corresponds to the product principal polarization.
 
 Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. But observe that $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, and so $E_A$ gives rise to a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization corresponding to $E_A$. Then by definition of $\psimod$, we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
 \]
-Let $\tilde{\lambda}$ be the polarization coming from the Siegel form for $\tau A$. Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
+Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$. Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
   (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}).
 \]
@@ -310,8 +326,6 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 % \]
 % are weakly isomorphic.
 
-\newpage
-
 \section{Step 1}
 \label{sec:step-1}
 
@@ -327,7 +341,7 @@ Here, the topology is the one induced by the Euclidean metric on the entries.
   \[
     G = E_n \cdots E_2 E_1
   \]
-  where $\det E_i = \pm 1$. Observe that, with at most one exception, the entries of each $E_i$ are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
+  where $\det E_i = \pm 1$. For each $E_i$, the entries, with at most one exception, are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/\ell]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/\ell])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
 \end{proof}
 
 % \begin{proof}[Alternative proof]
@@ -345,7 +359,7 @@ Here, the topology is the one induced by the Euclidean metric on the entries.
 % \end{proof}
 
 \begin{definition}\label{def:detl}
-  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $N$ for which $\det N$ is a power of $\ell$.
+  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $A$ for which $\det A$ is a power of $\ell$.
 \end{definition}
 
 \begin{lemma}\label{lemma:ggt-spd-detl}
@@ -654,13 +668,17 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
 
-Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write $\psidiag: Y_0(N) \to \ao^g$ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldots, d_g$ and for $(E, C) \in Y_0(N)$, we define $E_i$ to be $E/(N/d_i)C$, then
+Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write 
+\[
+\psidiag: Y_0(N) \to \ao^g
+\]
+for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldots, d_g$ and for $(E, C) \in Y_0(N)$, we define $E_i$ to be $E/(N/d_i)C$, then
 \[
   \psidiag(E,C) = E_1 \times \cdots \times E_g.
 \]
 
-\begin{theorem}
-  With notation as above,  $\bigcup_A \im\psidiag$ is dense in $\ao^g$.
+\begin{theorem}\label{thm:char-p-version}
+  The Zariski closure of $\bigcup_A \im\psidiag$ is $\ao^g$.
 \end{theorem}
 
 \begin{proof}
@@ -677,7 +695,7 @@ Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive in
 Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
 
-\bibliographystyle{alpha}
+\bibliographystyle{halpha}
 \bibliography{./references}
 
 \end{document}

@@ -4,16 +4,16 @@ Shahed
 * DONE Replace §2 with §5.
 * DONE Set N = det A.
 * DONE Show agreement of ψ_A and ψ_A mod.
-* Reference Eric's paper in ψ_A business.
-* Prove main theorems.
 * DONE Remove functor formalism—*maybe* it will come up in the proof of main theorem.
-* Delete closure notations, use words.
+* DONE Delete closure notations, use words.
 * DONE Number equations by section.
-* Fix Theorem 6.1 statement, state in introduction
-* Cryptographic motivation
 * DONE Change X₀(ℓⁿ) to Y₀
 ** Define Y₀
 ** Notation: (E, C) or (E, ϕ)
+* DONE Reference Eric's paper in ψ_A business.
+* Prove main theorems.
+* Fix Theorem 6.1 statement, state in introduction
+* Cryptographic motivation
 Travis
 * Prove the "Step 1" and "Step 2" theorems.
 * Prove 5.7.
