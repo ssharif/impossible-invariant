@@ -199,11 +199,11 @@ The map $\psi_A$ descends to a morphism
 \end{proposition}
 
 \begin{proof}
-Recall that $Y_0(N) = \hh/\Gamma_0(N)$ and $\ag = \hh_g/\Sp_{2g}(\Z)$. Let 
+Recall that $Y_0(N) = \hh/\Gamma_0(N)$ and $\ag = \hh_g/\Sp_{2g}(\Z)$. Let
 \[
 \sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N)
 \]
-and let $\tau \in \hh$. A direct computation shows that the matrix 
+and let $\tau \in \hh$. A direct computation shows that the matrix
 \[
 M = \begin{bmatrix} aI & bA \\ cA^{-1} & dI \end{bmatrix}
 \]
@@ -244,11 +244,11 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
   \[
     \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda.
   \]
-  This is the same isogeny $\rho_A$ as given in the proof of Prop.~\ref{prop:psimod-weakly-isomorphic-to-product}; that is, it is the natural isogeny $E^g \to E^g$ given by the matrix $A$. Then 
+  This is the same isogeny $\rho_A$ as given in the proof of Prop.~\ref{prop:psimod-weakly-isomorphic-to-product}; that is, it is the natural isogeny $E^g \to E^g$ given by the matrix $A$. Then
 \[
 \ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
 \]
-With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that 
+With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
 \[
 \ker \rho = (\ker \rho_A) \cap C^g = K(A).
 \]
@@ -332,9 +332,9 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
 
 \begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
-  The topological closure of $\Sl_g(\Z[1/\ell])$ is $\Sl_g(\R)$.
+  The set $\Sl_g(\Z[1/\ell])$ is dense in $\Sl_g(\R)$ (with respect to the Euclidean topology).
+  %Here, the topology is the one induced by the Euclidean metric on the entries.
 \end{lemma}
-Here, the topology is the one induced by the Euclidean metric on the entries.
 
 \begin{proof}
   Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices
@@ -397,7 +397,7 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
 \begin{proposition}\label{prop:A-over-detA}
-  The topological closure of ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is $\permat$.
+  The set ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is dense in $\permat$ with respect to the Euclidean topology.
 \end{proposition}
 
 \begin{proof}
@@ -412,14 +412,16 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
   The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
+If $X$ is a subset of a complex manifold $M$, we say that $X$ is holomorphically dense in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$. Observe that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
+
 Let $\R^+$ denote the set of positive real numbers.
 \begin{lemma}\label{lemma:holomorphic-closure-irM}
-  The holomorphic closure of ${\{ irM | M \in \permat, r \in \R^+\}}$ is $\hh_g$.
+  The set ${\{ irM | M \in \permat, r \in \R^+\}}$ is holomorphically dense in $\hh_g$.
 \end{lemma}
-Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$ containing $X$ for which any holomorphic function that vanishes on $X$ also vanishes on $\overline{X}$. Observe that the Euclidean topology is a refinement of the holomorphic topology, which is a refinement of the Zariski topology.
+
 
 \begin{proof}
-  Notice that the set $H := \{ irM | M \in \permat, r \in \R^+\}$ is precisely the subset of $\hh_g$ with realpart $0$. Note that $H$ is a real manifold with $\dim_{\R} H = g(g+1)/2$. So by \cite[Ch.~4.8]{krantz2017harmonic}, it is enough to show that $H$ is a totally real. That is, we need to show that the tangent space \textcolor{red}{TODO: figure out correct property}
+  The set $H := \{ irM | M \in \permat, r \in \R^+\}$ is the subset of $\hh_g$ with real part $0$. Note that $H$ is a real manifold with $\dim_{\R} H = g(g+1)/2$. So by \cite[Ch.~4.8]{krantz2017harmonic}, it is enough to show that $H$ is a totally real. That is, we need to show that the tangent space \textcolor{red}{TODO: figure out correct property}
 
   As $H$ is a topological group (it is isomorphic to $\R^+ \times \detl$), it is enough to consider the tangent space at the identity $iI_g$. The exponential map goes from \textcolor{red}{TODO: finish}
 \end{proof}
@@ -449,16 +451,17 @@ Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$
 \end{theorem}
 
 \begin{proof}
-  Observe that if $X$ is a subset of a complex manifold, then its topological closure is contained in its holomorphic closure. Now
+  We have
   \begin{align*}
     \cup_A \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
-               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \detl\}.
+               &= \cup \{irA/(\det A)^{\frac{1}{g}} | r \in \R^+, A \in \detl\},
   \end{align*}
-  By Proposition~\ref{prop:A-over-detA}, the topological closure of the above set is
+  and this set is dense in
   \[
-    \{irM | r \in \R^+, M \in \permat\}.
+    \{irM | r \in \R^+, M \in \permat\}
   \]
-  By Lemma~\ref{lemma:holomorphic-closure-irM}, the holomorphic closure of $\cup_A \psi_A(i\R^+)$ is $\hh_g$. Therefore the holomorphic closure of $\cup_A \im \psi_A$ is also $\hh_g$. Passing to the quotient, if we consider $\ag$ as a complex manifold, we have that $\cup_A \im \psimod$ is holomorphically dense in $\ag$.
+with respect to the Euclidean topology,  by Proposition~\ref{prop:A-over-detA}.
+  By Lemma~\ref{lemma:holomorphic-closure-irM}, the set $\cup_A \psi_A(i\R^+)$ is holomorphically dense (define this) in $\hh_g$. Thus $\cup_A \im \psi_A$ is holomorphically dense in $\hh_g$. Passing to the quotient, if we consider $\ag$ as a complex manifold, we have that $\cup_A \im \psimod$ is holomorphically dense in $\ag$.
 
   By definition of $\psimod$,  $\im \psimod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so the image of $\psimod$ in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense, and the claim follows.
 \end{proof}
@@ -468,7 +471,7 @@ Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$
 \section{Step 2}
 \label{sec:step-2}
 
-The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
+The main goal of this section is to prove Theorem~\ref{thm:Sg-dense}.
 
 \textcolor{red}{TODO: introduce lemmas}
 
@@ -507,10 +510,10 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 \end{definition}
 
 \begin{lemma}\label{lem:c-torsor}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of subgroups of $E$ with order $c$ form a $\Gt_q$ torsor.
+  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of subgroups of $E$ with order $q$ form a $\Gt_q$ torsor.
 \end{lemma}
 \begin{proof}
-  Note that $E[q]$ is an $\sO_K/q\sO_K \cong \F_{q^2}$ module of size $q^2$. Therefore it is isomorphic to $\F_{q^2}$ as an $\F_{q^2}$ vector space. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the $1$ dimensional $\F_q$-submodules.
+  Note that $E[q]$ is a module over $\sO_K/q\sO_K \cong \F_{q^2}$  of size $q^2$. Therefore $E[q]$ is isomorphic to $\F_{q^2}$ as $\F_{q^2}$-vector spaces. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the one dimensional $\F_q$-subspaces.
 \end{proof}
 
 \begin{definition}[{\cite[Sec.~2]{kani2011products}}]\label{def:ker-idl}
@@ -613,7 +616,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 
 \begin{lemma}\label{lem:lim-degree}
   Suppose $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$.
-  %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$. 
+  %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$.
   Then there exists a sequence $x_i \in Y_0(\ell^n)$ such that
   \[
     \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
@@ -668,7 +671,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 \section{Characteristic $p$}
 \label{sec:characteristic-p}
 
-Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write 
+Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write
 \[
 \psidiag: Y_0(N) \to \ao^g
 \]
