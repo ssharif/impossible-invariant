@@ -35,9 +35,9 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Let $\ag$ be the moduli space of principally polarized abelian varieties of dimension $g$. If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Our goal is to show the following.
+If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Let $\ag$ be the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $R$ is a subring of $\C$. Let $f: \ag \to X$ be a morphism of $R$-schemes. If $f(A) = f(B)$ whenever $A \approx B$, then $f$ is constant.
+  Suppose that $R$ is a subring of $\C$ and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A,B \in \ag$ and $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of the following theorem.
 
@@ -53,11 +53,11 @@ Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theor
 % \[
 %   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
 % \]
-% Then we will show the following.
+We need to define $\sg(R)$.
 \begin{theorem}\label{thm:sg-c-dense}
   If $R$ is a subring of $\C$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
-As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case where $R = \C$.
+As with Theorem~\ref{thm:invariant-c-constant}, it suffices to prove the result when $R = \C$.
 
 In positive characteristic, we have a slightly weaker result:
 \begin{theorem}
