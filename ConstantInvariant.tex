@@ -67,7 +67,7 @@ In positive characteristic, we have a slightly weaker result:
 
 \subsection{Overview}
 
-Let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinate is a power of a prime $\ell$ (see Definition~\ref{def:detl}). For a positive integer $N$, let $Y_0(N)$ be the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. For any $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}). For $A \in \detl$, let $X_A$ denote the image of the map $\psimod: Y_0(\det(A)) \to \ag$.
+If $\ell$ is a prime and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinant is a power of $\ell$ (omit Definition~\ref{def:detl}??). If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}; it would be better to give the definition here, instead of later). If $A \in \detl$, let $X_A$ denote the image of $\psimod$.
 
 In Section~\ref{sec:step-1} we prove the following theorem.
 
@@ -84,7 +84,7 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \textcolor{red}{TODO: introduce/move}
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
-  For two subsets $X,Y$ of $\ag \times \ag$, we write $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
+  If $X$ and $Y$ are subsets of $\ag \times \ag$, we write (I suggest omitting this notation and writing it out in words, rather than doing a long expression) $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
   \begin{align*}
     \sg(\C)
     &\supseteq
@@ -109,7 +109,7 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \textcolor{red}{TODO: introduce/move}
 
 \begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
-  Let $f: \ag \to X$ be a morphism of $R$-schemes. Consider the diagonal $\df$ determined by the diagram
+  Suppose $f: \ag \to X$ is a morphism of $R$-schemes. Consider the diagonal $\df$ determined by the diagram
   \[
   \begin{tikzcd}
     \df \arrow[r] \arrow[d] & \ag \arrow[d,"f"]
