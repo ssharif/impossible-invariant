@@ -1,22 +1,15 @@
 
-Shahed
-* DONE Streamline §5 proofs.
-* DONE Replace §2 with §5.
-* DONE Set N = det A.
-* DONE Show agreement of ψ_A and ψ_A mod.
-* DONE Remove functor formalism—*maybe* it will come up in the proof of main theorem.
-* DONE Delete closure notations, use words.
-* DONE Number equations by section.
-* DONE Change X₀(ℓⁿ) to Y₀
-** Define Y₀
-** Notation: (E, C) or (E, ϕ)
-* DONE Reference Eric's paper in ψ_A business.
-* Cryptographic motivation
-* Replace qif with iqf.
-* Prove main theorems.
-* Fix Theorem 6.1 statement, state in introduction
+* Shahed
+** Cryptographic motivation
+** Replace qif with iqf.
+** Read through §4
+* Alice
+** Edit §2
+* Karl
+** Read §4
+* Travis
+** Fix §5
+** Write a §6
 * Put defns and results for A₁ᵍ; for example, define new W_g.
 * Put addenda elsewhere for positive characteristic versions.
-Travis
-* Prove the "Step 1" and "Step 2" theorems.
 * Prove 5.7.
