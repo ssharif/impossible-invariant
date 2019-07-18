@@ -11,6 +11,7 @@ Shahed
 ** Define Y₀
 ** Notation: (E, C) or (E, ϕ)
 * DONE Reference Eric's paper in ψ_A business.
+* Replace qif with iqf.
 * Prove main theorems.
 * Fix Theorem 6.1 statement, state in introduction
 * Cryptographic motivation
