@@ -61,7 +61,7 @@ As with Theorem~\ref{thm:invariant-c-constant}, it suffices to address the case 
 
 \subsection{Overview}
 
-Let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinate is a power of a prime $\ell$ (see Definition~\ref{def:detl}). For any $A \in \detl$, we will define a map $\psi_A: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}). For $A \in \detl$, let $X_A$ denote the image of the map $\psi_A: Y_0(\det(A)) \to \ag$.
+Let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinate is a power of a prime $\ell$ (see Definition~\ref{def:detl}). For a positive integer $N$, let $Y_0(N)$ be the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. For any $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}). For $A \in \detl$, let $X_A$ denote the image of the map $\psimod: Y_0(\det(A)) \to \ag$.
 
 In Section~\ref{sec:step-1} we prove the following theorem.
 
@@ -122,14 +122,14 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \section{Constructing curves on $\ag$}
 \label{sec:curves-on-Ag}
 
-Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $X_0(\ell^n) \to \ag$ whose images $X_i$ are curves in $\ag$. These curves will be used in the steps outlined in Section~\ref{sec:introduction}.
+Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $Y_0(\ell^n) \to \ag$ whose images $X_i$ are curves in $\ag$. These curves will be used in the steps outlined in Section~\ref{sec:introduction}.
 
-We will describe the maps $X_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Unfortunately, the latter result does not directly carry over to positive characteristic, so we will need a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
+We will describe the maps $Y_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Unfortunately, the latter result does not directly carry over to positive characteristic, so we will need a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in X_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
+Fix a positive integer $N$ not divisible by the characteristic of our base field; later we will set $N = \ell^n$. Let $(E, C) \in Y_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
 
 \begin{lemma}
   $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
@@ -141,14 +141,14 @@ Fix a positive integer $N$ not divisible by the characteristic of our base field
 
 Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
 
-We define $\psimod: X_0(N) \to \ag$ by
+We define $\psimod: Y_0(N) \to \ag$ by
 \[
   \psimod(E,C) = (B,\lambda).
 \]
 
 
 \begin{proposition}\label{prop:psimod-weakly-isomorphic-to-product}
-  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in X_0(N)$, let $E_i = E/(N/d_i)C$. If $\psimod(E,C) = (B,\lambda)$, then
+  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in Y_0(N)$, let $E_i = E/(N/d_i)C$. If $\psimod(E,C) = (B,\lambda)$, then
   \[
     B \approx E_1 \times \cdots \times E_g.
   \]
@@ -212,7 +212,7 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
 \end{proposition}
 
 \begin{proof}
-  If $(E, C) \in X_0(N)$ corresponds to the point $\tau \in \hh$, then we may take $E = \C/\langle 1, \tau \rangle$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
+  If $(E, C) \in Y_0(N)$ corresponds to the point $\tau \in \hh$, then we may take $E = \C/\langle 1, \tau \rangle$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
 
   Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Observe that $\C^g/\Lambda = E^g$, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. Let
   \[
@@ -473,35 +473,6 @@ Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$
 % \end{proof}
 
 % It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Step 2}

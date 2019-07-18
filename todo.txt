@@ -11,7 +11,7 @@ Shahed
 * DONE Number equations by section.
 * Fix Theorem 6.1 statement, state in introduction
 * Cryptographic motivation
-* Change X₀(ℓⁿ) to Y₀
+* DONE Change X₀(ℓⁿ) to Y₀
 ** Define Y₀
 ** Notation: (E, C) or (E, ϕ)
 Travis
