@@ -6,7 +6,7 @@ Shahed
 * DONE Show agreement of ψ_A and ψ_A mod.
 * Reference Eric's paper in ψ_A business.
 * Prove main theorems.
-* Remove functor formalism—*maybe* it will come up in the proof of main theorem.
+* DONE Remove functor formalism—*maybe* it will come up in the proof of main theorem.
 * Delete closure notations, use words.
 * DONE Number equations by section.
 * Fix Theorem 6.1 statement, state in introduction
