@@ -11,12 +11,12 @@ Shahed
 ** Define Y₀
 ** Notation: (E, C) or (E, ϕ)
 * DONE Reference Eric's paper in ψ_A business.
+* Cryptographic motivation
 * Replace qif with iqf.
 * Prove main theorems.
 * Fix Theorem 6.1 statement, state in introduction
 * Put defns and results for A₁ᵍ; for example, define new W_g.
 * Put addenda elsewhere for positive characteristic versions.
-* Cryptographic motivation
 Travis
 * Prove the "Step 1" and "Step 2" theorems.
 * Prove 5.7.
