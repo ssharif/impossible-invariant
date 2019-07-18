@@ -137,17 +137,17 @@ For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base; later we will set $N = \ell^n$. Let $(E, C) \in Y_0(N)$. That is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
+Fix a positive integer $N$ not divisible by the characteristic of our base; later we will set $N = \ell^n$. Let $(E, C) \in Y_0(N)$; that is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg \lambda_A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
 
 \begin{lemma}
-  $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
+  The subgroup $K(A)$ is a maximal isotropic in $\ker \lambda_A$.
 \end{lemma}
 
 \begin{proof}
   Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda_A^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda_A^{(C)} \subset C^g$ is isotropic. The claim follows.
 \end{proof}
 
-Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(A)$ is injective, $\lambda$ is unique.
+Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
 We define $\psimod: Y_0(N) \to \ag$ by
 \[
@@ -187,7 +187,7 @@ We define $\psimod: Y_0(N) \to \ag$ by
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Define a map $\psi_A: \hh \to \hh_g$ by
+In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Let $\hh$ be the complex upper half-plane and $\hh_g$ the degree $g$ Siegel upper half-space. Define a map $\psi_A: \hh \to \hh_g$ by
 \[
   \psi_A(\tau) = \tau A.
 \]
@@ -216,11 +216,11 @@ and that $\sigma(\tau)A = M(\tau A)$.
 
 In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of the previous proposition.
 \begin{proposition}
-  The maps $\psimodt$ and $\psimod$ are equal.
+  The morphisms $\psimodt$ and $\psimod$ are equal.
 \end{proposition}
 
 \begin{proof}
-  If $(E, C) \in Y_0(N)$ is represented by the point $\tau \in \hh$, then we may take $E = \C/\langle 1, \tau \rangle$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
+  If $(E, C) \in Y_0(N)$ is represented by the point $\tau \in \hh$, then we may take $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
 
   Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Observe that $\C^g/\Lambda = E^g$, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. Let
   \[
@@ -254,17 +254,17 @@ With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished su
 \]
 Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
-  To specify a polarization on a $g$-dimensional complex abelian variety, either one can give an isogeny from the abelian variety to its dual, or one can give an appropriate Riemann form $H$ on $\C^g$; see, for example, \cite{rosen-avc} for this and other relevant background. The data of the form $H$ can be deduced from the correpsonding \emph{alternating Riemann form} $E$; more precisely, $H(u,v) = E(iu,v) + i E(u,v)$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
+  To specify a polarization on a $g$-dimensional complex abelian variety, either one can give an isogeny from the abelian variety to its dual, or one can give an appropriate Riemann form $H$ on $\C^g$; see, for example, \cite{rosen-avc} for this and other relevant background. The data of the form $H$ can be deduced from the corresponding \emph{alternating Riemann form} $E$; more precisely, $H(u,v) = E(iu,v) + i E(u,v)$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
 \[
 \C^g/(\Z^g + \Omega \Z^g),
 \]
-and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form corresponds to the product principal polarization.
+and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. But observe that $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, and so $E_A$ gives rise to a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization corresponding to $E_A$. Then by definition of $\psimod$, we have
+Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. But observe that $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, and so $E_A$ gives rise to a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Then by definition of $\psimod$, we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
 \]
-Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$. Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
+On the other hand, let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$. Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
   (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}).
 \]
@@ -672,7 +672,7 @@ Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive in
 \[
 \psidiag: Y_0(N) \to \ao^g
 \]
-for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldots, d_g$ and for $(E, C) \in Y_0(N)$, we define $E_i$ to be $E/(N/d_i)C$, then
+for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldots, d_g$ and for $(E, C) \in Y_0(N)$, if we define $E_i$ to be $E/(N/d_i)C$, then
 \[
   \psidiag(E,C) = E_1 \times \cdots \times E_g.
 \]
