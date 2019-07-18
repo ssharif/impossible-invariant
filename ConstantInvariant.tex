@@ -292,11 +292,7 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
 \section{Step 1}
 \label{sec:step-1}
 
-In this section, we focus on Step~\ref{i:curves-dense} outlined in Section~\ref{sec:introduction}. That is, we aim to prove that
-\[
-  \bigcup_{A} \im\left(\psi_{A,n}\right) \text{ is Zariski dense in } \ag,
-\]
-where $A$ ranges over all symmetric positive definite integer matrices whose determinant is a power of $\ell$. Recall that $\ell$ is fixed.\textcolor{red}{TODO: reference where fixing of $\ell$ occurs}
+The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
 
 \begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
   The topological closure of $\Sl_g(\Z[1/\ell])$ is $\Sl_g(\R)$.
@@ -386,7 +382,9 @@ Let $\R^+$ denote the set of positive real numbers.
 Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$ containing $X$ for which any holomorphic function that vanishes on $X$ also vanishes on $\overline{X}$. Observe that the Euclidean topology is a refinement of the holomorphic topology, which is a refinement of the Zariski topology.
 
 \begin{proof}
-  This is a standard result in multivariable complex analysis, which we are all completely familiar with.
+  Notice that the set $H := \{ irM | M \in \permat, r \in \R^+\}$ is precisely the subset of $\hh_g$ with realpart $0$. Note that $H$ is a real manifold with $\dim_{\R} H = g(g+1)/2$. So by \cite[Ch.~4.8]{krantz2017harmonic}, it is enough to show that $H$ is a totally real. That is, we need to show that the tangent space \textcolor{red}{TODO: figure out correct property}
+
+  As $H$ is a topological group (it is isomorphic to $\R^+ \times \detl$), it is enough to consider the tangent space at the identity $iI_g$. The exponential map goes from \textcolor{red}{TODO: finish}
 \end{proof}
 
 % \begin{lemma}
@@ -406,6 +404,7 @@ Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$
 %   Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
 % \end{proof}
 
+\textcolor{red}{TODO: alter this to prove Theorem~\ref{thm:curves-dense} directly}
 \begin{theorem}
   The Zariski closure of
   \[
@@ -428,28 +427,7 @@ Here, the holomorphic closure of a set $X$ means the smallest set $\overline{X}$
 
   By definition of $\psimod$,  $\im \psimod \subset \ag$ is the image of $\im \psi_A \subset \hh_g$ under the canonical covering map $\hh_g \to \ag$. As we have shown, $\im \psi_A$ is holomorphically dense in $\hh_g$, and so the image of $\psimod$ in $\ag$ is holomorphically dense when viewing $\ag$ as a complex manifold. But holomorphically dense implies Zariski dense, and the claim follows.
 \end{proof}
-% We will actually show the slightly stronger claim that $\cup_{A} \psi_{A,n}(i\R)$ is holomorphically dense, where $A$ ranges over ???. That is, if any holomorphic function $f$ on $\ag$ vanishes on $\cup_{A} \psi_{A,n}(i\R)$, then $f$ vanishes everywhere.
 
-% For a ring $R$, let $\Sympd_g(R)$ denote the set of symmetric positive definite matrices in $\Sl_g(R)$. Recall that for any $A \in \Sympd_g(\Z[1/\ell])$, the map $\psi_{A,n}$ is induced from the map $\psi_A: \hh \to \hh_g$ given by $\tau \mapsto \tau A$. Therefore
-% \[
-%   \bigcup_{A \in \Sympd_g(\Z[1/\ell])} \psi_A(i\R) = i\R\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right).
-% \]
-
-% \begin{lemma}
-%   $\Sympd_g\left(\Z\left[\frac{1}{\ell}\right]\right)$ is holomorphically dense in $\Sympd_g(\R)$.
-% \end{lemma}
-% \begin{proof}
-%   \textcolor{red}{TODO}
-% \end{proof}
-
-% \begin{lemma}
-%   $i\R\Sympd_g(\R)$ is holomorphically dense in $\hh_g$.
-% \end{lemma}
-% \begin{proof}
-%   \textcolor{red}{TODO}
-% \end{proof}
-
-% It follows that the image of the $\psi_{A,n}$ is dense in $\ag$.\textcolor{red}{TODO: check this and make it a cor. or something}
 
 
 
