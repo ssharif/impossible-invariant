@@ -698,7 +698,262 @@ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldo
 Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
 
-\bibliographystyle{halpha}
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Other Step 1}
+
+In this section we prove Theorem~\ref{thm:curves-dense}.
+
+
+\subsection{June 27}
+
+\begin{lemma}
+  For any subset $S \subset \N^n$, there is a nonempty open cone of linear functionals which are uniquely minimized on $S$, with the minimum attained on the same element.
+\end{lemma}
+\begin{proof}
+  Let $s = (s_1,\dots,s_n)$ be the lexicographically minimal element of $S$, and let $\lambda$ be any linear functional satisfying the strict inequalities
+  \[
+    \lambda_i > \sum_{j>i} s_j\lambda_j.
+  \]
+  In particular, $\lambda_i>0$ for all $i$. Such linear functionals clearly form a nonempty open cone in $\R^n$, so it will suffice to show that they are all uniquely minimized at $s$.
+
+  For any other element $t \in S$, we have $t > s$ in lexicographic order. If $m$ is the first index where they differ, then
+  \begin{align*}
+    \sum_{1\le i\le n} \lambda_i t_i
+    \ge
+    \sum_{1\le i\le m} \lambda_i t_i
+    \ge
+    \sum_{1\le i\le m} \lambda_i s_i
+    +
+    \lambda_m
+    \sum_{1\le i\le n} \lambda_i s_i.
+  \end{align*}
+\end{proof}
+%Lemma. For any subset S\subset \N^n, there is a nonempty open cone of
+%linear functionals which are uniquely minimized on S, with the minimum
+%attained on the same element.
+%
+%Proof.  Let s be the lexicographically minimal element of S, and let
+%\lambda be any linear functional satisfying the strict inequalities
+%
+%\lambda_i > \sum_{j>i} s_j\lambda_j.
+%
+%(In particular, \lambda_i>0 for all i.)  Such linear functionals clearly
+%form a nonempty open cone in \R^n, so it will suffice to show that they
+%are all uniquely minimized at s.
+%
+%For any other element t\in S, we have t>s in lexicographic order.  If m
+%is the first index where they differ, then
+%
+%\sum_{1\le i\le n} \lambda_i t_i
+%\ge
+%\sum_{1\le i\le m} \lambda_i t_i
+%\ge
+%\sum_{1\le i\le m} \lambda_i s_i
+%+
+%\lambda_m
+%
+%\sum_{1\le i\le n} \lambda_i s_i.
+%QED
+
+\begin{corollary}
+  For any set $S$ of positive semidefinite integral quadratic forms, there is a nonempty open cone of positive definite symmetric matrices $M$ such that $Q\mapsto \tr(M\cdot Q)$ has a unique minimum on $S$.
+\end{corollary}
+\begin{proof}
+  Let $M_1,\dots,M_{d(d+1)/2}$ be a sequence of positive definite symmetric matrices with integer entries that form a basis over $\R$ of the space of all symmetric matrices. Then the set of positive semidefinite integral quadratic forms injects linearly in $\N^{d(d+1)/2}$ via
+  \[
+    Q\mapsto (\tr(Q M_1),\dots,\tr(Q M_{d(d+1)/2}).
+  \]
+  If $\lambda$ is any element of the cone coming from the Lemma, then $M  = \sum_i \lambda_i M_i$ is positive definite, and thus the claim follows.
+\end{proof}
+%Corollary.  For any set S of positive semidefinite integral quadratic
+%forms, there is a nonempty open cone of positive definite symmetric
+%matrices M such that Q\mapsto \Tr(M\cdot Q) has a unique minimum on S.
+%
+%Proof.  Let M_1,\dots,M_{d(d+1)/2} be a sequence of positive definite
+%symmetric matrices with integer entries that form a basis over \R of the
+%space of all symmetric matrices.  Then the set of positive semidefinite
+%integral quadratic forms injects linearly in \N^{d(d+1)/2} via
+%
+%Q\mapsto (\Tr(Q M_1),\dots,\Tr(Q M_{d(d+1)/2}).
+%
+%If \lambda is any element of the cone coming from the Lemma, then
+%M=\sum_i \lambda_i M_i is positive definite, and thus the claim follows.
+%QED
+
+\begin{corollary}
+  For any set $S$ of positive semidefinite integral quadratic forms, there is an element $g \in \Sl_d(\Z[1/\ell])$ such that $Q \mapsto \tr(Q g g^t)$ has a unique minimum on $S$.
+\end{corollary}
+\begin{proof}
+  Indeed, the open cone from the previous corollary intersects the dense set of positive definite symmetric matrices of the form $r g g^t$ with $r > 0$, $g \in \Sl_d(\Z[1/\ell])$, and thus since it is a cone intersects the subset with $r = 1$.
+\end{proof}
+%Corollary.  For any set S of positive semidefinite integral quadratic
+%forms, there is an element g\in \SL_d(\Z[1/l]) such that Q\mapsto \Tr(Q
+%g g^t) has a unique minimum on S.
+%
+%Proof.  Indeed, the open cone from the previous corollary intersects the
+%dense set of positive definite symmetric matrices of the form r g g^t
+%with r>0, g\in \SL_d(\Z[1/l]), and thus since it is a cone intersects
+%the subset with r=1.
+%QED
+
+\subsection{June 28}
+
+Let $A$ be a symmetric positive definite matrix with determinate $N = \ell^n$. Let $X_A$ denote the image $\psi_A(Y_0(\det A))$. Our goal is to show that $\bigcup X_A$ is dense in $\ag$.
+
+Note that $\psi_A$ pulls back Siegel modular functions from $\ag$ to $X_0(N)$. On the level of Siegel upper half spaces, the pull back is given by
+\[
+  \psi_A^*(f) = \{\tau \mapsto f(A\tau)\}.
+\]
+
+Now $\bigcup X_A$ is dense in $\ag$ if and only if for all nonzero Siegel modular functions $f: \ag \to \C$, there is some $\psi_A$ such that $\psi_A^*(f) \neq 0$.
+
+Every Siegel modular function is of the form
+\[
+  f(T) = \sum_Q c_Q \exp(2 \pi i)^{\tr(QT)}
+\]
+where $T \in \hh_g$ and the sum is over all quadratic forms $Q$ \textcolor{red}{TODO: do we use quadratic forms instead of symmetric matrices because characteristic $2$ fields?} Then
+\[
+  \psi_A^*(f)(\tau) = f(A\tau) = \sum_Q c_Q \exp(2 \pi i \tau)^{\tr(AQ)}.
+\]
+Let $q = \exp(2 \pi i \tau)$. Then we can rewrite the previous equation as
+\[
+  \psi_A^*(f)(\tau) = \sum_Q c_Q q^{\tr(AQ)}
+\]
+
+\begin{lemma}
+  For any positive definite symmetric real matrix $A$ and $t \in \R$, the set of positive semidefinite integral quadratic forms $Q$ such that $\tr(AQ) = t$ is finite.
+\end{lemma}
+\begin{proof}
+  Recall that $\langle x,y \rangle = \tr(xy^t)$ gives an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
+  \begin{align*}
+    \tr(BQ)^2 &\leq \tr(B^2)\tr(Q^2)
+    &&\text{by Cauchy–Schwarz}
+    \\
+    &\leq \tr(B)^2\tr(Q)^2
+    &&\text{By positive semidefinite}
+    %\tr(B^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(B)^2.
+  \end{align*}
+  Therefore if $\tr(AQ) = t$, then
+  \[
+    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) = \tr(A^{-1})t.
+  \]
+  There is only finitely many positive semidefinite integral quadratic forms with bounded trace\textcolor{red}{TODO: why}
+\end{proof}
+
+
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
+  ???
+\end{proof}
+
+\begin{comment}
+From: "Rains, Eric M." <rains@caltech.edu>
+Subject: Re: some observations
+Date: Fri, June 28, 2019 at 9:54:26 AM PDT
+To: Alice Silverberg <asilverb@uci.edu>
+
+We're feeling a bit daunted by the positive characteristic case....
+
+     Actually, now that I understand things a bit better, I think the
+positive characteristic proof is actually a bit simpler than the current
+characteristic 0 proof (as it doesn't require knowing anything about
+holomorphic density in several variables).  Let me tell you the
+characteristic 0 analogue of the argument...
+
+     The basic idea in characteristic 0 is that the Zariski closure of
+the images of X_0(l^n) is cut out by an ideal in the algebra of Siegel
+modular forms.  Moreover, each A gives rise to a homomorphism from
+Siegel modular forms to ordinary modular forms over \Gamma_0(l^n), given by
+
+f\mapsto (\tau\mapsto f(A\tau)).
+
+So to show that the union of images of \phi_A is dense, it suffices to
+show that any nonzero Siegel modular form has nonzero image under one of
+these homomorphisms.
+
+     Since a Siegel modular form is 1-periodic in each coefficient, it
+can be expressed as a series of the following form:
+
+f(T) = \sum_Q c_Q \exp(2\pi\sqrt{-1}\Tr(QT))
+
+where T ranges over the Siegel upper half-space and Q ranges over
+positive semidefinite integral quadratic forms.  Specializing this to
+A\tau gives the expression
+
+f(A\tau) = \sum_Q c_Q q^{\Tr(AQ)},
+
+where q=\exp(2\pi\sqrt{-1}\tau).  (Note that for any positive definite
+real symmetric matrix A, |\{Q:\Tr(AQ)=t\}| is finite, essentially by
+Cauchy-Schwartz, or more precisely by the inequality
+
+\Tr(BQ)\le \Tr(AQ)\Tr(A^{-1}B)
+
+for any positive semidefinite real symmetric matrix B (which follows
+from Cauchy-Schwartz by writing both B and Q as sums of rank 1
+matrices).  In particular, if \Tr(AQ)=t, then \Tr(Q)\le \Tr(A^{-1})t is
+bounded, so there are only finitely many possibilities.)
+
+     If A is chosen so that \Tr(AQ) attains its minimum on the support
+of f at the unique point Q_0 (which can always be done, by the argument
+of the previous E-mail), then we have
+
+f(A\tau) = c_{Q_0} q^{\Tr(A Q_0)} + o(q^{\Tr(A Q_0)}),
+
+and thus f(A\tau) is not identically 0.
+
+     The only difference in finite characteristic is that we need to
+rewrite the original Siegel modular form in terms of the variables
+q_{ij}:=\exp(2\pi\sqrt{-1}T_{ij}) for 1\le i\le j\le d, at which point
+it is, I believe, known that such expressions extend to finite
+characteristic.  (That is, a Siegel modular form can be viewed as a
+section of an appropriate line bundle on a compactification of {\cal
+A}_g, that line bundle makes sense in finite characteristic, its
+q-expansions around the appropriate cusp are as stated, and it interacts
+with modular morphisms as expected.)
+
+     Note that the argument of the previous E-mail that there's a
+unique minimizing Q can be simplified somewhat.  Let A be any positive
+definite real symmetric matrix.  Since |\{Q:\Tr(AQ)\le t\}| is finite
+for all t, not only are there finitely many Q such that c_Q\ne 0 that
+attain the minimum value t_0 of \Tr(AQ), there is a separation between
+that value and the next smallest possible value t_1.  Let M be any
+positive definite real symmetric matrix such that the minimum of \Tr(MQ)
+subject to \Tr(AQ)=t_0 and c_Q\ne 0 is < t_1-t_0.  Then the minimum of
+\Tr((A+M)Q) subject to c_Q\ne 0 is attained only when \Tr(AQ)=t_0, and
+thus in particular for an open set of M, the minimum is uniquely attained.
+
+     In fact, a sufficiently small perturbation in any direction
+outside a finite set of hyperplanes will work: if M points in the
+direction we want to perturb, then for \epsilon sufficiently small,
+\epsilon A+\epsilon^2 M is positive definite and satisfies \Tr((\epsilon
+A+\epsilon^2 M)Q)<t_1-t_0  when \Tr(AQ)=t_0 and c_Q\ne 0, so that
+(1+\epsilon)A + \epsilon^2 M satisfies the desired condition, and thus
+so does A + ((\epsilon^2)/(1+\epsilon))M.  In other words, the
+minimizing Q is unique outside a locally finite complex of polyhedral cones.
+
+                                             Eric
+\end{comment}
+
+
+
+
+
+
+
+
+
+\bibliographystyle{alpha}
 \bibliography{./references}
 
 \end{document}
