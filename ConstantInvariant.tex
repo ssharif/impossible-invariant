@@ -10,36 +10,48 @@
 \usepackage{lineno}
 \linenumbers
 
-\title[Invariants constant on unpolarized isomorphism classes]{Algebraic invariants constant on unpolarized isomorphism classes of abelian varieties}
+\title[Algebraic maps constant on unpolarized isomorphism classes]{Algebraic maps constant on isomorphism classes of unpolarized abelian varieties are constant}
 
-%\author[E.\ Rains]{E.\ Rains}
-%\address{}
-%\email{}
-%\author[?]{?}
-%\address{}
-%\email{}
-%\author[A.\ Silverberg]{A.\ Silverberg}
-%\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
-%\email{asilverb@uci.edu}
+\author[E.\ Rains]{E.\ Rains}
+\address{}
+\email{}
+\author[K.\ Rubin]{K.\ Rubin}
+\address{}
+\email{}
+\author[T.\ Scholl]{T.\ Scholl}
+\address{}
+\email{}
+\author[S.\ Sharif]{S.\ Sharif}
+\address{}
+\email{}
+\author[A.\ Silverberg]{A.\ Silverberg}
+\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
+\email{asilverb@uci.edu}
 %\subjclass[2010]{??}
-%\keywords{abelian varieties}
-%\thanks{Support for the research was provided by the Alfred P.~Sloan Foundation
-%and the National Science Foundation.}
+\keywords{abelian varieties, polarizations}
+\thanks{Support for the research was provided by the Alfred P.~Sloan Foundation
+and the National Science Foundation.}
 
 \begin{document}
 
+\begin{abstract} 
+?
+\end{abstract} 
+
+
 \today
-\tableofcontents
 \maketitle
+
+%\tableofcontents
+
 
 \section{Introduction}
 \label{sec:introduction}
 
-If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if they are isomorphic as unpolarized abelian varieties. Let $\ag$ be the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
+If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if $A$ and $B$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $R$ is a subring of $\C$ and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A,B \in \ag$ and $A \approx B$. Then $f$ is a constant function.
+  Suppose that $R$ is a subring of $\C$ and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
-Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theorem with $R = \C$. We will deduce the theorem as a corollary of the following theorem.
 
 % Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
 % \[
@@ -53,15 +65,20 @@ Since a scheme over $\C$ is also scheme over $R$, it suffices to prove the theor
 % \[
 %   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
 % \]
-If $R$ is a scheme, define $\sg(R) = \{(A,B) \in (\ag \times \ag)(R) | A \approx B\}$.
+If $R$ is a scheme, let 
+$$
+\sg(R) = \{(A,B) \in (\ag \times \ag)(R) | A \approx B\}.
+$$
+We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
+
 \begin{theorem}\label{thm:sg-c-dense}
   If $R$ is a subring of $\C$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
-As with Theorem~\ref{thm:invariant-c-constant}, it suffices to prove the result when $R = \C$.
+Since a scheme over $\C$ is also scheme over $R$, it suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R = \C$. 
 
 In arbitrary characteristic, we have the following:
 \begin{theorem}
-  Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A,B \in \ao^g$ and $A \approx B$. Then $f$ is a constant function.
+  Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
 
