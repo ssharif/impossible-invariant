@@ -812,16 +812,52 @@ Let $A$ be a symmetric positive definite matrix with determinate $N = \ell^n$. L
 
 Note that $\psi_A$ pulls back Siegel modular functions from $\ag$ to $X_0(N)$. On the level of Siegel upper half spaces, the pull back is given by
 \[
-  \psi_A^*(f) = \{\tau \mapsto f(A\tau)\}.
+  f \mapsto = \{\tau \mapsto f(A\tau)\}.
 \]
 
-Now $\bigcup X_A$ is dense in $\ag$ if and only if for all nonzero Siegel modular functions $f: \ag \to \C$, there is some $\psi_A$ such that $\psi_A^*(f) \neq 0$.
+Now $\bigcup X_A$ is dense in $\ag$ if and only if for all nonzero Siegel modular functions $f: \ag \to \C$, there is some $\psi_A$ such that $f \circ \psi_A \neq 0$.
 
-Every Siegel modular function is of the form
-\[
-  f(T) = \sum_Q c_Q \exp(2 \pi i)^{\tr(QT)}
-\]
-where $T \in \hh_g$ and the sum is over all quadratic forms $Q$ \textcolor{red}{TODO: do we use quadratic forms instead of symmetric matrices because characteristic $2$ fields?} Then
+\begin{definition}
+  A $g \times g$ matrix $N$ is \emph{half-integral} if $2N_{i,j} \in \Z$ and $N_{i,i} \in \Z$ for all $i,j$.
+\end{definition}
+
+\begin{lemma}
+  Let $f$ be a holomorphic function on $\hh_g/\Sp_{2g}(\Z)$. Then $f$ can be written as
+  \[
+    f(\tau) = \sum_{N \text{ h.i.}} c_N \exp(2 \pi i)^{\tr(N\tau)}.
+  \]
+\end{lemma}
+\begin{proof}
+  This is given more rigorously in \cite[Pg.~44]{klingen1990introductory}.
+
+  \textcolor{red}{TODO: this is prob unnecessary, just cite Klingen}
+
+  By definition, $f$ is a function on $\hh_g$ such that $f(\tau) = f(\gamma(\tau))$ for any $\gamma \in \Sp_{2g}(\Z)$. Let $S$ be any integral symmetric $g \times g$ matrix, and let $\gamma = \begin{bmatrix} I & S \\ 0 & I \end{bmatrix}$. Then $f(\tau) = f(\gamma(\tau)) = f(\tau + S)$. If we write $\tau = (\tau_{i,j})$, then $f$ is periodic in each variable $\tau_{i,j}$ with $i \leq j$. Thus we write $f$ as a multivariable Fourier series,
+  \begin{align*}
+    f(\tau_{i,j})
+    &=
+    \sum_{N \in \mathrm{Sym}_g(\Z)} a_N \prod_{i \leq j} \exp(2 \pi i \tau_{i,j})^{N_{i,j}}
+    \\
+    &=
+    \sum_{N} a_N \prod_{i,j} \exp(2 \pi i)^{\tau_{i,j} N_{i,j}}
+  \end{align*}
+  where in the last line $N$ ranges over all half-integral symmetric $g \times g$ matrices. A short computation shows that $\sum_{i,j}\tau_{i,j}N_{i,j} = \tr(\tau N)$.
+  %\sum_{i,j} \tau_{i,j}N_{i,j} = \sum_{i} \sum_{k} \tau_{i,k}N_{k,i} = \tr(\tau N).
+\end{proof}
+
+\begin{theorem}[Koecher]
+  Let $f$ be a holomorphic function on $\hh_g/\Sp_{2g}(\Z)$, with Fourier series $f(\tau) = \sum_N a_N \exp(2 \pi i)^{\tr(\tau N)}$, where $N$ runs over all symmetric half-integer matrices. If $g \geq 2$, then $a_N = 0$ for any $N$ that is not positive semi-definite.
+\end{theorem}
+\begin{proof}
+  See the proof of \cite[Thm.~1, Pg.~45]{klingen1990introductory}.
+  %See also https://pdfs.semanticscholar.org/b1f4/d21acdbb599fe177fb15e087dcda2b7c2905.pdf
+\end{proof}
+
+In what follows we assume $g \geq 2$.
+
+
+
+Then
 \[
   \psi_A^*(f)(\tau) = f(A\tau) = \sum_Q c_Q \exp(2 \pi i \tau)^{\tr(AQ)}.
 \]
