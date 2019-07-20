@@ -149,6 +149,14 @@ Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \r
 
 (This section should be shortened, if possible.)
 
+Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.) 
+Recall the map 
+\[
+\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda)
+\]
+defined in the introduction.
+
+
 %\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
 
 %We will define the maps $Y_0(\ell^n) \to \ag$ in two ways: geometrically based on the moduli interpretation, and complex analytically. We will use that these two interpretations are the same in the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Since the latter result does not directly carry over to positive characteristic, we will use a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
@@ -158,30 +166,30 @@ For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.) 
 
-Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. Let 
+%Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. 
+If $(E, C) \in Y_0(N)$, let 
 $$
 K(A) = (\ker \lambda_A) \cap C^g  \subset E^g.
 $$
 
-Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
-\begin{lemma}
-  The subgroup $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
-\end{lemma}
+%Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
+%\begin{lemma}
+%  The subgroup $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
+%\end{lemma}
+%
+%\begin{proof}
+%  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Furthermore, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
+%\end{proof}
 
-\begin{proof}
-  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Furthermore, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
-\end{proof}
+%Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
-Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
-
-\begin{definition}\label{def:psimod-def}
-Define 
-\[
-\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
-\]
-\end{definition}
+%\begin{definition}\label{def:psimod-def}
+%Define 
+%\[
+%\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
+%\]
+%\end{definition}
 
 (State here where we'll use the next result.)
 \begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
@@ -217,21 +225,24 @@ Then $D$ is the Smith normal form of $A$, so there exist $U,V \in \Gl_g(\Z)$ suc
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$. Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Define %a map 
+In this section we assume that the base scheme is $\C$. 
+%Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$. 
+Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations, 
+ $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$. 
+Define  
 \[
   \psi_A: \hh \to \hh_g, \quad  \tau \mapsto \tau A.
 \]
 
 \begin{lemma}\label{lem:psi-A-n}
-The map $\psi_A$ descends to a morphism
+The map $\psi_A$ induces a map %descends to a morphism
 $$
   \psimodt: Y_0(N) \longrightarrow \ag.
 $$
 \end{lemma}
 
 \begin{proof}
-Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations, 
-and $Y_0(N) = \hh/\Gamma_0(N)$ and $\ag = \hh_g/\Sp_{2g}(\Z)$. Let
+Let
 \[
 \sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N) \text{ and } M = \begin{bmatrix} aI_g & bA \\ cA^{-1} & dI_g \end{bmatrix}
 \]
@@ -241,17 +252,13 @@ If $\tau \in \hh$, a direct computation shows that $M \in\Sp_{2g}(\Z)$
 % M is in Sp because then M^t*\Omega*M = M
 % where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
 and  $\sigma(\tau)A = M(\tau A)$.
-
-  
-(It's well-defined. Why is it a morphism?)
+%(It's well-defined. Why is it a morphism?)
 \end{proof}
 
-\subsection{Equality of the maps $\psimodt$ and $\psimod$}
-\label{sec:geo-desc}
 
-In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
+%In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
 \begin{lemma}
-  The morphisms $\psimodt$ and $\psimod$ are equal.
+  When the base scheme is $\C$, we have $\psimodt = \psimod$.
 \end{lemma}
 
 \begin{proof}
@@ -361,6 +368,8 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 % \psimat(\tau) \textrm{ and } \psivec(\tau)
 % \]
 % are weakly isomorphic.
+
+
 
 \section{Proof of Theorem~\ref{thm:curves-dense}}
 \label{sec:step-1}
