@@ -82,9 +82,13 @@ In arbitrary characteristic, we have the following result, which will be proved 
 \end{theorem}
 
 
-\subsection{Overview}
+%\subsection{Overview}
 
-If $\ell$ is a prime and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integral matrices whose determinant is a power of $\ell$ (omit Definition~\ref{def:detl}??). If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}; it would be better to give the definition here, instead of later). If $A \in \detl$, let $X_A$ denote the image of $\psimod$.
+\begin{definition}\label{def:gellmatrix}
+If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
+\end{definition} 
+
+If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}; it would be better to give the definition here, instead of later). If $A \in \detl$, let $X_A$ denote the image of $\psimod$.
 
 In Section~\ref{sec:step-1} we prove the following theorem.
 
@@ -101,7 +105,7 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \textcolor{red}{TODO: introduce/move}
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
-  If $X$ and $Y$ are subsets of $\ag \times \ag$, we write (I suggest omitting this notation and writing it out in words, rather than doing a long expression) $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
+  If $X$ and $Y$ are subsets of $\ag \times \ag$, we write (I suggest omitting this notation and writing it out in words, rather than proving the result in a long expression) $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
   \begin{align*}
     \sg(\C)
     &\supseteq
@@ -145,7 +149,7 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \section{Defining curves $X_{A}$ on $\ag$}
 \label{sec:curves-on-Ag}
 
-Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $Y_0(\ell^n) \to \ag$ whose images are the curves $X_A \subset \ag$ mentioned in Section~\ref{sec:introduction}.
+\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
 
 We will describe the maps $Y_0(\ell^n) \to \ag$ in two ways: one based on the moduli interpretation, and one based on complex analysis. The fact that these two interpretations are the same is key to the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Unfortunately, the latter result does not directly carry over to positive characteristic, so we will need a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
 
@@ -154,81 +158,89 @@ For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $N$ not divisible by the characteristic of our base; later we will set $N = \ell^n$. Let $(E, C) \in Y_0(N)$; that is, $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of order $N$. Let $A$ be a $g \times g$ symmetric, positive definite integer matrix such that $\det A = N$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. By identifying $E^g$ with its dual, we consider $\lambda_A$ as a polarization of $E^g$; this makes sense since $A$ is symmetric and positive definite. Furthermore, $\deg \lambda_A = N^2$. Let $K(A) \subset E^g$ be $(\ker \lambda_A) \cap C^g$.
+Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. (Later we will take $N$ to be a power of a prime $\ell$.) Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. Let 
+$$
+K(A) = \ker \lambda_A) \cap C^g  \subset E^g.
+$$
 
+Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
 \begin{lemma}
-  The subgroup $K(A)$ is a maximal isotropic in $\ker \lambda_A$.
+  The subgroup $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
 \end{lemma}
 
 \begin{proof}
-  Let $P \in C$ be a generator, defined over the algebraic closure of our base field. We may identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then $\lambda_A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$ which is given by multiplication by the matrix $A$. One sees that the order of $\ker \lambda_A^{(C)}$ is the square root of the order of $\ker \lambda_A$, and furthermore $\ker \lambda_A^{(C)} \subset C^g$ is isotropic. The claim follows.
+  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Furthermore, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
 \end{proof}
 
-Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
+Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
-We define $\psimod: Y_0(N) \to \ag$ by
+\begin{definition}\label{def:psimod-def}
+Define $\psimod: Y_0(N) \to \ag$ by
 \[
   \psimod(E,C) = (B,\lambda).
 \]
+\end{definition}
 
 
 \begin{proposition}\label{prop:psimod-weakly-isomorphic-to-product}
-  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in Y_0(N)$, let $E_i = E/(N/d_i)C$. If $\psimod(E,C) = (B,\lambda)$, then
-  \[
+  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in Y_0(N)$ and $1 \le i \le g$, let $E_i = E/d_i^{-1}NC$. If $(B,\lambda) = \psimod(E,C)$, then
+$
     B \approx E_1 \times \cdots \times E_g.
-  \]
+$
 \end{proposition}
 
 \begin{proof}
-  Let
-   \[
-     D =
-    \begin{bmatrix}
-      {d_1} & & & \\
-      & {d_2} & & \\
-      & & \ddots & \\
-      & & & {d_{g}}
-    \end{bmatrix}
-  \]
-  be the Smith normal form of $A$. Then there are matrices $U,V \in \Gl_g(\Z)$ such that $A = UDV$. Each of these matrices induces a natural endomorphism of $E^g$; we use $\rho_M$ to denote the endomorphism corresponding to the matrix $M$. We have $\rho_A = \rho_U \rho_D \rho_V$, and $\rho_U, \rho_V$ are isomorphisms. We also have that
+  Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal. 
+%   \[
+%     D =
+%    \begin{bmatrix}
+%      {d_1} & & & \\
+%      & {d_2} & & \\
+%      & & \ddots & \\
+%      & & & {d_{g}}
+%    \end{bmatrix}
+%  \]
+Then $D$ is the Smith normal form of $A$, so there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. For $M \in \Gl_g(\Z)$, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$. Then $\rho_U$ and $\rho_V$ are isomorphisms, and $\rho_A = \rho_U \rho_D \rho_V$. Further, 
   \begin{align*}
     \ker \rho_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
   \end{align*}
-  and so $(\ker \rho_D) \cap C^g = (N/d_1)C \times \cdots \times (N/d_g)C$. Furthermore, $\rho_V(C^g) = C^g$, and so
+  and so $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$. 
+  Furthermore, $\rho_V(C^g) = C^g$, so
   \[
     \rho_V((\ker \rho_A) \cap C^g) = (\ker \rho_D) \cap C^g.
   \]
-  Therefore the quotients of $E^g$ by $(\ker \rho_A) \cap C^g$ and $(\ker \rho_D) \cap C^g$ respectively are (weakly) isomorphic. The claim follows.
+  Thus the quotients of $E^g$ by $(\ker \rho_A) \cap C^g$ and by $(\ker \rho_D) \cap C^g$ are weakly isomorphic. The claim follows.
 \end{proof}
 
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Let $\hh$ be the complex upper half-plane and $\hh_g$ the degree $g$ Siegel upper half-space. Define a map $\psi_A: \hh \to \hh_g$ by
+In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Define %a map 
 \[
-  \psi_A(\tau) = \tau A.
+  \psi_A: \hh \to \hh_g,  \tau \mapsto \tau A.
 \]
-\begin{proposition}
+\begin{proposition}\label{prop:psi-A-n}
 The map $\psi_A$ descends to a morphism
-\begin{equation}\label{def:psi-A-n}
+$$
   \psimodt: Y_0(N) \longrightarrow \ag.
-\end{equation}
+$$
 \end{proposition}
 
 \begin{proof}
-Recall that $Y_0(N) = \hh/\Gamma_0(N)$ and $\ag = \hh_g/\Sp_{2g}(\Z)$. Let
+Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations, 
+and $Y_0(N) = \hh/\Gamma_0(N)$ and $\ag = \hh_g/\Sp_{2g}(\Z)$. Let
 \[
-\sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N)
+\sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N) \text{ and } M = \begin{bmatrix} aI_g & bA \\ cA^{-1} & dI_g \end{bmatrix}
 \]
-and let $\tau \in \hh$. A direct computation shows that the matrix
-\[
-M = \begin{bmatrix} aI & bA \\ cA^{-1} & dI \end{bmatrix}
-\]
-lies in $\Sp_{2g}(\Z)$
+where $I_g$ denotes the $g \times g$ identity matrix.
+If $\tau \in \hh$, a direct computation shows that $M \in\Sp_{2g}(\Z)$
 % it is integral because \det(A) | c, so cA^{-1} is integral.
 % M is in Sp because then M^t*\Omega*M = M
 % where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
-and that $\sigma(\tau)A = M(\tau A)$.
+and  $\sigma(\tau)A = M(\tau A)$.
+
+  
+(It's well-defined. Why is it a morphism?)
 \end{proof}
 
 In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of the previous proposition.
@@ -375,9 +387,9 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 %   Details: unirational means there is a dominant rational map $f:\Pro^n \to \Sl_g$ for some $n$. Given $G \in \Sl_g(\R)$, there some $G' \in f(\Pro^n(\R))$ which is close to $G$. Let $P \in \Pro^n(\R)$ with $f(P) = G'$. Then
 % \end{proof}
 
-\begin{definition}\label{def:detl}
-  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $A$ for which $\det A$ is a power of $\ell$.
-\end{definition}
+%\begin{definition}\label{def:detl}
+%  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $A$ for which %$\det A$ is a power of $\ell$.
+%\end{definition}
 
 \begin{lemma}\label{lemma:ggt-spd-detl}
   If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
