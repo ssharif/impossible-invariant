@@ -444,22 +444,28 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
 \begin{proposition}\label{prop:A-over-detA}
-  The set ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is dense in $\permat$ with respect to the Euclidean topology.
+  Let $S = {\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$. Then $S$ is dense in $\permat$ with respect to the Euclidean topology.
 \end{proposition}
 
 \begin{proof}
-Let
-  \[
-   S =  \{A/(\det A)^{\frac{1}{g}} | A \in \detl\}.
-  \]
-  (I don't understand the next sentence.) By Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have 
+%Let
+%  \[
+%   S =  \{A/(\det A)^{\frac{1}{g}} | A \in \detl\}.
+%  \]
+  (I don't understand the next sentence. Can it be made more precise?) By Lemma~\ref{lemma:ggt-spd-detl}, in the definition of $S$ we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have 
   \[
     S = \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
   \]
   The proposition now follows from Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
-If $X$ is a subset of a complex manifold $M$, we say that $X$ is holomorphically dense in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$. Observe that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
+\begin{definition}
+If $X$ is a subset of a complex manifold $M$, we say that $X$ is {\em holomorphically dense} in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$. 
+\end{definition}
+
+\begin{remark}
+Note that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
+\end{remark}
 
 Let $\R^+$ denote the set of positive real numbers.
 \begin{lemma}\label{lemma:holomorphic-closure-irM}
