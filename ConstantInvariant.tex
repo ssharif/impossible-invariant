@@ -377,7 +377,7 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 %The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
 
 \begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
-  The set $\Sl_g(\Z[1/\ell])$ is dense in $\Sl_g(\R)$ (with respect to the Euclidean topology).
+  The set $\Sl_g(\Z[1/\ell])$ is dense in $\Sl_g(\R)$ with respect to the Euclidean topology.
   %Here, the topology is the one induced by the Euclidean metric on the entries.
 \end{lemma}
 
@@ -407,6 +407,8 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 %  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $A$ for which %$\det A$ is a power of $\ell$.
 %\end{definition}
 
+Recall the definition of $detl$ in Definition \ref{def:detl}.
+
 \begin{lemma}\label{lemma:ggt-spd-detl}
   If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
   \[
@@ -415,12 +417,12 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 \end{lemma}
 
 \begin{proof}
-  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
+  If $n \in \N$, the $\ell^n GG^t$ is symmetric and positive definite, and its determinant is a power of $\ell$. Let $N$ be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
 \end{proof}
 
 
 \begin{definition}
-  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
+  Let $\permat$ denote the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
 \end{definition}
 
 \begin{lemma}\label{lemma:ggt-periodmatrices}
@@ -428,7 +430,7 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 \end{lemma}
 
 \begin{proof}
-  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
+  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $d_1, d_2, \dots, d_n$ be the diagonal entries of $D$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Further, $\prod d_i = \det A = 1$. Let
   \[
     G = O
     \begin{bmatrix}
@@ -446,15 +448,15 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proposition}
 
 \begin{proof}
-  In the set
+Let
   \[
-    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
+   S =  \{A/(\det A)^{\frac{1}{g}} | A \in \detl\}.
   \]
-  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
+  (I don't understand the next sentence.) By Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have 
   \[
-    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
+    S = \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
   \]
-  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
+  The proposition now follows from Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
 If $X$ is a subset of a complex manifold $M$, we say that $X$ is holomorphically dense in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$. Observe that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
