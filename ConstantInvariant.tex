@@ -158,9 +158,11 @@ For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. (Later we will take $N$ to be a power of a prime $\ell$.) Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. Let 
+Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. (Later we will take $N$ to be a power of a prime $\ell$.) 
+
+Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. Let 
 $$
-K(A) = \ker \lambda_A) \cap C^g  \subset E^g.
+K(A) = (\ker \lambda_A) \cap C^g  \subset E^g.
 $$
 
 Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
@@ -172,16 +174,16 @@ Where is the next result used? If we use it, we should refer to it. If we don't 
   Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Furthermore, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
 \end{proof}
 
-Define $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
+Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
 \begin{definition}\label{def:psimod-def}
-Define $\psimod: Y_0(N) \to \ag$ by
+Define 
 \[
-  \psimod(E,C) = (B,\lambda).
+\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
 \]
 \end{definition}
 
-
+(State here where we'll use the next result.)
 \begin{proposition}\label{prop:psimod-weakly-isomorphic-to-product}
   Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in Y_0(N)$ and $1 \le i \le g$, let $E_i = E/d_i^{-1}NC$. If $(B,\lambda) = \psimod(E,C)$, then
 $
@@ -217,8 +219,9 @@ Then $D$ is the Smith normal form of $A$, so there exist $U,V \in \Gl_g(\Z)$ suc
 
 In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Define %a map 
 \[
-  \psi_A: \hh \to \hh_g,  \tau \mapsto \tau A.
+  \psi_A: \hh \to \hh_g, \quad  \tau \mapsto \tau A.
 \]
+
 \begin{proposition}\label{prop:psi-A-n}
 The map $\psi_A$ descends to a morphism
 $$
@@ -243,27 +246,30 @@ and  $\sigma(\tau)A = M(\tau A)$.
 (It's well-defined. Why is it a morphism?)
 \end{proof}
 
-In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of the previous proposition.
+\subsection{Equality of the maps $\psimodt$ and $\psimod$}
+\label{sec:geo-desc}
+
+In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Proposition \ref{prop:psi-A-n}.
 \begin{proposition}
   The morphisms $\psimodt$ and $\psimod$ are equal.
 \end{proposition}
 
 \begin{proof}
-  If $(E, C) \in Y_0(N)$ is represented by the point $\tau \in \hh$, then we may take $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
+  Suppose $(E, C) \in Y_0(N)$. There exists $\tau \in \hh$ such that $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
 
-  Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Observe that $\C^g/\Lambda = E^g$, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. Let
+  Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Then $\C^g/\Lambda = E^g$, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. Let
   \[
-    \tla = \Z^g + \tau A \Z^g.
+    \tla = \Z^g + \tau A \Z^g \quad \text{ and } \quad     \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
   \]
-  One sees that $\psimodt(\tau) \approx \C^g/\tla$. Let
-  \[
-    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
-  \]
-  Multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
+Then $\psimodt(\tau) \approx \C^g/\tla$, and
+%  \[
+%    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
+%  \]
+  multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
   \[
     \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
   \]
-  Furthermore, $\Lambda \subset \Lambda_A$, so we have a natural isogeny
+ Since $\Lambda \subset \Lambda_A$, there is a natural isogeny
   \[
     \rho: E^g = \C^g/\Lambda \to \C^g/\Lambda_A.
   \]
@@ -273,13 +279,14 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
   \[
     \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda.
   \]
-  This is the same isogeny $\rho_A$ as given in the proof of Prop.~\ref{prop:psimod-weakly-isomorphic-to-product}; that is, it is the natural isogeny $E^g \to E^g$ given by the matrix $A$. Then
+  This is the same isogeny $\rho_A$ as in the proof of Proposition \ref{prop:psimod-weakly-isomorphic-to-product}; i.e., it is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
 \[
 \ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
 \]
-With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
+%With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
+Then
 \[
-\ker \rho = (\ker \rho_A) \cap C^g = K(A).
+\ker \rho = (\ker \rho_A) \cap C^g = (\ker \lambda_A) \cap C^g = K(A).
 \]
 Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
