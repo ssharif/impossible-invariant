@@ -88,7 +88,7 @@ In arbitrary characteristic, we have the following result, which will be proved 
 If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
 \end{definition} 
 
-If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}; it would be better to give the definition here, instead of later). If $A \in \detl$, let $X_A$ denote the image of $\psimod$.
+If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. If $(E, C) \in Y_0(N)$, the matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define $\psimod$ to send $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and let $X_A$ denote the image of $\psimod$.
 
 In Section~\ref{sec:step-1} we prove the following theorem.
 
@@ -149,16 +149,16 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 \section{Defining curves $X_{A}$ on $\ag$}
 \label{sec:curves-on-Ag}
 
-\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
+%\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
 
-We will define the maps $Y_0(\ell^n) \to \ag$ in two ways: geometrically based on the moduli interpretation, and complex analytically. We will use that these two interpretations are the same in the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Since the latter result does not directly carry over to positive characteristic, we will use a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
+%We will define the maps $Y_0(\ell^n) \to \ag$ in two ways: geometrically based on the moduli interpretation, and complex analytically. We will use that these two interpretations are the same in the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Since the latter result does not directly carry over to positive characteristic, we will use a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
 
 For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. (Later we will take $N$ to be a power of a prime $\ell$.) 
+Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.) 
 
 Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. Let 
 $$
@@ -217,7 +217,7 @@ Then $D$ is the Smith normal form of $A$, so there exist $U,V \in \Gl_g(\Z)$ suc
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Define %a map 
+In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$. Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Define %a map 
 \[
   \psi_A: \hh \to \hh_g, \quad  \tau \mapsto \tau A.
 \]
