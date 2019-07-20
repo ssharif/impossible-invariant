@@ -144,8 +144,10 @@ Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \r
 
 
 
-\section{Defining curves $X_{A}$ on $\ag$}
+\section{The curves $X_{A}$}
 \label{sec:curves-on-Ag}
+
+(This section should be shortened, if possible.)
 
 %\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
 
@@ -182,12 +184,12 @@ Define
 \end{definition}
 
 (State here where we'll use the next result.)
-\begin{proposition}\label{prop:psimod-weakly-isomorphic-to-product}
+\begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
   Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in Y_0(N)$ and $1 \le i \le g$, let $E_i = E/d_i^{-1}NC$. If $(B,\lambda) = \psimod(E,C)$, then
 $
     B \approx E_1 \times \cdots \times E_g.
 $
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
   Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal. 
@@ -220,12 +222,12 @@ In this section we work over $\C$. Suppose that $A$ is a symmetric, positive def
   \psi_A: \hh \to \hh_g, \quad  \tau \mapsto \tau A.
 \]
 
-\begin{proposition}\label{prop:psi-A-n}
+\begin{lemma}\label{lem:psi-A-n}
 The map $\psi_A$ descends to a morphism
 $$
   \psimodt: Y_0(N) \longrightarrow \ag.
 $$
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
 Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations, 
@@ -247,10 +249,10 @@ and  $\sigma(\tau)A = M(\tau A)$.
 \subsection{Equality of the maps $\psimodt$ and $\psimod$}
 \label{sec:geo-desc}
 
-In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Proposition \ref{prop:psi-A-n}.
-\begin{proposition}
+In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
+\begin{lemma}
   The morphisms $\psimodt$ and $\psimod$ are equal.
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
   Suppose $(E, C) \in Y_0(N)$. There exists $\tau \in \hh$ such that $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
@@ -277,7 +279,7 @@ Then $\psimodt(\tau) \approx \C^g/\tla$, and
   \[
     \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda.
   \]
-  This is the same isogeny $\rho_A$ as in the proof of Proposition \ref{prop:psimod-weakly-isomorphic-to-product}; i.e., it is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
+  This is the same isogeny $\rho_A$ as in the proof of Lemma \ref{lem:psimod-weakly-isomorphic-to-product}; i.e., it is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
 \[
 \ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
 \]
@@ -661,7 +663,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 
     For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and similarly for $x_i$. Note that the $x_i$ are distinct points, as the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
 
-    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Proposition~\ref{prop:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$. By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
+    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$. By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
     \[
       \psi_{A}(x_1) \approx E/\gamma^{gn_1}(\sC_1) \times \cdots \times E/\gamma^{gn_g}(\sC_1).
     \]
@@ -670,7 +672,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
       \left(\gamma^{n_1 + \cdots + n_g}\right)^g \equiv \beta^g\left(\gamma^{n_1' + \cdots + n_g'}\right)^g
       \text{ in } \Gt_{q_1}.
     \]
-    Note that $\#S = g$ because $g$ divides $q_1 + 1$, the order of $\Gt_{q_1}$. For any $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Proposition~\ref{prop:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\gamma^{gn_1'}(\beta(\sC_1)) \times \cdots \times E/\gamma^{gn_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
+    Note that $\#S = g$ because $g$ divides $q_1 + 1$, the order of $\Gt_{q_1}$. For any $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\gamma^{gn_1'}(\beta(\sC_1)) \times \cdots \times E/\gamma^{gn_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
 
   For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta$ such that
   \[
