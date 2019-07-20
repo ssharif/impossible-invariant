@@ -76,8 +76,8 @@ We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 \end{theorem}
 Since a scheme over $\C$ is also scheme over $R$, it suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R = \C$. 
 
-In arbitrary characteristic, we have the following:
-\begin{theorem}
+In arbitrary characteristic, we have the following result, which will be proved in Section~\ref{sec:characteristic-p}.
+\begin{theorem}\label{thm:arbit-char}
   Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
@@ -142,7 +142,7 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 
 
 
-\section{Constructing curves on $\ag$}
+\section{Defining curves $X_{A}$ on $\ag$}
 \label{sec:curves-on-Ag}
 
 Fix a prime $\ell$ and positive integer $n$\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct a sequence of maps $Y_0(\ell^n) \to \ag$ whose images are the curves $X_A \subset \ag$ mentioned in Section~\ref{sec:introduction}.
@@ -343,10 +343,10 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 % \]
 % are weakly isomorphic.
 
-\section{Step 1}
+\section{Proof of Theorem~\ref{thm:curves-dense}}
 \label{sec:step-1}
 
-The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
+%The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
 
 \begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
   The set $\Sl_g(\Z[1/\ell])$ is dense in $\Sl_g(\R)$ (with respect to the Euclidean topology).
@@ -460,14 +460,8 @@ Let $\R^+$ denote the set of positive real numbers.
 %   Since $\psi_A(i\R^+) \subset \im \psi_A$, the claim follows from the previous lemma.
 % \end{proof}
 
-\textcolor{red}{TODO: alter this to prove Theorem~\ref{thm:curves-dense} directly}
-\begin{theorem}
-  The set
-  ${\bigcup_{A \in \detl} \im \psimod}$
-  is Zariski dense in $\ag$.
-\end{theorem}
 
-\begin{proof}
+\begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
   We have
   \begin{align*}
     \cup_A \psi_A(i\R^+) &= \cup \{irA | r \in \R^+, A \in \detl\} \\
@@ -485,10 +479,10 @@ with respect to the Euclidean topology,  by Proposition~\ref{prop:A-over-detA}.
 
 
 
-\section{Step 2}
+\section{Proof of Theorem~\ref{thm:Sg-dense}}
 \label{sec:step-2}
 
-The main goal of this section is to prove Theorem~\ref{thm:Sg-dense}.
+%The main goal of this section is to prove Theorem~\ref{thm:Sg-dense}.
 
 \textcolor{red}{TODO: introduce lemmas}
 
@@ -685,7 +679,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 
 
 
-\section{Characteristic $p$}
+\section{Proof of Theorem \ref{thm:arbit-char}}
 \label{sec:characteristic-p}
 
 Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write
