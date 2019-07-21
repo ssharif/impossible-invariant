@@ -543,24 +543,28 @@ with respect to the Euclidean topology,  by Proposition~\ref{prop:A-over-detA}.
 \begin{lemma}\label{lem:K-exists}
   Let $g$ be a positive integer and $\ell$ a prime. Then there exists an imaginary quadratic field $K$ such that
   \begin{enumerate}
-    \item $\sO_K^\times = \{\pm 1\}$
-    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$
-    \item There is an infinite number of rational primes $q$ such that
+    \item $\sO_K^\times = \{\pm 1\}$,
+    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$,
+    \item there are infinitely many rational primes $q$ such that
     \begin{enumerate}
-      \item $q$ is inert in $K$
-      \item $q \equiv -1 \mod{g}$
+      \item $q$ is inert in $K$,
+      \item $q \equiv -1 \mod{g}$, and
       \item $\alpha \mod q\sO_K \in (\sO_K/q\sO_K)^\times$ is a $g$th power.
     \end{enumerate}
   \end{enumerate}
 \end{lemma}
 \begin{proof}
-  By Lemma~\ref{lem:silly}, we can find a $K$ satisfying the first two properties. Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. Let $\frak{q}$ be a prime of $L$ lying over a prime $q$ of $\Q$ unramified in $L/\Q$. Let $\sigma = \mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$. Note that $q$ is inert in $K$ if and only if $\sigma|_K$ is complex conjugation. Similarly, $q \equiv -1 \mod{g}$ if and only if $\sigma|_{\Q(\zeta_g)}$ is complex conjugation.
+  By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2). Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. 
+  Let $\sigma$ be any complex conjugation in $\Gal(L/\Q)$.
+  Let $\frak{q}$ be any prime of $L$ unramified in $L/\Q$ whose Frobenius $\mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$ is $\sigma$. The Chebotarev density theorem guarantees that there are infinitely many such $\frak{q}$.
+  Let $q$ be the rational prime below $\frak{q}$.
+  Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (a). 
+  Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \mod{g}$, giving (b).
 %To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
-Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $\F_{q^2}^\times$. 
+Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, in $(\sO_K/q\sO_K)^\times$, we have that $\alpha^{1/g}$ is a $g$th root of $\alpha$, giving (c). 
 %Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. 
-So by Chebotarev's density theorem, it remains to show there exists some $\sigma \in \Gal(L/\Q)$ such that $\sigma$ has order $2$ and restricts to complex multiplication in $K$ and $\Q(\zeta_g)$.
-
-  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
+%By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
+%  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
 
 \textcolor{red}{TODO: introduce lemmas}
@@ -570,7 +574,7 @@ So by Chebotarev's density theorem, it remains to show there exists some $\sigma
 \end{definition}
 
 \begin{lemma}\label{lem:c-torsor}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime inert in $K$ and not equal to the characteristic of the base field. Then the set of subgroups of $E$ with order $q$ is a $\Gt_q$ torsor.
+  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime inert in $K$ and not equal to the characteristic of the base field. Then the set of subgroups of $E$ with order $q$ is a $\Gt_q$ torsor.
 \end{lemma}
 \begin{proof}
   Note that $E[q]$ is a module over $\sO_K/q\sO_K \cong \F_{q^2}$  of size $q^2$. Therefore $E[q] \cong \F_{q^2}$ as $\F_{q^2}$-vector spaces. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the one-dimensional $\F_q$-subspaces of $E[q]$.
@@ -586,7 +590,7 @@ So by Chebotarev's density theorem, it remains to show there exists some $\sigma
 \end{theorem}
 
 \begin{lemma}\label{lem:c-end}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a product of distinct primes not equal to the characteristic of the base field and inert in $K$. If $\sC$ is a subgroup of $E$ of order $q$, then $\End(E/\sC) \cong \Z + q\sO_K$. In particular, every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
+  Suppose $E$ be an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a product of distinct primes not equal to the characteristic of the base field and inert in $K$. If $\sC$ is a subgroup of $E$ of order $q$, then $\End(E/\sC) \cong \Z + q\sO_K$. In particular, every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
 \end{lemma}
 \begin{proof}
   Factor $q = \prod_{i=1}^n q_i$, where each $q_i$ is a prime inert in $K$ and not equal to the characteristic of the base field. We can write $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of order $q_i$.
@@ -607,7 +611,7 @@ So by Chebotarev's density theorem, it remains to show there exists some $\sigma
 \end{proof}
 
 \begin{lemma}\label{lem:c-subgps-distinct-quotients}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
+  Suppose $E$ be an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
 \end{lemma}
 \begin{proof}
   Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so up to replacing $\sC$ with $\beta(\sC)$ and $\alpha$ with $\alpha\overline{\beta}$, it is enough to prove the claim for $\beta = 1$.
@@ -632,7 +636,7 @@ So by Chebotarev's density theorem, it remains to show there exists some $\sigma
 \end{proof}
 
 \begin{lemma}\label{lem:prod-equiv-torsor}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Let $\sC$ be a subgroup of $E$ of order $q$. If $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, then
+  Suppose $E$ be an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Let $\sC$ be a subgroup of $E$ of order $q$. If $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, then
   \[
     \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
     \,\Leftrightarrow\,
