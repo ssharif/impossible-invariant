@@ -163,6 +163,10 @@ defined in the introduction.
 
 For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 
+\begin{definition}
+If $M \in \Gl_g(\Z)$ and $E$ is an elliptic curve, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$. 
+\end{definition}
+
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
@@ -210,16 +214,16 @@ $
 %      & & & {d_{g}}
 %    \end{bmatrix}
 %  \]
-Then $D$ is the Smith normal form of $A$, so there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. For $M \in \Gl_g(\Z)$, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$. Then $\rho_U$ and $\rho_V$ are isomorphisms, and $\rho_A = \rho_U \rho_D \rho_V$. Further, 
+Then $D$ is the Smith normal form of $A$, and there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. Then $\rho_U$ and $\rho_V$ are automorphisms of $E^g$ induced by $U$ and $V$, respectively, and $\rho_A = \rho_U \rho_D \rho_V$. Since 
   \begin{align*}
     \ker \rho_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
   \end{align*}
-  and so $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$. 
-  Furthermore, $\rho_V(C^g) = C^g$, so
+  we have $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$. 
+ Since $\rho_V(C^g) = C^g$, we now have
   \[
     \rho_V((\ker \rho_A) \cap C^g) = (\ker \rho_D) \cap C^g.
   \]
-  Thus the quotients of $E^g$ by $(\ker \rho_A) \cap C^g$ and by $(\ker \rho_D) \cap C^g$ are weakly isomorphic. The claim follows.
+  Thus the quotients of $E^g$ by $(\ker \rho_A) \cap C^g$ and by $(\ker \rho_D) \cap C^g$ are weakly isomorphic. The lemma follows.
 \end{proof}
 
 \subsection{Analytic description}
@@ -267,25 +271,30 @@ and  $\sigma(\tau)A = M(\tau A)$.
   \[
     \tla = \Z^g + \tau A \Z^g \quad \text{ and } \quad     \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
   \]
-Then $\psimodt(\tau) \approx \C^g/\tla$, and
+By definition, $\psimodt(\tau) \approx \C^g/\tla$.
 %  \[
 %    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
 %  \]
-  multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
-  \[
-    \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
-  \]
+%  Multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
+%  \[
+ %   \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
+ % \]
  Since $\Lambda \subset \Lambda_A$, there is a natural isogeny
   \[
     \rho: E^g = \C^g/\Lambda \to \C^g/\Lambda_A.
   \]
   We wish to compute $\ker \rho$.
 
-  Multiplication by $A: \C^g \to \C^g$ induces an isogeny
+  Multiplication by $A: \C^g \to \C^g$ induces an isomorphism
   \[
-    \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda.
+     \C^g/\Lambda_A \xrightarrow{\sim}  \C^g/\tla
   \]
-  This is the same isogeny $\rho_A$ as in the proof of Lemma \ref{lem:psimod-weakly-isomorphic-to-product}; i.e., it is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
+and an isogeny
+  \[
+    \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda,
+  \]
+  %This is the same isogeny $\rho_A$ as in the proof of Lemma \ref{lem:psimod-weakly-isomorphic-to-product}; i.e., it
+  where $\rho_A$ as before is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
 \[
 \ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
 \]
@@ -302,7 +311,7 @@ Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx
 \[
 \C^g/(\Z^g + \Omega \Z^g),
 \]
-and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
+and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
 Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. But observe that $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, and so $E_A$ gives rise to a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Then by definition of $\psimod$, we have
 \[
