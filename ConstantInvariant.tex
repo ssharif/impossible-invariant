@@ -900,16 +900,16 @@ Let $q = \exp(2 \pi i \tau)$. Then we can rewrite the previous equation as
 \textcolor{red}{TODO: this is prob unnecessary, just cite}
 
 \begin{lemma}\label{lem:finite-fixed-trace}
-  For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) = t$.
+  For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
 \end{lemma}
 \begin{proof}
   This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
 
-  Recall that $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$ and $M_{g \times g}(\Z)$ is a discrete subset. So it is enough to show that $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, $\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 \leq (\sum \lambda_i)^2 = \tr(Q)^2 = t^2$.
+  Recall that $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$ and $M_{g \times g}(\Z)$ is a discrete subset. So it is enough to show that $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, $\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 \leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
 \end{proof}
 
-\begin{lemma}
-  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) = t$ is finite.
+\begin{lemma}\label{lem:bound-trace-finite}
+  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
 \end{lemma}
 \begin{proof}
   Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
@@ -921,18 +921,51 @@ Let $q = \exp(2 \pi i \tau)$. Then we can rewrite the previous equation as
     &&\text{By positive semidefinite.}
     %\tr(B^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(B)^2.
   \end{align*}
-  Therefore, if $\tr(AQ) = t$, then
+  Therefore, if $\tr(AQ) \leq t$, then
   \[
-    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) = \tr(A^{-1})t.
+    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) \leq \tr(A^{-1})t.
   \]
   The claim then follows from Lemma~\ref{lem:finite-fixed-trace}.
+\end{proof}
+
+\begin{lemma}
+  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists a positive definite real symmetric $g \times g$ matrix $A$ such that $\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+\end{lemma}
+\begin{proof}
+  Define
+  \begin{align*}
+    S_{\leq t} &= \min\{ Q \in S \colon \tr(Q) \leq t \}
+    \\
+    t_0 &= \min\{ \tr(Q) \colon Q \in S \}
+    \\
+    t_1 &= \min\{ \tr(Q) \colon Q \in S \text{ and } \tr(Q) > t_0 \}.
+  \end{align*}
+  Note that for any $t$, $S_{\leq t}$ is finite by Lemma~\ref{lem:bound-trace-finite}.
+
+  Consider the set of symmetric matrices $E$ such that
+  \begin{enumerate}
+    \item $E$ is small \textcolor{red}{TODO: fix}
+    \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all $Q_i,Q_j \in S_{\leq t_1}$.
+  \end{enumerate}
+
+  If $E$ is small enough, then $I + E$ is positive definite. Note that if $\epsilon > \max\{|E_{i,j}|\}$ then
+  \begin{align*}
+    \tr(Q)(1 - \epsilon) \leq \tr((I + E)Q) \leq \tr(Q)(1 + \epsilon).
+  \end{align*}
+  So if $\tr(Q) > t_1$ and $1 - t_0/t_1 > \epsilon$, then $\tr(Q)(1 - \epsilon) > t_0$. Thus if $E$ is small enough, then $\tr(QE) > t_1$ for any $Q$ with $\tr(Q) > t_1$. We can also ensure $\tr(Q(I+E)) < t_1 - t_0$ for any $Q \in S_{\leq t_1}$. In particular, $\tr(Q(I+E))$ is minimized only when $\tr(Q) = t_0$.
+
+  To see that the second condition can be satisfied, note that the equation $\tr(EQ_i) \neq \tr(EQ_j)$ is a closed linear condition on the entries of $E$. So the set of possible $E$ is the complement of a finite union of hyperplanes in $\R^{g(g+1)/2}$.
+
+  We have shown properties (1) and (2) are both open conditions. Hence there is an open subset of $\R^{g(g+1)/2}$ of possible $E$ around $0$.
+
+  \textcolor{red}{TODO: rewrite}
 \end{proof}
 
 
 
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  ???
+  \textcolor{red}{TODO: finish}
 \end{proof}
 
 \begin{comment}
