@@ -541,27 +541,29 @@ with respect to the Euclidean topology,  by Proposition~\ref{prop:A-over-detA}.
 \end{proof}
 
 \begin{lemma}\label{lem:K-exists}
-  Let $g$ be a positive integer and $\ell$ a prime. Then there exists an imaginary quadratic field $K$ such that
-  \begin{enumerate}
-    \item $\sO_K^\times = \{\pm 1\}$,
-    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$,
-    \item there are infinitely many rational primes $q$ such that
+  Suppose $\ell$ is a prime, $g$ is a positive integer, and  $K$ is an imaginary quadratic field such that $\sO_K^\times = \{\pm 1\}$ and $\ell$ splits into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$.
+%  \begin{enumerate}
+%    \item $\sO_K^\times = \{\pm 1\}$,
+%    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$,
+%    \item 
+Then there are infinitely many rational primes $q$ such that
     \begin{enumerate}
       \item $q$ is inert in $K$,
       \item $q \equiv -1 \mod{g}$, and
       \item $\alpha \mod q\sO_K \in (\sO_K/q\sO_K)^\times$ is a $g$th power.
     \end{enumerate}
-  \end{enumerate}
+%  \end{enumerate}
 \end{lemma}
 \begin{proof}
-  By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2). Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. 
+  %By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2). 
+  Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. 
   Let $\sigma$ be any complex conjugation in $\Gal(L/\Q)$.
   Let $\frak{q}$ be any prime of $L$ unramified in $L/\Q$ whose Frobenius $\mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$ is $\sigma$. The Chebotarev density theorem guarantees that there are infinitely many such $\frak{q}$.
   Let $q$ be the rational prime below $\frak{q}$.
-  Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (a). 
-  Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \mod{g}$, giving (b).
+  Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (1). 
+  Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \mod{g}$, giving (2).
 %To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
-Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, in $(\sO_K/q\sO_K)^\times$, we have that $\alpha^{1/g}$ is a $g$th root of $\alpha$, giving (c). 
+Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3). 
 %Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. 
 %By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
 %  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
@@ -687,7 +689,7 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
   \]
 \end{lemma}
 \begin{proof}
-  Choose an imaginary quadratic field $K$, principal prime $\alpha\sO_K$ lying over $\ell$, and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for any $i$. Let $E$ be an elliptic curve over an algebraically closed field with endomorphism ring $\End(E) \cong \sO_K$.
+  For any imaginary quadratic field $K$ as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for any $i$. Let $E$ be an elliptic curve over an algebraically closed field with endomorphism ring $\End(E) \cong \sO_K$.
 
   If $\sC$ is a cyclic subgroup of $E$ with order prime to $\ell$, then $\alpha$ induces a chain of isogenies
   \[
