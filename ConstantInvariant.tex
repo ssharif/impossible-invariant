@@ -580,7 +580,7 @@ Then there are infinitely many rational primes $q$ such that
 Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3).
 %Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$.
 %By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
-%  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
+%  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Since $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
 
 \textcolor{red}{TODO: introduce lemmas}
@@ -636,7 +636,9 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 
   If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the other direction. Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. We want to show that $\sC = \alpha(\sC)$.
 
-  Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$. This shows that $\deg(\alpha) = \deg(\alpha')$. Because $\alpha$ and $\alpha'$ are prime to $q$,
+  Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$. 
+  %This shows that $\deg(\alpha) = \deg(\alpha')$. 
+  Since $\alpha$ and $\alpha'$ are prime to $q$,
   \[
     \sC + \ker(\alpha')
     \cong
