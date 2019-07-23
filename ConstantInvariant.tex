@@ -81,6 +81,7 @@ In arbitrary characteristic, we have the following result, which will be proved 
   Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
+The motivation behind this result is the construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Or, to put it another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the protocol is incomplete. It remains to be able to extract a numerical invariant of the product of elliptic curves which respects weak isomorphism; that is, a map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, which is not useful cryptographically. There may be useful non-algebraic invariants; indeed, \cite[Section 5]{multiparty} considers an invariant due to Deligne, but unfortunately finds it flawed as well.
 
 %\subsection{Overview}
 
