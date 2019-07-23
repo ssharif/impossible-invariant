@@ -81,6 +81,7 @@ In arbitrary characteristic, we have the following result, which will be proved 
   Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
+The motivation behind this result is the construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Or, to put it another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the protocol is incomplete. It remains to be able to extract a numerical invariant of the product of elliptic curves which respects weak isomorphism; that is, a map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, which is not useful cryptographically. There may be useful non-algebraic invariants; indeed, \cite[Section 5]{multiparty} considers an invariant due to Deligne, but unfortunately finds it flawed as well.
 
 %\subsection{Overview}
 
@@ -313,16 +314,22 @@ Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx
 \]
 and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$ (How do we know this is the same $\lambda$ as in the definition of $\psimod$?). Then by the definition of $\psimod$ (I don't see why the below follows from the definition. Can it be made clearer? Thanks.), we have
+Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Recall that the polarization coming from $\psimod$ is the unique one descending from the product polarization on $E^g$. Since $\lambda$ also descends from the product polarization, we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
 \]
-Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$ (I don't know what this means. Shahed, could you please define it explicitly? Thanks.). Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
+Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$; that is, given by the form $E_{\tau A}(u, \tau A v) = u^tv$. If $u, v \in \Z^g$, we have
+\begin{align*}
+  E_{\tau A} (u, \tau A v) &= u^tv \\
+                          &= E_A(A^{-1}u, \tau v) \\
+                          &= E_{A}(A^{-1}u, A^{-1}\tau Av).
+\end{align*}
+Thus multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}) = \psimodt(E,C),
 \]
 %Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
-as desired. (Shahed, why does mult by $A$ take $\lambda$ to $\tilde{\lambda}$? Thanks.)
+as desired.
 
 
  % Further, this polarization is specified by letting the columns be a symplectic basis for the associated Riemann form $H: \C^g \times \C^g \to \C$; this is precisely the product polarization.
