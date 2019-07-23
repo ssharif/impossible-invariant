@@ -2,6 +2,7 @@
 * Shahed
 ** Revise §5
 ** Revise Faltings-Chai business (once written)
+** Introduce and revise proof of 1.6.
 * Alice
 ** Edit introduction
 ** Edit §2
@@ -14,3 +15,4 @@
 * Put defns and results for A₁ᵍ; for example, define new W_g.
 * Put addenda elsewhere for positive characteristic versions.
 * Prove 5.7.
+* Prove everything over a domain.

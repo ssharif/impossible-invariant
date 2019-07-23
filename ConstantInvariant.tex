@@ -89,14 +89,14 @@ Our motivation behind this result is the proposal for a construction of a crypto
 If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
 \end{definition}
 
-If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. If $(E, C) \in Y_0(N)$, the matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define $\psimod$ by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and let $X_A$ denote the image of $\psimod$.
+If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. If $(E, C) \in Y_0(N)$, the matrix $A$ induces a natural endomorphism $\rho_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\rho_A$ as a polarization $\lambda_A$ on $E^g$. Let $B = E^g/((\ker \rho_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define $\psimod$ by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and let $X_A$ denote the image of $\psimod$.
 
 \begin{theorem}\label{thm:curves-dense}
   The set $\bigcup_{A \in \detl} X_A$ is Zariski dense in $\ag$.
 \end{theorem}
 
 \begin{theorem}\label{thm:Sg-dense}
-  If $A,A' \in \detl$, then $\sg(\C) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
+  Suppose $F$ is an algebraically closed field. If $A,A' \in \detl$, then $\sg(F) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
 
 Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \ref{sec:step-1} and \ref{sec:step-2}, respectively.
@@ -741,7 +741,7 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 \textcolor{red}{TODO: introduce proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
-  Let $F$ be an algebraically closed field containing $R$. Let $S$ denote the Zariski closure of $\sg(F) \cap (X_A \times X_{A'})$. By Lemma~\ref{lem:lim-degree}, $\sg(F) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $S = \cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. Consider the projection $\pi_X: S' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, and so $\pi_X|_{S'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$, whence the claim follows.
+  Let $S$ denote the Zariski closure of $\sg(F) \cap (X_A \times X_{A'})$. By Lemma~\ref{lem:lim-degree}, $\sg(F) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $S = \cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. Consider the projection $\pi_X: S' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, and so $\pi_X|_{S'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$, whence the claim follows.
 \end{proof}
 
 
