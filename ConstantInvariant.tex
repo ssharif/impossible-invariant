@@ -96,7 +96,7 @@ If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizin
 \end{theorem}
 
 \begin{theorem}\label{thm:Sg-dense}
-  Let $k$ be an algebraically closed field. If $A,A' \in \detl$, then $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
+  If $A,A' \in \detl$, then $\sg(\C) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
 
 Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \ref{sec:step-1} and \ref{sec:step-2}, respectively.
@@ -105,13 +105,14 @@ Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \r
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}], 
 %  If $X$ and $Y$ are subsets of $\ag \times \ag$, we write (I suggest omitting this notation and writing it out in words, rather than proving the result in a long expression) $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
+As stated earlier, it suffices to prove the result when $R$ is an algebraically closed field $k$.
 We have 
 $$
-\bigcup_{A,A'} \left(\sg(\C) \cap (X_A \times X_{A'}\right) =  \sg(\C) \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
-   \subset \sg(\C).
+\bigcup_{A,A'} \left(\sg(k) \cap (X_A \times X_{A'}\right) =  \sg(k) \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
+   \subset \sg(k).
    $$
 By Theorem~\ref{thm:sg-c-dense},
-$\sg(\C) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'} =
+$\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'} =
     \left(\bigcup_{A} X_A\right) \times \left(\bigcup_{A'} X_{A'}\right),$ which by Theorem~\ref{thm:Sg-dense} is Zariski dense in $\ag \times \ag$.
 %  \begin{align*}
 %    \sg(\C)
@@ -745,8 +746,10 @@ Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides
 There are precisely $g^2$ solutions $\beta$ to this equation. Continuing this construction for $i=3,4,\dots$, we find that for $x_i$ there are $g^i$ points $y \in Y_0(\ell^m)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
 \end{proof}
 
+\textcolor{red}{TODO: introduce proof}
+
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
-  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: S' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, and so $\pi_X|_{S'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$, whence the claim follows.
+  Let $S$ denote the Zariski closure of $\sg \cap (X_A \times X_{A'})$ \textcolor{red}{TODO: should this be $\sg(F)$ for some alg. closed field $F$?}. By Lemma~\ref{lem:lim-degree}, $\sg \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $V = \cup V_i$. The $V_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $V'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: V' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $V'$ is nonconstant, and so $\pi_X|_{V'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$, whence the claim follows.
 \end{proof}
 
 
