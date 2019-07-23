@@ -34,9 +34,9 @@ and the National Science Foundation.}
 
 \begin{document}
 
-\begin{abstract} 
+\begin{abstract}
 ?
-\end{abstract} 
+\end{abstract}
 
 
 \today
@@ -65,7 +65,7 @@ If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomor
 % \[
 %   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
 % \]
-If $R$ is a scheme, let 
+If $R$ is a scheme, let
 $$
 \sg(R) = \{(A,B) \in (\ag \times \ag)(R) | A \approx B\}.
 $$
@@ -74,7 +74,7 @@ We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 \begin{theorem}\label{thm:sg-c-dense}
   If $R$ is a subring of $\C$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
-Since a scheme over $\C$ is also scheme over $R$, it suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R = \C$. 
+Since a scheme over $\C$ is also scheme over $R$, it suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R = \C$.
 
 In arbitrary characteristic, we have the following result, which will be proved in Section~\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
@@ -87,7 +87,7 @@ The motivation behind this result is the construction of a cryptographic protoco
 
 \begin{definition}\label{def:detl}
 If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
-\end{definition} 
+\end{definition}
 
 If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. If $(E, C) \in Y_0(N)$, the matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define $\psimod$ by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and let $X_A$ denote the image of $\psimod$.
 
@@ -150,8 +150,8 @@ Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \r
 
 (This section should be shortened, if possible.)
 
-Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.) 
-Recall the map 
+Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
+Recall the map
 \[
 \psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda)
 \]
@@ -165,15 +165,15 @@ defined in the introduction.
 For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
 
 \begin{definition}
-If $M \in \Gl_g(\Z)$ and $E$ is an elliptic curve, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$. 
+If $M \in \Gl_g(\Z)$ and $E$ is an elliptic curve, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$.
 \end{definition}
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
 
-%Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. 
-If $(E, C) \in Y_0(N)$, let 
+%Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$.
+If $(E, C) \in Y_0(N)$, let
 $$
 K(A) = (\ker \lambda_A) \cap C^g  \subset E^g.
 $$
@@ -190,7 +190,7 @@ $$
 %Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
 %\begin{definition}\label{def:psimod-def}
-%Define 
+%Define
 %\[
 %\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
 %\]
@@ -205,7 +205,7 @@ $
 \end{lemma}
 
 \begin{proof}
-  Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal. 
+  Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
 %   \[
 %     D =
 %    \begin{bmatrix}
@@ -215,11 +215,11 @@ $
 %      & & & {d_{g}}
 %    \end{bmatrix}
 %  \]
-Then $D$ is the Smith normal form of $A$, and there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. Then $\rho_U$ and $\rho_V$ are automorphisms of $E^g$ induced by $U$ and $V$, respectively, and $\rho_A = \rho_U \rho_D \rho_V$. Since 
+Then $D$ is the Smith normal form of $A$, and there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. Then $\rho_U$ and $\rho_V$ are automorphisms of $E^g$ induced by $U$ and $V$, respectively, and $\rho_A = \rho_U \rho_D \rho_V$. Since
   \begin{align*}
     \ker \rho_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
   \end{align*}
-  we have $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$. 
+  we have $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$.
  Since $\rho_V(C^g) = C^g$, we now have
   \[
     \rho_V((\ker \rho_A) \cap C^g) = (\ker \rho_D) \cap C^g.
@@ -230,10 +230,10 @@ Then $D$ is the Smith normal form of $A$, and there exist $U,V \in \Gl_g(\Z)$ su
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-In this section we assume that the base scheme is $\C$. 
-%Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$. 
-Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations, 
- $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$. 
+In this section we assume that the base scheme is $\C$.
+%Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$.
+Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
+ $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$.
 
 \begin{lemma}\label{lem:psi-A-n}
 The map \[
@@ -306,8 +306,8 @@ Then
 \]
 Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
-  A polarization on a $g$-dimensional complex abelian variety is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$. 
-  
+  A polarization on a $g$-dimensional complex abelian variety is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$.
+
   For a point $\Omega \in \hh_g$, the corresponding abelian variety is
 \[
 \C^g/(\Z^g + \Omega \Z^g),
@@ -318,7 +318,7 @@ Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The correspondin
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
 \]
-Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$; that is, given by the form $E_{\tau A}(u, \tau A v) = u^tv$. If $u, v \in \Z^g$, we have 
+Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$; that is, given by the form $E_{\tau A}(u, \tau A v) = u^tv$. If $u, v \in \Z^g$, we have
 \begin{align*}
   E_{\tau A} (u, \tau A v) &= u^tv \\
                           &= E_A(A^{-1}u, \tau v) \\
@@ -328,7 +328,7 @@ Thus multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}) = \psimodt(E,C),
 \]
-%Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, 
+%Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
 as desired.
 
 
@@ -470,7 +470,7 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 %  \[
 %   S =  \{A/(\det A)^{\frac{1}{g}} | A \in \detl\}.
 %  \]
-  (I don't understand the next sentence. Can it be made more precise?) By Lemma~\ref{lemma:ggt-spd-detl}, in the definition of $S$ we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have 
+  (I don't understand the next sentence. Can it be made more precise?) By Lemma~\ref{lemma:ggt-spd-detl}, in the definition of $S$ we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have
   \[
     S = \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
   \]
@@ -478,7 +478,7 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
 \begin{definition}
-If $X$ is a subset of a complex manifold $M$, we say that $X$ is {\em holomorphically dense} in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$. 
+If $X$ is a subset of a complex manifold $M$, we say that $X$ is {\em holomorphically dense} in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$.
 \end{definition}
 
 \begin{remark}
@@ -552,7 +552,7 @@ with respect to the Euclidean topology,  by Proposition~\ref{prop:A-over-detA}.
 %  \begin{enumerate}
 %    \item $\sO_K^\times = \{\pm 1\}$,
 %    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$,
-%    \item 
+%    \item
 Then there are infinitely many rational primes $q$ such that
     \begin{enumerate}
       \item $q$ is inert in $K$,
@@ -562,16 +562,16 @@ Then there are infinitely many rational primes $q$ such that
 %  \end{enumerate}
 \end{lemma}
 \begin{proof}
-  %By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2). 
-  Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. 
+  %By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2).
+  Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$.
   Let $\sigma$ be any complex conjugation in $\Gal(L/\Q)$.
   Let $\frak{q}$ be any prime of $L$ unramified in $L/\Q$ whose Frobenius $\mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$ is $\sigma$. The Chebotarev density theorem guarantees that there are infinitely many such $\frak{q}$.
   Let $q$ be the rational prime below $\frak{q}$.
-  Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (1). 
+  Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (1).
   Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \mod{g}$, giving (2).
 %To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
-Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3). 
-%Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. 
+Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3).
+%Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$.
 %By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
 %  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
@@ -579,8 +579,8 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 \textcolor{red}{TODO: introduce lemmas}
 
 \begin{definition}
-  Suppose that $K$ is an imaginary quadratic field. If $q$ is a prime number that is inert in $K$, let 
-  $$\Gt_q=(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times. $$ 
+  Suppose that $K$ is an imaginary quadratic field. If $q$ is a prime number that is inert in $K$, let
+  $$\Gt_q=(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times. $$
   %The field $K$ should be clear from the context.
 \end{definition}
 
@@ -772,6 +772,357 @@ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldo
  \]
 Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Other Step 1}
+
+In this section we prove Theorem~\ref{thm:curves-dense}.
+
+
+\subsection{June 27}
+
+\begin{lemma}
+  For any subset $S \subset \N^n$, there is a nonempty open cone of linear functionals which are uniquely minimized on $S$, with the minimum attained on the same element.
+\end{lemma}
+\begin{proof}
+  Let $s = (s_1,\dots,s_n)$ be the lexicographically minimal element of $S$, and let $\lambda$ be any linear functional satisfying the strict inequalities
+  \[
+    \lambda_i > \sum_{j>i} s_j\lambda_j.
+  \]
+  In particular, $\lambda_i>0$ for all $i$. Such linear functionals clearly form a nonempty open cone in $\R^n$, so it will suffice to show that they are all uniquely minimized at $s$.
+
+  For any other element $t \in S$, we have $t > s$ in lexicographic order. If $m$ is the first index where they differ, then
+  \begin{align*}
+    \sum_{1\le i\le n} \lambda_i t_i
+    \ge
+    \sum_{1\le i\le m} \lambda_i t_i
+    \ge
+    \sum_{1\le i\le m} \lambda_i s_i
+    +
+    \lambda_m
+    \sum_{1\le i\le n} \lambda_i s_i.
+  \end{align*}
+\end{proof}
+%Lemma. For any subset S\subset \N^n, there is a nonempty open cone of
+%linear functionals which are uniquely minimized on S, with the minimum
+%attained on the same element.
+%
+%Proof.  Let s be the lexicographically minimal element of S, and let
+%\lambda be any linear functional satisfying the strict inequalities
+%
+%\lambda_i > \sum_{j>i} s_j\lambda_j.
+%
+%(In particular, \lambda_i>0 for all i.)  Such linear functionals clearly
+%form a nonempty open cone in \R^n, so it will suffice to show that they
+%are all uniquely minimized at s.
+%
+%For any other element t\in S, we have t>s in lexicographic order.  If m
+%is the first index where they differ, then
+%
+%\sum_{1\le i\le n} \lambda_i t_i
+%\ge
+%\sum_{1\le i\le m} \lambda_i t_i
+%\ge
+%\sum_{1\le i\le m} \lambda_i s_i
+%+
+%\lambda_m
+%
+%\sum_{1\le i\le n} \lambda_i s_i.
+%QED
+
+\begin{corollary}
+  For any set $S$ of positive semidefinite integral quadratic forms, there is a nonempty open cone of positive definite symmetric matrices $M$ such that $Q\mapsto \tr(M\cdot Q)$ has a unique minimum on $S$.
+\end{corollary}
+\begin{proof}
+  Let $M_1,\dots,M_{d(d+1)/2}$ be a sequence of positive definite symmetric matrices with integer entries that form a basis over $\R$ of the space of all symmetric matrices. Then the set of positive semidefinite integral quadratic forms injects linearly in $\N^{d(d+1)/2}$ via
+  \[
+    Q\mapsto (\tr(Q M_1),\dots,\tr(Q M_{d(d+1)/2}).
+  \]
+  If $\lambda$ is any element of the cone coming from the Lemma, then $M  = \sum_i \lambda_i M_i$ is positive definite, and thus the claim follows.
+\end{proof}
+%Corollary.  For any set S of positive semidefinite integral quadratic
+%forms, there is a nonempty open cone of positive definite symmetric
+%matrices M such that Q\mapsto \Tr(M\cdot Q) has a unique minimum on S.
+%
+%Proof.  Let M_1,\dots,M_{d(d+1)/2} be a sequence of positive definite
+%symmetric matrices with integer entries that form a basis over \R of the
+%space of all symmetric matrices.  Then the set of positive semidefinite
+%integral quadratic forms injects linearly in \N^{d(d+1)/2} via
+%
+%Q\mapsto (\Tr(Q M_1),\dots,\Tr(Q M_{d(d+1)/2}).
+%
+%If \lambda is any element of the cone coming from the Lemma, then
+%M=\sum_i \lambda_i M_i is positive definite, and thus the claim follows.
+%QED
+
+\begin{corollary}
+  For any set $S$ of positive semidefinite integral quadratic forms, there is an element $g \in \Sl_d(\Z[1/\ell])$ such that $Q \mapsto \tr(Q g g^t)$ has a unique minimum on $S$.
+\end{corollary}
+\begin{proof}
+  Indeed, the open cone from the previous corollary intersects the dense set of positive definite symmetric matrices of the form $r g g^t$ with $r > 0$, $g \in \Sl_d(\Z[1/\ell])$, and thus since it is a cone intersects the subset with $r = 1$.
+\end{proof}
+%Corollary.  For any set S of positive semidefinite integral quadratic
+%forms, there is an element g\in \SL_d(\Z[1/l]) such that Q\mapsto \Tr(Q
+%g g^t) has a unique minimum on S.
+%
+%Proof.  Indeed, the open cone from the previous corollary intersects the
+%dense set of positive definite symmetric matrices of the form r g g^t
+%with r>0, g\in \SL_d(\Z[1/l]), and thus since it is a cone intersects
+%the subset with r=1.
+%QED
+
+\subsection{June 28}
+
+Let $A$ be a symmetric positive definite matrix with determinate $N = \ell^n$. Let $X_A$ denote the image $\psi_A(Y_0(\det A))$. Our goal is to show that $\bigcup X_A$ is dense in $\ag$.
+
+Note that $\psi_A$ pulls back Siegel modular functions from $\ag$ to $X_0(N)$. On the level of Siegel upper half spaces, the pull back is given by
+\[
+  f \mapsto = \{\tau \mapsto f(A\tau)\}.
+\]
+
+Now $\bigcup X_A$ is dense in $\ag$ if and only if for all nonzero Siegel modular functions $f: \ag \to \C$, there is some $\psi_A$ such that $f \circ \psi_A \neq 0$.
+
+\begin{definition}
+  A $g \times g$ matrix $N$ is \emph{half-integral} if $2N_{i,j} \in \Z$ and $N_{i,i} \in \Z$ for all $i,j$.
+\end{definition}
+
+\textcolor{red}{TODO: this is prob unnecessary, just cite Klingen}
+
+\begin{lemma}
+  Let $f$ be a holomorphic function on $\hh_g/\Sp_{2g}(\Z)$. Then $f$ can be written as
+  \[
+    f(\tau) = \sum_{N \text{ h.i.}} c_N \exp(2 \pi i)^{\tr(N\tau)}.
+  \]
+\end{lemma}
+\begin{proof}
+  This is given more rigorously in \cite[Pg.~44]{klingen1990introductory}.
+
+  By definition, $f$ is a function on $\hh_g$ such that $f(\tau) = f(\gamma(\tau))$ for any $\gamma \in \Sp_{2g}(\Z)$. Let $S$ be any integral symmetric $g \times g$ matrix, and let $\gamma = \begin{bmatrix} I & S \\ 0 & I \end{bmatrix}$. Then $f(\tau) = f(\gamma(\tau)) = f(\tau + S)$. If we write $\tau = (\tau_{i,j})$, then $f$ is periodic in each variable $\tau_{i,j}$ with $i \leq j$. Thus we write $f$ as a multivariable Fourier series,
+  \begin{align*}
+    f(\tau_{i,j})
+    &=
+    \sum_{N \in \mathrm{Sym}_g(\Z)} a_N \prod_{i \leq j} \exp(2 \pi i \tau_{i,j})^{N_{i,j}}
+    \\
+    &=
+    \sum_{N} a_N \prod_{i,j} \exp(2 \pi i)^{\tau_{i,j} N_{i,j}}
+  \end{align*}
+  where in the last line $N$ ranges over all half-integral symmetric $g \times g$ matrices. A short computation shows that $\sum_{i,j}\tau_{i,j}N_{i,j} = \tr(\tau N)$.
+  %\sum_{i,j} \tau_{i,j}N_{i,j} = \sum_{i} \sum_{k} \tau_{i,k}N_{k,i} = \tr(\tau N).
+\end{proof}
+
+\textcolor{red}{TODO: this is prob unnecessary, just cite}
+
+\begin{theorem}[Koecher principle]
+  Let $f$ be a holomorphic function on $\hh_g/\Sp_{2g}(\Z)$, with Fourier series $f(\tau) = \sum_N a_N \exp(2 \pi i)^{\tr(\tau N)}$, where $N$ runs over all symmetric half-integer matrices. If $a_N$ is not positive semi-definite, then $a_N = 0$ for any $N$ that is not positive semi-definite.
+\end{theorem}
+\begin{proof}
+  See the proof of \cite[Thm.~1, Pg.~45]{klingen1990introductory} or \cite[Thm.~2, Pg.~191]{bruinier2008the123}.
+
+  %See also https://pdfs.semanticscholar.org/b1f4/d21acdbb599fe177fb15e087dcda2b7c2905.pdf
+\end{proof}
+
+Let $f$ be a modular function on $\hh_g/\Sp_{2g}(\Z)$ and $\tau \in \hh_g$. Then
+\[
+  (f \circ \psi_A)(\tau) = \sum_Q c_Q \exp(2 \pi i \tau)^{\tr(AQ)}.
+\]
+where $Q$ runs over all symmetric positive semi-definite half-integral $g \times g$ matrices.
+Let $q = \exp(2 \pi i \tau)$. Then we can rewrite the previous equation as
+\[
+  (f \circ \psi_A)(\tau) = \sum_Q c_Q q^{\tr(AQ)}
+\]
+
+\textcolor{red}{TODO: this is prob unnecessary, just cite}
+
+\begin{lemma}\label{lem:finite-fixed-trace}
+  For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
+\end{lemma}
+\begin{proof}
+  This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
+
+  Recall that $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$ and $M_{g \times g}(\Z)$ is a discrete subset. So it is enough to show that $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, $\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 \leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
+\end{proof}
+
+\begin{lemma}\label{lem:bound-trace-finite}
+  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
+\end{lemma}
+\begin{proof}
+  Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
+  \begin{align*}
+    \tr(BQ)^2 &\leq \tr(B^2)\tr(Q^2)
+    &&\text{by Cauchy–Schwarz}
+    \\
+    &\leq \tr(B)^2\tr(Q)^2
+    &&\text{By positive semidefinite.}
+    %\tr(B^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(B)^2.
+  \end{align*}
+  Therefore, if $\tr(AQ) \leq t$, then
+  \[
+    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) \leq \tr(A^{-1})t.
+  \]
+  The claim then follows from Lemma~\ref{lem:finite-fixed-trace}.
+\end{proof}
+
+\textcolor{red}{TODO: common knowledge? See \url{https://math.stackexchange.com/questions/113842/is-the-product-of-symmetric-positive-semidefinite-matrices-positive-definite}}
+
+\begin{lemma}\label{lem:non-neg-tr}
+  Let $M$ and $N$ be symmetric positive semi-definite real $g \times g$ matrices. Then $\tr(MN) \geq 0$.
+\end{lemma}
+\begin{proof}
+  As $M$ is positive semi-definite, it admits a symmetric square root, say $M^{1/2}$. Then $M^{1/2}NM^{1/2}$ is positive semi-definite because
+  \[
+    \vec{v}^t(M^{1/2}NM^{1/2})\vec{v}
+    =
+    (M^{1/2}v)^t N (M^{1/2}\vec{v})
+    \geq 0.
+  \]
+  The last inequality follows from the fact that $N$ is positive semi-definite.
+\end{proof}
+
+\begin{lemma}\label{lem:unique-minimizer}
+  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open set of positive definite real symmetric $g \times g$ matrix $A$ such that $\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+\end{lemma}
+\begin{proof}
+  Define
+  \begin{align*}
+    S_{\leq t} &= \min\{ Q \in S \colon \tr(Q) \leq t \}
+    \\
+    t_0 &= \min\{ \tr(Q) \colon Q \in S \}
+    \\
+    t_1 &= \min\{ \tr(Q) \colon Q \in S \text{ and } \tr(Q) > t_0 \}.
+  \end{align*}
+  Note that for any $t$, $S_{\leq t}$ is finite by Lemma~\ref{lem:bound-trace-finite}. In particular, the minimums above are well defined and $t_1 > t_0$.
+
+  Consider the set $\mathfrak{S}$ of symmetric matrices $E$ such that
+  \begin{enumerate}
+    \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all $Q_i,Q_j \in S_{\leq t_0}$ with $Q_i \neq Q_j$.
+    \item $E$ is positive definite.
+    \item $I + E$ is positive definite.
+  \end{enumerate}
+
+  The first conditions is the complement of a finite union of hyperplanes. The second is an open set. Note that both conditions hold under scaling by a positive number. Since $I$ is positive definite, it contains an open neighborhood which is positive definite. For any $E$ satisfying the first two properties, we can scale $E$ small enough so that it will also satisfy the third. Therefore $\mathfrak{S}$ is non-empty and open.
+
+  It remains to check that any $E \in \mathfrak{S}$ satisfies the conclusion. By Lemma~\ref{lem:non-neg-tr},
+  \[
+    \tr(Q(I + E)) = \tr(Q) + \tr(QE) \geq \tr(Q).
+  \]
+  So
+  \[
+    \inf\left\{ \tr(Q(I+E)) \colon Q \in S \right\}
+    =
+    \min\left\{ t_0 + \tr(QE) \colon Q \in S \text{ and } \tr(Q) = t_0 \right\}.
+  \]
+  By the construction of $\mathfrak{S}$, there is a unique $Q$ such that the last set is minimal.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
+  \textcolor{red}{TODO: apply Lemma~\ref{lem:unique-minimizer} to the set of $Q$ such that $c_Q \neq 0$. Use openness to find a symmetric matrix $A \in \Gl(\Z[1/\ell])$ and then scale by a power of $\ell$.}
+\end{proof}
+
+\begin{comment}
+From: "Rains, Eric M." <rains@caltech.edu>
+Subject: Re: some observations
+Date: Fri, June 28, 2019 at 9:54:26 AM PDT
+To: Alice Silverberg <asilverb@uci.edu>
+
+We're feeling a bit daunted by the positive characteristic case....
+
+     Actually, now that I understand things a bit better, I think the
+positive characteristic proof is actually a bit simpler than the current
+characteristic 0 proof (as it doesn't require knowing anything about
+holomorphic density in several variables).  Let me tell you the
+characteristic 0 analogue of the argument...
+
+     The basic idea in characteristic 0 is that the Zariski closure of
+the images of X_0(l^n) is cut out by an ideal in the algebra of Siegel
+modular forms.  Moreover, each A gives rise to a homomorphism from
+Siegel modular forms to ordinary modular forms over \Gamma_0(l^n), given by
+
+f\mapsto (\tau\mapsto f(A\tau)).
+
+So to show that the union of images of \phi_A is dense, it suffices to
+show that any nonzero Siegel modular form has nonzero image under one of
+these homomorphisms.
+
+     Since a Siegel modular form is 1-periodic in each coefficient, it
+can be expressed as a series of the following form:
+
+f(T) = \sum_Q c_Q \exp(2\pi\sqrt{-1}\Tr(QT))
+
+where T ranges over the Siegel upper half-space and Q ranges over
+positive semidefinite integral quadratic forms.  Specializing this to
+A\tau gives the expression
+
+f(A\tau) = \sum_Q c_Q q^{\Tr(AQ)},
+
+where q=\exp(2\pi\sqrt{-1}\tau).  (Note that for any positive definite
+real symmetric matrix A, |\{Q:\Tr(AQ)=t\}| is finite, essentially by
+Cauchy-Schwartz, or more precisely by the inequality
+
+\Tr(BQ)\le \Tr(AQ)\Tr(A^{-1}B)
+
+for any positive semidefinite real symmetric matrix B (which follows
+from Cauchy-Schwartz by writing both B and Q as sums of rank 1
+matrices).  In particular, if \Tr(AQ)=t, then \Tr(Q)\le \Tr(A^{-1})t is
+bounded, so there are only finitely many possibilities.)
+
+     If A is chosen so that \Tr(AQ) attains its minimum on the support
+of f at the unique point Q_0 (which can always be done, by the argument
+of the previous E-mail), then we have
+
+f(A\tau) = c_{Q_0} q^{\Tr(A Q_0)} + o(q^{\Tr(A Q_0)}),
+
+and thus f(A\tau) is not identically 0.
+
+     The only difference in finite characteristic is that we need to
+rewrite the original Siegel modular form in terms of the variables
+q_{ij}:=\exp(2\pi\sqrt{-1}T_{ij}) for 1\le i\le j\le d, at which point
+it is, I believe, known that such expressions extend to finite
+characteristic.  (That is, a Siegel modular form can be viewed as a
+section of an appropriate line bundle on a compactification of {\cal
+A}_g, that line bundle makes sense in finite characteristic, its
+q-expansions around the appropriate cusp are as stated, and it interacts
+with modular morphisms as expected.)
+
+     Note that the argument of the previous E-mail that there's a
+unique minimizing Q can be simplified somewhat.  Let A be any positive
+definite real symmetric matrix.  Since |\{Q:\Tr(AQ)\le t\}| is finite
+for all t, not only are there finitely many Q such that c_Q\ne 0 that
+attain the minimum value t_0 of \Tr(AQ), there is a separation between
+that value and the next smallest possible value t_1.  Let M be any
+positive definite real symmetric matrix such that the minimum of \Tr(MQ)
+subject to \Tr(AQ)=t_0 and c_Q\ne 0 is < t_1-t_0.  Then the minimum of
+\Tr((A+M)Q) subject to c_Q\ne 0 is attained only when \Tr(AQ)=t_0, and
+thus in particular for an open set of M, the minimum is uniquely attained.
+
+     In fact, a sufficiently small perturbation in any direction
+outside a finite set of hyperplanes will work: if M points in the
+direction we want to perturb, then for \epsilon sufficiently small,
+\epsilon A+\epsilon^2 M is positive definite and satisfies \Tr((\epsilon
+A+\epsilon^2 M)Q)<t_1-t_0  when \Tr(AQ)=t_0 and c_Q\ne 0, so that
+(1+\epsilon)A + \epsilon^2 M satisfies the desired condition, and thus
+so does A + ((\epsilon^2)/(1+\epsilon))M.  In other words, the
+minimizing Q is unique outside a locally finite complex of polyhedral cones.
+
+                                             Eric
+\end{comment}
+
+
+
+
+
+
+
+
 
 \bibliographystyle{alpha}
 \bibliography{./references}
