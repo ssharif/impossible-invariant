@@ -129,18 +129,18 @@ Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \r
 \textcolor{red}{TODO: introduce/move}
 
 \begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
-  Suppose $f: \ag \to X$ is a morphism of $R$-schemes. Consider the diagonal $\df$ determined by the diagram
-  \[
-  \begin{tikzcd}
-    \df \arrow[r] \arrow[d] & \ag \arrow[d,"f"]
-    \\
-    \ag \arrow[r,"f"] & X.
-  \end{tikzcd}
-  \]
-  There is a natural map $\df \to \ag \times \ag$. The hypotheses on $f$ will imply that, viewed as functors, the latter map factors through $\sg$.
-  Assume $f$ is separated \textcolor{red}{TODO: is this necessary?}.
+  Suppose $f: \ag \to X$ is a morphism of $R$-schemes. Consider the fiber product $\df = \ag \times_X \ag$. 
+  % determined by the diagram
+  % \[
+  % \begin{tikzcd}
+  %   \df \arrow[r] \arrow[d] & \ag \arrow[d,"f"]
+  %   \\
+  %   \ag \arrow[r,"f"] & X.
+  % \end{tikzcd}
+  % \]
+  The hypotheses on $f$  imply that $\sg(\C) \subset \df(\C)$.
   % https://ncatlab.org/nlab/show/separated+morphism+of+schemes
-  Then $\df$ is closed in $\ag \times \ag$. By Theorem~\ref{thm:sg-c-dense}, this implies that $\df = \ag \times \ag$, whence the claim follows.\textcolor{red}{TODO: whence? I think this needs more.}
+   Since $\df$ is a closed subscheme of $\ag \times \ag$, Theorem~\ref{thm:sg-c-dense} implies that $\df = \ag \times \ag$, whence the claim follows.\textcolor{red}{TODO: whence? I think this needs more.}
 \end{proof}
 
 

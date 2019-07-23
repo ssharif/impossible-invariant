@@ -1,9 +1,8 @@
 
 * Shahed
-** Cryptographic motivation
-** Replace qif with iqf.
-** Read through §4
+** Revise §5
 * Alice
+** Edit introduction
 ** Edit §2
 * Karl
 ** Read §4
