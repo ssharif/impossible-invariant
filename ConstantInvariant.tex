@@ -84,23 +84,21 @@ In arbitrary characteristic, we have the following result, which will be proved 
 
 %\subsection{Overview}
 
-\begin{definition}\label{def:gellmatrix}
+\begin{definition}\label{def:detl}
 If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
 \end{definition}
 
-If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, we will define a map $\psimod: Y_0(\det(A)) \to \ag$ (see Section~\ref{sec:curves-on-Ag}; it would be better to give the definition here, instead of later). If $A \in \detl$, let $X_A$ denote the image of $\psimod$.
-
-In Section~\ref{sec:step-1} we prove the following theorem.
+If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. If $(E, C) \in Y_0(N)$, the matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define $\psimod$ by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and let $X_A$ denote the image of $\psimod$.
 
 \begin{theorem}\label{thm:curves-dense}
   The set $\bigcup_{A \in \detl} X_A$ is Zariski dense in $\ag$.
 \end{theorem}
 
-In Section~\ref{sec:step-2} we prove the following theorem.
-
 \begin{theorem}\label{thm:Sg-dense}
   If $A,A' \in \detl$, then $\sg(\C) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
+
+Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \ref{sec:step-1} and \ref{sec:step-2}, respectively.
 
 \textcolor{red}{TODO: introduce/move}
 
@@ -146,50 +144,64 @@ In Section~\ref{sec:step-2} we prove the following theorem.
 
 
 
-\section{Defining curves $X_{A}$ on $\ag$}
+\section{The curves $X_{A}$}
 \label{sec:curves-on-Ag}
 
-\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
+(This section should be shortened, if possible.)
 
-We will define the maps $Y_0(\ell^n) \to \ag$ in two ways: geometrically based on the moduli interpretation, and complex analytically. We will use that these two interpretations are the same in the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Since the latter result does not directly carry over to positive characteristic, we will use a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
+Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
+Recall the map
+\[
+\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda)
+\]
+defined in the introduction.
+
+
+%\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
+
+%We will define the maps $Y_0(\ell^n) \to \ag$ in two ways: geometrically based on the moduli interpretation, and complex analytically. We will use that these two interpretations are the same in the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Since the latter result does not directly carry over to positive characteristic, we will use a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
 
 For another construction of these maps, see \cite[p. 19 et seq.]{rains}.
+
+\begin{definition}
+If $M \in \Gl_g(\Z)$ and $E$ is an elliptic curve, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$.
+\end{definition}
 
 \subsection{Geometric description}
 \label{sec:geo-desc}
 
-Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. (Later we will take $N$ to be a power of a prime $\ell$.)
 
-Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$. Let
+%Suppose $(E, C) \in Y_0(N)$, i.e., $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$.  The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, by identifying $E^g$ with its dual we can view $\lambda_A$ as a polarization on $E^g$ of degree $N^2$.
+If $(E, C) \in Y_0(N)$, let
 $$
 K(A) = (\ker \lambda_A) \cap C^g  \subset E^g.
 $$
 
-Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
-\begin{lemma}
-  The subgroup $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
-\end{lemma}
+%Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
+%\begin{lemma}
+%  The subgroup $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
+%\end{lemma}
+%
+%\begin{proof}
+%  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Further, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
+%\end{proof}
 
-\begin{proof}
-  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Furthermore, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
-\end{proof}
+%Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
-Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
-
-\begin{definition}\label{def:psimod-def}
-Define
-\[
-\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
-\]
-\end{definition}
+%\begin{definition}\label{def:psimod-def}
+%Define
+%\[
+%\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
+%\]
+%\end{definition}
 
 (State here where we'll use the next result.)
-\begin{proposition}\label{prop:psimod-weakly-isomorphic-to-product}
+\begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
   Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $(E,C) \in Y_0(N)$ and $1 \le i \le g$, let $E_i = E/d_i^{-1}NC$. If $(B,\lambda) = \psimod(E,C)$, then
 $
     B \approx E_1 \times \cdots \times E_g.
 $
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
   Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
@@ -202,36 +214,38 @@ $
 %      & & & {d_{g}}
 %    \end{bmatrix}
 %  \]
-Then $D$ is the Smith normal form of $A$, so there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. For $M \in \Gl_g(\Z)$, let $\rho_M$ denote the natural endomorphism of $E^g$ induced by $M$. Then $\rho_U$ and $\rho_V$ are isomorphisms, and $\rho_A = \rho_U \rho_D \rho_V$. Further,
+Then $D$ is the Smith normal form of $A$, and there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$. Then $\rho_U$ and $\rho_V$ are automorphisms of $E^g$ induced by $U$ and $V$, respectively, and $\rho_A = \rho_U \rho_D \rho_V$. Since
   \begin{align*}
     \ker \rho_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
   \end{align*}
-  and so $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$.
-  Furthermore, $\rho_V(C^g) = C^g$, so
+  we have $(\ker \rho_D) \cap C^g = \prod_{i=1}^g d_i^{-1}NC$. %d_1^{-1}NC \times \cdots \times d_g^{-1}NC$.
+ Since $\rho_V(C^g) = C^g$, we now have
   \[
     \rho_V((\ker \rho_A) \cap C^g) = (\ker \rho_D) \cap C^g.
   \]
-  Thus the quotients of $E^g$ by $(\ker \rho_A) \cap C^g$ and by $(\ker \rho_D) \cap C^g$ are weakly isomorphic. The claim follows.
+  Thus the quotients of $E^g$ by $(\ker \rho_A) \cap C^g$ and by $(\ker \rho_D) \cap C^g$ are weakly isomorphic. The lemma follows.
 \end{proof}
 
 \subsection{Analytic description}
 \label{sec:ana-desc}
 
-In this section we work over $\C$. Suppose that $A$ is a symmetric, positive definite integer matrix with $\det A = N \neq 0$. Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Define %a map
-\[
-  \psi_A: \hh \to \hh_g, \quad  \tau \mapsto \tau A.
-\]
+In this section we assume that the base scheme is $\C$.
+%Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$.
+Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
+ $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$.
 
-\begin{proposition}\label{prop:psi-A-n}
-The map $\psi_A$ descends to a morphism
-$$
+\begin{lemma}\label{lem:psi-A-n}
+The map \[
+  \psi_A: \hh \to \hh_g, \quad  \tau \mapsto \tau A
+\]
+induces a map %descends to a morphism
+$
   \psimodt: Y_0(N) \longrightarrow \ag.
-$$
-\end{proposition}
+$
+\end{lemma}
 
 \begin{proof}
-Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
-and $Y_0(N) = \hh/\Gamma_0(N)$ and $\ag = \hh_g/\Sp_{2g}(\Z)$. Let
+Let
 \[
 \sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N) \text{ and } M = \begin{bmatrix} aI_g & bA \\ cA^{-1} & dI_g \end{bmatrix}
 \]
@@ -241,18 +255,14 @@ If $\tau \in \hh$, a direct computation shows that $M \in\Sp_{2g}(\Z)$
 % M is in Sp because then M^t*\Omega*M = M
 % where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
 and  $\sigma(\tau)A = M(\tau A)$.
-
-
-(It's well-defined. Why is it a morphism?)
+%(It's well-defined. Why is it a morphism?)
 \end{proof}
 
-\subsection{Equality of the maps $\psimodt$ and $\psimod$}
-\label{sec:geo-desc}
 
-In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Proposition \ref{prop:psi-A-n}.
-\begin{proposition}
-  The morphisms $\psimodt$ and $\psimod$ are equal.
-\end{proposition}
+%In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
+\begin{lemma}
+  When the base scheme is $\C$, we have $\psimodt = \psimod$.
+\end{lemma}
 
 \begin{proof}
   Suppose $(E, C) \in Y_0(N)$. There exists $\tau \in \hh$ such that $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
@@ -261,25 +271,30 @@ In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an a
   \[
     \tla = \Z^g + \tau A \Z^g \quad \text{ and } \quad     \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
   \]
-Then $\psimodt(\tau) \approx \C^g/\tla$, and
+By definition, $\psimodt(\tau) \approx \C^g/\tla$.
 %  \[
 %    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
 %  \]
-  multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
-  \[
-    \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
-  \]
+%  Multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
+%  \[
+ %   \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
+ % \]
  Since $\Lambda \subset \Lambda_A$, there is a natural isogeny
   \[
     \rho: E^g = \C^g/\Lambda \to \C^g/\Lambda_A.
   \]
   We wish to compute $\ker \rho$.
 
-  Multiplication by $A: \C^g \to \C^g$ induces an isogeny
+  Multiplication by $A: \C^g \to \C^g$ induces an isomorphism
   \[
-    \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda.
+     \C^g/\Lambda_A \xrightarrow{\sim}  \C^g/\tla
   \]
-  This is the same isogeny $\rho_A$ as in the proof of Proposition \ref{prop:psimod-weakly-isomorphic-to-product}; i.e., it is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
+and an isogeny
+  \[
+    \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda,
+  \]
+  %This is the same isogeny $\rho_A$ as in the proof of Lemma \ref{lem:psimod-weakly-isomorphic-to-product}; i.e., it
+  where $\rho_A$ as before is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
 \[
 \ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
 \]
@@ -290,24 +305,27 @@ Then
 \]
 Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
-  To specify a polarization on a $g$-dimensional complex abelian variety, either one can give an isogeny from the abelian variety to its dual, or one can give an appropriate Riemann form $H$ on $\C^g$; see, for example, \cite{rosen-avc} for this and other relevant background. The data of the form $H$ can be deduced from the corresponding \emph{alternating Riemann form} $E$; more precisely, $H(u,v) = E(iu,v) + i E(u,v)$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
+  A polarization on a $g$-dimensional complex abelian variety is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$.
+
+  For a point $\Omega \in \hh_g$, the corresponding abelian variety is
 \[
 \C^g/(\Z^g + \Omega \Z^g),
 \]
-and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
+and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. But observe that $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, and so $E_A$ gives rise to a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Then by definition of $\psimod$, we have
+Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$ (How do we know this is the same $\lambda$ as in the definition of $\psimod$?). Then by the definition of $\psimod$ (I don't see why the below follows from the definition. Can it be made clearer? Thanks.), we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
 \]
-On the other hand, let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$. Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
+Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$ (I don't know what this means. Shahed, could you please define it explicitly? Thanks.). Multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
-  (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}).
+  \psimod(E,C) = (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}) = \psimodt(E,C),
 \]
-But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved.
+%Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
+as desired. (Shahed, why does mult by $A$ take $\lambda$ to $\tilde{\lambda}$? Thanks.)
 
 
- % Furthermore, this polarization is specified by letting the columns be a symplectic basis for the associated Riemann form $H: \C^g \times \C^g \to \C$; this is precisely the product polarization.
+ % Further, this polarization is specified by letting the columns be a symplectic basis for the associated Riemann form $H: \C^g \times \C^g \to \C$; this is precisely the product polarization.
 
  %  The abelian variety $B$ associated to $\psi_A(\tau)$ is $\C^g/\tilde{\Lambda}$, where $\tilde{\Lambda}$ is the lattice generated by the columns of
  %  \[
@@ -362,13 +380,15 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 % \]
 % are weakly isomorphic.
 
+
+
 \section{Proof of Theorem~\ref{thm:curves-dense}}
 \label{sec:step-1}
 
 %The main goal of this section is to prove Theorem~\ref{thm:curves-dense}.
 
 \begin{lemma}\label{lemma:sl-z-1overl-dense-sl-r}
-  The set $\Sl_g(\Z[1/\ell])$ is dense in $\Sl_g(\R)$ (with respect to the Euclidean topology).
+  The set $\Sl_g(\Z[1/\ell])$ is dense in $\Sl_g(\R)$ with respect to the Euclidean topology.
   %Here, the topology is the one induced by the Euclidean metric on the entries.
 \end{lemma}
 
@@ -398,6 +418,8 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 %  For $\ell$ a prime, let $\detl$ be the set of $g \times g$ symmetric, positive definite integer matrices $A$ for which %$\det A$ is a power of $\ell$.
 %\end{definition}
 
+Recall the definition of $\detl$ in Definition \ref{def:detl}.
+
 \begin{lemma}\label{lemma:ggt-spd-detl}
   If $G \in \Sl_g(\Z[1/\ell])$, then for all sufficiently large $n \in \N$,
   \[
@@ -406,12 +428,12 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 \end{lemma}
 
 \begin{proof}
-  Certainly for all $n$, $\ell^n GG^t$ will be symmetric, positive definite, and have determinant which is an integer power of $\ell$. Choose $N$ to be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
+  If $n \in \N$, the $\ell^n GG^t$ is symmetric and positive definite, and its determinant is a power of $\ell$. Let $N$ be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
 \end{proof}
 
 
 \begin{definition}
-  Let $\permat$ be the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
+  Let $\permat$ denote the set of $g \times g$ real, positive definite symmetric matrices  with determinant $1$.
 \end{definition}
 
 \begin{lemma}\label{lemma:ggt-periodmatrices}
@@ -419,7 +441,7 @@ But $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$, and thus the claim is proved
 \end{lemma}
 
 \begin{proof}
-  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $D$ have diagonal entries $d_1, d_2, \dots, d_n$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Furthermore, $\prod d_i = \det A = 1$. Let
+  Suppose $A \in \permat$. By the Spectral Theorem, there exist a real orthogonal matrix $O$ and a real diagonal matrix $D$ such that $A = ODO^t$. Let $d_1, d_2, \dots, d_n$ be the diagonal entries of $D$. Since $A$ is positive definite, $d_i > 0$ for all $i$. Further, $\prod d_i = \det A = 1$. Let
   \[
     G = O
     \begin{bmatrix}
@@ -433,22 +455,28 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 \end{proof}
 
 \begin{proposition}\label{prop:A-over-detA}
-  The set ${\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$ is dense in $\permat$ with respect to the Euclidean topology.
+  Let $S = {\{A/(\det A)^{\frac{1}{g}} | A \in \detl\}}$. Then $S$ is dense in $\permat$ with respect to the Euclidean topology.
 \end{proposition}
 
 \begin{proof}
-  In the set
+%Let
+%  \[
+%   S =  \{A/(\det A)^{\frac{1}{g}} | A \in \detl\}.
+%  \]
+  (I don't understand the next sentence. Can it be made more precise?) By Lemma~\ref{lemma:ggt-spd-detl}, in the definition of $S$ we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have
   \[
-    \{A/(\det A)^{\frac{1}{g}} | A \in \detl\},
+    S = \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
   \]
-  by Lemma~\ref{lemma:ggt-spd-detl}, we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). But $\det (\ell^n GG^t) = \ell^n$, so the above set equals
-  \[
-    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
-  \]
-  The claim follows from combining Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
+  The proposition now follows from Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
 
-If $X$ is a subset of a complex manifold $M$, we say that $X$ is holomorphically dense in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$. Observe that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
+\begin{definition}
+If $X$ is a subset of a complex manifold $M$, we say that $X$ is {\em holomorphically dense} in $M$ if every holomorphic function that vanishes on $X$ also vanishes on $M$.
+\end{definition}
+
+\begin{remark}
+Note that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
+\end{remark}
 
 Let $\R^+$ denote the set of positive real numbers.
 \begin{lemma}\label{lemma:holomorphic-closure-irM}
@@ -506,44 +534,54 @@ with respect to the Euclidean topology,  by Proposition~\ref{prop:A-over-detA}.
 \textcolor{red}{TODO: introduce lemmas}
 
 \begin{lemma}\label{lem:silly}
-  Let $\ell$ be a prime. Then there is a imaginary quadratic field $K$ such that $\ell$ splits into principal primes in $K$ and $\sO_K^\times = \{\pm 1\}$.
+  Let $\ell$ be a prime. Then there is an imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$ and $\ell$ splits into principal primes in $K$.
 \end{lemma}
 \begin{proof}
-  The possible fields $K$ in which $\ell$ splits into principal primes are precisely the fields generated by the polynomials $x^2 - tx + \ell$ with $0 < |t| < 2\sqrt{\ell}$. There are $2\lfloor 2\sqrt{\ell} \rfloor$ such polynomials. Recall that there are, up to Galois conjugates, $\leq 4$ elements of norm $\ell$ in $\Q(i)$ and $\leq 6$ in $\Q(\sqrt{-3})$. Therefore, if $4\sqrt{\ell} > 10$ then there are more than $10$ such polynomials, so one must correspond to a field other than $\Q(i)$ and $\Q(\sqrt{-3})$. The the remaining primes $\ell < 7$ can be checked by hand.
+  The fields $K$ in which $\ell$ splits into principal primes are precisely the fields generated by roots of the polynomials $x^2 - tx + \ell$ with $0 < |t| < 2\sqrt{\ell}$. There are $2\lfloor 2\sqrt{\ell} \rfloor$ such polynomials. Recall that there are, up to Galois conjugates, at most $4$ elements of norm $\ell$ in $\Q(i)$ and at most $6$ elements of norm $\ell$  in $\Q(\sqrt{-3})$. Thus, if $4\sqrt{\ell} > 10$, then there are more than $10$ such polynomials, so one must correspond to a field other than $\Q(i)$ and $\Q(\sqrt{-3})$. The remaining primes $\ell < 7$ can be checked by hand.
 \end{proof}
 
 \begin{lemma}\label{lem:K-exists}
-  Let $g$ be a positive integer and $\ell$ a prime. Then there exists a imaginary quadratic field $K$ such that
-  \begin{enumerate}
-    \item $\sO_K^\times = \{\pm 1\}$
-    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$
-    \item There is an infinite number of rational primes $q$ such that
+  Suppose $\ell$ is a prime, $g$ is a positive integer, and $K$ is an imaginary quadratic field over which $\ell$ splits into principal primes, namely $\ell = \alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$.
+%  \begin{enumerate}
+%    \item $\sO_K^\times = \{\pm 1\}$,
+%    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$,
+%    \item
+Then there are infinitely many rational primes $q$ such that
     \begin{enumerate}
-      \item $q$ is inert in $K$
-      \item $q \equiv -1 \mod{g}$
-      \item $\alpha \mod q\sO_K \in \sO_K/q\sO_K$ is a $g$th power.
+      \item $q$ is inert in $K$,
+      \item $q \equiv -1 \mod{g}$, and
+      \item $\alpha \mod q\sO_K \in (\sO_K/q\sO_K)^\times$ is a $g$th power.
     \end{enumerate}
-  \end{enumerate}
+%  \end{enumerate}
 \end{lemma}
 \begin{proof}
-  By Lemma~\ref{lem:silly}, we can find a $K$ satisfying the first two properties. Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$. Let $\frak{q}$ be a prime of $L$ lying over a prime $q$ of $\Q$. Let $\sigma = \mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$. Note that $q$ is inert in $K$ if and only if $\sigma|_K$ is complex conjugation. Similarly, $q \equiv -1 \mod{g}$ if and only if $\sigma|_{\Q(\zeta_g)}$ is complex conjugation.
+  %By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2).
+  Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$.
+  Let $\sigma$ be any complex conjugation in $\Gal(L/\Q)$.
+  Let $\frak{q}$ be any prime of $L$ unramified in $L/\Q$ whose Frobenius $\mathrm{Frob}(\frak{q}) \in \Gal(L/\Q)$ is $\sigma$. The Chebotarev density theorem guarantees that there are infinitely many such $\frak{q}$.
+  Let $q$ be the rational prime below $\frak{q}$.
+  Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (1).
+  Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \mod{g}$, giving (2).
 %To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
-Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $\F_{q^2}$. Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$. So by Chebotarev's density theorem, it remains to show there exists some $\sigma \in \Gal(L/\Q)$ such that $\sigma$ has order $2$ and restricts to complex multiplication in $K$ and $\Q(\zeta_g)$.
-
-  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
+Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3).
+%Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$.
+%By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
+%  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Because $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
 
 \textcolor{red}{TODO: introduce lemmas}
 
 \begin{definition}
-  If $K$ is a imaginary quadratic field $K$, then we let $\Gt_q$ denote the group $(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times$. The field $K$ should be clear from context.
+  Suppose that $K$ is an imaginary quadratic field. If $q$ is a prime number that is inert in $K$, let
+  $$\Gt_q=(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times. $$
+  %The field $K$ should be clear from the context.
 \end{definition}
 
 \begin{lemma}\label{lem:c-torsor}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Then the set of subgroups of $E$ with order $q$ form a $\Gt_q$ torsor.
+  Suppose $E$ is an elliptic curve over an algebraically closed field $k$, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime inert in $K$ and not equal to the characteristic of $k$. Then the set of subgroups of $E$ of order $q$ is a $\Gt_q$ torsor.
 \end{lemma}
 \begin{proof}
-  Note that $E[q]$ is a module over $\sO_K/q\sO_K \cong \F_{q^2}$  of size $q^2$. Therefore $E[q]$ is isomorphic to $\F_{q^2}$ as $\F_{q^2}$-vector spaces. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the one dimensional $\F_q$-subspaces.
+  Note that $E[q]$ is a module over $\sO_K/q\sO_K \cong \F_{q^2}$  of size $q^2$. Therefore $E[q] \cong \F_{q^2}$ as $\F_{q^2}$-vector spaces. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the one-dimensional $\F_q$-subspaces of $E[q]$.
 \end{proof}
 
 \begin{definition}[{\cite[Sec.~2]{kani2011products}}]\label{def:ker-idl}
@@ -556,10 +594,10 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 \end{theorem}
 
 \begin{lemma}\label{lem:c-end}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a product of primes not equal to the characteristic of the base field and inert in $K$. If $\sC$ is a subgroup of $E$ of order $q$, then $\End(E/\sC) \cong \Z + q\sO_K$. In particular, every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
+  Suppose $E$ be an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a product of distinct primes not equal to the characteristic of the base field and inert in $K$. If $\sC$ is a subgroup of $E$ of order $q$, then $\End(E/\sC) \cong \Z + q\sO_K$. In particular, every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
 \end{lemma}
 \begin{proof}
-  Factor $q = \prod_{i=1}^n q_i$, where each $q_i$ is a prime not equal to the characteristic of the base field, and is inert in $K$. We can write $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of order $q_i$.
+  Factor $q = \prod_{i=1}^n q_i$, where each $q_i$ is a prime inert in $K$ and not equal to the characteristic of the base field. We can write $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of order $q_i$.
 
   The isogeny $\pi: E \to E/\sC$ factors into a chain of isogenies
   \[
@@ -573,16 +611,16 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
     \xrightarrow{\pi_n}
     E/\sum_{i=1}^n\sC_i.
   \]
-  Let $E_j = E/\sum_{i=1}^j\sC_i$ so $\pi_j: E_{j-1} \to E_j$. Recall that $\End(E_j)$ is isomorphic to an order in $K$, say $\sO_j$. Because $\pi_j$ has degree $c_j$, we know that $[\sO_j : \sO_{j-1}] = q_j$, $[\sO_{j-1} : \sO_j] = q_j$, or $\sO_{j-1} = \sO_j$ \cite[Prop.~5]{kohel1996endomorphism}. Therefore the index of $\sO_j$ in $\sO_K$ divides $\prod_{i=1}^{j}q_i$. Recall from \cite[Prop.~7.20]{cox2011primes} that ideals of $\sO_j$ that are prime to $f_j$ are in bijection with primes of $\sO_K$ avoiding $f_j$. In particular, there is no prime of $\sO_{j-1}$ of norm $q_j$. So $\ker\pi_j$ is not an ideal subgroup \cite[Prop.~23]{kani2011products}. Then by Theorem~\ref{thm:kani-20b}, $[\sO_{j-1} : \sO_j] = q_j$. It follows that $[\sO_K : \sO_n] = \prod_{i=1}^n q_i$ as required.
+  Let $E_j = E/\sum_{i=1}^j\sC_i$ so $\pi_j: E_{j-1} \to E_j$. Define $\sO_j$ to be the order $\End(E_j)$ in $K$, and let $f_j$ be the conductor of $\sO_j$. Since $\pi_j$ has degree $q_j$, we have $[\sO_j : \sO_{j-1}] = q_j$, $[\sO_{j-1} : \sO_j] = q_j$, or $\sO_{j-1} = \sO_j$ \cite[Prop.~5]{kohel1996endomorphism}. Therefore $[\sO_K : \sO_j]$ divides $\prod_{i=1}^{j}q_i$. Recall from \cite[Prop.~7.20]{cox2011primes} that ideals of $\sO_j$ that are prime to $f_j$ are in bijection with primes of $\sO_K$ avoiding $f_j$. In particular, there is no prime of $\sO_{j-1}$ of norm $q_j$. So $\ker\pi_j$ is not an ideal subgroup \cite[Prop.~23]{kani2011products}. Then by Theorem~\ref{thm:kani-20b}, $[\sO_{j-1} : \sO_j] = q_j$. It follows that $[\sO_K : \sO_n] = \prod_{i=1}^n q_i$ as required.
 \end{proof}
 
 \begin{lemma}\label{lem:c-subgps-distinct-quotients}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
+  Suppose $E$ be an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
 \end{lemma}
 \begin{proof}
   Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so up to replacing $\sC$ with $\beta(\sC)$ and $\alpha$ with $\alpha\overline{\beta}$, it is enough to prove the claim for $\beta = 1$.
 
-  If $\alpha(\sC) = \sC$, then it is clear that $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the other direction. Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. We want to show that $\sC = \alpha(\sC)$.
+  If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the other direction. Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. We want to show that $\sC = \alpha(\sC)$.
 
   Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\sC}\circ\alpha$. This shows that $\deg(\alpha) = \deg(\alpha')$\textcolor{red}{TODO: do we need $\alpha$ prime to be separable?}. Because $\alpha$ and $\alpha'$ are prime to $q$,
   \[
@@ -602,7 +640,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
 \end{proof}
 
 \begin{lemma}\label{lem:prod-equiv-torsor}
-  Let $E$ be an elliptic curve over an algebraically closed field with $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Let $\sC$ be a subgroup of $E$ of order $q$. If $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, then
+  Suppose $E$ be an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Let $\sC$ be a subgroup of $E$ of order $q$. If $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, then
   \[
     \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
     \,\Leftrightarrow\,
@@ -653,17 +691,17 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
   \]
 \end{lemma}
 \begin{proof}
-  Choose a imaginary quadratic field $K$, principal prime $\alpha\sO_K$ lying over $\ell$, and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for any $i$. Let $E$ be an elliptic curve over an algebraically closed field with endomorphism ring $\End(E) \cong \sO_K$.
+  For any imaginary quadratic field $K$ as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for all $i$. Let $E$ be an elliptic curve over an algebraically closed field with endomorphism ring $\End(E) \cong \sO_K$.
 
-  If $\sC$ is a cyclic subgroup of $E$ with order prime to $\ell$, then $\alpha$ induces a chain of isogenies
+  If $\sC$ is a cyclic subgroup of $E$ of order prime to $\ell$, then $\alpha$ induces a chain of isogenies
   \[
     E/\sC \to E/\alpha(\sC) \to \cdots \to E/\alpha^n(\sC).
   \]
   Let $\alpha_{\sC,n}: E/\sC \to \cdots \to E/\alpha^n(\sC)$ be the composition of this chain. Then $\alpha_{\sC,n}$ is a cyclic $\ell^n$-isogeny, so the pair $(E/\sC,\alpha_{\sC,n})$ defines a point in $Y_0(\ell^n)$.
 
-    For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ with order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and similarly for $x_i$. Note that the $x_i$ are distinct points, as the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
+    For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ of order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and similarly for $x_i$. Note that the $x_i$ are distinct points, as the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
 
-    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Proposition~\ref{prop:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$. By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
+    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$. By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
     \[
       \psi_{A}(x_1) \approx E/\gamma^{gn_1}(\sC_1) \times \cdots \times E/\gamma^{gn_g}(\sC_1).
     \]
@@ -672,7 +710,7 @@ Finally, if $\sigma$ has order $2$, then $\sO_L/\frak{q} \cong \sO_K/q\sO_K \con
       \left(\gamma^{n_1 + \cdots + n_g}\right)^g \equiv \beta^g\left(\gamma^{n_1' + \cdots + n_g'}\right)^g
       \text{ in } \Gt_{q_1}.
     \]
-    Note that $\#S = g$ because $g$ divides $q_1 + 1$, the order of $\Gt_{q_1}$. For any $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Proposition~\ref{prop:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\gamma^{gn_1'}(\beta(\sC_1)) \times \cdots \times E/\gamma^{gn_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
+    Note that $\#S = g$ since $g$ divides $q_1 + 1$, the order of $\Gt_{q_1}$. For all $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\gamma^{gn_1'}(\beta(\sC_1)) \times \cdots \times E/\gamma^{gn_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
 
   For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta$ such that
   \[
