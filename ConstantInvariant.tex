@@ -50,7 +50,7 @@ and the National Science Foundation.}
 
 If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if $A$ and $B$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $R$ is a subring of $\C$ and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
+  Suppose that $R$ is a domain and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
 % Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
@@ -72,9 +72,9 @@ $$
 We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
 \begin{theorem}\label{thm:sg-c-dense}
-  If $R$ is a subring of $\C$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
+  If $R$ is a domain, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
-Since a scheme over $\C$ is also a scheme over $R$, it suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R = \C$.
+It suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
 
 In arbitrary characteristic we have the following, which we will prove in Section~\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
