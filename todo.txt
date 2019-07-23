@@ -1,6 +1,7 @@
 
 * Shahed
 ** Revise §5
+** Revise Faltings-Chai business (once written)
 * Alice
 ** Edit introduction
 ** Edit §2
@@ -9,6 +10,7 @@
 * Travis
 ** Fix §5
 ** Write a §6
+** Write argument that cites Faltings-Chai
 * Put defns and results for A₁ᵍ; for example, define new W_g.
 * Put addenda elsewhere for positive characteristic versions.
 * Prove 5.7.
