@@ -2,7 +2,7 @@
 * Shahed
 ** Revise §5
 ** Revise Faltings-Chai business (once written)
-** Introduce and revise proof of 1.6.
+** Fix proof of 5.1.
 * Alice
 ** Edit introduction
 ** Edit §2
