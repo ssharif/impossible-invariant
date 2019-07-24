@@ -821,23 +821,19 @@ is dense in the set of real symmetric positive definite matrices.
   A $g \times g$ matrix $Q$ is \emph{half-integral} if $2Q_{i,j} \in \Z$ and $Q_{i,i} \in \Z$ for all $1 \leq i,j \leq g$.
 \end{definition}
 
-\begin{lemma}\label{lem:unique-minimizer}
-  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite real symmetric $g \times g$ matrix $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+\begin{lemma}\label{lem:finite-fixed-trace}
+ For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
 \end{lemma}
 \begin{proof}
-  Since $\{Q \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$,
-%\begin{lemma}\label{lem:finite-fixed-trace}
-%  For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
-%\end{lemma}
-%\begin{proof}
-%  This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
-%
-%  Recall that $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$ and $M_{g \times g}(\Z)$ is a discrete subset. So it is enough to show that $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, %$\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 %\leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
-%\end{proof}
-%\begin{lemma}\label{lem:bound-trace-finite}
+ % This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
+\textcolor{red}{I don't see how the proof implies the statement.}
+The map $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$, and the half-integral matrices form a discrete subset. So it is enough to show that for $Q$ symmetric positive semi-definite and half-integral, $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, $\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 \leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
+\end{proof}
+
+% \begin{lemma}\label{lem:bound-trace-finite}
 %  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
-%\end{lemma}
-%\begin{proof}
+% \end{lemma}
+% \begin{proof}
 %  Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
 %  \begin{align*}
 %    \tr(BQ)^2 &\leq \tr(B^2)\tr(Q^2)
@@ -852,7 +848,13 @@ is dense in the set of real symmetric positive definite matrices.
 %    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) \leq \tr(A^{-1})t.
 %  \]
 %  The claim then follows from Lemma~\ref{lem:finite-fixed-trace}.
-%\end{proof}
+% \end{proof}
+
+\begin{lemma}\label{lem:unique-minimizer}
+  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite real symmetric $g \times g$ matrix $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+\end{lemma}
+\begin{proof}
+  Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$,
   there is a gap between the smallest value $t_0$ of $\tr(Q)$ for $Q \in S$, and the next smallest value $t_1$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
 
   Let $\mathfrak{S}$ be the set of symmetric real matrices $E$ such that
