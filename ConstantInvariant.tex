@@ -777,9 +777,9 @@ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldo
 \begin{proof}
  Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Kani (give ref), since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
 
- For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$ by \textcolor{red}{TODO: cite Kani?}.
+ For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End E_{i}$ has exactly one ideal of norm $\ell$ given by $\ell\End E_{i-1}$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so the endomorphism ring of $E_{i+1}$ must be strictly smaller by Theorem~\ref{thm:kani-20b}.
 
- For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$ because \textcolor{red}{TODO: there is no backtracking}.
+ For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$. To see this, note that if $\ker\pi^{(n)}$ was not cyclic, then $\pi^{(n)}$ would factor into a composition of the form $\psi\circ[\ell^m]$, where $[\ell^m]$ is the multiplication by $\ell^m$ map. However, the index of $\End E_n$ in $\sO_K$ is then bounded by $\deg\psi$. By above, $\End E_n$ has index $\ell^n = \deg\pi^{(n)}$ and therefore we must have that $m = 0$.
 
  Let $S = \{E_i\}_{i=0}^\infty$. Let $(E_{n_1},\dots,E_{n_g}) \in S$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$, and let $\sC = \ker \pi^{(n)}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
  \[
@@ -807,7 +807,7 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 \end{proof}
 
 \begin{lemma}\label{lem:rggt-dense}
-  For any positive integer $N$, the set 
+  For any positive integer $N$, the set
 \[
 \{ rGG^t \colon r \in \R^+ \text{ and } G \in \Sl_g(\Z[1/N]) \}
 \]
