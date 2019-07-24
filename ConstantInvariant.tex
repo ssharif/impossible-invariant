@@ -103,10 +103,10 @@ Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \r
 
 \textcolor{red}{TODO: introduce/move}
 
-\begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}], 
+\begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}],
 %  If $X$ and $Y$ are subsets of $\ag \times \ag$, we write (I suggest omitting this notation and writing it out in words, rather than proving the result in a long expression) $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
 As stated earlier, it suffices to prove the result when $R$ is an algebraically closed field $k$.
-We have 
+We have
 $$
 \bigcup_{A,A'} \left(\sg(k) \cap (X_A \times X_{A'})\right) =  \sg(k) \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
    \subset \sg(k).
@@ -138,7 +138,7 @@ $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'} =
 \textcolor{red}{TODO: introduce/move}
 
 \begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
-  Suppose $f: \ag \to X$ is a morphism of $R$-schemes. Consider the fiber product $\df = \ag \times_X \ag$. 
+  Suppose $f: \ag \to X$ is a morphism of $R$-schemes. Consider the fiber product $\df = \ag \times_X \ag$.
   % determined by the diagram
   % \[
   % \begin{tikzcd}
@@ -147,7 +147,7 @@ $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'} =
   %   \ag \arrow[r,"f"] & X.
   % \end{tikzcd}
   % \]
-%  The hypotheses on $f$  imply that 
+%  The hypotheses on $f$  imply that
 Since $f$ is a morphism such that $f(A) = f(B)$ whenever $A \approx B$, we have that $\sg(\C) \subset \df(\C)$.
   % https://ncatlab.org/nlab/show/separated+morphism+of+schemes
    Since $\df$ is a closed subscheme of $\ag \times \ag$, Theorem~\ref{thm:sg-c-dense} implies that $\df = \ag \times \ag$, giving the desired result.\textcolor{red}{TODO: I think this needs more.}
@@ -639,8 +639,8 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 
   If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the other direction. Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. We want to show that $\sC = \alpha(\sC)$.
 
-  Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$. 
-  %This shows that $\deg(\alpha) = \deg(\alpha')$. 
+  Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$.
+  %This shows that $\deg(\alpha) = \deg(\alpha')$.
   Since $\alpha$ and $\alpha'$ are prime to $q$,
   \[
     \sC + \ker(\alpha')
@@ -720,7 +720,7 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 
     For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ of order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and similarly for $x_i$. Note that the $x_i$ are distinct points, as the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
 
-    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$. 
+    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$.
     %By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
 %    \[
 %      \psi_{A}(x_1) \approx E/\gamma^{gn_1}(\sC_1) \times \cdots \times E/\gamma^{gn_g}(\sC_1).
@@ -730,7 +730,7 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
       \alpha^{n_1 + \cdots + n_g} \equiv \beta^g\alpha^{n_1' + \cdots + n_g'}
       \text{ in } \Gt_{q_1}.
     \]
-Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides the order $q_1 + 1$ of the cyclic group $\Gt_{q_1}$, 
+Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides the order $q_1 + 1$ of the cyclic group $\Gt_{q_1}$,
    we have $\#S = g$. For all $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\alpha^{n_1'}(\beta(\sC_1)) \times \cdots \times E/\alpha^{n_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
 
   For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta$ such that
@@ -742,7 +742,7 @@ Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides
     \alpha^{n_1 + \cdots + n_g} \equiv \beta^g\alpha^{n_1' + \cdots + n_g'}
     \text{ in } \Gt_{q_1} \times \Gt_{q_2}.
   \]
-%  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$. 
+%  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$.
 There are precisely $g^2$ solutions $\beta$ to this equation. Continuing this construction for $i=3,4,\dots$, we find that for $x_i$ there are $g^i$ points $y \in Y_0(\ell^m)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
 \end{proof}
 
@@ -797,341 +797,82 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 
 
 
-\newpage
+\section{Proof of Theorem~\ref{thm:curves-dense}}
 
-\section{Other Step 1}
-
-In this section we prove Theorem~\ref{thm:curves-dense}.
-
-
-\subsection{June 27}
-
-\begin{lemma}
-  For any subset $S \subset \N^n$, there is a nonempty open cone of linear functionals which are uniquely minimized on $S$, with the minimum attained on the same element.
+\begin{lemma}\label{lem:sl-dense}
+  For any positive integer $N$, $\Sl_g(\Z[1/N])$ is dense in $\Sl_g(\R)$.
 \end{lemma}
 \begin{proof}
-  Let $s = (s_1,\dots,s_n)$ be the lexicographically minimal element of $S$, and let $\lambda$ be any linear functional satisfying the strict inequalities
-  \[
-    \lambda_i > \sum_{j>i} s_j\lambda_j.
-  \]
-  In particular, $\lambda_i>0$ for all $i$. Such linear functionals clearly form a nonempty open cone in $\R^n$, so it will suffice to show that they are all uniquely minimized at $s$.
-
-  For any other element $t \in S$, we have $t > s$ in lexicographic order. If $m$ is the first index where they differ, then
-  \begin{align*}
-    \sum_{1\le i\le n} \lambda_i t_i
-    \ge
-    \sum_{1\le i\le m} \lambda_i t_i
-    \ge
-    \sum_{1\le i\le m} \lambda_i s_i
-    +
-    \lambda_m
-    \sum_{1\le i\le n} \lambda_i s_i.
-  \end{align*}
+  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices $G = E_n \cdots E_2 E_1$, where $\det E_i = \pm 1$. For each $E_i$, the entries, with at most one exception, are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/N]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/N])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
 \end{proof}
-%Lemma. For any subset S\subset \N^n, there is a nonempty open cone of
-%linear functionals which are uniquely minimized on S, with the minimum
-%attained on the same element.
-%
-%Proof.  Let s be the lexicographically minimal element of S, and let
-%\lambda be any linear functional satisfying the strict inequalities
-%
-%\lambda_i > \sum_{j>i} s_j\lambda_j.
-%
-%(In particular, \lambda_i>0 for all i.)  Such linear functionals clearly
-%form a nonempty open cone in \R^n, so it will suffice to show that they
-%are all uniquely minimized at s.
-%
-%For any other element t\in S, we have t>s in lexicographic order.  If m
-%is the first index where they differ, then
-%
-%\sum_{1\le i\le n} \lambda_i t_i
-%\ge
-%\sum_{1\le i\le m} \lambda_i t_i
-%\ge
-%\sum_{1\le i\le m} \lambda_i s_i
-%+
-%\lambda_m
-%
-%\sum_{1\le i\le n} \lambda_i s_i.
-%QED
 
-\begin{corollary}
-  For any set $S$ of positive semidefinite integral quadratic forms, there is a nonempty open cone of positive definite symmetric matrices $M$ such that $Q\mapsto \tr(M\cdot Q)$ has a unique minimum on $S$.
-\end{corollary}
+\begin{lemma}\label{lem:rggt-dense}
+  For any positive integer $N$, the set $\{ rgg^t \colon r \in \R^+ \text{ and } g \in \Sl_g(\Z[1/N]) \}$ is dense in the set of real symmetric positive definite matrices.
+\end{lemma}
 \begin{proof}
-  Let $M_1,\dots,M_{d(d+1)/2}$ be a sequence of positive definite symmetric matrices with integer entries that form a basis over $\R$ of the space of all symmetric matrices. Then the set of positive semidefinite integral quadratic forms injects linearly in $\N^{d(d+1)/2}$ via
-  \[
-    Q\mapsto (\tr(Q M_1),\dots,\tr(Q M_{d(d+1)/2}).
-  \]
-  If $\lambda$ is any element of the cone coming from the Lemma, then $M  = \sum_i \lambda_i M_i$ is positive definite, and thus the claim follows.
+  Let $A$ be a real symmetric positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal, with non-negative entries. Let $G = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)GG^t$. Note that $G \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $H \in \Sl_g(\Z[1/N])$ arbitrarily close to $G$, and therefore we can make $\det(D)HH^t$ arbitrarily close to $A$.
 \end{proof}
-%Corollary.  For any set S of positive semidefinite integral quadratic
-%forms, there is a nonempty open cone of positive definite symmetric
-%matrices M such that Q\mapsto \Tr(M\cdot Q) has a unique minimum on S.
-%
-%Proof.  Let M_1,\dots,M_{d(d+1)/2} be a sequence of positive definite
-%symmetric matrices with integer entries that form a basis over \R of the
-%space of all symmetric matrices.  Then the set of positive semidefinite
-%integral quadratic forms injects linearly in \N^{d(d+1)/2} via
-%
-%Q\mapsto (\Tr(Q M_1),\dots,\Tr(Q M_{d(d+1)/2}).
-%
-%If \lambda is any element of the cone coming from the Lemma, then
-%M=\sum_i \lambda_i M_i is positive definite, and thus the claim follows.
-%QED
-
-\begin{corollary}
-  For any set $S$ of positive semidefinite integral quadratic forms, there is an element $g \in \Sl_d(\Z[1/\ell])$ such that $Q \mapsto \tr(Q g g^t)$ has a unique minimum on $S$.
-\end{corollary}
-\begin{proof}
-  Indeed, the open cone from the previous corollary intersects the dense set of positive definite symmetric matrices of the form $r g g^t$ with $r > 0$, $g \in \Sl_d(\Z[1/\ell])$, and thus since it is a cone intersects the subset with $r = 1$.
-\end{proof}
-%Corollary.  For any set S of positive semidefinite integral quadratic
-%forms, there is an element g\in \SL_d(\Z[1/l]) such that Q\mapsto \Tr(Q
-%g g^t) has a unique minimum on S.
-%
-%Proof.  Indeed, the open cone from the previous corollary intersects the
-%dense set of positive definite symmetric matrices of the form r g g^t
-%with r>0, g\in \SL_d(\Z[1/l]), and thus since it is a cone intersects
-%the subset with r=1.
-%QED
-
-\subsection{June 28}
-
-Let $A$ be a symmetric positive definite matrix with determinate $N = \ell^n$. Let $X_A$ denote the image $\psi_A(Y_0(\det A))$. Our goal is to show that $\bigcup X_A$ is dense in $\ag$.
-
-Note that $\psi_A$ pulls back Siegel modular functions from $\ag$ to $X_0(N)$. On the level of Siegel upper half spaces, the pull back is given by
-\[
-  f \mapsto = \{\tau \mapsto f(A\tau)\}.
-\]
-
-Now $\bigcup X_A$ is dense in $\ag$ if and only if for all nonzero Siegel modular functions $f: \ag \to \C$, there is some $\psi_A$ such that $f \circ \psi_A \neq 0$.
 
 \begin{definition}
-  A $g \times g$ matrix $N$ is \emph{half-integral} if $2N_{i,j} \in \Z$ and $N_{i,i} \in \Z$ for all $i,j$.
+  A $g \times g$ matrix $Q$ is \emph{half-integral} if $2Q_{i,j} \in \Z$ and $Q_{i,i} \in \Z$ for all $1 \leq i,j \leq g$.
 \end{definition}
 
-\textcolor{red}{TODO: this is prob unnecessary, just cite Klingen}
-
-\begin{lemma}
-  Let $f$ be a holomorphic function on $\hh_g/\Sp_{2g}(\Z)$. Then $f$ can be written as
-  \[
-    f(\tau) = \sum_{N \text{ h.i.}} c_N \exp(2 \pi i)^{\tr(N\tau)}.
-  \]
-\end{lemma}
-\begin{proof}
-  This is given more rigorously in \cite[Pg.~44]{klingen1990introductory}.
-
-  By definition, $f$ is a function on $\hh_g$ such that $f(\tau) = f(\gamma(\tau))$ for any $\gamma \in \Sp_{2g}(\Z)$. Let $S$ be any integral symmetric $g \times g$ matrix, and let $\gamma = \begin{bmatrix} I & S \\ 0 & I \end{bmatrix}$. Then $f(\tau) = f(\gamma(\tau)) = f(\tau + S)$. If we write $\tau = (\tau_{i,j})$, then $f$ is periodic in each variable $\tau_{i,j}$ with $i \leq j$. Thus we write $f$ as a multivariable Fourier series,
-  \begin{align*}
-    f(\tau_{i,j})
-    &=
-    \sum_{N \in \mathrm{Sym}_g(\Z)} a_N \prod_{i \leq j} \exp(2 \pi i \tau_{i,j})^{N_{i,j}}
-    \\
-    &=
-    \sum_{N} a_N \prod_{i,j} \exp(2 \pi i)^{\tau_{i,j} N_{i,j}}
-  \end{align*}
-  where in the last line $N$ ranges over all half-integral symmetric $g \times g$ matrices. A short computation shows that $\sum_{i,j}\tau_{i,j}N_{i,j} = \tr(\tau N)$.
-  %\sum_{i,j} \tau_{i,j}N_{i,j} = \sum_{i} \sum_{k} \tau_{i,k}N_{k,i} = \tr(\tau N).
-\end{proof}
-
-\textcolor{red}{TODO: this is prob unnecessary, just cite}
-
-\begin{theorem}[Koecher principle]
-  Let $f$ be a holomorphic function on $\hh_g/\Sp_{2g}(\Z)$, with Fourier series $f(\tau) = \sum_N a_N \exp(2 \pi i)^{\tr(\tau N)}$, where $N$ runs over all symmetric half-integer matrices. If $a_N$ is not positive semi-definite, then $a_N = 0$ for any $N$ that is not positive semi-definite.
-\end{theorem}
-\begin{proof}
-  See the proof of \cite[Thm.~1, Pg.~45]{klingen1990introductory} or \cite[Thm.~2, Pg.~191]{bruinier2008the123}.
-
-  %See also https://pdfs.semanticscholar.org/b1f4/d21acdbb599fe177fb15e087dcda2b7c2905.pdf
-\end{proof}
-
-Let $f$ be a modular function on $\hh_g/\Sp_{2g}(\Z)$ and $\tau \in \hh_g$. Then
-\[
-  (f \circ \psi_A)(\tau) = \sum_Q c_Q \exp(2 \pi i \tau)^{\tr(AQ)}.
-\]
-where $Q$ runs over all symmetric positive semi-definite half-integral $g \times g$ matrices.
-Let $q = \exp(2 \pi i \tau)$. Then we can rewrite the previous equation as
-\[
-  (f \circ \psi_A)(\tau) = \sum_Q c_Q q^{\tr(AQ)}
-\]
-
-\textcolor{red}{TODO: this is prob unnecessary, just cite}
-
-\begin{lemma}\label{lem:finite-fixed-trace}
-  For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
-\end{lemma}
-\begin{proof}
-  This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
-
-  Recall that $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$ and $M_{g \times g}(\Z)$ is a discrete subset. So it is enough to show that $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, $\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 \leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
-\end{proof}
-
-\begin{lemma}\label{lem:bound-trace-finite}
-  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
-\end{lemma}
-\begin{proof}
-  Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
-  \begin{align*}
-    \tr(BQ)^2 &\leq \tr(B^2)\tr(Q^2)
-    &&\text{by Cauchy–Schwarz}
-    \\
-    &\leq \tr(B)^2\tr(Q)^2
-    &&\text{By positive semidefinite.}
-    %\tr(B^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(B)^2.
-  \end{align*}
-  Therefore, if $\tr(AQ) \leq t$, then
-  \[
-    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) \leq \tr(A^{-1})t.
-  \]
-  The claim then follows from Lemma~\ref{lem:finite-fixed-trace}.
-\end{proof}
-
-\textcolor{red}{TODO: common knowledge? See \url{https://math.stackexchange.com/questions/113842/is-the-product-of-symmetric-positive-semidefinite-matrices-positive-definite}}
-
-\begin{lemma}\label{lem:non-neg-tr}
-  Let $M$ and $N$ be symmetric positive semi-definite real $g \times g$ matrices. Then $\tr(MN) \geq 0$.
-\end{lemma}
-\begin{proof}
-  As $M$ is positive semi-definite, it admits a symmetric square root, say $M^{1/2}$. Then $M^{1/2}NM^{1/2}$ is positive semi-definite because
-  \[
-    \vec{v}^t(M^{1/2}NM^{1/2})\vec{v}
-    =
-    (M^{1/2}v)^t N (M^{1/2}\vec{v})
-    \geq 0.
-  \]
-  The last inequality follows from the fact that $N$ is positive semi-definite. The claim holds because $\tr(M^{1/2}NM^{1/2}) = \tr(MN)$.
-\end{proof}
-
 \begin{lemma}\label{lem:unique-minimizer}
-  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open set of positive definite real symmetric $g \times g$ matrix $A$ such that $\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite real symmetric $g \times g$ matrix $A$ such that $\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
 \end{lemma}
 \begin{proof}
-  Define
-  \begin{align*}
-    S_{\leq t} &= \min\{ Q \in S \colon \tr(Q) \leq t \}
-    \\
-    t_0 &= \min\{ \tr(Q) \colon Q \in S \}
-    \\
-    t_1 &= \min\{ \tr(Q) \colon Q \in S \text{ and } \tr(Q) > t_0 \}.
-  \end{align*}
-  Note that for any $t$, $S_{\leq t}$ is finite by Lemma~\ref{lem:bound-trace-finite}. In particular, the minimums above are well defined and $t_1 > t_0$.
+  Since $\{Q \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$,
+%\begin{lemma}\label{lem:finite-fixed-trace}
+%  For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
+%\end{lemma}
+%\begin{proof}
+%  This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
+%
+%  Recall that $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$ and $M_{g \times g}(\Z)$ is a discrete subset. So it is enough to show that $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, %$\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 %\leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
+%\end{proof}
+%\begin{lemma}\label{lem:bound-trace-finite}
+%  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
+%\end{lemma}
+%\begin{proof}
+%  Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
+%  \begin{align*}
+%    \tr(BQ)^2 &\leq \tr(B^2)\tr(Q^2)
+%    &&\text{by Cauchy–Schwarz}
+%    \\
+%    &\leq \tr(B)^2\tr(Q)^2
+%    &&\text{By positive semidefinite.}
+%    %\tr(B^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(B)^2.
+%  \end{align*}
+%  Therefore, if $\tr(AQ) \leq t$, then
+%  \[
+%    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) \leq \tr(A^{-1})t.
+%  \]
+%  The claim then follows from Lemma~\ref{lem:finite-fixed-trace}.
+%\end{proof}
+  there is a gap between the smallest value $t_0$ of $\tr(Q)$ for $Q \in S$, and the next smallest value $t_1$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
 
-  Consider the set $\mathfrak{S}$ of symmetric matrices $E$ such that
+  Let $\mathfrak{S}$ be the set of symmetric real matrices $E$ such that
   \begin{enumerate}
-    \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all $Q_i,Q_j \in S_{\leq t_0}$ with $Q_i \neq Q_j$.
-    \item $E$ is positive definite.
-    \item $I + E$ is positive definite.
+    \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$
+    \item $I+E$ is positive definite
+    \item $\tr(EQ) < t_1 - t_0$.
   \end{enumerate}
+  The last condition implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by the first condition, $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. As $I+E$ is positive definite, the matrix $A = I + E$ satisfies the conclusion. Moreover, $rA$ also satisfies the conclusion for any $r \in R^+$, so $I + \mathfrak{S}$ is a cone.
 
-  The first conditions is the complement of a finite union of hyperplanes. The second is an open set. Note that both conditions hold under scaling by a positive number. Since $I$ is positive definite, it contains an open neighborhood which is positive definite. For any $E$ satisfying the first two properties, we can scale $E$ small enough so that it will also satisfy the third. Therefore $\mathfrak{S}$ is non-empty and open.
-
-  It remains to check that any $E \in \mathfrak{S}$ satisfies the conclusion. By Lemma~\ref{lem:non-neg-tr},
-  \[
-    \tr(Q(I + E)) = \tr(Q) + \tr(QE) \geq \tr(Q).
-  \]
-  So
-  \[
-    \inf\left\{ \tr(Q(I+E)) \colon Q \in S \right\}
-    =
-    \min\left\{ t_0 + \tr(QE) \colon Q \in S \text{ and } \tr(Q) = t_0 \right\}.
-  \]
-  By the construction of $\mathfrak{S}$, there is a unique $Q$ such that the last set is minimal.
+  It remains to show that $I + \mathfrak{S}$ is open (in the space of symmetric real matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, recall that the compliment of a finite union of hyperplanes is dense. Therefore we can find some $E$ satisfying properties (i) and (ii). By scaling by a sufficiently small $\epsilon > 0$, we can guarantee that $\epsilon E \in \mathfrak{S}$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  \textcolor{red}{TODO: apply Lemma~\ref{lem:unique-minimizer} to the set of $Q$ such that $c_Q \neq 0$. Use openness to find a symmetric matrix $A \in \Gl(\Z[1/\ell])$ and then scale by a power of $\ell$.}
+  Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. It is sufficient to show that for any non-zero Siegel modular function $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $f \circ \psimod$ is non-zero.
+
+  Let $f$ be a Siegel modular form on $\ag$. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Ch.~5]{faltings1990degeneration}.
+
+  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$, that is $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is can find an open cone $U$ of real symmetric positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
+
+  By Lemma~\ref{lem:rggt-dense}, we can find some $A \in U$ of the form $A = rgg^t$ with $r \in \R^+$ and $g \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r = 1$. We may also scale $A$ by a power of $\ell$ so that $A \in \detl$.
+
+  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. Then there is a unique $Q \in S$ such that $\tr(AQ) = n$, say $Q_0$. The $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $f \circ \psimod \neq 0$.
 \end{proof}
-
-\begin{comment}
-From: "Rains, Eric M." <rains@caltech.edu>
-Subject: Re: some observations
-Date: Fri, June 28, 2019 at 9:54:26 AM PDT
-To: Alice Silverberg <asilverb@uci.edu>
-
-We're feeling a bit daunted by the positive characteristic case....
-
-     Actually, now that I understand things a bit better, I think the
-positive characteristic proof is actually a bit simpler than the current
-characteristic 0 proof (as it doesn't require knowing anything about
-holomorphic density in several variables).  Let me tell you the
-characteristic 0 analogue of the argument...
-
-     The basic idea in characteristic 0 is that the Zariski closure of
-the images of X_0(l^n) is cut out by an ideal in the algebra of Siegel
-modular forms.  Moreover, each A gives rise to a homomorphism from
-Siegel modular forms to ordinary modular forms over \Gamma_0(l^n), given by
-
-f\mapsto (\tau\mapsto f(A\tau)).
-
-So to show that the union of images of \phi_A is dense, it suffices to
-show that any nonzero Siegel modular form has nonzero image under one of
-these homomorphisms.
-
-     Since a Siegel modular form is 1-periodic in each coefficient, it
-can be expressed as a series of the following form:
-
-f(T) = \sum_Q c_Q \exp(2\pi\sqrt{-1}\Tr(QT))
-
-where T ranges over the Siegel upper half-space and Q ranges over
-positive semidefinite integral quadratic forms.  Specializing this to
-A\tau gives the expression
-
-f(A\tau) = \sum_Q c_Q q^{\Tr(AQ)},
-
-where q=\exp(2\pi\sqrt{-1}\tau).  (Note that for any positive definite
-real symmetric matrix A, |\{Q:\Tr(AQ)=t\}| is finite, essentially by
-Cauchy-Schwartz, or more precisely by the inequality
-
-\Tr(BQ)\le \Tr(AQ)\Tr(A^{-1}B)
-
-for any positive semidefinite real symmetric matrix B (which follows
-from Cauchy-Schwartz by writing both B and Q as sums of rank 1
-matrices).  In particular, if \Tr(AQ)=t, then \Tr(Q)\le \Tr(A^{-1})t is
-bounded, so there are only finitely many possibilities.)
-
-     If A is chosen so that \Tr(AQ) attains its minimum on the support
-of f at the unique point Q_0 (which can always be done, by the argument
-of the previous E-mail), then we have
-
-f(A\tau) = c_{Q_0} q^{\Tr(A Q_0)} + o(q^{\Tr(A Q_0)}),
-
-and thus f(A\tau) is not identically 0.
-
-     The only difference in finite characteristic is that we need to
-rewrite the original Siegel modular form in terms of the variables
-q_{ij}:=\exp(2\pi\sqrt{-1}T_{ij}) for 1\le i\le j\le d, at which point
-it is, I believe, known that such expressions extend to finite
-characteristic.  (That is, a Siegel modular form can be viewed as a
-section of an appropriate line bundle on a compactification of {\cal
-A}_g, that line bundle makes sense in finite characteristic, its
-q-expansions around the appropriate cusp are as stated, and it interacts
-with modular morphisms as expected.)
-
-     Note that the argument of the previous E-mail that there's a
-unique minimizing Q can be simplified somewhat.  Let A be any positive
-definite real symmetric matrix.  Since |\{Q:\Tr(AQ)\le t\}| is finite
-for all t, not only are there finitely many Q such that c_Q\ne 0 that
-attain the minimum value t_0 of \Tr(AQ), there is a separation between
-that value and the next smallest possible value t_1.  Let M be any
-positive definite real symmetric matrix such that the minimum of \Tr(MQ)
-subject to \Tr(AQ)=t_0 and c_Q\ne 0 is < t_1-t_0.  Then the minimum of
-\Tr((A+M)Q) subject to c_Q\ne 0 is attained only when \Tr(AQ)=t_0, and
-thus in particular for an open set of M, the minimum is uniquely attained.
-
-     In fact, a sufficiently small perturbation in any direction
-outside a finite set of hyperplanes will work: if M points in the
-direction we want to perturb, then for \epsilon sufficiently small,
-\epsilon A+\epsilon^2 M is positive definite and satisfies \Tr((\epsilon
-A+\epsilon^2 M)Q)<t_1-t_0  when \Tr(AQ)=t_0 and c_Q\ne 0, so that
-(1+\epsilon)A + \epsilon^2 M satisfies the desired condition, and thus
-so does A + ((\epsilon^2)/(1+\epsilon))M.  In other words, the
-minimizing Q is unique outside a locally finite complex of polyhedral cones.
-
-                                             Eric
-\end{comment}
-
-
 
 
 
