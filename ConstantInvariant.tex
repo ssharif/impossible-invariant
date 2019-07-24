@@ -820,12 +820,14 @@ is dense in the set of real symmetric positive definite matrices.
 \end{definition}
 
 \begin{lemma}\label{lem:finite-fixed-trace}
- For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(Q) \leq t$.
+ For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral matrices $Q$ such that $\tr(Q) \leq t$.
 \end{lemma}
 \begin{proof}
- % This is at the bottom of \cite[Pg.~46]{klingen1990introductory}.
-\textcolor{red}{I don't see how the proof implies the statement.}
-The map $\langle A,B \rangle \mapsto \tr(AB^t)$ is an inner product on $M_{g \times g}(\R)$, and the half-integral matrices form a discrete subset. So it is enough to show that for $Q$ symmetric positive semi-definite and half-integral, $\tr(Q^2)$ is bounded. Let $\lambda_i$ denote the eigenvalues of $Q$, with multiplicity. By hypothesis, $\lambda_i \in \R$ and $\lambda_i \geq 0$ for all $i$. Then $\tr(Q^2) = \sum \lambda_i^2 \leq (\sum \lambda_i)^2 = \tr(Q)^2 \leq t^2$.
+  Let $Q$ be a symmetric positive semi-definite half-integral matrix, and let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Note that $\lambda_i \geq 0$, so
+  \[
+    \sum_{1 \leq i,j \leq g} (Q_{i,j})^2 = \tr(Q^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
+  \]
+  This shows that $Q$, as a vector in $\R^{g^2}$, lies in the ball of radius $t$. Thus the number of possible $Q$ is bounded by the number of half-integral points in the ball of radius $t$ in $\R^{g^2}$, which is finite.
 \end{proof}
 
 % \begin{lemma}\label{lem:bound-trace-finite}
