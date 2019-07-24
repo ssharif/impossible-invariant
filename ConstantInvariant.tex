@@ -807,10 +807,14 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 \end{proof}
 
 \begin{lemma}\label{lem:rggt-dense}
-  For any positive integer $N$, the set $\{ rgg^t \colon r \in \R^+ \text{ and } g \in \Sl_g(\Z[1/N]) \}$ is dense in the set of real symmetric positive definite matrices.
+  For any positive integer $N$, the set 
+\[
+\{ rGG^t \colon r \in \R^+ \text{ and } G \in \Sl_g(\Z[1/N]) \}
+\]
+is dense in the set of real symmetric positive definite matrices.
 \end{lemma}
 \begin{proof}
-  Let $A$ be a real symmetric positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal, with non-negative entries. Let $G = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)GG^t$. Note that $G \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $H \in \Sl_g(\Z[1/N])$ arbitrarily close to $G$, and therefore we can make $\det(D)HH^t$ arbitrarily close to $A$.
+  Let $A$ be a real symmetric positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal, with non-negative entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $G \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore we can make $\det(D)GG^t$ arbitrarily close to $A$.
 \end{proof}
 
 \begin{definition}
@@ -818,7 +822,7 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 \end{definition}
 
 \begin{lemma}\label{lem:unique-minimizer}
-  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite real symmetric $g \times g$ matrix $A$ such that $\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite real symmetric $g \times g$ matrix $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
 \end{lemma}
 \begin{proof}
   Since $\{Q \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$,
@@ -853,25 +857,25 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 
   Let $\mathfrak{S}$ be the set of symmetric real matrices $E$ such that
   \begin{enumerate}
-    \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$
-    \item $I+E$ is positive definite
+    \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$,
+    \item $I+E$ is positive definite, and
     \item $\tr(EQ) < t_1 - t_0$.
   \end{enumerate}
-  The last condition implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by the first condition, $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. As $I+E$ is positive definite, the matrix $A = I + E$ satisfies the conclusion. Moreover, $rA$ also satisfies the conclusion for any $r \in R^+$, so $I + \mathfrak{S}$ is a cone.
+  The last condition implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by the first condition, $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. As $I+E$ is positive definite, the matrix $A = I + E$ satisfies the conclusion of the lemma. Moreover, $rA$ also satisfies the conclusion for any $r \in \R^+$, so $I + \mathfrak{S}$ is a cone.
 
-  It remains to show that $I + \mathfrak{S}$ is open (in the space of symmetric real matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, recall that the compliment of a finite union of hyperplanes is dense. Therefore we can find some $E$ satisfying properties (i) and (ii). By scaling by a sufficiently small $\epsilon > 0$, we can guarantee that $\epsilon E \in \mathfrak{S}$.
+  It remains to show that $I + \mathfrak{S}$ is open (in the space of symmetric real matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, cofirst observe that property (i) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some $E$ simultaneously satisfying properties (i) and (ii). By scaling by a sufficiently small $\varepsilon > 0$, we can guarantee property (iii) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. It is sufficient to show that for any non-zero Siegel modular function $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $f \circ \psimod$ is non-zero.
 
-  Let $f$ be a Siegel modular form on $\ag$. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Ch.~5]{faltings1990degeneration}.
+  Let $f$ be a Siegel modular form on $\ag$. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Ch.~V]{faltings1990degeneration}.
 
-  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$, that is $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is can find an open cone $U$ of real symmetric positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
+  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $U$ of real symmetric positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
 
-  By Lemma~\ref{lem:rggt-dense}, we can find some $A \in U$ of the form $A = rgg^t$ with $r \in \R^+$ and $g \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r = 1$. We may also scale $A$ by a power of $\ell$ so that $A \in \detl$.
+  By Lemma~\ref{lem:rggt-dense}, we can find some $A \in U$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r = 1$. We may also scale $A$ by a power of $\ell$ so that $A \in \detl$.
 
-  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. Then there is a unique $Q \in S$ such that $\tr(AQ) = n$, say $Q_0$. The $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $f \circ \psimod \neq 0$.
+  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. Then there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. The $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $f \circ \psimod \neq 0$.
 \end{proof}
 
 
