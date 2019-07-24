@@ -441,7 +441,7 @@ Recall the definition of $\detl$ in Definition \ref{def:detl}.
 \end{lemma}
 
 \begin{proof}
-  If $n \in \N$, the $\ell^n GG^t$ is symmetric and positive definite, and its determinant is a power of $\ell$. Let $N$ be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
+  If $n \in \N$, then $\ell^n GG^t$ is symmetric and positive definite, and its determinant is a power of $\ell$. Let $N$ be the maximum power of $\ell$ appearing in the denominators of the entries of $GG^t$. Then for $n \geq N$, $\ell^n GG^t$ is an integer matrix.
 \end{proof}
 
 
@@ -476,9 +476,13 @@ Then $A = GG^t$ and $G \in \Sl_g(\R)$.
 %  \[
 %   S =  \{A/(\det A)^{\frac{1}{g}} | A \in \detl\}.
 %  \]
-  (I don't understand the next sentence. Can it be made more precise?) By Lemma~\ref{lemma:ggt-spd-detl}, in the definition of $S$ we may replace $A$ with $\ell^n GG^t$ with $G \in \Sl_g(Z[1/\ell])$, $n$ sufficiently large (depending on $G$). Since $\det (\ell^n GG^t) = \ell^n$, we have
+   By Lemma~\ref{lemma:ggt-spd-detl}, we have
   \[
-    S = \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
+    \{A/(\det A)^{\frac{1}{g}} \colon A = \ell^n GG^t \in M_{g \times g}(\Z), n \in \N, G \in \Sl_g(\Z[1/\ell])\} \subset S.
+  \]
+  Since $\det (\ell^n GG^t) = \ell^n$, the left-hand set equals
+  \[
+    \{GG^t | G \in \Sl_g(\Z[1/\ell])\}.
   \]
   The proposition now follows from Lemmas~\ref{lemma:sl-z-1overl-dense-sl-r} and \ref{lemma:ggt-periodmatrices}.
 \end{proof}
@@ -769,7 +773,7 @@ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldo
 \end{theorem}
 
 \begin{proof}
- Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Kani (give ref), since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
+ Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curve will be defined over any algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Theorem~\ref{thm:kani-20b}, since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
 
  For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End E_{i}$ has exactly one ideal of norm $\ell$ given by $\ell\End E_{i-1}$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so the endomorphism ring of $E_{i+1}$ must be strictly smaller by Theorem~\ref{thm:kani-20b}.
 
