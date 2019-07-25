@@ -798,21 +798,21 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 \section{Proof of Theorem~\ref{thm:curves-dense}}
 
 \begin{lemma}\label{lem:sl-dense}
-  For any positive integer $N$, $\Sl_g(\Z[1/N])$ is dense in $\Sl_g(\R)$.
+  If $N$ is a positive integer, then $\Sl_g(\Z[1/N])$ is dense in $\Sl_g(\R)$.
 \end{lemma}
 \begin{proof}
-  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices $G = E_n \cdots E_2 E_1$, where $\det E_i = \pm 1$. For each $E_i$, the entries, with at most one exception, are $0$ or $\pm 1$. Thus we can find a $g \times g$ matrix $E_i'$ with entries in $\Z[1/N]$ and $\det E_i' = \det E_i$ which is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1'$. Certainly $G' \in \Sl_g(\Z[1/N])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
+  Let $G \in \Sl_g(\R)$. Factor $G$ as a product of elementary matrices $G = E_n \cdots E_2 E_1$, where $\det E_i = \pm 1$. For each $E_i$, with at most one exception the entries are $0$ or $\pm 1$. Thus there exists a $g \times g$ matrix $E_i'$ with entries in $\Z[1/N]$ and $\det E_i' = \det E_i$ that is arbitrarily close to $E_i$. Let $G' = E_n' \cdots E_1' \in \Sl_g(\Z[1/N])$. Since matrix multiplication is continuous, $G'$ is close to $G$.
 \end{proof}
 
 \begin{lemma}\label{lem:rggt-dense}
-  For any positive integer $N$, the set
+  If $N$ is a positive integer, then the set
 \[
 \{ rGG^t \colon r \in \R^+ \text{ and } G \in \Sl_g(\Z[1/N]) \}
 \]
-is dense in the set of real symmetric positive definite matrices.
+is dense in the set of real, symmetric, positive definite matrices.
 \end{lemma}
 \begin{proof}
-  Let $A$ be a real symmetric positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal, with non-negative entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $G \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore we can make $\det(D)GG^t$ arbitrarily close to $A$.
+  Let $A$ be a real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal, with non-negative entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $G \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore we can make $\det(D)GG^t$ arbitrarily close to $A$.
 \end{proof}
 
 \begin{definition}
@@ -820,10 +820,10 @@ is dense in the set of real symmetric positive definite matrices.
 \end{definition}
 
 \begin{lemma}\label{lem:finite-fixed-trace}
- For any fixed number $t$, there are finitely many $g \times g$ symmetric positive semi-definite half-integral matrices $Q$ such that $\tr(Q) \leq t$.
+ For any fixed number $t$, there are finitely many $g \times g$ symmetric, positive semi-definite, half-integral matrices $Q$ such that $\tr(Q) \leq t$.
 \end{lemma}
 \begin{proof}
-  Let $Q$ be a symmetric positive semi-definite half-integral matrix with $\tr(Q) \leq t$, and let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Note that $\lambda_i \geq 0$, so
+  Let $Q$ be a symmetric, positive semi-definite, half-integral matrix with $\tr(Q) \leq t$, and let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Note that $\lambda_i \geq 0$, so
   \[
     \sum_{1 \leq i,j \leq g} (Q_{i,j})^2 = \tr(Q^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
   \]
@@ -831,7 +831,7 @@ is dense in the set of real symmetric positive definite matrices.
 \end{proof}
 
 % \begin{lemma}\label{lem:bound-trace-finite}
-%  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
+%  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric, positive semi-definite, half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
 % \end{lemma}
 % \begin{proof}
 %  Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
@@ -851,7 +851,7 @@ is dense in the set of real symmetric positive definite matrices.
 % \end{proof}
 
 \begin{lemma}\label{lem:unique-minimizer}
-  Let $S$ be any nonempty subset of symmetric positive semi-definite half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite real symmetric $g \times g$ matrix $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+  Let $S$ be any nonempty subset of symmetric, positive semi-definite, half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite, real, symmetric, $g \times g$ matrices $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
 \end{lemma}
 \begin{proof}
   Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$,
@@ -873,7 +873,7 @@ is dense in the set of real symmetric positive definite matrices.
 
   Let $f$ be a Siegel modular form on $\ag$. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Ch.~V]{faltings1990degeneration}.
 
-  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $U$ of real symmetric positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
+  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $U$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
 
   By Lemma~\ref{lem:rggt-dense}, we can find some $A \in U$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r = 1$. We may also scale $A$ by a power of $\ell$ so that $A \in \detl$.
 
