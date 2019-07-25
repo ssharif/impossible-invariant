@@ -9,10 +9,6 @@
 * Karl
 ** Read §4
 * Travis
-** Fix §5
-** Write a §6
-** Write argument that cites Faltings-Chai
 * Put defns and results for A₁ᵍ; for example, define new W_g.
 * Put addenda elsewhere for positive characteristic versions.
-* Prove 5.7.
-* Prove everything over a domain.
+* Finish section 5

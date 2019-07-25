@@ -77,7 +77,7 @@ $$
 We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
 \begin{theorem}\label{thm:sg-c-dense}
-  If $g\in\Z_{\ge 2}$, $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
+  If $g\in\Z_{\ge 2}$, $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(k)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
 
 %In arbitrary characteristic we have the following, which w
@@ -866,11 +866,11 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   Let $\mathfrak{S}$ be the set of real symmetric matrices $E$ such that
   \begin{enumerate}
     \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$,
-    \item $E$ is positive definite (make clear where this is used and needed), and
-%    \item $I+E$ is positive definite (this follows from (2), so omit it), 
+    \item $E$ is positive definite, and
+%    \item $I+E$ is positive definite (this follows from (2), so omit it),
     \item $\tr(EQ) < t_1 - t_0$ for all $Q\in S_0$.
   \end{enumerate}
-  Let $C = \R^+(I + \mathfrak{S})$. 
+  Let $C = \R^+(I + \mathfrak{S})$.
   Suppose $E\in\mathfrak{S}$. Since $E$ and $Q$ are positive semi-definite, $\tr(EQ)\ge 0$. Property (3) now implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by (1) we have that $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. Since $E$ is positive definite, so is $I+E$, so $A = I + E$ satisfies the conclusion of the lemma. If $r \in \R^+$, then $rA$ also satisfies the conclusion of the lemma,  so $C$ is a cone.
 
   It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
@@ -881,9 +881,9 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
 
   Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Prop. V.1.5]{faltings1990degeneration}.
 
-  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $U$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
+  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
 
-  By Lemma~\ref{lem:rggt-dense}, we can find some $A \in U$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$ so that $A \in \detl$.
+  By Lemma~\ref{lem:rggt-dense}, we can find some $A \in C$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$ so that $A \in \detl$.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. Then there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   Since $q$-expansions interact
