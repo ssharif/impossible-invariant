@@ -53,6 +53,9 @@ If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomor
   Suppose that $R$ is a domain and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
+It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
+
+
 % Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
 % \[
 %   \dlim_{T/R} S(T)
@@ -65,6 +68,8 @@ If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomor
 % \[
 %   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
 % \]
+
+
 If $R$ is a scheme, let
 $$
 \sg(R) = \{(A,B) \in (\ag \times \ag)(R) | A \approx B\}.
@@ -72,16 +77,16 @@ $$
 We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
 \begin{theorem}\label{thm:sg-c-dense}
-  If $R$ is a domain, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
+  If $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
-It suffices to prove Theorems \ref{thm:invariant-c-constant} and \ref{thm:sg-c-dense} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
 
-In arbitrary characteristic we have the following, which we will prove in Section~\ref{sec:characteristic-p}.
+%In arbitrary characteristic we have the following, which w
+We will prove the following result in Section~\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
   Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
-Our motivation behind this result is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. There may be useful non-algebraic invariants. %; indeed, \cite[Section 5]{multiparty} considered an invariant due to Deligne, but unfortunately finds it flawed as well.
+Our motivation behind Theorem \ref{thm:sg-c-dense} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. There may be useful non-algebraic invariants. %; indeed, \cite[Section 5]{multiparty} considered an invariant due to Deligne, but unfortunately finds it flawed as well.
 
 %\subsection{Overview}
 
