@@ -570,13 +570,13 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we will assume $g \geq 2$. It is sufficient to show that for all non-zero Siegel modular functions $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $f \circ \psimod$ is non-zero.
 
-  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Prop. V.1.5]{faltings1990degeneration}.
+  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices $\mathfrak{Q}$ \cite[Prop. V.1.5]{faltings1990degeneration}.
 
-  Let $S$ denote the set of $Q$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q$.
+  Let $S$ denote the set of $Q \in \mathfrak{Q}$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
   By Lemma~\ref{lem:rggt-dense}, we can find some $A \in C$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$ so that $A \in \detl$.
 
-  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. Then there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
+  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the choice of $A$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   Since $q$-expansions interact
   with modular morphisms as expected, we have that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$.   By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $f \circ \psimod \neq 0$.
 \end{proof}
