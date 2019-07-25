@@ -50,7 +50,7 @@ and the National Science Foundation.}
 
 If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if $A$ and $B$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $R$ is a domain and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
 It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
@@ -77,13 +77,13 @@ $$
 We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
 \begin{theorem}\label{thm:sg-c-dense}
-  If $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
+  If $g\in\Z_{\ge 2}$, $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(R)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
 
 %In arbitrary characteristic we have the following, which w
 We will prove the following result in Section~\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
-  Suppose that $R$ is a scheme and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a scheme, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
 Our motivation behind Theorem \ref{thm:sg-c-dense} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. There may be useful non-algebraic invariants. %; indeed, \cite[Section 5]{multiparty} considered an invariant due to Deligne, but unfortunately finds it flawed as well.
@@ -101,7 +101,7 @@ If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizin
 \end{theorem}
 
 \begin{theorem}\label{thm:Sg-dense}
-  Let $k$ be an algebraically closed field. If $A,A' \in \detl$, then $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
+  Suppose $g\in\Z_{\ge 2}$, $\ell$ is a prime number, and $k$ is an algebraically closed field. If $A,A' \in \detl$, then $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
 
 Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \ref{sec:step-1} and \ref{sec:step-2}, respectively. With these two results, the proofs of our main theorems follow easily.
@@ -497,7 +497,7 @@ If $X$ is a subset of a complex manifold $M$, we say that $X$ is {\em holomorphi
 \end{definition}
 
 \begin{remark}
-Note that if $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
+If $X$ is dense in $M$ with respect to the Euclidean topology then $X$ is holomorphically dense in $M$, and if $X$ is holomorphically dense in $M$ then $X$ is Zariski dense in $M$.
 \end{remark}
 
 Let $\R^+$ denote the set of positive real numbers.
@@ -507,7 +507,7 @@ Let $\R^+$ denote the set of positive real numbers.
 
 
 \begin{proof}
-  The set $H := \{ irM | M \in \permat, r \in \R^+\}$ is the subset of $\hh_g$ with real part $0$. Note that $H$ is a real manifold with $\dim_{\R} H = g(g+1)/2$. So by \cite[Ch.~4.8]{krantz2017harmonic}, it is enough to show that $H$ is a totally real. That is, we need to show that the tangent space \textcolor{red}{TODO: figure out correct property}
+  The set $H := \{ irM | M \in \permat, r \in \R^+\}$ is the subset of $\hh_g$ with real part $0$. Note that $H$ is a real manifold with $\dim_{\R} H = g(g+1)/2$. So by \cite[Ch.~4.8]{krantz2017harmonic}, it suffices to show that $H$ is a totally real. That is, it suffices to show that the tangent space \textcolor{red}{TODO: figure out correct property}
 
   As $H$ is a topological group (it is isomorphic to $\R^+ \times \detl$), it is enough to consider the tangent space at the identity $iI_g$. The exponential map goes from \textcolor{red}{TODO: finish}
 \end{proof}
@@ -603,7 +603,7 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
   Suppose $E$ is an elliptic curve over an algebraically closed field $k$, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a prime inert in $K$ and not equal to the characteristic of $k$. Then the set of subgroups of $E$ of order $q$ is a $\Gt_q$ torsor.
 \end{lemma}
 \begin{proof}
-  Note that $E[q]$ is a module over $\sO_K/q\sO_K \cong \F_{q^2}$  of size $q^2$. Therefore $E[q] \cong \F_{q^2}$ as $\F_{q^2}$-vector spaces. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the one-dimensional $\F_q$-subspaces of $E[q]$.
+  Since $E[q]$ is a module over $\sO_K/q\sO_K \cong \F_{q^2}$  of size $q^2$, we have that $E[q] \cong \F_{q^2}$ as $\F_{q^2}$-vector spaces. So $(\F_{q^2})^\times/(\F_q^\times) \cong \Gt_q$ acts freely and transitively on the one-dimensional $\F_q$-subspaces of $E[q]$.
 \end{proof}
 
 \begin{definition}[{\cite[Sec.~2]{kani2011products}}]\label{def:ker-idl}
@@ -752,7 +752,7 @@ There are precisely $g^2$ solutions $\beta$ to this equation. Continuing this co
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
-  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: S' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, and so $\pi_X|_{S'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$, whence the claim follows.
+  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $V$ with the horizontal components removed. Consider the projection $\pi_X: S' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, and so $\pi_X|_{S'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$ and the claim follows.
 \end{proof}
 
 
@@ -817,11 +817,11 @@ Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of 
 is dense in the set of real, symmetric, positive definite matrices.
 \end{lemma}
 \begin{proof}
-  Let $A$ be a real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal, with non-negative entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $G \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore we can make $\det(D)GG^t$ arbitrarily close to $A$.
+  Let $A$ be a real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal and has positive entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $H \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore we can make $\det(D)GG^t$ arbitrarily close to $A$.
 \end{proof}
 
 \begin{definition}
-  A $g \times g$ matrix $Q$ is \emph{half-integral} if $2Q_{i,j} \in \Z$ and $Q_{i,i} \in \Z$ for all $1 \leq i,j \leq g$.
+  A $g \times g$ matrix $Q$ is \emph{half-integral} if $2Q_{ij} \in \Z$ and $Q_{ii} \in \Z$ for all $1 \leq i,j \leq g$, where $Q_{ij}$ denotes the $i,j$ entry of $Q$.
 \end{definition}
 
 \begin{lemma}\label{lem:finite-fixed-trace}
@@ -830,7 +830,7 @@ is dense in the set of real, symmetric, positive definite matrices.
 \begin{proof}
   Suppose $Q$ is a symmetric, positive semi-definite, half-integral matrix with $\tr(Q) \leq t$. Let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Since $\lambda_i \geq 0$, we have
   \[
-    \sum_{1 \leq i,j \leq g} (Q_{i,j})^2 = \tr(Q^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
+    \sum_{1 \leq i,j \leq g} (Q_{ij})^2 = \tr(Q^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
   \]
   This shows that $Q$, as a vector in $\R^{g^2}$, lies in the ball of radius $t$. Thus the number of possible $Q$ is bounded by the number of half-integral points in the ball of radius $t$ in $\R^{g^2}$, which is finite.
 \end{proof}
@@ -871,7 +871,7 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(AQ)$.
   \end{enumerate}
   The last condition implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by the first condition, $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. As $I+E$ is positive definite, the matrix $A = I + E$ satisfies the conclusion of the lemma. Moreover, $rA$ also satisfies the conclusion for any $r \in \R^+$, so $I + \mathfrak{S}$ is a cone.
 
-  It remains to show that $I + \mathfrak{S}$ is open (in the space of symmetric real matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, cofirst observe that property (i) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some $E$ simultaneously satisfying properties (i) and (ii). By scaling by a sufficiently small $\varepsilon > 0$, we can guarantee property (iii) as well, and hence $\varepsilon E \in \mathfrak{S}$.
+  It remains to show that $I + \mathfrak{S}$ is open (in the space of symmetric real matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that property (i) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some $E$ simultaneously satisfying properties (i) and (ii). By scaling by a sufficiently small $\varepsilon > 0$, we can guarantee property (iii) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
