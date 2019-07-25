@@ -820,10 +820,10 @@ is dense in the set of real, symmetric, positive definite matrices.
 \end{definition}
 
 \begin{lemma}\label{lem:finite-fixed-trace}
- For any fixed number $t$, there are finitely many $g \times g$ symmetric, positive semi-definite, half-integral matrices $Q$ such that $\tr(Q) \leq t$.
+ Fix $t\in\R$. Then there are finitely many $g \times g$ symmetric, positive semi-definite, half-integral matrices $Q$ such that $\tr(Q) \leq t$.
 \end{lemma}
 \begin{proof}
-  Let $Q$ be a symmetric, positive semi-definite, half-integral matrix with $\tr(Q) \leq t$, and let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Note that $\lambda_i \geq 0$, so
+  Suppose $Q$ is a symmetric, positive semi-definite, half-integral matrix with $\tr(Q) \leq t$. Let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Since $\lambda_i \geq 0$, we have
   \[
     \sum_{1 \leq i,j \leq g} (Q_{i,j})^2 = \tr(Q^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
   \]
@@ -851,11 +851,12 @@ is dense in the set of real, symmetric, positive definite matrices.
 % \end{proof}
 
 \begin{lemma}\label{lem:unique-minimizer}
-  Let $S$ be any nonempty subset of symmetric, positive semi-definite, half-integral $g \times g$ matrices $Q$. Then there exists an open cone of positive definite, real, symmetric, $g \times g$ matrices $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q$.
+  Suppose $S$ is a nonempty set of symmetric, positive semi-definite, half-integral $g \times g$ matrices. Then there exists an open cone of positive definite, real, symmetric, $g \times g$ matrices $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q\in S$.
 \end{lemma}
 \begin{proof}
-  Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$,
-  there is a gap between the smallest value $t_0$ of $\tr(Q)$ for $Q \in S$, and the next smallest value $t_1$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
+Let $t_0 = \displaystyle\min_{Q \in S}\tr(AQ)$.
+  Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$ by Lemma~\ref{lem:finite-fixed-trace},
+  there is a gap between $t_0$ and the next smallest value $t_1$ of $\tr(Q)$ for $Q \in S$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
 
   Let $\mathfrak{S}$ be the set of symmetric real matrices $E$ such that
   \begin{enumerate}
