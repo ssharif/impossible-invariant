@@ -830,7 +830,7 @@ is dense in the set of real, symmetric, positive definite matrices.
 \begin{proof}
   Suppose $Q$ is a symmetric, positive semi-definite, half-integral matrix with $\tr(Q) \leq t$. Let $\lambda_1,\dots,\lambda_g$ be the eigenvalues of $Q$. Since $\lambda_i \geq 0$, we have
   \[
-    \sum_{1 \leq i,j \leq g} (Q_{ij})^2 = \tr(Q^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
+    \sum_{1 \leq i,j \leq g} Q_{ij}^2 = \tr(Q^2) = \sum_{i=1}^g \lambda_i^2 \leq \left(\sum_{i=1}^g \lambda_i\right)^2 = \tr(Q)^2 \leq t^2.
   \]
   This shows that $Q$, as a vector in $\R^{g^2}$, lies in the ball of radius $t$. Thus the number of possible $Q$ is bounded by the number of half-integral points in the ball of radius $t$ in $\R^{g^2}$, which is finite.
 \end{proof}
