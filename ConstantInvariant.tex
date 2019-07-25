@@ -859,23 +859,23 @@ is dense in the set of real, symmetric, positive definite matrices.
   Suppose $S$ is a nonempty set of symmetric, positive semi-definite, half-integral $g \times g$ matrices. Then there exists an open cone of positive definite, real, symmetric, $g \times g$ matrices $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q\in S$.
 \end{lemma}
 \begin{proof}
-Let $t_0 = \displaystyle\min_{Q \in S}\tr(AQ)$.
+Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$ by Lemma~\ref{lem:finite-fixed-trace},
   there is a gap between $t_0$ and the next smallest value $t_1$ of $\tr(Q)$ for $Q \in S$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
 
-  Let $\mathfrak{S}$ be the set of symmetric real matrices $E$ such that
+  Let $\mathfrak{S}$ be the set of real symmetric matrices $E$ such that
   \begin{enumerate}
     \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$,
     \item $I+E$ is positive definite, and
     \item $\tr(EQ) < t_1 - t_0$.
   \end{enumerate}
-  The last condition implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by the first condition, $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. As $I+E$ is positive definite, the matrix $A = I + E$ satisfies the conclusion of the lemma. Moreover, $rA$ also satisfies the conclusion for any $r \in \R^+$, so $I + \mathfrak{S}$ is a cone.
+  Condition (3) implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by condition (1) we have that $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. As $I+E$ is positive definite, the matrix $A = I + E$ satisfies the conclusion of the lemma. Moreover, $rA$ also satisfies the conclusion for all $r \in \R^+$, so $I + \mathfrak{S}$ is a cone.
 
-  It remains to show that $I + \mathfrak{S}$ is open (in the space of symmetric real matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that property (i) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some $E$ simultaneously satisfying properties (i) and (ii). By scaling by a sufficiently small $\varepsilon > 0$, we can guarantee property (iii) as well, and hence $\varepsilon E \in \mathfrak{S}$.
+  It remains to show that $I + \mathfrak{S}$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that property (i) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some $E$ simultaneously satisfying properties (i) and (ii). By scaling by a sufficiently small $\varepsilon > 0$, we can guarantee property (iii) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we will assume $g \geq 2$. It is sufficient to show that for any non-zero Siegel modular function $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $f \circ \psimod$ is non-zero.
+  Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we will assume $g \geq 2$. It is sufficient to show that for all non-zero Siegel modular functions $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $f \circ \psimod$ is non-zero.
 
   Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over all symmetric half-integral positive semi-definite matrices \cite[Prop. V.1.5]{faltings1990degeneration}.
 
