@@ -567,10 +567,32 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
+\begin{lemma}\label{lemma:q-expansion}
+  Let $f$ be a modular form on $\ag$. Let $A$ be a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Then, at any cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ is of the form
+  \[
+    \sum_Q c_Q q^{\tr(AQ)},
+  \]
+  where the sum is over symmetric half-integral positive semidefinite matrices.
+\end{lemma}
+
+\begin{proof}
+  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $q_{ij}$, $1 \leq i \leq j \leq g$, be the standard basis for $S^2(X)$, the symmetric quadratic forms on $X$. Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
+  \[
+    \sum_Q c_Q \prod q_{ij}^{Q_{ij}},
+  \]
+  where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
+
+  The morphism $\psimod$ induces a morphism on the toroidal compactifications $X_0(N) \to \overline{\ag}$. At the cusps, $\psimod$ yields a map $\G_m \to \G_m^g$ via the composition $\lambda_A \circ \Delta$. Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$. The pull back of $q_{ij}$ under this map is $q^{A_{ij}}$, and hence the pull back of $f$ is
+  \begin{align*}
+    \sum_Q c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_Q c_Q q^{\sum A_{ij}Q_{ij}} \\
+    &= \sum_Q c_Q q^{\tr(AQ)}.
+  \end{align*}
+\end{proof}
+
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we will assume $g \geq 2$. It is sufficient to show that for all non-zero Siegel modular functions $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $f \circ \psimod$ is non-zero.
 
-  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Recall that $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices \cite[Prop. V.1.5]{faltings1990degeneration}.
+  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. By Lemma~\ref{lemma:q-expansion}, $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
 
   Let $S$ denote the set of $Q \in \mathfrak{Q}$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
