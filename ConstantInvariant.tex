@@ -113,9 +113,9 @@ $$
 \bigcup_{A,A'} \left(\sg(k) \cap (X_A \times X_{A'})\right) =  \sg(k) \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
    \subset \sg(k).
    $$
-By Theorem~\ref{thm:sg-c-dense},
+By Theorem~\ref{thm:Sg-dense},
 $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'} =
-    \left(\bigcup_{A} X_A\right) \times \left(\bigcup_{A'} X_{A'}\right),$ which by Theorem~\ref{thm:Sg-dense} is Zariski dense in $\ag \times \ag$.
+    \left(\bigcup_{A} X_A\right) \times \left(\bigcup_{A'} X_{A'}\right),$ which by Theorem~\ref{thm:curves-dense} is Zariski dense in $\ag \times \ag$.
 %  \begin{align*}
 %    \sg(\C)
 %    &\supseteq
@@ -158,8 +158,6 @@ Since $f$ is a morphism such that $f(A) = f(B)$ whenever $A \approx B$, we have 
 
 \section{The curves $X_{A}$}
 \label{sec:curves-on-Ag}
-
-(This section should be shortened, if possible.)
 
 Fix a positive integer $g$, and a $g \times g$ symmetric, positive definite integer matrix $A$ whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
 Recall the map
@@ -462,9 +460,10 @@ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldo
 \[
   \psidiag(E,C) = E_1 \times \cdots \times E_g.
 \]
+We denote the image $\psidiag(Y_0(N))$ by $X^{(1)}_A$.
 
-\begin{theorem}\label{thm:char-p-version}
-  The set $\bigcup_A \im\psidiag$ is Zariski dense in $\ao^g$.
+\begin{theorem}\label{thm:curves-dense-a1}
+  The set $\bigcup_A X^{(1)}$ is Zariski dense in $\ao^g$.
 \end{theorem}
 
 \begin{proof}
@@ -478,10 +477,20 @@ for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldo
  \[
    \psidiag(E_0,\sC) = E_{n_1} \times \cdots \times E_{n_g}.
  \]
-Thus, $S \subset \bigcup\psidiag(Y_0(\ell^n))$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
+Thus, $S \subset \bigcup X^{(1)}$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
 
-\textcolor{red}{TODO: finish this and prove the main theorem for $A^1_g$.}
+\begin{theorem}\label{thm:Sg-dense-a1}
+  Suppose $g\in\Z_{\ge 2}$, $\ell$ is a prime number, and $k$ is an algebraically closed field. If $A,A' \in \detl$ and are diagonal, then $\sg^{(1)}(k) \cap (X^{(1)}_A \times X^{(1)}_{A'})$ is Zariski dense in $X^{(1)}_A \times X^{(1)}_{A'}$.
+\end{theorem}
+
+\begin{proof}
+  The proof is the same as the proof of Theorem~\ref{thm:Sg-dense} only with $\ag$ replaced with $\ao^g$, the matrices $A$ and $A'$ are diagonal, and $\psimod$ is replaced with $\psidiag$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:arbit-char}]
+  The proof of Theorem~\ref{thm:arbit-char} is almost the same as Theorem~\ref{thm:invariant-c-constant}, only with $\ag$ replaced with $\ao^g$. The only difference is that we need to replace Theorems~\ref{thm:Sg-dense} and \ref{thm:curves-dense} with analogs that work with $\ao^g$ instead of $\ag$. Theorem~\ref{thm:curves-dense-a1} is an analog of Theorem~\ref{thm:curves-dense}, and Theorem~\ref{thm:Sg-dense-a1} is an analog of Theorem~\ref{thm:Sg-dense}.
+\end{proof}
 
 
 
