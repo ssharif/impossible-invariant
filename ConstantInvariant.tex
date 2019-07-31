@@ -452,18 +452,18 @@ There are precisely $g^2$ solutions $\beta$ to this equation. Continuing this co
 \section{Proof of Theorem \ref{thm:arbit-char}}
 \label{sec:characteristic-p}
 
-Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and having determinant $N$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through $\ao^g$, where we consider elements of $\ao^g$ to be products of $g$ elliptic curves with the product polarization. Write
+Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and let $N = \det A$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through the map $\ao^g \to \ag$ that sends a tuple of polarized elliptic curves $E_1,\dots,E_g$ to the product $E_1 \times \cdots \times E_g$ with the product polarization. Write
 \[
 \psidiag: Y_0(N) \to \ao^g
 \]
-for the associated morphism. Thus, if the diagonal entries of $A$ are $d_1, \ldots, d_g$ and for $(E, C) \in Y_0(N)$, if we define $E_i$ to be $E/(N/d_i)C$, then
+for the associated morphism. Let $d_1, \ldots, d_g$ be the diagonal entries of $A$. For $(E, C) \in Y_0(N)$, if we define $E_i$ to be $E/(N/d_i)C$, then
 \[
   \psidiag(E,C) = E_1 \times \cdots \times E_g.
 \]
 We denote the image $\psidiag(Y_0(N))$ by $X^{(1)}_A$.
 
 \begin{theorem}\label{thm:curves-dense-a1}
-  The set $\bigcup_A X^{(1)}$ is Zariski dense in $\ao^g$.
+  The set $\bigcup_A X^{(1)}_A$, where $A$ ranges over all $g \times g$ diagonal matrices $A$ with entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$, is Zariski dense in $\ao^g$.
 \end{theorem}
 
 \begin{proof}
@@ -477,7 +477,7 @@ We denote the image $\psidiag(Y_0(N))$ by $X^{(1)}_A$.
  \[
    \psidiag(E_0,\sC) = E_{n_1} \times \cdots \times E_{n_g}.
  \]
-Thus, $S \subset \bigcup X^{(1)}$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
+Thus, $S \subset \bigcup_A X^{(1)}_A$. Since $S$ is an infinite set of non-isomorphic elliptic curves, $S$ is dense in $\ao$. Therefore $S^g$ is dense in $\ao^g$.
 \end{proof}
 
 \begin{theorem}\label{thm:Sg-dense-a1}
