@@ -81,30 +81,37 @@ We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 \end{theorem}
 
 %In arbitrary characteristic we have the following, which w
-We will prove the following result in Section~\ref{sec:characteristic-p}.
+We will prove the following result in \S\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
   Suppose that $g\in\Z_{\ge 2}$, $R$ is a scheme, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
 \end{theorem}
 
-Our motivation behind Theorem \ref{thm:sg-c-dense} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. There may be useful non-algebraic invariants. %; indeed, \cite[Section 5]{multiparty} considered an invariant due to Deligne, but unfortunately finds it flawed as well.
+Our motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A) = f(B)$ whenever $A \approx B$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. There may be useful non-algebraic invariants of (isomorphism classes of non-polarized) products of elliptic curves.
 
-%\subsection{Overview}
 
 \begin{definition}\label{def:detl}
 If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
 \end{definition}
 
-If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. If $(E, C) \in Y_0(N)$, the matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define $\psimod$ by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and let $X_A$ denote the image of $\psimod$.
-
-\begin{theorem}\label{thm:curves-dense}
-  The set $\bigcup_{A \in \detl} X_A$ is Zariski dense in $\ag$.
-\end{theorem}
+If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(N)$. Then the matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$, let $\pi: E^g \to B$ be the quotient map, and let $\lambda$ denote the (unique) principal polarization on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define 
+\begin{equation}\label{def:psimoddef}
+\psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
+\end{equation}
+%by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and l
+Let 
+\begin{equation}\label{def:XAdef}
+X_A=\psimod(Y_0(\det(A))).
+\end{equation}
 
 \begin{theorem}\label{thm:Sg-dense}
-  Suppose $g\in\Z_{\ge 2}$, $\ell$ is a prime number, and $k$ is an algebraically closed field. If $A,A' \in \detl$, then $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
+  Suppose $\ell$ is a prime number, $g\in\Z_{\ge 2}$, and $k$ is an algebraically closed field. Suppose $A,A' \in \detl$. Then $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
 
-Theorems \ref{thm:curves-dense} and \ref{thm:Sg-dense} are proved in sections \ref{sec:step-1} and \ref{sec:step-2}, respectively. With these two results, the proofs of our main theorems follow easily.
+\begin{theorem}\label{thm:curves-dense}
+    Suppose $\ell$ is a prime number and $g\in\Z_{\ge 1}$. Then $\bigcup_{A \in \detl} X_A$ is Zariski dense in $\ag$.
+\end{theorem}
+
+Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:step-2} and \S\ref{sec:step-1}, respectively. Next, we derive Theorem \ref{thm:sg-c-dense} and \ref{thm:curves-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense}, and we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense}.
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
 %  If $X$ and $Y$ are subsets of $\ag \times \ag$, we write (I suggest omitting this notation and writing it out in words, rather than proving the result in a long expression) $X \prec Y$ if $X \subseteq Y$ and $X$ is Zariski dense in $Y$. Then
