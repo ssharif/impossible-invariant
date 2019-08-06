@@ -267,19 +267,23 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 \end{proof}
 
 \begin{definition}[{\cite[Sec.~2]{kani2011products}}]\label{def:ker-idl}
-  Let $A$ be an abelian variety over a field $K$. Given a regular left-ideal $I$ of $\End A$, let $H(I) = \cap_{\phi \in I}\ker \phi$. A finite subgroup scheme $H$ is a \emph{ideal subgroup} if $H = H(I)$ for some $I$. Symmetrically, given such an $H$, let $I(H) = \{\phi \in \End A \colon \phi(H) = 0\}$. We say $I$ is a \emph{kernel ideal} if it is the form $I(H)$ for some $H$.
+  Suppose $A$ is an abelian variety over a field. If $I$ is a regular left ideal of $\End A$ (i.e., a left ideal that contains an isogeny), let $H(I) = \cap_{\phi \in I}\ker \phi$. If $H$ is a finite subgroup scheme of $A$, let $I(H) = \{\phi \in \End A \colon \phi(H) = 0\}$. A finite subgroup scheme $H$ of $A$ is an \emph{ideal subgroup} of $A$ if $H = H(I)$ for some ideal $I$ of $\End A$. A left ideal $I$ of $\End A$ is a \emph{kernel ideal} if $I = I(H)$ for some finite subgroup scheme $H$ of $A$.
 \end{definition}
 
 \begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]\label{thm:kani-20b}
-  Let $E$ be a CM elliptic curve over an algebraically closed field, and $H$ a finite subgroup scheme of $E$. Then $H$ is a kernel subgroup if and only if there is an inclusion $\End E \hookrightarrow \End E/H$. Moreover, if $H_1,H_2$ are ideal subgroups of $E$, then $E/H_1 \approx E/H_2$ if and only if $I(H_1)$ is isomorphic to $I(H_2)$ as $\End(E)$ modules.
+  Suppose $E$ is a CM elliptic curve over an algebraically closed field and $H$ a finite subgroup scheme of $E$. Then $H$ is an ideal %kernel 
+  subgroup if and only %if there is an inclusion $\End E \hookrightarrow \End E/H$. 
+  $\End E \subset \End E/H$. Moreover, if $H_1,H_2$ are ideal subgroups of $E$, then $E/H_1 \approx E/H_2$ if and only if $I(H_1)$ and $I(H_2)$ are isomorphic as $\End(E)$-modules.
   %$f_{E_H} \mid f_E$
 \end{theorem}
 
 \begin{lemma}\label{lem:c-end}
-  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Let $q$ be a product of distinct primes not equal to the characteristic of the base field and inert in $K$. If $\sC$ is a subgroup of $E$ of order $q$, then $\End(E/\sC) \cong \Z + q\sO_K$. In particular, every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
+  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$. Suppose $q$ is a product of distinct prime numbers that are inert in $K$ and not equal to the characteristic of the base field, and suppose $\sC$ is a subgroup of $E$ of order $q$. Then $\End(E/\sC) \cong \Z + q\sO_K$, and every endomorphism of $E/\sC$ is induced by an endomorphism of $E$ that takes $\sC$ to $\sC$.
 \end{lemma}
 \begin{proof}
-  Factor $q = \prod_{i=1}^n q_i$, where each $q_i$ is a prime inert in $K$ and not equal to the characteristic of the base field. We can write $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of order $q_i$.
+  Let $q = \prod_{i=1}^n q_i$ be the prime factorization of $q$.
+  %, where each $q_i$ is a prime inert in $K$ and not equal to the characteristic of the base field. We can write 
+  Then $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of $E$ of order $q_i$.
 
   The isogeny $\pi: E \to E/\sC$ factors into a chain of isogenies
   \[
