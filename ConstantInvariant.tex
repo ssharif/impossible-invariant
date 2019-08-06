@@ -597,13 +597,14 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
 \end{lemma}
 
 \begin{proof}
-  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $q_{ij}$, $1 \leq i \leq j \leq g$, be the standard basis for $S^2(X)$, the symmetric quadratic forms on $X$. Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
+  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $q_{ij}$, $1 \leq i \leq j \leq g$, be the standard basis for $S^2(X)$, the symmetric quadratic forms on $X$, and $q$ the standard basis for $S^2(Y)$. Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
   \[
     \sum_Q c_Q \prod q_{ij}^{Q_{ij}},
   \]
   where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
 
-  The morphism $\psimod$ induces a morphism on the toroidal compactifications $X_0(N) \to \overline{\ag}$. At the cusps, $\psimod$ yields a map $\G_m \to \G_m^g$ via the composition $\lambda_A \circ \Delta$. Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$. The pull back of $q_{ij}$ under this map is $q^{A_{ij}}$, and since $q$-expansions are compatible with pull backs, the $q$-expansion of $\psimod^*(f)$ is
+  The morphism $\psimod$ induces a morphism on the toroidal compactifications $X_0(N) \to \overline{\ag}$. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$. % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
+  Let $E$ be the split torus with character group $S^2(Y)$ and $F$ the split torus with character group $S^2(X)$; see~\cite[IV.2.6]{faltings1990degeneration}. These split tori are essentially parameter spaces for the periods, so $E$ is analogous to the upper half-plane $\hh$ and $F$ to the Siegel upper half-space $\hh_g$. Then $\psimod$ induces a map $E \to F$ characterized by the property that the pull back of $q_{ij}$ is $q^{A_{ij}}$. Since $q$-expansions are compatible with pull backs, the $q$-expansion of $\psimod^*(f)$ is
   \begin{align*}
     \sum_Q c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_Q c_Q q^{\sum A_{ij}Q_{ij}} \\
     &= \sum_Q c_Q q^{\tr(AQ)}.
@@ -621,7 +622,7 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the choice of $A$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   Since $q$-expansions interact
-  with modular morphisms as expected, we have that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$.   By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $f \circ \psimod \neq 0$.
+  with modular morphisms as expected, we have that the $q$-expansion of $\psimod^*(f)$ is $\sum_Q c_Q q^{\tr(AQ)}$.   By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $\psimod^*(f) \neq 0$.
 \end{proof}
 
 
