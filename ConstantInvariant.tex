@@ -515,11 +515,12 @@ Thus, $S \subset \bigcup_A X^{(1)}_A$. Since $S$ is an infinite set of non-isomo
 \end{theorem}
 
 \begin{proof}
-  The proof is the same as the proof of Theorem~\ref{thm:Sg-dense} only with $\ag$ replaced with $\ao^g$, the matrices $A$ and $A'$ are diagonal, and $\psimod$ is replaced with $\psidiag$.
+  The proof is the same as the proof of Theorem~\ref{thm:Sg-dense}, only replacing $\ag$ with $\ao^g$, and $\psimod$ with $\psidiag$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:arbit-char}]
-  The proof of Theorem~\ref{thm:arbit-char} is almost the same as Theorem~\ref{thm:invariant-c-constant}, only with $\ag$ replaced with $\ao^g$. The only difference is that we need to replace Theorems~\ref{thm:Sg-dense} and \ref{thm:curves-dense} with analogs that work with $\ao^g$ instead of $\ag$. Theorem~\ref{thm:curves-dense-a1} is an analog of Theorem~\ref{thm:curves-dense}, and Theorem~\ref{thm:Sg-dense-a1} is an analog of Theorem~\ref{thm:Sg-dense}.
+  The proof of Theorem~\ref{thm:arbit-char} is almost the same as Theorem~\ref{thm:invariant-c-constant}, replacing $\ag$  with $\ao^g$, and invoking Theorems~\ref{thm:Sg-dense-a1} and  Theorem~\ref{thm:curves-dense-a1} in place of Theorems~\ref{thm:Sg-dense} and \ref{thm:curves-dense}, respectively. 
+  %with analogs that work with $\ao^g$ instead of $\ag$. Theorem~\ref{thm:curves-dense-a1} is an analogue of Theorem~\ref{thm:curves-dense}, and Theorem~\ref{thm:Sg-dense-a1} is an analog of Theorem~\ref{thm:Sg-dense}.
 \end{proof}
 
 
@@ -547,7 +548,7 @@ Thus, $S \subset \bigcup_A X^{(1)}_A$. Since $S$ is an infinite set of non-isomo
 is dense in the set of real, symmetric, positive definite matrices.
 \end{lemma}
 \begin{proof}
-  Let $A$ be a real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal and has positive entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $H \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, we can find $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore we can make $\det(D)GG^t$ arbitrarily close to $A$.
+  Let $A$ be a real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal and has positive entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $H \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, there exists $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore $\det(D)GG^t$ can be made arbitrarily close to $A$.
 \end{proof}
 
 \begin{definition}
@@ -603,44 +604,46 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   Let $C = \R^+(I + \mathfrak{S})$.
   Suppose $E\in\mathfrak{S}$. Since $E$ and $Q$ are positive semi-definite, $\tr(EQ)\ge 0$. Property (3) now implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by (1) we have that $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. Since $E$ is positive definite, so is $I+E$, so $A = I + E$ satisfies the conclusion of the lemma. If $r \in \R^+$, then $rA$ also satisfies the conclusion of the lemma,  so $C$ is a cone.
 
-  It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore we can find some real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
+  It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore there is a real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
 \begin{lemma}\label{lemma:q-expansion}
-  Suppose $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Then at any cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ is of the form
+  Suppose $g \in \Z_{\ge 1}$, $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. Then at any cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ (has this been defined?? We could use the wording from Eric's email, i.e., call it the pull back to...) is of the form
   \[
-    \sum_Q c_Q q^{\tr(AQ)},
+    \sum_{Q \in D} c_Q q^{\tr(AQ)}
   \]
-  where the sum is over symmetric half-integral positive semidefinite matrices.
+%  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{lemma}
 
 \begin{proof}
-  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $q_{ij}$, $1 \leq i \leq j \leq g$, be the standard basis for $S^2(X)$, the symmetric quadratic forms on $X$, and $q$ the standard basis for $S^2(Y)$. Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
+  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be the standard basis for the space $S^2(X)$ of symmetric quadratic forms on $X$, and let $q$ be the standard basis for $S^2(Y)$ (SHAHED: what does this mean, and does the notation conflict with the $q$ in $q$-expansion?). Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
   \[
-    \sum_Q c_Q \prod q_{ij}^{Q_{ij}},
+    \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
   \]
-  where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
+ % where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
 
-  The morphism $\psimod$ induces a morphism on the toroidal compactifications $X_0(N) \to \overline{\ag}$. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$. % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
+  The morphism $\psimod$ induces a morphism $X_0(N) \to \overline{\ag}$ on the toroidal compactifications. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$. % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
   Let $E$ be the split torus with character group $S^2(Y)$ and $F$ the split torus with character group $S^2(X)$; see~\cite[IV.2.6]{faltings1990degeneration}. These split tori are essentially parameter spaces for the periods, so $E$ is analogous to the upper half-plane $\hh$ and $F$ to the Siegel upper half-space $\hh_g$. Then $\psimod$ induces a map $E \to F$ characterized by the property that the pull back of $q_{ij}$ is $q^{A_{ij}}$. Since $q$-expansions are compatible with pull backs, the $q$-expansion of $\psimod^*(f)$ is
   \begin{align*}
-    \sum_Q c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_Q c_Q q^{\sum A_{ij}Q_{ij}} \\
-    &= \sum_Q c_Q q^{\tr(AQ)}.
+    \sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} \\
+    &= \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \end{align*}
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  Our goal is to show that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we will assume $g \geq 2$. It is sufficient to show that for all non-zero Siegel modular functions $f: \ag \to k$, there exists some $A \in \detl$ such that the pull back $\psimod^*(f)$ is non-zero.
+  We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to k$, there exists $A \in \detl$ such that the pull back $\psimod^*(f)$ is non-zero.
 
-  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. By Lemma~\ref{lemma:q-expansion}, $f$ admits a $q$-expansion of the form $f = \sum_Q c_Q q^{\tr(Q)}$ where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
+  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. By Lemma~\ref{lemma:q-expansion}, $f$ admits a $q$-expansion of the form $f = \sum_{Q \in D} c_Q q^{\tr(Q)}$.
+  %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
 
-  Let $S$ denote the set of $Q \in \mathfrak{Q}$ such that $c_Q \neq 0$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
+  Let $S = \{ $Q \in D :c_Q \neq 0\}$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
-  By Lemma~\ref{lem:rggt-dense}, we can find some $A \in C$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$ so that $A \in \detl$.
+  By Lemma~\ref{lem:rggt-dense}, there exists $A \in C$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$, so that $A \in \detl$.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the choice of $A$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   Since $q$-expansions interact
-  with modular morphisms as expected, we have that the $q$-expansion of $\psimod^*(f)$ is $\sum_Q c_Q q^{\tr(AQ)}$.   By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $\psimod^*(f) \neq 0$.
+  with modular morphisms in a natural way, %as expected, 
+  the $q$-expansion of $\psimod^*(f)$ is $\sum_Q c_Q q^{\tr(AQ)}$.   By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $\psimod^*(f) \neq 0$, as desired.
 \end{proof}
 
 
