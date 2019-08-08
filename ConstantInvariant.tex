@@ -465,7 +465,7 @@ There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
-  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$ in $(X_A \times X_{A'}$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with thie horizontal components removed. By Lemma~\ref{lem:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
+  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$ in $(X_A \times X_{A'}$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. By Lemma~\ref{lem:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
 \end{proof}
 
 
@@ -477,28 +477,33 @@ There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i
 \section{Proof of Theorem \ref{thm:arbit-char}}
 \label{sec:characteristic-p}
 
-Let $A$ be a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and let $N = \det A$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through the map $\ao^g \to \ag$ that sends a tuple of polarized elliptic curves $E_1,\dots,E_g$ to the product $E_1 \times \cdots \times E_g$ with the product polarization. Write
+{NOTE: There is a notation conflict here, since $A$ means something else in Theorem \ref{thm:arbit-char}.)
+
+Suppose $A$ is a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and let $N = \det A$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through the map $\ao^g \to \ag$ that sends a tuple of polarized elliptic curves $(E_1,\dots,E_g)$ to the product $E_1 \times \cdots \times E_g$ with the product polarization. Write
 \[
 \psidiag: Y_0(N) \to \ao^g
 \]
-for the associated morphism. Let $d_1, \ldots, d_g$ be the diagonal entries of $A$. For $(E, C) \in Y_0(N)$, if we define $E_i$ to be $E/(N/d_i)C$, then
+for the associated morphism. Let $d_1, \ldots, d_g$ be the diagonal entries of $A$. If $(E, C) \in Y_0(N)$, then
 \[
-  \psidiag(E,C) = E_1 \times \cdots \times E_g.
+  \psidiag(E,C) = E_1 \times \cdots \times E_g
 \]
-We denote the image $\psidiag(Y_0(N))$ by $X^{(1)}_A$.
+where  $E_i := E/d_i^{-1}NC$.
+Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
 
 \begin{theorem}\label{thm:curves-dense-a1}
   The set $\bigcup_A X^{(1)}_A$, where $A$ ranges over all $g \times g$ diagonal matrices $A$ with entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$, is Zariski dense in $\ao^g$.
 \end{theorem}
 \textcolor{red}{Proof does not choose $\ell$ arbitrarily.}
 \begin{proof}
- Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curveis defined over every algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Theorem~\ref{thm:kani-20b}, since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
+ Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curve is defined over every algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\sC_0$ is not a kernel ideal of $E_0$, by Theorem~\ref{thm:kani-20b} it follows that $\End E_1 \cong \Z + \ell\sO_K$.
 
- For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End E_{i}$ has exactly one ideal of norm $\ell$ given by $\ell\End E_{i-1}$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so the endomorphism ring of $E_{i+1}$ must be strictly smaller by Theorem~\ref{thm:kani-20b}.
+ For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End E_{i}$ has exactly one ideal of norm $\ell$ given by $\ell\End E_{i-1}$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so $\End(E_{i+1})$ must be strictly smaller than ?? by Theorem~\ref{thm:kani-20b}.
 
- For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$. To see this, note that if $\ker\pi^{(n)}$ was not cyclic, then $\pi^{(n)}$ would factor into a composition of the form $\psi\circ[\ell^m]$, where $[\ell^m]$ is the multiplication by $\ell^m$ map. However, the index of $\End E_n$ in $\sO_K$ is then bounded by $\deg\psi$. By above, $\End E_n$ has index $\ell^n = \deg\pi^{(n)}$ and therefore we must have that $m = 0$.
+ For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$. To see this, note that if $\ker\pi^{(n)}$ were not cyclic, then $\pi^{(n)}$ would factor into a composition of the form $\psi\circ[\ell^m]$, where $[\ell^m]$ is the multiplication by $\ell^m$ map. However, the index of $\End E_n$ in $\sO_K$ is then bounded by $\deg\psi$. By above, $\End E_n$ has index $\ell^n = \deg\pi^{(n)}$ and therefore 
+ %we must have that 
+ $m = 0$.
 
- Let $S = \{E_i\}_{i=0}^\infty$. Let $(E_{n_1},\dots,E_{n_g}) \in S$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$, and let $\sC = \ker \pi^{(n)}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
+ Let $S = \{E_i\}_{i=0}^\infty$. Let $(E_{n_1},\dots,E_{n_g}) \in S^g$ and let $A$ be the diagonal matrix with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$.  Choose any $n > \max\{n_i\}$, and let $\sC = \ker \pi^{(n)}$. Then $(E_0,\pi^{(n)}) \in Y_0(\ell^n)$ and
  \[
    \psidiag(E_0,\sC) = E_{n_1} \times \cdots \times E_{n_g}.
  \]
