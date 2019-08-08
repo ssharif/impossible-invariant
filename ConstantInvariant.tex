@@ -245,7 +245,7 @@ Then there are infinitely many rational prime numbers $q$ such that
   Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \pmod{g}$, giving (2).
 %To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\frak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
 Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3).
-%Moreover, if $\sigma$ satisfies these conditions, then so does any conjugate of $\sigma$.
+%Moreover, if $\sigma$ satisfies these conditions, then so does every conjugate of $\sigma$.
 %By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
 %  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Since $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
@@ -281,34 +281,46 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
 \begin{proof}
   Let $q = \prod_{i=1}^n q_i$ be the prime factorization of $q$.
   %, where each $q_i$ is a prime inert in $K$ and not equal to the characteristic of the base field. We can write 
-  Then $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of $E$ of order $q_i$.
+  Then $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of $E$ of order $q_i$. Let $E_j = E/\sum_{i=1}^j\sC_i$. 
 
   The isogeny $\pi: E \to E/\sC$ factors into a chain of isogenies
-  \[
+   \[
     E
     \xrightarrow{\pi_1}
-    E/\sC_1
+    E_1
     \xrightarrow{\pi_2}
-    E/(\sC_1 + \sC_2)
+    E_2
     \xrightarrow{\pi_3}
     \cdots
     \xrightarrow{\pi_n}
-    E/\sum_{i=1}^n\sC_i.
+    E_n.
   \]
-  Let $E_j = E/\sum_{i=1}^j\sC_i$ so $\pi_j: E_{j-1} \to E_j$. Define $\sO_j$ to be the order $\End(E_j)$ in $K$, and let $f_j$ be the conductor of $\sO_j$. Since $\pi_j$ has degree $q_j$, we have $[\sO_j : \sO_{j-1}] = q_j$, $[\sO_{j-1} : \sO_j] = q_j$, or $\sO_{j-1} = \sO_j$ \cite[Prop.~5]{kohel1996endomorphism}. Therefore $[\sO_K : \sO_j]$ divides $\prod_{i=1}^{j}q_i$. Recall from \cite[Prop.~7.20]{cox2011primes} that ideals of $\sO_j$ that are prime to $f_j$ are in bijection with primes of $\sO_K$ avoiding $f_j$. In particular, there is no prime of $\sO_{j-1}$ of norm $q_j$. So $\ker\pi_j$ is not an ideal subgroup \cite[Prop.~23]{kani2011products}. Then by Theorem~\ref{thm:kani-20b}, $[\sO_{j-1} : \sO_j] = q_j$. It follows that $[\sO_K : \sO_n] = \prod_{i=1}^n q_i$ as required.
+% \[
+%    E
+%    \xrightarrow{\pi_1}
+%    E/\sC_1
+%    \xrightarrow{\pi_2}
+%    E/(\sC_1 + \sC_2)
+%    \xrightarrow{\pi_3}
+%    \cdots
+%    \xrightarrow{\pi_n}
+%    E/\sum_{i=1}^n\sC_i.
+%  \]
+  Let $\sO_j$ be the order $\End(E_j)$ in $K$, and let $f_j$ be its conductor. Since the isogeny $\pi_j$ has degree $q_j$, we have either $[\sO_j : \sO_{j-1}] = q_j$, or $[\sO_{j-1} : \sO_j] = q_j$, or $\sO_{j-1} = \sO_j$ \cite[Prop.~5]{kohel1996endomorphism}. Therefore $[\sO_K : \sO_j]$ divides $\prod_{i=1}^{j}q_i$. Recall from \cite[Prop.~7.20]{cox2011primes} that ideals of $\sO_j$ that are prime to $f_j$ are in bijection with primes of $\sO_K$ avoiding $f_j$. In particular, there is no prime of $\sO_{j-1}$ of norm $q_j$. So $\ker\pi_j$ is not an ideal subgroup \cite[Prop.~23]{kani2011products}. Then by Theorem~\ref{thm:kani-20b}, $[\sO_{j-1} : \sO_j] = q_j$. It follows that $[\sO_K : \sO_n] = \prod_{i=1}^n q_i$ as required.
 \end{proof}
 
 \begin{lemma}\label{lem:c-subgps-distinct-quotients}
   Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
 \end{lemma}
 \begin{proof}
-  Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so after replacing $\beta(\sC)$ with $\sC$ and $\alpha\overline{\beta}$ with $\alpha$, it is enough to prove the claim for $\beta = 1$.
+  Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so after replacing $\beta(\sC)$ with $\sC$ and $\alpha\overline{\beta}$ with $\alpha$, it suffices to prove the claim for $\beta = 1$.
 
-  If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the other direction. Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. We want to show that $\sC = \alpha(\sC)$.
-
-  Let $\pi_{\sC}$ denote the quotient map $E \to E/\sC$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ defined by the equation $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ that fixes $\sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$.
+  If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the converse. 
+  
+  Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. %We want to show that $\sC = \alpha(\sC)$.
+If $D$ is a subgroup of $E$, let $\pi_{D}$ denote the quotient map $E \to E/D$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ such that $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ such that $\alpha'(\sC) = \sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$.
   %This shows that $\deg(\alpha) = \deg(\alpha')$.
-  Since $\alpha$ and $\alpha'$ are prime to $q$,
+  Since $\alpha$ and $\alpha'$ are prime to $q = \#\sC$, we have
   \[
     \sC + \ker(\alpha')
     =
@@ -317,10 +329,10 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
     \ker(\tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha)
     =
     \ker(\pi_{\alpha(\sC)}\circ\alpha)
-    \cong
-    \sC + \ker(\alpha).
+    =
+    \sC + \ker(\alpha),
   \]
-  Therefore $\ker(\alpha) = \ker(\alpha')$, so $\alpha' = \alpha\circ u$ for some $u \in \sO_K^\times$. By hypothesis, $u = \pm 1$. So $\alpha(\sC) = \pm\alpha'(\sC) = \pm\sC = \sC$.
+  and $\ker(\alpha) = \ker(\alpha')$. Thus $\alpha' = u\alpha$ for some $u \in \sO_K^\times = \{\pm 1\}$. So $\alpha(\sC) = \pm\alpha'(\sC) = \pm\sC = \sC$, as desired.
 
   %Alternate proof of existence of u: $E/\alpha(\sC)$ and $E/\sC$ have a unique ascending isogeny. As $\tilde{u}$ is an isomorphism, it must send the ascending kernel of $E/\alpha(\sC)$ to that of $E/\sC$. The ascending kernel is the image of $E[c]$ under the quotient. Therefore $\pi^{\vee}\circ\tilde{u}\circ\pi_{\alpha(\sC)}$ is divisible by $c$, and so factors through an automorphism of $E$.
 \end{proof}
@@ -334,7 +346,7 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
   \]
 \end{lemma}
 \begin{proof}
-  Let $\alpha = \prod_{i=1}^g\alpha_i$ and $\beta = \prod_{i=1}^g\beta_i$. Let $M$ be the diagonal matrix with diagonal entries $\alpha_1^{-1},\dots,\alpha_{g-1}^{-1}, \alpha_g^{-1}\alpha$. Note that $M\mod{q\sO_K} \in \Sl_g(\sO_K/q\sO_K)$. By \cite[Cor.~5.2, Pg.~18]{ktheory1964bass}, we can find $M' \in \Sl_g(\sO_K)$ such that $M \equiv M' \mod{q\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^g$ sending $\prod_{i=1}^g \alpha_i(\sC)$ to $\sC^{g-1} \times \left(\prod_{i=1}^g \alpha_i\right)(\sC)$. A similar construction with $\beta$ shows that
+  Let $\alpha = \prod_{i=1}^g\alpha_i$ and $\beta = \prod_{i=1}^g\beta_i$. Let $M$ be the diagonal matrix with diagonal entries $\alpha_1^{-1},\dots,\alpha_{g-1}^{-1}, \alpha_g^{-1}\alpha$. Note that $M\mod{q\sO_K} \in \Sl_g(\sO_K/q\sO_K)$. By \cite[Cor.~5.2, p.~18]{ktheory1964bass}, there exists $M' \in \Sl_g(\sO_K)$ such that $M \equiv M' \mod{q\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^g$ that sends $\prod_{i=1}^g \alpha_i(\sC)$ to $\sC^{g-1} \times \left(\prod_{i=1}^g \alpha_i\right)(\sC)$. A similar construction with $\beta$ shows that
   \[
     \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
     \,\Leftrightarrow\,
@@ -344,15 +356,16 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
   Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. Let $\sO = \Z + q\sO_K$, which by Lemma~\ref{lem:c-end} is isomorphic to $\End(E/\sC)$, $\End(E/\alpha(\sC))$, and $\End(E/\beta(\sC))$. Thus $\ker\tilde{\alpha}$ is an ideal subgroup by Theorem~\ref{thm:kani-20b}. The same holds for $\beta$ as well.
 
   %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
-  For an isogeny $\phi$ with domain $E/\sC$, let $I_\phi$ denote the kernel ideal of $\ker(\phi)$, i.e. $I_\phi = \{f \in \End(E/\sC) \colon f(\ker(\phi)) = 0\}$.
+  For an isogeny $\phi$ with domain $E/\sC$, let $I_\phi$ denote the kernel ideal of $\ker(\phi)$, i.e., $I_\phi = \{f \in \End(E/\sC) \colon f(\ker(\phi)) = 0\}$.
   By \cite[Thm.~46]{kani2011products},
   \begin{align*}
     \left(E/\sC\right)^{g-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{g-1} \times E/\beta(\sC)
     \\
     \Leftrightarrow
-    \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\alpha}} \cong \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\beta}},
+    \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\alpha}} \cong \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\beta}} \text{  as $\sO$-modules}.
   \end{align*}
-  where the second isomorphism is as $\sO$-modules. By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products}), the latter isomorphism is equivalent to $I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}$.
+%  where the second isomorphism is as $\sO$-modules. 
+By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products}), the latter isomorphism is equivalent to $I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}$.
   By Theorem~\ref{thm:kani-20b},
   \[
     I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}
@@ -413,44 +426,46 @@ $\rho_A = \rho_U \rho_D \rho_V$. Since
   \]
 \end{lemma}
 \begin{proof}
-  For any imaginary quadratic field $K$ as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for all $i$. Let $E$ be an elliptic curve over an algebraically closed field with endomorphism ring $\End(E) \cong \sO_K$.
+  For every imaginary quadratic field $K$ as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for all $i$. Let $E$ be an elliptic curve over an algebraically closed field such that $\End(E) \cong \sO_K$.
 
   If $\sC$ is a cyclic subgroup of $E$ of order prime to $\ell$, then $\alpha$ induces a chain of isogenies
   \[
     E/\sC \to E/\alpha(\sC) \to \cdots \to E/\alpha^n(\sC).
   \]
-  Let $\alpha_{\sC,n}: E/\sC \to \cdots \to E/\alpha^n(\sC)$ be the composition of this chain. Then $\alpha_{\sC,n}$ is a cyclic $\ell^n$-isogeny, so the pair $(E/\sC,\alpha_{\sC,n})$ defines a point in $Y_0(\ell^n)$.
+  Let $\alpha_{\sC,n}: E/\sC \to E/\alpha^n(\sC)$ be the composition of this chain. Then $\alpha_{\sC,n}$ is a cyclic $\ell^n$-isogeny, so the pair $(E/\sC,\alpha_{\sC,n})$ defines a point in $Y_0(\ell^n)$.
 
-    For each $i$, we fix a cyclic subgroup $\sC_i$ of $E$ of order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and similarly for $x_i$. Note that the $x_i$ are distinct points, as the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
+    For each $i$, fix a cyclic subgroup $\sC_i$ of $E$ of order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and so on. The $x_i$ are distinct points, since the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
 
-    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) = \psi_{A}(x_i)$. We first focus on the case $i = 1$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1)$, where $\ell^{n_1},\dots,\ell^{n_g}$ are the elementary divisors of $A$.
+%    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) \approx \psi_{A}(x_i)$. We first focus on the case $i = 1$. 
+Let $\ell^{n_1},\dots,\ell^{n_g}$ be the elementary divisors of $A$  and let $\ell^{n_1'},\dots,\ell^{n_g'}$ be the elementary divisors of $A'$.
+By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product} we have $$\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1).$$ 
     %By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
 %    \[
 %      \psi_{A}(x_1) \approx E/\gamma^{gn_1}(\sC_1) \times \cdots \times E/\gamma^{gn_g}(\sC_1).
 %    \]
-    Let $\ell^{n_1'},\dots,\ell^{n_g'}$ be the elementary divisors of $A'$, and let $S$ denote a set of representatives $\beta \in \sO_K$ of the solutions to the equation
+    Let $S$ denote a set of representatives $\beta \in \sO_K$ of the solutions to %the equation
     \[
       \alpha^{n_1 + \cdots + n_g} \equiv \beta^g\alpha^{n_1' + \cdots + n_g'}
       \text{ in } \Gt_{q_1}.
     \]
 Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides the order $q_1 + 1$ of the cyclic group $\Gt_{q_1}$,
-   we have $\#S = g$. For all $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\psi_{A'}(y_\beta) = E/\alpha^{n_1'}(\beta(\sC_1)) \times \cdots \times E/\alpha^{n_g'}(\beta(\sC_1))$. Therefore $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. Moreover, by Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. Hence we have found $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
+   we have $\#S = g$. For all $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product} we have $$\psi_{A'}(y_\beta) = E/\alpha^{n_1'}(\beta(\sC_1)) \times \cdots \times E/\alpha^{n_g'}(\beta(\sC_1)).$$ Thus $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. By Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. This gives $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
 
-  For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta$ such that
+  For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta \in \sO_K$ such that
   \[
     \psi_{A}(x_2) \approx \psi_{A'}\left(E/\beta(\sC_1+\sC_2),\alpha_{\beta(\sC_1+\sC_2),m}\right)
   \]
-  reduces to finding solutions $\beta$ to the equation
+  reduces to finding solutions $\beta$ to %the equation
   \[
     \alpha^{n_1 + \cdots + n_g} \equiv \beta^g\alpha^{n_1' + \cdots + n_g'}
     \text{ in } \Gt_{q_1} \times \Gt_{q_2}.
   \]
 %  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$.
-There are precisely $g^2$ solutions $\beta$ to this equation. Continuing this construction for $i=3,4,\dots$, we find that for $x_i$ there are $g^i$ points $y \in Y_0(\ell^m)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
+There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i=3,4,\dots$, we find that each $i$ there are $g^i$ points $y \in Y_0(\ell^m)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
-  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. This implies that $\dim S \geq 1$. Suppose the dimension equals $1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. Consider the projection $\pi_X: S' \to X$. Lemma~\ref{lem:lim-degree} implies that this map has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, and so $\pi_X|_{S'}$ has finite degree, yielding a contradiction. Therefore $\dim S \geq 2$ and the claim follows.
+  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$ in $(X_A \times X_{A'}$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with thie horizontal components removed. By Lemma~\ref{lem:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
 \end{proof}
 
 
@@ -477,7 +492,7 @@ We denote the image $\psidiag(Y_0(N))$ by $X^{(1)}_A$.
 \end{theorem}
 \textcolor{red}{Proof does not choose $\ell$ arbitrarily.}
 \begin{proof}
- Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curve will be defined over any algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Theorem~\ref{thm:kani-20b}, since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
+ Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curveis defined over every algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Note that by Theorem~\ref{thm:kani-20b}, since $\sC_0$ is not a kernel ideal of $E_0$, it follows that $\End E_1 \cong \Z + \ell\sO_K$.
 
  For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, we have that $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End E_{i}$ has exactly one ideal of norm $\ell$ given by $\ell\End E_{i-1}$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so the endomorphism ring of $E_{i+1}$ must be strictly smaller by Theorem~\ref{thm:kani-20b}.
 
@@ -587,7 +602,7 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
 \end{proof}
 
 \begin{lemma}\label{lemma:q-expansion}
-  Let $f$ be a modular form on $\ag$. Let $A$ be a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Then, at any cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ is of the form
+  Suppose $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Then at any cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ is of the form
   \[
     \sum_Q c_Q q^{\tr(AQ)},
   \]
