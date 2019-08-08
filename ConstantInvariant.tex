@@ -265,13 +265,13 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
 \end{proof}
 
 \begin{definition}[{\cite[Sec.~2]{kani2011products}}]\label{def:ker-idl}
-  Suppose $A$ is an abelian variety over a field. If $I$ is a regular left ideal of $\End A$ (i.e., a left ideal that contains an isogeny), let $H(I) = \cap_{\phi \in I}\ker \phi$. If $H$ is a finite subgroup scheme of $A$, let $I(H) = \{\phi \in \End A \colon \phi(H) = 0\}$. A finite subgroup scheme $H$ of $A$ is an \emph{ideal subgroup} of $A$ if $H = H(I)$ for some ideal $I$ of $\End A$. A left ideal $I$ of $\End A$ is a \emph{kernel ideal} if $I = I(H)$ for some finite subgroup scheme $H$ of $A$.
+  Suppose $A$ is an abelian variety over a field. If $I$ is a regular left ideal of $\End(A)$ (i.e., a left ideal that contains an isogeny), let $H(I) = \cap_{\phi \in I}\ker \phi$. If $H$ is a finite subgroup scheme of $A$, let $I(H) = \{\phi \in \End(A) \colon \phi(H) = 0\}$. A finite subgroup scheme $H$ of $A$ is an \emph{ideal subgroup} of $A$ if $H = H(I)$ for some ideal $I$ of $\End(A)$. A left ideal $I$ of $\End(A)$ is a \emph{kernel ideal} if $I = I(H)$ for some finite subgroup scheme $H$ of $A$.
 \end{definition}
 
 \begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]\label{thm:kani-20b}
   Suppose $E$ is a CM elliptic curve over an algebraically closed field and $H$ a finite subgroup scheme of $E$. Then $H$ is an ideal %kernel 
-  subgroup if and only %if there is an inclusion $\End E \hookrightarrow \End E/H$. 
-  $\End E \subset \End E/H$. Moreover, if $H_1$ and $H_2$ are ideal subgroups of $E$, then $E/H_1 \approx E/H_2$ if and only if $I(H_1)$ and $I(H_2)$ are isomorphic as $\End(E)$-modules.
+  subgroup if and only %if there is an inclusion $\End(E) \hookrightarrow \End(E/H)$. 
+  $\End(E) \subset \End(E/H)$. Moreover, if $H_1$ and $H_2$ are ideal subgroups of $E$, then $E/H_1 \approx E/H_2$ if and only if $I(H_1)$ and $I(H_2)$ are isomorphic as $\End(E)$-modules.
   %$f_{E_H} \mid f_E$
 \end{theorem}
 
@@ -310,7 +310,7 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
 \end{proof}
 
 \begin{lemma}\label{lem:c-subgps-distinct-quotients}
-  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
+  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
 \end{lemma}
 \begin{proof}
   Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so after replacing $\beta(\sC)$ with $\sC$ and $\alpha\overline{\beta}$ with $\alpha$, it suffices to prove the claim for $\beta = 1$.
@@ -338,24 +338,24 @@ If $D$ is a subgroup of $E$, let $\pi_{D}$ denote the quotient map $E \to E/D$. 
 \end{proof}
 
 \begin{lemma}\label{lem:prod-equiv-torsor}
-  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End E \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Let $\sC$ be a subgroup of $E$ of order $q$. If $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, then
+  Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. Suppose $\sC$ is a subgroup of $E$ of order $q$. Suppose $\alpha_1,\dots,\alpha_g,\beta_1,\dots,\beta_g \in \sO_K$ are prime to $q$, and let $\alpha = \prod_{i=1}^g\alpha_i$ and $\beta = \prod_{i=1}^g\beta_i$. Then
   \[
     \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
     \,\Leftrightarrow\,
-    \prod_{i=1}^g \alpha_i \equiv \prod_{i=1}^g \beta_i \text{ in } \Gt_q.
+    \alpha \equiv \beta \text{ in } \Gt_q.
   \]
 \end{lemma}
 \begin{proof}
-  Let $\alpha = \prod_{i=1}^g\alpha_i$ and $\beta = \prod_{i=1}^g\beta_i$. Let $M$ be the diagonal matrix with diagonal entries $\alpha_1^{-1},\dots,\alpha_{g-1}^{-1}, \alpha_g^{-1}\alpha$. Note that $M\mod{q\sO_K} \in \Sl_g(\sO_K/q\sO_K)$. By \cite[Cor.~5.2, p.~18]{ktheory1964bass}, there exists $M' \in \Sl_g(\sO_K)$ such that $M \equiv M' \mod{q\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^g$ that sends $\prod_{i=1}^g \alpha_i(\sC)$ to $\sC^{g-1} \times \left(\prod_{i=1}^g \alpha_i\right)(\sC)$. A similar construction with $\beta$ shows that
+   Let $M$ be the diagonal matrix with diagonal entries $\alpha_1^{-1},\dots,\alpha_{g-1}^{-1}, \alpha_g^{-1}\alpha$. Note that $M\mod{q\sO_K} \in \Sl_g(\sO_K/q\sO_K)$. By \cite[Cor.~5.2, p.~18]{ktheory1964bass}, there exists $M' \in \Sl_g(\sO_K)$ such that $M \equiv M' \mod{q\sO_K}$. The matrix $M'$ corresponds to an automorphism of $E^g$ that sends $\prod_{i=1}^g \alpha_i(\sC)$ to $\sC^{g-1} \times \alpha(\sC)$. A similar construction with $\beta$ shows that
   \[
     \prod_{i=1}^g E/\alpha_i(\sC) \approx \prod_{i=1}^g E/\beta_i(\sC)
     \,\Leftrightarrow\,
     \left(E/\sC\right)^{g-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{g-1} \times E/\beta(\sC).
   \]
 
-  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. Let $\sO = \Z + q\sO_K$, which by Lemma~\ref{lem:c-end} is isomorphic to $\End(E/\sC)$, $\End(E/\alpha(\sC))$, and $\End(E/\beta(\sC))$. Thus $\ker\tilde{\alpha}$ is an ideal subgroup by Theorem~\ref{thm:kani-20b}. The same holds for $\beta$ as well.
+  Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. Let $\sO = \Z + q\sO_K$. By Lemma~\ref{lem:c-end} we have $\sO \cong \End(E/\sC)\cong \End(E/\alpha(\sC))\cong \End(E/\beta(\sC))$. Thus $\ker\tilde{\alpha}$ is an ideal subgroup by Theorem~\ref{thm:kani-20b}. The same holds for $\beta$ in place of $\alpha$.
 
-  %I(\phi) = \{f \in \End E/\sC \colon \ker f \supseteq \ker \phi \}
+  %I(\phi) = \{f \in \End(E/\sC) \colon \ker f \supseteq \ker \phi \}
   For an isogeny $\phi$ with domain $E/\sC$, let $I_\phi$ denote the kernel ideal of $\ker(\phi)$, i.e., $I_\phi = \{f \in \End(E/\sC) \colon f(\ker(\phi)) = 0\}$.
   By \cite[Thm.~46]{kani2011products},
   \begin{align*}
@@ -418,7 +418,7 @@ $\rho_A = \rho_U \rho_D \rho_V$. Since
 \end{proof}
 
 \begin{lemma}\label{lem:lim-degree}
-  Let $\ell$ be a prime not equal to the characteristic of the base. Suppose $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$.
+  Let $\ell$ be a prime not equal to the characteristic of the base. (What base?? Should this condition be moved down to the proof, where we can choose $E$ over a field of char not $\ell$?) Suppose $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$.
   %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$.
   Then there exists a sequence $x_i \in Y_0(\ell^n)$ such that
   \[
@@ -477,7 +477,7 @@ There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i
 \section{Proof of Theorem \ref{thm:arbit-char}}
 \label{sec:characteristic-p}
 
-{NOTE: There is a notation conflict here, since $A$ means something else in Theorem \ref{thm:arbit-char}.)
+{NOTE: We need to resolve the  conflict of notation here, since $A$ means something else in the statement of Theorem \ref{thm:arbit-char}.)
 
 Suppose $A$ is a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and let $N = \det A$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through the map $\ao^g \to \ag$ that sends a tuple of polarized elliptic curves $(E_1,\dots,E_g)$ to the product $E_1 \times \cdots \times E_g$ with the product polarization. Write
 \[
@@ -491,15 +491,16 @@ where  $E_i := E/d_i^{-1}NC$.
 Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
 
 \begin{theorem}\label{thm:curves-dense-a1}
-  The set $\bigcup_A X^{(1)}_A$, where $A$ ranges over all $g \times g$ diagonal matrices $A$ with entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$, is Zariski dense in $\ao^g$.
+  Fix a prime number $\ell$. Let $W$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$.
+  The set $\bigcup_{A\in W} X^{(1)}_A$ is Zariski dense in $\ao^g$.
 \end{theorem}
 \textcolor{red}{Proof does not choose $\ell$ arbitrarily.}
 \begin{proof}
- Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curve is defined over every algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\sC_0$ is not a kernel ideal of $E_0$, by Theorem~\ref{thm:kani-20b} it follows that $\End E_1 \cong \Z + \ell\sO_K$.
+ Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curve is defined over every algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\sC_0$ is not a kernel ideal of $E_0$, by Theorem~\ref{thm:kani-20b} it follows that $\End(E_1) \cong \Z + \ell\sO_K$.
 
- For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End E_{i+1} \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End E_{i}$ has exactly one ideal of norm $\ell$ given by $\ell\End E_{i-1}$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so $\End(E_{i+1})$ must be strictly smaller than ?? by Theorem~\ref{thm:kani-20b}.
+ For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End(E_{i+1}) \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End(E_{i})$ has exactly one ideal of norm $\ell$ given by $\ell\End(E_{i-1})$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so $\End(E_{i+1})$ must be strictly smaller than ?? by Theorem~\ref{thm:kani-20b}.
 
- For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$. To see this, note that if $\ker\pi^{(n)}$ were not cyclic, then $\pi^{(n)}$ would factor into a composition of the form $\psi\circ[\ell^m]$, where $[\ell^m]$ is the multiplication by $\ell^m$ map. However, the index of $\End E_n$ in $\sO_K$ is then bounded by $\deg\psi$. By above, $\End E_n$ has index $\ell^n = \deg\pi^{(n)}$ and therefore 
+ For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$. To see this, note that if $\ker\pi^{(n)}$ were not cyclic, then $\pi^{(n)}$ would factor into a composition of the form $\psi\circ[\ell^m]$, where $[\ell^m]$ is the multiplication by $\ell^m$ map. However, the index of $\End(E_n)$ in $\sO_K$ is then bounded by $\deg\psi$. By above, $\End(E_n)$ has index $\ell^n = \deg\pi^{(n)}$ and therefore 
  %we must have that 
  $m = 0$.
 
