@@ -154,20 +154,13 @@ $$
 
 
 \begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
-  %Suppose $f: \ag \to X$ is a morphism of $R$-schemes.
-  Let $k$ be an algebraically closed field containing $R$. Consider the fiber product $\df = \ag \times_X \ag$.
-  % determined by the diagram
-  % \[
-  % \begin{tikzcd}
-  %   \df \arrow[r] \arrow[d] & \ag \arrow[d,"f"]
-  %   \\
-  %   \ag \arrow[r,"f"] & X.
-  % \end{tikzcd}
-  % \]
-%  The hypotheses on $f$  imply that
-Since $f$ is a morphism such that $f(A) = f(B)$ whenever $A \approx B$, we have that $\sg(k) \subset \df(k)$.
-  % https://ncatlab.org/nlab/show/separated+morphism+of+schemes
-   Since $\df$ is a closed subscheme of $\ag \times \ag$, Theorem~\ref{thm:sg-c-dense} implies that $\df = \ag \times \ag$, as desired.
+  Consider the fiber product $\df = \ag \times_X \ag$.
+  The universal property of $\df$ says that for any scheme $W$ and pair of morphisms $h_1,h_2$ from $W \to \ag$ such that $f \circ h_1 = f \circ h_2$, there is a unique morphism $h: W \to \df$ such that $h_1,h_2$ factor through $h$.
+
+  Let $k$ be an algebraically closed field containing $R$.
+  Applying the universal property with $W = \Spec k$ shows that $\df(k)$ consists of pairs $(A,B)$ of abelian varieties over $k$ such that $f(A) = f(B)$.
+  By the hypothesis on $f$, if $A \approx B$ then $f(A) = f(B)$. Hence $\sg(k) \subseteq \df$.
+  Since $\df$ is a closed subscheme of $\ag \times \ag$\textcolor{red}{TODO: does this need a reference?}, Theorem~\ref{thm:sg-c-dense} implies that $\df = \ag \times \ag$, as desired.
 \end{proof}
 
 
