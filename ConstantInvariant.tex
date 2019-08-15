@@ -51,9 +51,9 @@ and the National Science Foundation.}
 \section{Introduction}
 \label{sec:introduction}
 
-If $A$ and $B$ are abelian varieties, we say $A$ and $B$ are \emph{weakly isomorphic}, written $A \approx B$, if $A$ and $B$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
+If $A_1$ and $A_2$ are abelian varieties, we say $A_1$ and $A_2$ are \emph{weakly isomorphic}, written $A_1 \approx A_2$, if $A_1$ and $A_2$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A) = f(B)$ whenever $A \approx B$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \to X$ is a morphism of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
 \end{theorem}
 
 It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
@@ -75,7 +75,7 @@ It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algeb
 
 If $R$ is a scheme, let
 $$
-\sg(R) = \{(A,B) \in (\ag \times \ag)(R) | A \approx B\}.
+\sg(R) = \{(A_1,A_2) \in (\ag \times \ag)(R) | A_1 \approx A_2\}.
 $$
 We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
@@ -476,7 +476,7 @@ There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i
 \section{Proof of Theorem \ref{thm:arbit-char}}
 \label{sec:characteristic-p}
 
-{NOTE: We need to resolve the  conflict of notation here, since $A$ means something else in the statement of Theorem \ref{thm:arbit-char}.)
+
 
 Suppose $A$ is a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and let $N = \det A$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through the map $\ao^g \to \ag$ that sends a tuple of polarized elliptic curves $(E_1,\dots,E_g)$ to the product $E_1 \times \cdots \times E_g$ with the product polarization. Write
 \[
