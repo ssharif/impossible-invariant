@@ -214,8 +214,8 @@ The plan is to find a suitable infinite set of pairs $(x,y) \in \sg(k) \cap (X_A
 \begin{proof}
   Let $L$ denote the set of algebraic integers $\alpha \in \C$ whose minimal polynomial is of the form $x^2 - tx + \ell$ with $0 < |t| < 2\sqrt{\ell}$.
   Then $\#L = 4\lfloor 2\sqrt{\ell} \rfloor$.
-  For any imaginary quadratic field $K$, there are at most $2|\sO_K^\times| \leq 12$ algebraic integers in $K$ of norm $\ell$.
- % Therefore $\#K \cap L \leq 12$.
+  For any imaginary quadratic field $K$, there are at most $2\#(\sO_K^\times) \leq 12$ algebraic integers in $K$ of norm $\ell$.
+ % Therefore $\#(K \cap L) \leq 12$.
   If $\ell \geq 13$, then $4\lfloor 2\sqrt{\ell} \rfloor > 24$, so there is some $\alpha \in L$ that does not lie in $\Q(i)$ or $\Q(\sqrt{-3})$, and we can let
    $K = \Q(\alpha)$.
   The cases when $\ell < 13$ can be checked by hand.
@@ -268,12 +268,9 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
   Suppose $A$ is an abelian variety over a field. If $I$ is a regular left ideal of $\End(A)$ (i.e., a left ideal that contains an isogeny), let $H(I) = \cap_{\phi \in I}\ker \phi$. If $H$ is a finite subgroup scheme of $A$, let $I(H) = \{\phi \in \End(A) \colon \phi(H) = 0\}$. A finite subgroup scheme $H$ of $A$ is an \emph{ideal subgroup} of $A$ if $H = H(I)$ for some ideal $I$ of $\End(A)$. A left ideal $I$ of $\End(A)$ is a \emph{kernel ideal} if $I = I(H)$ for some finite subgroup scheme $H$ of $A$.
 \end{definition}
 
-\begin{lemma}\label{lemma:order-ideal-subgroup}
-  Let $E$ be a CM elliptic curve. If $H = H(I)$ is an ideal subgroup of $E$, then $\# H = [\End(E):I]$.
+\begin{lemma}[{\cite[Prop.~23]{kani2011products}}]\label{lemma:order-ideal-subgroup}
+  Suppose $E$ is a CM elliptic curve. If $H = H(I)$ is an ideal subgroup of $E$, then $\# H = [\End(E):I]$.
 \end{lemma}
-\begin{proof}
-  This is~\cite[Prop. 23]{kani2011products}.
-\end{proof}
 
 \begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]\label{thm:kani-20b}
   Suppose $E$ is a CM elliptic curve over an algebraically closed field and $H$ a finite subgroup scheme of $E$. Then $H$ is an ideal %kernel
