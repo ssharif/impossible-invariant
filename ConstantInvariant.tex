@@ -607,12 +607,11 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore there is a real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
-We will need to compute pull backs of modular forms. It is convenient to reduce the computation to one over $\C$.
-%Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$.
-Accordingly, let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
+%In ?? we will compute pull backs of modular forms. It is convenient (instead, say what we mean?) to reduce the computation [what computation?] to one over $\C$.
+Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
  $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$.
 \begin{lemma}\label{lem:psi-A-n}
-Suppose $A$ is ???
+Suppose that $A$ is a symmetric, positive definite integer matrix and $N = \det A$.
 Then the map \[
   \psic: \hh \to \hh_g, \quad  \tau \mapsto \tau A
 \]
@@ -640,8 +639,8 @@ and  $\sigma(\tau)A = M(\tau A)$.
 
 %In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
 \begin{lemma}\label{lemma:psimod-over-c}
-Suppose $A$ is ??
-When the base scheme is $\C$, we have $\psimodt = \psimod$.
+Suppose that $A$ is a symmetric, positive definite integer matrix and
+ the base scheme is $\C$. Then $\psimod = \psimodt$.
 \end{lemma}
 
 \begin{proof}
