@@ -119,13 +119,14 @@ Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
 %Let $k$ be an algebraically closed field containing $R$.
-Fix a prime number $\ell$ not equal to the characteristic of $k$. We have
-$$
-\bigcup_{A,A' \in \detl} \left(\sg(k) \cap (X_A \times X_{A'})\right) =  \sg(k) \cap \left(\bigcup_{A,A' \in \detl} (X_A \times X_{A'})\right)
+Fix a prime number $\ell\neq\car(k)$. We have
+\begin{multline*}
+\bigcup_{A,A' \in \detl} \left(\sg(k) \cap (X_A \times X_{A'})(k)\right) \\
+ =  \sg(k) \cap \left(\bigcup_{A,A' \in \detl} (X_A \times X_{A'})(k)\right)
    \subset \sg(k).
-   $$
+\end{multline*}
 By Theorem~\ref{thm:Sg-dense}, the set
-$\bigcup_{A,A' \in \detl} \left(\sg(k) \cap (X_A \times X_{A'})\right)$ is Zariski dense in
+$\bigcup_{A,A' \in \detl} \left(\sg(k) \cap (X_A \times X_{A'})(k)\right)$ is Zariski dense in
 $$
 \bigcup_{A,A' \in \detl} \left(X_A \times X_{A'}\right) =
     \left(\bigcup_{A \in \detl} X_A\right) \times \left(\bigcup_{A' \in \detl} X_{A'}\right),
@@ -417,11 +418,13 @@ $\rho_A = \rho_U \rho_D \rho_V$. Since
 \end{proof}
 
 \begin{lemma}\label{lem:lim-degree}
-  Let $\ell$ be a prime not equal to the characteristic of the base. (What base?? Should this condition be moved down to the proof, where we can choose $E$ over a field of char not $\ell$?) Suppose $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$.
+Let $k$ be an algebraically closed field containing the base ring.
+  Let $\ell$ be a prime not equal to $\car(k)$. 
+  Suppose $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$.
   %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$.
-  Then there exists a sequence $x_i \in Y_0(\ell^n)$ such that
+  Then there exists a sequence $x_i \in Y_0(\ell^n)(k)$ such that
   \[
-    \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
+    \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m)(k) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
   \]
 \end{lemma}
 \begin{proof}
@@ -431,7 +434,7 @@ $\rho_A = \rho_U \rho_D \rho_V$. Since
   \[
     E/\sC \to E/\alpha(\sC) \to \cdots \to E/\alpha^n(\sC).
   \]
-  Let $\alpha_{\sC,n}: E/\sC \to E/\alpha^n(\sC)$ be the composition of this chain. Then $\alpha_{\sC,n}$ is a cyclic $\ell^n$-isogeny, so the pair $(E/\sC,\alpha_{\sC,n})$ defines a point in $Y_0(\ell^n)$.
+  Let $\alpha_{\sC,n}: E/\sC \to E/\alpha^n(\sC)$ be the composition of this chain. Then $\alpha_{\sC,n}$ is a cyclic $\ell^n$-isogeny, so the pair $(E/\sC,\alpha_{\sC,n})$ defines a point in $Y_0(\ell^n)(k)$.
 
     For each $i$, fix a cyclic subgroup $\sC_i$ of $E$ of order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and so on. The $x_i$ are distinct points, since the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
 
@@ -448,7 +451,7 @@ By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product} we have $$\psi_{A}(x_1) \
       \text{ in } \Gt_{q_1}.
     \]
 Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides the order $q_1 + 1$ of the cyclic group $\Gt_{q_1}$,
-   we have $\#S = g$. For all $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product} we have $$\psi_{A'}(y_\beta) = E/\alpha^{n_1'}(\beta(\sC_1)) \times \cdots \times E/\alpha^{n_g'}(\beta(\sC_1)).$$ Thus $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. By Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. This gives $g$ points $y \in Y_0(\ell^m)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
+   we have $\#S = g$. For all $\beta \in S$, let $y_\beta = (E/\beta(\sC_1),\alpha_{\beta(\sC_1),m})$. By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product} we have $$\psi_{A'}(y_\beta) = E/\alpha^{n_1'}(\beta(\sC_1)) \times \cdots \times E/\alpha^{n_g'}(\beta(\sC_1)).$$ Thus $\psi_A(x_1) \approx \psi_{A'}(y_\beta)$ by Lemma~\ref{lem:prod-equiv-torsor}. By Lemma~\ref{lem:c-subgps-distinct-quotients} the $y_\beta$ are distinct. This gives $g$ points $y \in Y_0(\ell^m)(k)$ with $\psi_{A}(x_1) \approx \psi_{A'}(y)$.
 
   For $x_2$, we use a similar construction. By the Chinese remainder theorem, the set of subgroups of $E$ of order $q_1q_2$ is a torsor over $\Gt_{q_1} \times \Gt_{q_2}$. Finding $\beta \in \sO_K$ such that
   \[
@@ -460,7 +463,7 @@ Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides
     \text{ in } \Gt_{q_1} \times \Gt_{q_2}.
   \]
 %  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$.
-There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i=3,4,\dots$, we find that each $i$ there are $g^i$ points $y \in Y_0(\ell^m)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
+There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i=3,4,\dots$, we find that for each $i$ there are $g^i$ points $y \in Y_0(\ell^m)(k)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
