@@ -357,12 +357,12 @@ If $D$ is a subgroup of $E$, let $\pi_{D}$ denote the quotient map $E \to E/D$. 
   %I(\phi) = \{f \in \End(E/\sC) \colon \ker f \supseteq \ker \phi \}
   For an isogeny $\phi$ with domain $E/\sC$, let $I_\phi$ denote the kernel ideal of $\ker(\phi)$, i.e., $I_\phi = \{f \in \End(E/\sC) \colon f(\ker(\phi)) = 0\}$.
   By \cite[Thm.~46]{kani2011products},
-  \begin{align*}
+  \begin{multline*}
     \left(E/\sC\right)^{g-1} \times E/\alpha(\sC) \approx \left(E/\sC\right)^{g-1} \times E/\beta(\sC)
     \\
     \Leftrightarrow
     \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\alpha}} \cong \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\beta}} \text{  as $\sO$-modules}.
-  \end{align*}
+  \end{multline*}
 %  where the second isomorphism is as $\sO$-modules.
 By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products}), the latter isomorphism is equivalent to $I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}$.
   By Theorem~\ref{thm:kani-20b},
@@ -380,11 +380,11 @@ By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products})
   By Lemma~\ref{lem:c-torsor}, $\alpha(\sC) = \beta(\sC)$ if and only if $\alpha \equiv \beta$ in $\Gt_q$.
 \end{proof}
 
-Recall the map $\psimod$ defined in \eqref{def:XAdef}.
+Recall the map $\psimod$ defined in \eqref{def:psimoddef}.
 
 \begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
 Suppose $g\in\Z_{\ge 1}$, and $A$ is a $g \times g$ symmetric, positive definite integer matrix whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
-Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$.  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/d_i^{-1}NC$. Then
+Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$.  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/(d_i^{-1}N)C$. Then
 $
     B \approx E_1 \times \cdots \times E_g.
 $
