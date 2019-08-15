@@ -268,6 +268,13 @@ We now establish properties of elliptic curves with CM by our imaginary quadrati
   Suppose $A$ is an abelian variety over a field. If $I$ is a regular left ideal of $\End(A)$ (i.e., a left ideal that contains an isogeny), let $H(I) = \cap_{\phi \in I}\ker \phi$. If $H$ is a finite subgroup scheme of $A$, let $I(H) = \{\phi \in \End(A) \colon \phi(H) = 0\}$. A finite subgroup scheme $H$ of $A$ is an \emph{ideal subgroup} of $A$ if $H = H(I)$ for some ideal $I$ of $\End(A)$. A left ideal $I$ of $\End(A)$ is a \emph{kernel ideal} if $I = I(H)$ for some finite subgroup scheme $H$ of $A$.
 \end{definition}
 
+\begin{lemma}\label{lemma:order-ideal-subgroup}
+  Let $E$ be a CM elliptic curve. If $H = H(I)$ is an ideal subgroup of $E$, then $\# H = [\End(E):I]$.
+\end{lemma}
+\begin{proof}
+  This is~\cite[Prop. 23]{kani2011products}.
+\end{proof}
+
 \begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]\label{thm:kani-20b}
   Suppose $E$ is a CM elliptic curve over an algebraically closed field and $H$ a finite subgroup scheme of $E$. Then $H$ is an ideal %kernel
   subgroup if and only if %there is an inclusion $\End(E) \hookrightarrow \End(E/H)$.
@@ -497,9 +504,9 @@ Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
   Then there exists a prime number $\ell$ not equal to the characteristic of the base ring such that $(\bigcup_{A\in W_\ell} X^{(1)}_A)$ is Zariski dense in $\ao^g$.
 \end{theorem}
 \begin{proof}
- Let $k$ be an algebraically closed field containing the base ring. Let $E_0$ be an elliptic curve over $k$ with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell\neq\car(k)$ that is inert in $K$, and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\sC_0$ is not an  ideal subgroup of $E_0$, by Theorem~\ref{thm:kani-20b} it follows that $\End(E_1) \cong \Z + \ell\sO_K$.
+ Let $k$ be an algebraically closed field containing the base ring. Let $E_0$ be an elliptic curve over $k$ with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell\neq\car(k)$ that is inert in $K$, and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. As $\End(E_0)$ has no ideal of norm $\ell$, by Lemma~\ref{lemma:order-ideal-subgroup}, $\sC_0$ is not an  ideal subgroup of $E_0$. Theorem~\ref{thm:kani-20b} then implies that $\End(E_1) \cong \Z + \ell\sO_K$.
 
- For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End(E_{i+1}) \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End(E_{i})$ has exactly one ideal of norm $\ell$ given by $\ell\End(E_{i-1})$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup, so $\End(E_{i+1})$ must be strictly smaller than $\End(E_{i})$  by Theorem~\ref{thm:kani-20b}.
+ For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End(E_{i+1}) \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End(E_{i})$ has exactly one ideal of norm $\ell$ given by $\ell\End(E_{i-1})$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence by Lemma~\ref{lemma:order-ideal-subgroup}, $\ker\pi_i$ is not an ideal subgroup, so $\End(E_{i+1})$ must be strictly smaller than $\End(E_{i})$  by Theorem~\ref{thm:kani-20b}.
 
  For all $n \in \Z_{\ge 1}$, the composition $\pi^{(n)} = \pi_{n-1} \circ \cdots \circ \pi_0$ is a cyclic $\ell^n$-isogeny on $E$. To see this, note that if $\ker\pi^{(n)}$ were not cyclic, then $\pi^{(n)}$ would factor into a composition of the form $\psi\circ[\ell^m]$, where $[\ell^m]$ is the multiplication by $\ell^m$ map. However, the index of $\End(E_n)$ in $\sO_K$ is then bounded by $\deg\psi$. By above, $\End(E_n)$ has index $\ell^n = \deg\pi^{(n)}$ and therefore
  %we must have that
