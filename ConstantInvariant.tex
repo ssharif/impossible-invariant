@@ -680,33 +680,33 @@ and an isogeny
 %With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
 Then
 \[
-\ker \rho = (\ker \rho_A) \cap C^g = (\ker \lambda_A) \cap C^g = K(A).
+\ker \rho = (\ker \rho_A) \cap C^g = (\ker \lambda_A) \cap C^g.
 \]
-Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
+Since $\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
-  A polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with $\Omega \in \hh_g$ is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$ as in \cite{}. The map $E$ is the unique map satisfying $E(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
+  A polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with $\Omega \in \hh_g$ is given by an alternating Riemann form $\sE: \C^g \times \C^g \to \R$ as in~\cite{rosen-avc}. The standard form $\sE$ is the unique map satisfying $\sE(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
   %We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (nonprincipal) polarization $\rho_A$ on $E^g = \C^g/\Lambda$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
+Now consider the (nonprincipal) polarization $\rho_A$ on $E^g = \C^g/\Lambda$. The corresponding alternating Riemann form is given by $\sE_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $\sE_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $\sE_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
 %Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. 
-Since the polarization $E_A$ descends from the product polarization, and the polarization coming from $\psimod$ is the unique polarization descending from the product polarization on $E^g$. we have
+Since the polarization $\sE_A$ descends from $\rho_A$, and the polarization coming from $\psimod$ is the unique polarization also descending from $\rho_A$, we have
 \[
-  \psimod(E,C) = (\C^g/\Lambda_A, E_A).
+  \psimod(E,C) = (\C^g/\Lambda_A, \sE_A).
 \]
 %Let $\tilde{\lambda}$ be 
-Let $\tilde{E}$ denote the %polarization coming from the 
+Let $\tilde{\sE}$ denote the %polarization coming from the 
 %Siegel alternating form for $\tau A$; that is, given by the 
 alternating Riemann form %$E_{\tau A}$ 
 that satisfies %$E_{\tau A}(u, \tau A v) = u^tv$
-$\tilde{E}(u, \tau A v) = u^tv$ for all $u,v \in \Z^g$. If $u, v \in \Z^g$, then
+$\tilde{\sE}(u, \tau A v) = u^tv$ for all $u,v \in \Z^g$. If $u, v \in \Z^g$, then
 \begin{align*}
-  \tilde{E}(u, \tau A v) &= u^tv \\
-                          &= E_A(A^{-1}u, \tau v) \\
-                          &= E_{A}(A^{-1}u, A^{-1}\tau Av).
+  \tilde{\sE}(u, \tau A v) &= u^tv \\
+                          &= \sE_A(A^{-1}u, \tau v) \\
+                          &= \sE_{A}(A^{-1}u, A^{-1}\tau Av).
 \end{align*}
 Thus multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
-  \psimod(E,C) = (\C^g/\Lambda_A, E_A) \xrightarrow{\sim} (\C^g/\tla, \tilde{E}) = \psimodt(E,C),
+  \psimod(E,C) = (\C^g/\Lambda_A, \sE_A) \xrightarrow{\sim} (\C^g/\tla, \tilde{\sE}) = \psimodt(E,C),
 \]
 %Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
 as desired.
@@ -729,7 +729,7 @@ as desired.
 \end{lemma}
 
 \begin{proof}
-  We first prove the lemma over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $t_{ij}$ (resp.~$t$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i t_{ij}}$ (resp.~$e^{2\pi i t}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. The modular form $f$ has an expansion of the form
+  We first prove the lemma over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $\tau_{ij}$ (resp.~$\tau$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i \tau_{ij}}$ (resp.~$e^{2\pi i \tau}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. Setting $q_{ji} = q_{ij}$, the modular form $f$ has an expansion of the form
     \[
       \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
     \]
