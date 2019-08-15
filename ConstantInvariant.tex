@@ -607,27 +607,146 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore there is a real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
 \end{proof}
 
-\begin{lemma}\label{lemma:q-expansion}
-  Suppose $g \in \Z_{\ge 1}$, $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. Then at any cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ (has this been defined?? We could use the wording from Eric's email, i.e., call it the pull back to...) is of the form
+We will need to compute pull backs of modular forms. It is convenient to reduce the computation to one over $\C$.
+%Suppose that $A$ is a symmetric, positive definite integer matrix. Let $N = \det A$.
+Accordingly, let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
+ $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$.
+\begin{lemma}\label{lem:psi-A-n}
+The map \[
+  \psic: \hh \to \hh_g, \quad  \tau \mapsto \tau A
+\]
+descends to a morphism of $\C$-schemes
+$
+  \psimodt: Y_0(N) \longrightarrow \ag.
+$
+\end{lemma}
+
+\begin{proof}
+Let
+\[
+\sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N) \text{ and } M = \begin{bmatrix} aI_g & bA \\ cA^{-1} & dI_g \end{bmatrix}
+\]
+where $I_g$ denotes the $g \times g$ identity matrix.
+If $\tau \in \hh$, a direct computation shows that $M \in\Sp_{2g}(\Z)$
+% it is integral because \det(A) | c, so cA^{-1} is integral.
+% M is in Sp because then M^t*\Omega*M = M
+% where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
+and  $\sigma(\tau)A = M(\tau A)$.
+%(It's well-defined. Why is it a morphism?)
+\end{proof}
+
+
+%In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
+\begin{lemma}\label{lemma:psimod-over-c}
+  When the base scheme is $\C$, we have $\psimodt = \psimod$.
+\end{lemma}
+
+\begin{proof}
+  Suppose $(E, C) \in Y_0(N)$. There exists $\tau \in \hh$ such that $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
+
+  Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Then $\C^g/\Lambda = E^g$, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. Let
   \[
-    \sum_{Q \in D} c_Q q^{\tr(AQ)}
+    \tla = \Z^g + \tau A \Z^g \quad \text{ and } \quad     \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
+  \]
+By definition, $\psimodt(\tau) \approx \C^g/\tla$.
+%  \[
+%    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
+%  \]
+%  Multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
+%  \[
+ %   \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
+ % \]
+ Since $\Lambda \subset \Lambda_A$, there is a natural isogeny
+  \[
+    \rho: E^g = \C^g/\Lambda \to \C^g/\Lambda_A.
+  \]
+  We wish to compute $\ker \rho$.
+
+  Multiplication by $A: \C^g \to \C^g$ induces an isomorphism
+  \[
+     \C^g/\Lambda_A \xrightarrow{\sim}  \C^g/\tla
+  \]
+and an isogeny
+  \[
+    \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda,
+  \]
+  %This is the same isogeny $\rho_A$ as in the proof of Lemma \ref{lem:psimod-weakly-isomorphic-to-product}; i.e., it
+  where $\rho_A$ as before is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
+\[
+\ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
+\]
+%With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
+Then
+\[
+\ker \rho = (\ker \rho_A) \cap C^g = (\ker \lambda_A) \cap C^g = K(A).
+\]
+Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
+
+  A polarization on a $g$-dimensional complex abelian variety is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
+\[
+\C^g/(\Z^g + \Omega \Z^g),
+\]
+and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
+
+Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Recall that the polarization coming from $\psimod$ is the unique one descending from the product polarization on $E^g$. Since $\lambda$ also descends from the product polarization, we have
+\[
+  \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
+\]
+Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$; that is, given by the form $E_{\tau A}(u, \tau A v) = u^tv$. If $u, v \in \Z^g$, we have
+\begin{align*}
+  E_{\tau A} (u, \tau A v) &= u^tv \\
+                          &= E_A(A^{-1}u, \tau v) \\
+                          &= E_{A}(A^{-1}u, A^{-1}\tau Av).
+\end{align*}
+Thus multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
+\[
+  \psimod(E,C) = (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}) = \psimodt(E,C),
+\]
+%Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
+as desired.
+ % Further, this polarization is specified by letting the columns be a symplectic basis for the associated Riemann form $H: \C^g \times \C^g \to \C$; this is precisely the product polarization.
+ %  The abelian variety $B$ associated to $\psic(\tau)$ is $\C^g/\tilde{\Lambda}$, where $\tilde{\Lambda}$ is the lattice generated by the columns of
+ %  \[
+ %    \begin{bmatrix}
+ %      I | \tau A
+ %    \end{bmatrix},
+ %  \]
+ %  and with the associated principal polarization.
+\end{proof}
+
+\begin{lemma}\label{lemma:q-expansion}
+  Suppose $g \in \Z_{\ge 1}$, $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. Let $\psimod^*(f) = f \circ \psimod$ be the pull back modular form on $X_0(N)$. Then for some cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ at that cusp is of the form
+  \[
+    \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \]
 %  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{lemma}
 
 \begin{proof}
-  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be the standard basis for the space $S^2(X)$ of symmetric quadratic forms on $X$, and let $q$ be the standard basis for $S^2(Y)$ (SHAHED: what does this mean, and does the notation conflict with the $q$ in $q$-expansion?). Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
-  \[
-    \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
-  \]
- % where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
-
-  The morphism $\psimod$ induces a morphism $X_0(N) \to \overline{\ag}$ on the toroidal compactifications. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$. % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
-  Let $E$ be the split torus with character group $S^2(Y)$ and $F$ the split torus with character group $S^2(X)$; see~\cite[IV.2.6]{faltings1990degeneration}. These split tori are essentially parameter spaces for the periods, so $E$ is analogous to the upper half-plane $\hh$ and $F$ to the Siegel upper half-space $\hh_g$. Then $\psimod$ induces a map $E \to F$ characterized by the property that the pull back of $q_{ij}$ is $q^{A_{ij}}$. Since $q$-expansions are compatible with pull backs, the $q$-expansion of $\psimod^*(f)$ is
+  We first prove the lemma over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $t_{ij}$ (resp.~$t$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i t_{ij}}$ (resp.~$e^{2\pi i t}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. The modular form $f$ has an expansion of the form
+    \[
+      \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
+    \]
+    Thus at the cusp at infinity of $X_0(N)$, the $q$-expansion of $\psimod^*(f)$ is
   \begin{align*}
     \sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} \\
     &= \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \end{align*}
+
+  Now consider an arbitrary base $R$. By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
+  
+  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove the claim, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pull backs and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of cusp and of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
+  % Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
+ %  \[
+ %    \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
+ %  \]
+ % % where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
+ %  The morphism $\psimod$ induces a morphism $X_0(N) \to \overline{\ag}$ on the toroidal compactifications. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$. % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
+ %  Let $E$ be the split torus with character group $S^2(Y)$ and $F$ the split torus with character group $S^2(X)$; see~\cite[IV.2.6]{faltings1990degeneration}. These split tori are essentially parameter spaces for the periods, so $E$ is analogous to the upper half-plane $\hh$ and $F$ to the Siegel upper half-space $\hh_g$. Then $\psimod$ induces a map $E \to F$ characterized by the property that the pull back of $q_{ij}$ is $q^{A_{ij}}$. Since $q$-expansions are compatible with pull backs, the $q$-expansion of $\psimod^*(f)$ is
+ %  \begin{align*}
+ %    \sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} \\
+ %    &= \sum_{Q \in D} c_Q q^{\tr(AQ)}.
+ %  \end{align*}
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
