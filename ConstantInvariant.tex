@@ -612,10 +612,12 @@ We will need to compute pull backs of modular forms. It is convenient to reduce 
 Accordingly, let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
  $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$.
 \begin{lemma}\label{lem:psi-A-n}
-The map \[
+Suppose $A$ is ???
+Then the map \[
   \psic: \hh \to \hh_g, \quad  \tau \mapsto \tau A
 \]
-descends to a morphism of $\C$-schemes
+%descends to 
+induces a morphism of $\C$-schemes
 $
   \psimodt: Y_0(N) \longrightarrow \ag.
 $
@@ -638,7 +640,8 @@ and  $\sigma(\tau)A = M(\tau A)$.
 
 %In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
 \begin{lemma}\label{lemma:psimod-over-c}
-  When the base scheme is $\C$, we have $\psimodt = \psimod$.
+Suppose $A$ is ??
+When the base scheme is $\C$, we have $\psimodt = \psimod$.
 \end{lemma}
 
 \begin{proof}
@@ -682,25 +685,27 @@ Then
 \]
 Since $\psimod(E,C) \approx E^g/K(A)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
 
-  A polarization on a $g$-dimensional complex abelian variety is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$. For a point $\Omega \in \hh_g$, the corresponding abelian variety is
-\[
-\C^g/(\Z^g + \Omega \Z^g),
-\]
-and the corresponding alternating Riemann form is the unique such form $E$ satisfying, for $u,v \in \Z^g$, $E(u,\Omega v) = u^tv$. We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
+  A polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with $\Omega \in \hh_g$ is given by an alternating Riemann form $E: \C^g \times \C^g \to \R$ as in \cite{}. The map $E$ is the unique map satisfying $E(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
+  $We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (nonprincipal) polarization $\rho_A$ on $E^g$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$, where $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is a Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Recall that the polarization coming from $\psimod$ is the unique one descending from the product polarization on $E^g$. Since $\lambda$ also descends from the product polarization, we have
+Now consider the (nonprincipal) polarization $\rho_A$ on $E^g = \C^g/\Lambda$. The corresponding alternating Riemann form is given by $E_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $E_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $E_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. Recall that the polarization coming from $\psimod$ is the unique one descending from the product polarization on $E^g$. Since $\lambda$ also descends from the product polarization, we have
 \[
-  \psimod(E,C) = (\C^g/\Lambda_A, \lambda).
+  \psimod(E,C) = (\C^g/\Lambda_A, E_A).
 \]
-Let $\tilde{\lambda}$ be the polarization coming from the Siegel alternating form for $\tau A$; that is, given by the form $E_{\tau A}(u, \tau A v) = u^tv$. If $u, v \in \Z^g$, we have
+%Let $\tilde{\lambda}$ be 
+Let $\tilde{E}$ denote the %polarization coming from the 
+%Siegel alternating form for $\tau A$; that is, given by the 
+alternating Riemann form %$E_{\tau A}$ 
+that satisfies %$E_{\tau A}(u, \tau A v) = u^tv$
+$\tilde{E}(u, \tau A v) = u^tv$ for all $u,v \in \Z^g$. If $u, v \in \Z^g$, then
 \begin{align*}
-  E_{\tau A} (u, \tau A v) &= u^tv \\
+  \tilde{E}(u, \tau A v) &= u^tv \\
                           &= E_A(A^{-1}u, \tau v) \\
                           &= E_{A}(A^{-1}u, A^{-1}\tau Av).
 \end{align*}
 Thus multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
-  \psimod(E,C) = (\C^g/\Lambda_A, \lambda) \xrightarrow{\sim} (\C^g/\tla, \tilde{\lambda}) = \psimodt(E,C),
+  \psimod(E,C) = (\C^g/\Lambda_A, E_A) \xrightarrow{\sim} (\C^g/\tla, \tilde{E}) = \psimodt(E,C),
 \]
 %Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
 as desired.
