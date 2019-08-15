@@ -108,7 +108,7 @@ X_A=\psimod(Y_0(\det(A))).
 (For another construction of the maps $\psimod$, see \cite[p. 19 et seq.]{rains}.)
 
 \begin{theorem}\label{thm:Sg-dense}
-  Suppose $\ell$ is a prime number, $g\in\Z_{\ge 2}$, and $k$ is an algebraically closed field. Suppose $A,A' \in \detl$. Then $\sg(k) \cap (X_A \times X_{A'})$ is Zariski dense in $X_A \times X_{A'}$.
+  Suppose $\ell$ is a prime number, $g\in\Z_{\ge 2}$, and $k$ is an algebraically closed field. Suppose $A,A' \in \detl$. Then $\sg(k) \cap (X_A \times X_{A'})(k)$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
 
 \begin{theorem}\label{thm:curves-dense}
@@ -206,7 +206,7 @@ $$
 
 %The main goal of this section is to prove Theorem~\ref{thm:Sg-dense}.
 
-The plan is to find a suitable infinite set of pairs $(x,y) \in \sg(k) \cap (X_A \times X_{A'})$. We will explicitly construct these pairs by choosing $x,y \in \ag$ that are products of isogenous CM elliptic curves. To ensure both that our products are weakly isomorphic and that there are enough pairs, we first establish basic observations about ideals in CM fields.
+The plan is to find a suitable infinite set of pairs $(x,y) \in \sg(k) \cap (X_A \times X_{A'})(k)$. We will explicitly construct these pairs by choosing $x,y \in \ag(k)$ that are products of isogenous CM elliptic curves. To ensure both that our products are weakly isomorphic and that there are enough pairs, we first establish basic observations about ideals in CM fields.
 \begin{lemma}\label{lem:silly}
   Suppose $\ell$ is a prime number. Then there is an imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$ and $\ell$ splits into principal prime ideals in $K$.
 \end{lemma}
@@ -464,7 +464,7 @@ There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
-  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})$ in $(X_A \times X_{A'}$. By Lemma~\ref{lem:lim-degree}, $\sg(k) \cap (X_A \times X_{A'})$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. By Lemma~\ref{lem:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
+  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})(k)$ in $X_A \times X_{A'}$. By Lemma~\ref{lem:lim-degree}, the set $\sg(k) \cap (X_A \times X_{A'})(k)$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Lemma~\ref{lem:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. By Lemma~\ref{lem:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
 \end{proof}
 
 
@@ -490,12 +490,11 @@ where  $E_i := E/d_i^{-1}NC$.
 Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
 
 \begin{theorem}\label{thm:curves-dense-a1}
-  Fix a prime number $\ell$. Let $W$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$.
-  The set $\bigcup_{A\in W} X^{(1)}_A$ is Zariski dense in $\ao^g$.
+  If $\ell$ is a prime number, let $W_\ell$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$. 
+  Then there exists a prime number $\ell$ not equal to the characteristic of the base ring such that $(\bigcup_{A\in W_\ell} X^{(1)}_A)$ is Zariski dense in $\ao^g$.
 \end{theorem}
-\textcolor{red}{Proof does not choose $\ell$ arbitrarily.}
 \begin{proof}
- Let $E_0$ be an elliptic curve with CM by $\sO_K$ for some imaginary quadratic field $K$; such a curve is defined over every algebraically closed field $k$ containing the base ring $R$. Choose a prime $\ell$ that is inert in $K$ and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\sC_0$ is not a kernel ideal of $E_0$, by Theorem~\ref{thm:kani-20b} it follows that $\End(E_1) \cong \Z + \ell\sO_K$.
+ Let $k$ be an algebraically closed field containing the base ring. Let $E_0$ be an elliptic curve over $k$ with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell\neq\car(k)$ that is inert in $K$, and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\sC_0$ is not a kernel ideal of $E_0$, by Theorem~\ref{thm:kani-20b} it follows that $\End(E_1) \cong \Z + \ell\sO_K$.
 
  For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than $\pi_{i-1}(\sC_{i-1})$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. Again, $\End(E_{i+1}) \cong \Z + \ell^{i+1}\sO_{i}$. This is because $\End(E_{i})$ has exactly one ideal of norm $\ell$ given by $\ell\End(E_{i-1})$. This ideal corresponds to the dual of $\pi_{i-1}$. Hence $\ker\pi_i$ is not an ideal subgroup so $\End(E_{i+1})$ must be strictly smaller than ?? by Theorem~\ref{thm:kani-20b}.
 
@@ -613,7 +612,7 @@ Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree 
 \begin{lemma}\label{lem:psi-A-n}
 Suppose that $A$ is a symmetric, positive definite integer matrix and $N = \det A$.
 Then the map \[
-  \psic: \hh \to \hh_g, \quad  \tau \mapsto \tau A
+  \hh \to \hh_g, \quad  \tau \mapsto \tau A
 \]
 %descends to 
 induces a morphism of $\C$-schemes
