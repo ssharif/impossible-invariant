@@ -732,10 +732,11 @@ as desired.
 \end{proof}
 
 \begin{lemma}\label{lemma:q-expansion}
-  Suppose $g \in \Z_{\ge 1}$, $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. Let $\psimod^*(f) = f \circ \psimod$ be the pullback modular form on $X_0(N)$. Then for some cusp of $X_0(N)$, the $q$-expansion of the modular form $\psimod^*(f)$ at that cusp is of the form
+  Suppose $g \in \Z_{\ge 1}$, $f$ is a modular form on $\ag$, and $A$ is a $g \times g$ symmetric, positive definite integral matrix with determinant $N \neq 0$. Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. Let $\psimod^*(f) = f \circ \psimod$ be the pullback modular form on $X_0(N)$. Write $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. Then the $q$-expansion of the modular form $\psimod^*(f)$ at $\infty$ is of the form
   \[
     \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \]
+  Furthermore, such an expansion can be chosen compatibly for all $A$; that is, so that the $c_Q$ are independent of $A$.
 %  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{lemma}
 
@@ -749,10 +750,14 @@ as desired.
     \sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} \\
     &= \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \end{align*}
+  Observe furthermore that the cusp at infinity on $X_0(N)$ corresponds to type $I_1$ reduction. The independence from $A$ is immediate.
 
   Now consider an arbitrary base $R$. By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
   
-  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove the claim, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of cusp and of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
+  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove that $\psimod^*(f)$ has the desired $q$-expansion, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of cusp and of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
+
+  It remains to show independence from $A$. The coefficients $c_Q$ depend only on the point $y_0 \in \overline{\ag} - \ag$ where we compute the $q$-expansion of $f$% , and on the chosen basis $q_{ij}$ for $S^2(X)$
+. The $q_{ij}$ may be viewed as local affine functions on $\overline{\ag}$---see IV.2.6 and Section IV.3 of~\cite{faltings1990degeneration}. Thus $y_0$ is characterized by $q_{ij}(y_0) = 0$ for all $i,j$. But the $q_{ij}$ are chosen independently of $A$ over $\C$, and so by functoriality the neighborhood $\Spec R[q_{ij}] \subset \overline{\ag}$ is independent of $A$. In particular, we have $\psi_A(\infty) = y_0$ for all $A$, and the claim follows. % By choosing bases for $S^2(X)$ compatibly for all $A$, we can thus guarantee that the $c_Q$ are independent of $A$. 
   % Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
  %  \[
  %    \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
@@ -769,17 +774,18 @@ as desired.
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero.
 
-  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. $f$ admits a $q$-expansion of the form $f = \sum_{Q \in D} c_Q q^{\tr(Q)}$.
+  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Then by Lemma~\ref{lemma:q-expansion}, there exist coefficients $c_Q$, $Q \in D$, such that for all $A$, $\psimod^*(f)$ admits a $q$-expansion of the form $f = \sum_{Q \in D} c_Q q^{\tr(AQ)}$.
   %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
 
-  Let $S = \{ Q \in D :c_Q \neq 0\}$; that is, $S$ is the support of $f$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
+  Let $S = \{ Q \in D :c_Q \neq 0\}$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
   By Lemma~\ref{lem:rggt-dense}, there exists $A \in C$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. As $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$, so that $A \in \detl$.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the choice of $A$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
-  Since $q$-expansions interact
-  with modular morphisms in a natural way, %as expected,
-  the $q$-expansion of $\psimod^*(f)$ is $\sum_Q c_Q q^{\tr(AQ)}$.   By construction, the coefficient of $q^n$ is $c_{Q_0} \neq 0$. Hence $\psimod^*(f) \neq 0$, as desired.
+  % Since $q$-expansions interact
+  % with modular morphisms in a natural way, %as expected,
+  % the $q$-expansion of $\psimod^*(f)$ is $\sum_Q c_Q q^{\tr(AQ)}$.
+  By construction, the coefficient of $q^n$ in the $q$-expansion of $\psimod^*(f)$ is $c_{Q_0} \neq 0$. Hence $\psimod^*(f) \neq 0$, as desired.
 \end{proof}
 
 
