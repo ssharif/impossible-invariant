@@ -690,26 +690,26 @@ By definition, $\psimodt(\tau) \approx \C^g/\tla$.
   \]
 and an isogeny
   \[
-    \rho_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda,
+    \lambda_A: \C^g/\Lambda \longrightarrow \C^g/\Lambda,
   \]
   %This is the same isogeny $\rho_A$ as in the proof of Lemma \ref{lem:psimod-weakly-isomorphic-to-product}; i.e., it
-  where $\rho_A$ as in Lemma \ref{lem:psimod-weakly-isomorphic-to-product} is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
+  where $\lambda_A$ is the natural isogeny $E^g \to E^g$ induced by the matrix $A$. Then
 \[
-\ker \rho_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}.
+\ker \lambda_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}
 \]
 %With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
-Then
+and
 \[
-\ker \rho = (\ker \rho_A) \cap C^g = (\ker \lambda_A) \cap C^g.
+\ker \rho = (\ker \lambda_A) \cap C^g. % = (\ker \lambda_A) \cap C^g.
 \]
-Since $\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g)$, we have proven that $\psimod(E,C) \approx \psimodt(E,C)$.
+Since $\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g)$, it follows that $\psimod(E,C) \approx \psimodt(E,C)$.
 
   A polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with $\Omega \in \hh_g$ is given by an alternating Riemann form $\sE: \C^g \times \C^g \to \R$ as in~\cite{rosen-avc}. The standard form $\sE$ is the unique map satisfying $\sE(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
   %We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (nonprincipal) polarization $\rho_A$ on $E^g = \C^g/\Lambda$. The corresponding alternating Riemann form is given by $\sE_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $\sE_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $\sE_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
+Now consider the (non-principal) polarization $\lambda_A$ on $E^g = \C^g/\Lambda$. The corresponding alternating Riemann form is given by $\sE_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $\sE_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $\sE_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
 %Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. 
-Since the polarization $\sE_A$ descends from $\rho_A$, and the polarization coming from $\psimod$ is the unique polarization also descending from $\rho_A$, we have
+Since the polarization $\sE_A$ descends from $\lambda_A$, and the polarization coming from $\psimod$ is the unique polarization also descending from $\lambda_A$, we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \sE_A).
 \]
