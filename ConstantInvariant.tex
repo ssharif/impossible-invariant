@@ -321,12 +321,21 @@ Thus $\ker\pi_j$ is not an ideal subgroup of $E_{j-1}$, by Lemma \ref{lemma:orde
   Suppose $E$ is an elliptic curve over an algebraically closed field, and $\End(E) \cong \sO_K$ for some imaginary quadratic field $K$ with $\sO_K^\times = \{\pm 1\}$. Let $q$ be a prime not equal to the characteristic of the base field and inert in $K$. If $\alpha,\beta \in \sO_K$ are prime to $q$, then $E/\alpha(\sC) \approx E/\beta(\sC)$ if and only if $\alpha(\sC) = \beta(\sC)$.
 \end{lemma}
 \begin{proof}
-  Note that $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$ so after replacing $\beta(\sC)$ with $\sC$ and $\alpha\overline{\beta}$ with $\alpha$, it suffices to prove the claim for $\beta = 1$.
+ Since $\alpha(\sC) = (\alpha\overline{\beta})(\beta(\sC))$, after replacing $\beta(\sC)$ with $\sC$ and $\alpha\overline{\beta}$ with $\alpha$ it suffices to prove the claim for $\beta = 1$.
 
   If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the converse.
 
   Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. %We want to show that $\sC = \alpha(\sC)$.
-If $D$ is a subgroup of $E$, let $\pi_{D}$ denote the quotient map $E \to E/D$. Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$ such that $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ such that $\alpha'(\sC) = \sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$.
+If $D$ is a subgroup of $E$, let $\pi_{D}$ denote the quotient map $E \to E/D$. Then $\alpha$ induces an isogeny $\tilde{\alpha}$
+%: E/\sC \to E/\alpha(\sC)$ such that $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. 
+such that the left-hand square of the following diagram commutes.
+$$
+\xymatrix{
+E \ar^{\alpha}[r]  \ar^{\pi_\sC}[d] \ar@/^2pc/^{\alpha'}[rr] & E \ar^{^\exists u}[r]  \ar^{\pi_{\alpha(\sC)}}[d] & E \ar^{\pi_\sC}[d] \\
+E/\sC \ar^-{\tilde{\alpha}}[r] & E/\alpha(\sC) \ar^-{\tilde{u}}[r] & E/\sC
+}
+$$
+The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ such that $\alpha'(\sC) = \sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$.
   %This shows that $\deg(\alpha) = \deg(\alpha')$.
   Since $\alpha$ and $\alpha'$ are prime to $q = \#\sC$, we have
   \[
