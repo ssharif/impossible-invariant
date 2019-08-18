@@ -745,7 +745,7 @@ as desired.
   \[
     \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \]
-  Furthermore, such an expansion can be chosen compatibly for all $A$; that is, so that the $c_Q$ are independent of $A$.
+  Furthermore, the $c_Q$ are independent of $A$.
 %  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{lemma}
 
@@ -759,14 +759,15 @@ as desired.
     $$\sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} = \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} 
     = \sum_{Q \in D} c_Q q^{\tr(AQ)}.$$
 %  \end{align*}
-  Observe furthermore that the cusp at infinity on $X_0(N)$ corresponds to type $I_1$ reduction. The independence from $A$ is immediate.
+  Observe furthermore that the cusp at infinity on $X_0(N)$ corresponds to type $I_1$ reduction. % The independence from $A$ is immediate.
 
   Now consider an arbitrary base $R$. By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
   
   Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove that $\psimod^*(f)$ has the desired $q$-expansion, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of cusp and of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
 
-  It remains to show independence from $A$. The coefficients $c_Q$ depend only on the point $y_0 \in \overline{\ag} - \ag$ where we compute the $q$-expansion of $f$% , and on the chosen basis $q_{ij}$ for $S^2(X)$
-. The $q_{ij}$ may be viewed as local affine functions on $\overline{\ag}$---see IV.2.6 and Section IV.3 of~\cite{faltings1990degeneration}. Thus $y_0$ is characterized by $q_{ij}(y_0) = 0$ for all $i,j$. But the $q_{ij}$ are chosen independently of $A$ over $\C$, and so by functoriality the neighborhood $\Spec R[q_{ij}] \subset \overline{\ag}$ is independent of $A$. In particular, we have $\psi_A(\infty) = y_0$ for all $A$, and the claim follows. % By choosing bases for $S^2(X)$ compatibly for all $A$, we can thus guarantee that the $c_Q$ are independent of $A$. 
+  Finally, independence from $A$ follows from \cite[V.1.5]{faltings1990degeneration}. %  The coefficients $c_Q$ depend only on the point $y_0 \in \overline{\ag} - \ag$ where we compute the $q$-expansion of $f$% , and on the chosen basis $q_{ij}$ for $S^2(X)$
+% . The $q_{ij}$ may be viewed as local affine functions on $\overline{\ag}$---see IV.2.6 and Section IV.3 of~\cite{faltings1990degeneration}. Thus $y_0$ is characterized by $q_{ij}(y_0) = 0$ for all $i,j$. But the $q_{ij}$ are chosen independently of $A$ over $\C$, and so by functoriality the neighborhood $\Spec R[q_{ij}] \subset \overline{\ag}$ is independent of $A$. In particular, we have $\psi_A(\infty) = y_0$ for all $A$, and the claim follows. 
+% By choosing bases for $S^2(X)$ compatibly for all $A$, we can thus guarantee that the $c_Q$ are independent of $A$. 
   % Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
  %  \[
  %    \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
