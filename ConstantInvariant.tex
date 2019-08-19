@@ -509,12 +509,12 @@ for the associated morphism. Let $d_1, \ldots, d_g$ be the diagonal entries of $
 where  $E_i := E/\frac{N}{d_i}C$.
 Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
 
-\begin{definition}
-  If $\ell$ is a prime number, let $W_\ell$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$. 
-\end{definition}
+%\begin{definition}
+  If $g$ is a positive integer and $\ell$ is a prime number, let $W_{\ell,g}$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$. 
+%\end{definition}
 
 \begin{theorem}\label{thm:curves-dense-a1}
-    Then there exists a prime number $\ell$ not equal to the characteristic of the base ring such that $\bigcup_{A\in W_\ell} X^{(1)}_A$ is Zariski dense in $\ao^g$.
+    If $g \in \Z_{>0}$ then there exists a prime number $\ell$ not equal to the characteristic of the base ring such that $\bigcup_{A\in W_{\ell,g}} X^{(1)}_A$ is Zariski dense in $\ao^g$.
 \end{theorem}
 \begin{proof}
  Let $k$ be an algebraically closed field containing the base ring. Let $E_0$ be an elliptic curve over $k$ with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell\neq\car(k)$ that is inert in $K$, and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\End(E_0)$ has no ideal of norm $\ell$, $\sC_0$ is not an  ideal subgroup of $E_0$ by Lemma~\ref{lemma:order-ideal-subgroup}. Theorem~\ref{thm:kani-20b} and~\cite[Prop.~5]{kohel1996endomorphism} then implies that $\End(E_1) \cong \Z + \ell\sO_K$.
