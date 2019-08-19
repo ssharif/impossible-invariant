@@ -742,12 +742,18 @@ as desired.
  %  and with the associated principal polarization.
 \end{proof}
 
-\begin{definition}
-   Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. If $f$ is a Siegel modular form on $\ag$, let $\psimod^*(f) = f \circ \psimod$ be the pullback modular form on $X_0(N)$.
-\end{definition}
+%\begin{definition}
+Suppose $g$ is a positive integer.
+   Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. 
+   If $f$ is a Siegel modular form on $\ag$, $\ell$ is a prime not equal to the characteristic of the base, and $A\in \detl$, let $\psimod^*(f) = f \circ \psimod$ denote the pullback modular form on $X_0(\det(A))$.
+%\end{definition}
 
 \begin{lemma}\label{lemma:q-expansion}
-  Suppose $\ell$ is a prime number not equal to the characteristic of the base, $g \in \Z_{\ge 1}$, $f$ a modular form on $\ag$. Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. Then there exist coefficients $c_Q$ such that for all $A \in \detl$, the $q$-expansion of the modular form $\psimod^*(f)$ at $\infty$ is of the form
+  Suppose  $g \in \Z_{\ge 1}$, $f$ a Siegel modular form on $\ag$, and $\ell$ is a prime number not equal to the characteristic of the base ring $R$. 
+  %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. 
+  Then for all $Q\in D$ there exist $c_Q \in R$ such that for all $A \in \detl$, the $q$-expansion of 
+  %the modular form 
+  $\psimod^*(f)$ at $\infty$ is of the form
   \[
     \sum_{Q \in D} c_Q q^{\tr(AQ)}.
   \]
@@ -755,7 +761,7 @@ as desired.
 \end{lemma}
 
 \begin{proof}
-  We first prove the lemma over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $\tau_{ij}$ (resp.~$\tau$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i \tau_{ij}}$ (resp.~$e^{2\pi i \tau}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. Setting $q_{ji} = q_{ij}$, the modular form $f$ has an expansion of the form
+  We first prove the result over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $\tau_{ij}$ (resp.~$\tau$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i \tau_{ij}}$ (resp.~$e^{2\pi i \tau}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. Setting $q_{ji} = q_{ij}$, the modular form $f$ has an expansion of the form
     \[
       \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
     \]
