@@ -761,13 +761,13 @@ Suppose $g$ is a positive integer.
 \end{lemma}
 
 \begin{proof}
-  We first prove the result over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $\tau_{ij}$ (resp.~$\tau$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i \tau_{ij}}$ (resp.~$e^{2\pi i \tau}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. Setting $q_{ji} = q_{ij}$, the modular form $f$ has an expansion of the form
+  We first prove the result over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. Let $A \in \detl$ have determinant $N$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $\tau_{ij}$ (resp.~$\tau$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i \tau_{ij}}$ (resp.~$e^{2\pi i \tau}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. Setting $q_{ji} = q_{ij}$, the modular form $f$ has an expansion of the form
     \[
-      \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
+      \sum_{Q \in D} c_Q \prod_{i,j=1}^g q_{ij}^{Q_{ij}}.
     \]
     Thus at the cusp at infinity of $X_0(N)$, the $q$-expansion of $\psimod^*(f)$ is
 %  \begin{align*}
-    $$\sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} = \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} 
+    $$\sum_{Q \in D} c_Q \prod_{i,j=1}^g q^{A_{ij}Q_{ij}} = \sum_{Q \in D} c_Q q^{\sum_{i,j=1}^g A_{ij}Q_{ij}} 
     = \sum_{Q \in D} c_Q q^{\tr(AQ)}.$$
 %  \end{align*}
   Observe furthermore that the cusp at infinity on $X_0(N)$ corresponds to type $I_1$ reduction. % The independence from $A$ is immediate.
