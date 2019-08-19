@@ -655,7 +655,7 @@ and  $\sigma(\tau)A = M(\tau A)$.
 %(It's well-defined. Why is it a morphism?)
 \end{proof}
 
-Recall the definition of $\psimod$ in \eqref{def:XAdef}.
+Recall the definition of $\psimod$ in \eqref{def:psimoddef}.
 
 %In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
 \begin{lemma}\label{lemma:psimod-over-c}
@@ -704,29 +704,35 @@ and
 \[
 \ker \rho = (\ker \lambda_A) \cap C^g. % = (\ker \lambda_A) \cap C^g.
 \]
-Since $\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho)$, it follows that
+Now %$\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho)$, it follows that
 \[
-  \psimod(E,C) \approx E^g/(\ker \rho) 
+  \psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho) 
   \cong \C^g/\Lambda_A 
   \cong \C^g/\tla 
   \approx \psimodt(E,C).
 \]
 
-  A polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with $\Omega \in \hh_g$ is given by an alternating Riemann form $\sE: \C^g \times \C^g \to \R$ as in~\cite{rosen-avc}. The standard form $\sE$ is the unique map satisfying $\sE(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
+  Elements of $\ag$ can be viewed as pairs $(\C^g/(\Z^g + \Omega \Z^g),\sE$ where
+  %polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with 
+  $\Omega \in \hh_g$ and where $\sE: \C^g \times \C^g \to \R$ is the alternating Riemann form that
+ satisfies $\sE(u,\Omega v) = u^tv$ for all $u,v \in \R^g$.
+See for example \cite{rosen-avc}. 
+%The standard form $\sE$ is the unique map satisfying $\sE(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
   %We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
-Now consider the (non-principal) polarization $\lambda_A$ on $E^g = \C^g/\Lambda$. The corresponding alternating Riemann form is given by $\sE_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $\sE_A(\Lambda_A \times \Lambda_A) \subset \Z$, it follows that $\sE_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
+The (non-principal) polarization $\lambda_A$ on $E^g = \C^g/\Lambda$ corresponds to the alternating Riemann form that satisfies $\sE_A(u,\tau v) = u^tAv$ for all $u,v \in \Z^g$. Since $\sE_A(\Lambda_A \times \Lambda_A) \subseteq \Z$, it follows that $\sE_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
 %Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. 
 Since the polarization $\sE_A$ descends from $\lambda_A$, and the polarization coming from $\psimod$ is the unique polarization also descending from $\lambda_A$, we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \sE_A).
 \]
 %Let $\tilde{\lambda}$ be 
-Let $\tilde{\sE}$ denote the %polarization coming from the 
+We have $\psimodt(E,C) = (\C^g/\tla, \tilde{\sE})$ where
+ $\tilde{\sE}$ denotes the %polarization coming from the 
 %Siegel alternating form for $\tau A$; that is, given by the 
 alternating Riemann form %$E_{\tau A}$ 
 that satisfies %$E_{\tau A}(u, \tau A v) = u^tv$
-$\tilde{\sE}(u, \tau A v) = u^tv$ for all $u,v \in \Z^g$. If $u, v \in \Z^g$, then
+$\tilde{\sE}(u, \tau A v) = u^tv$ for all $u,v \in \R^g$. If $u, v \in \R^g$, then
 %\begin{align*}
 $$  \tilde{\sE}(u, \tau A v) = u^tv 
                           = \sE_A(A^{-1}u, \tau v) 
