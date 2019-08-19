@@ -16,14 +16,14 @@
 \title[Algebraic maps constant on unpolarized isomorphism classes]{Algebraic maps constant on isomorphism classes of unpolarized abelian varieties are constant}
 
 \author[E.\ Rains]{E.\ Rains}
-\address{}
-\email{}
+\address{Department of Mathematics, California Institute of Technology, Pasadena, CA, USA}
+\email{rains@caltech.edu}
 \author[K.\ Rubin]{K.\ Rubin}
-\address{}
-\email{}
+\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
+\email{krubin@uci.edu}
 \author[T.\ Scholl]{T.\ Scholl}
-\address{}
-\email{}
+\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
+\email{schollt@uci.edu}
 \author[S.\ Sharif]{S.\ Sharif}
 \address{}
 \email{}
@@ -38,7 +38,7 @@ and the National Science Foundation.}
 \begin{document}
 
 \begin{abstract}
-?
+In this paper we show that if a morphism is constant on each isomorphism class of unpolarized abelian varieties of a given dimension, then it is a constant map. 
 \end{abstract}
 
 
@@ -89,7 +89,7 @@ We will prove the following result in \S\ref{sec:characteristic-p}.
   Suppose that $g\in\Z_{\ge 2}$, $R$ is a scheme, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
 \end{theorem}
 
-Our motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
+A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
 
 
 If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a uniqe principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
