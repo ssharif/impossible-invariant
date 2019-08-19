@@ -253,7 +253,7 @@ Since $\sigma$ has order $2$, we have $\sO_L/\frak{q} \cong \sO_K/q\sO_K \cong \
 %  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Since $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
 
-We now establish properties of elliptic curves with CM by our imaginary quadratic field $K$.
+We now establish some properties of CM elliptic curves that we will use in Proposition \ref{prop:lim-degree}.
 \begin{definition}
   If $K$ is an imaginary quadratic field and $q$ is a prime number that is inert in $K$, let
   $$\Gt_q=(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times. $$
@@ -554,6 +554,12 @@ Thus, $S \subset \bigcup_A X^{(1)}_A(k)$. Since $S$ is an infinite set of non-is
 \section{Proof of Theorem~\ref{thm:curves-dense}}
 \label{sec:step-1}
 
+To prove Theorem~\ref{thm:curves-dense}, we will show that for each non-zero Siegel modular function $f$ on $\ag$, there exists $A \in \detl$ such that the pullback modular function $\psimod^*(f)$ is non-zero.
+In order to guarantee that the $q$-expansion of $\psimod^*(f)$ has a non-zero coefficient,
+we establish some results about matrices.
+
+We begin with some density results for matrices.
+
 \begin{lemma}\label{lem:sl-dense}
   If $N$ is a positive integer, then $\Sl_g(\Z[1/N])$ is dense in $\Sl_g(\R)$.
 \end{lemma}
@@ -611,7 +617,7 @@ is dense in the set of $g \times g$ real, symmetric, positive definite matrices.
   Suppose $S$ is a nonempty set of symmetric, positive semi-definite, half-integral $g \times g$ matrices. Then there exists an open cone of positive definite, real, symmetric, $g \times g$ matrices $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q\in S$.
 \end{proposition}
 \begin{proof}
-Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
+Let $t_0 = \min_{Q \in S}\tr(Q)$.
   Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$ by Lemma~\ref{lem:finite-fixed-trace},
   there is a gap between $t_0$ and the next smallest value $t_1$ of $\tr(Q)$ for $Q \in S$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
 
@@ -781,7 +787,7 @@ Suppose $g$ is a positive integer.
     \[
       \sum_{Q \in \sD} c_Q \prod_{i,j=1}^g q_{ij}^{Q_{ij}}.
     \]
-    Thus at the cusp $\ infty$ of $X_0(N)$, the $q$-expansion of $\psimod^*(f)$ is
+    Thus at the cusp $\infty$ of $X_0(N)$, the $q$-expansion of $\psimod^*(f)$ is
 %  \begin{align*}
     $$\sum_{Q \in \sD} c_Q \prod_{i,j=1}^g q^{A_{ij}Q_{ij}} = \sum_{Q \in \sD} c_Q q^{\sum_{i,j=1}^g A_{ij}Q_{ij}} 
     = \sum_{Q \in \sD} c_Q q^{\tr(AQ)}.$$
