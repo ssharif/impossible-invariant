@@ -758,18 +758,18 @@ as desired.
 
 %\begin{definition}
 Suppose $g$ is a positive integer.
-   Let $D$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. 
+   Let $\sD$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. 
    If $f$ is a Siegel modular form on $\ag$, $\ell$ is a prime not equal to the characteristic of the base, and $A\in \detl$, let $\psimod^*(f) = f \circ \psimod$ denote the pullback modular form on $X_0(\det(A))$.
 %\end{definition}
 
 \begin{lemma}\label{lemma:q-expansion}
   Suppose  $g \in \Z_{\ge 1}$, $f$ a Siegel modular form on $\ag$, and $\ell$ is a prime number not equal to the characteristic of the base ring $R$. 
   %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. 
-  Then for all $Q\in D$ there exist $c_Q \in R$ such that for all $A \in \detl$, the $q$-expansion of 
+  Then for all $Q\in \sD$ there exist $c_Q \in R$ such that for all $A \in \detl$, the $q$-expansion of 
   %the modular form 
   $\psimod^*(f)$ at $\infty$ is of the form
   \[
-    \sum_{Q \in D} c_Q q^{\tr(AQ)}.
+    \sum_{Q \in \sD} c_Q q^{\tr(AQ)}.
   \]
 %  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{lemma}
@@ -777,12 +777,12 @@ Suppose $g$ is a positive integer.
 \begin{proof}
   We first prove the result over $\C$. Let $\overline{\ag}$ be a toroidal compactification of $\ag$. Let $A \in \detl$ have determinant $N$. The rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$. Let $\tau_{ij}$ (resp.~$\tau$) with $1 \leq i \leq j \leq g$ be the standard coordinates for $\hh_g$ (resp.~$\hh$), and let $q_{ij}$ (resp.~$q$) be $e^{2\pi i \tau_{ij}}$ (resp.~$e^{2\pi i \tau}$). By Lemma~\ref{lemma:psimod-over-c}, $\psimod^*(q_{ij}) = q^{A_{ij}}$. Setting $q_{ji} = q_{ij}$, the modular form $f$ has an expansion of the form
     \[
-      \sum_{Q \in D} c_Q \prod_{i,j=1}^g q_{ij}^{Q_{ij}}.
+      \sum_{Q \in \sD} c_Q \prod_{i,j=1}^g q_{ij}^{Q_{ij}}.
     \]
     Thus at the cusp at infinity of $X_0(N)$, the $q$-expansion of $\psimod^*(f)$ is
 %  \begin{align*}
-    $$\sum_{Q \in D} c_Q \prod_{i,j=1}^g q^{A_{ij}Q_{ij}} = \sum_{Q \in D} c_Q q^{\sum_{i,j=1}^g A_{ij}Q_{ij}} 
-    = \sum_{Q \in D} c_Q q^{\tr(AQ)}.$$
+    $$\sum_{Q \in \sD} c_Q \prod_{i,j=1}^g q^{A_{ij}Q_{ij}} = \sum_{Q \in \sD} c_Q q^{\sum_{i,j=1}^g A_{ij}Q_{ij}} 
+    = \sum_{Q \in \sD} c_Q q^{\tr(AQ)}.$$
 %  \end{align*}
   Observe furthermore that the cusp at infinity on $X_0(N)$ corresponds to type $I_1$ reduction. % The independence from $A$ is immediate.
 
@@ -795,25 +795,25 @@ Suppose $g$ is a positive integer.
 % By choosing bases for $S^2(X)$ compatibly for all $A$, we can thus guarantee that the $c_Q$ are independent of $A$. 
   % Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
   % \[
-  %   \sum_{Q \in D} c_Q \prod q_{ij}^{Q_{ij}}.
+  %   \sum_{Q \in \sD} c_Q \prod q_{ij}^{Q_{ij}}.
   % \]
  % where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
   % The morphism $\psimod$ induces a morphism $X_0(N) \to \overline{\ag}$ on the toroidal compactifications. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$.
   % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
   % Let $E$ be the split torus with character group $S^2(Y)$ and $F$ the split torus with character group $S^2(X)$; see~\cite[IV.2.6]{faltings1990degeneration}. These split tori are essentially parameter spaces for the periods, so $E$ is analogous to the upper half-plane $\hh$ and $F$ to the Siegel upper half-space $\hh_g$. Then $\psimod$ induces a map $E \to F$ characterized by the property that the pullback of $q_{ij}$ is $q^{A_{ij}}$. Since $q$-expansions are compatible with pullbacks, the $q$-expansion of $\psimod^*(f)$ is
   % \begin{align*}
-  %   \sum_{Q \in D} c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in D} c_Q q^{\sum A_{ij}Q_{ij}} \\
-  %   &= \sum_{Q \in D} c_Q q^{\tr(AQ)}.
+  %   \sum_{Q \in \sD} c_Q \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in \sD} c_Q q^{\sum A_{ij}Q_{ij}} \\
+  %   &= \sum_{Q \in \sD} c_Q q^{\tr(AQ)}.
   % \end{align*}
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero.
 
-  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Then by Lemma~\ref{lemma:q-expansion}, there exist coefficients $c_Q \in R$ for $Q \in D$, such that for all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in D} c_Q q^{\tr(AQ)}$.
+  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Then by Lemma~\ref{lemma:q-expansion}, there exist coefficients $c_Q \in R$ for $Q \in \sD$, such that for all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c_Q q^{\tr(AQ)}$.
   %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
 
-  Let $S = \{ Q \in D :c_Q \neq 0\}$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
+  Let $S = \{ Q \in \sD :c_Q \neq 0\}$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
   By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$.
 
