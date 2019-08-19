@@ -612,17 +612,18 @@ Let $t_0 = \displaystyle\min_{Q \in S}\tr(Q)$.
   Since $\{Q \in S \colon \tr(Q) \leq t\}$ is finite for all $t \in \R$ by Lemma~\ref{lem:finite-fixed-trace},
   there is a gap between $t_0$ and the next smallest value $t_1$ of $\tr(Q)$ for $Q \in S$. Let $S_0 = \{Q \in S \colon \tr(Q) = t_0\}$.
 
-  Let $\mathfrak{S}$ be the set of real symmetric matrices $E$ such that
+  Let $\mathfrak{S}$ be the set of real symmetric $g \times g$ matrices $E$ such that
   \begin{enumerate}
     \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$,
     \item $E$ is positive definite, and
 %    \item $I+E$ is positive definite (this follows from (2), so omit it),
     \item $\tr(EQ) < t_1 - t_0$ for all $Q\in S_0$.
   \end{enumerate}
-  Let $C = \R^+(I + \mathfrak{S})$.
-  Suppose $E\in\mathfrak{S}$. Since $E$ and $Q$ are positive semi-definite, $\tr(EQ)\ge 0$. Property (3) now implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by (1) we have that $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. Since $E$ is positive definite, so is $I+E$, so $A = I + E$ satisfies the conclusion of the lemma. If $r \in \R^+$, then $rA$ also satisfies the conclusion of the lemma,  so $C$ is a cone.
+  To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore there is a real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well.
 
-  It remains to show that $C$ is open (in the space of real symmetric matrices) and non-empty. It is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets. To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore there is a real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well, and hence $\varepsilon E \in \mathfrak{S}$.
+  Let $C = \R^+(I + \mathfrak{S})$, where $I$ is the $g \times g$ identity matrix. By definition, $C$ is a cone. The set $C$ is open because $\mathfrak{S}$ is defined as a finite intersection of open subsets.
+
+  Suppose $A \in C$; that is, $A = r(I+E)$ for some $r \in \R^+$ and $E \in \mathfrak{S}$. Let $Q \in S$. Since $E$ and $Q$ are positive semi-definite, $\tr(EQ)\ge 0$. Property (3) now implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by (1) we have that $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. Since $E$ is positive definite, so is $I+E$, and hence $I + E$ satisfies the conclusion of the lemma. By linearity of the trace, $A$ also satisfies the conclusion of the lemma, and the claim follows.
 \end{proof}
 
 %In ?? we will compute pullbacks of modular forms. It is convenient (instead, say what we mean?) to reduce the computation [what computation?] to one over $\C$.
