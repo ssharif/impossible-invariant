@@ -563,10 +563,10 @@ Thus, $S \subset \bigcup_A X^{(1)}_A(k)$. Since $S$ is an infinite set of non-is
 \[
 \{ rGG^t \colon r \in \R^+ \text{ and } G \in \Sl_g(\Z[1/N]) \}
 \]
-is dense in the set of real, symmetric, positive definite matrices.
+is dense in the set of $g \times g$ real, symmetric, positive definite matrices.
 \end{lemma}
 \begin{proof}
-  Let $A$ be a real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal and has positive entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $H \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, there exists $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore $\det(D)GG^t$ can be made arbitrarily close to $A$.
+  Let $A$ be a $g \times g$ real, symmetric, positive definite matrix. Then there exists an orthogonal matrix $O$ such that $D = OAO^t$ is diagonal and has positive entries. Let $H = \det(D)^{-1/2}O\sqrt{D}$ so that $A = \det(D)HH^t$. Note that $H \in \Sl_g(\R)$, so by Lemma~\ref{lem:sl-dense}, there exists $G \in \Sl_g(\Z[1/N])$ arbitrarily close to $H$, and therefore $\det(D)GG^t$ can be made arbitrarily close to $A$.
 \end{proof}
 
 \begin{definition}
@@ -784,20 +784,20 @@ as desired.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero.
+  Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero.
 
-  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Then by Lemma~\ref{lemma:q-expansion}, there exist coefficients $c_Q$, $Q \in D$, such that for all $A$, $\psimod^*(f)$ admits a $q$-expansion of the form $f = \sum_{Q \in D} c_Q q^{\tr(AQ)}$.
+  Let $f$ be a Siegel modular function on $\ag$, viewed as a global section of the structure sheaf. Then by Lemma~\ref{lemma:q-expansion}, there exist coefficients $c_Q \in R$ for $Q \in D$, such that for all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in D} c_Q q^{\tr(AQ)}$.
   %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
 
-  Let $S = \{ Q \in D :c_Q \neq 0\}$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
+  Let $S = \{ Q \in D :c_Q \neq 0\}$. By Lemma~\ref{lem:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
-  By Lemma~\ref{lem:rggt-dense}, there exists $A \in C$ of the form $A = rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $U$ is a cone, we may scale $A$ and assume that $r$ is a power of $\ell$, so that $A \in \detl$.
+  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$.
 
-  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the choice of $A$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
+  Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By definition of $C$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   % Since $q$-expansions interact
   % with modular morphisms in a natural way, %as expected,
   % the $q$-expansion of $\psimod^*(f)$ is $\sum_Q c_Q q^{\tr(AQ)}$.
-  By construction, the coefficient of $q^n$ in the $q$-expansion of $\psimod^*(f)$ is $c_{Q_0} \neq 0$. Hence $\psimod^*(f) \neq 0$, as desired.
+  Thus, the coefficient of $q^n$ in the $q$-expansion of $\psimod^*(f)$ is $c_{Q_0}$. Since $Q_0 \in S$, $c_{Q_0} \ne 0$. Hence $\psimod^*(f) \neq 0$, as desired.
 \end{proof}
 
 
