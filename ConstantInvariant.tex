@@ -86,7 +86,7 @@ We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 %In arbitrary characteristic we have the following, which w
 We will prove the following result in \S\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a scheme, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
 \end{theorem}
 
 A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
@@ -164,7 +164,9 @@ $$
   Since $\df$ is a closed subscheme of $\ag \times \ag$, Theorem~\ref{thm:sg-c-dense} implies that $\df = \ag \times \ag$, as desired.
 \end{proof}
 
-
+\begin{remark}
+  With some work, all of the above theorems apply when $R$ is a geometrically reduced scheme as well. To see this, note that when $R$ is geometrically integral, we can use the fact that the generic point is dense in $R$. For $R$ geometrically reduced, instead take the union of the generic points of the irreducible components.
+\end{remark}
 
 %\section{The curves $X_{A}$}
 %\label{sec:curves-on-Ag}
