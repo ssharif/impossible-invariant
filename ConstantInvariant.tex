@@ -672,7 +672,7 @@ Let  $N = \det A$.  Suppose $(E, C) \in Y_0(N)$. There exists $\tau \in \hh$ suc
   \[
     \tla = \Z^g + \tau A \Z^g \quad \text{ and } \quad     \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
   \]
-By definition, $\psimodt(\tau) \approx \C^g/\tla$.
+By definition, $\psimodt(E,C) \approx \C^g/\tla$.
 %  \[
 %    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
 %  \]
@@ -704,7 +704,13 @@ and
 \[
 \ker \rho = (\ker \lambda_A) \cap C^g. % = (\ker \lambda_A) \cap C^g.
 \]
-Since $\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g)$, it follows that $\psimod(E,C) \approx \psimodt(E,C)$.
+Since $\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho)$, it follows that
+\[
+  \psimod(E,C) \approx E^g/(\ker \rho) 
+  \cong \C^g/\Lambda_A 
+  \cong \C^g/\tla 
+  \approx \psimodt(E,C).
+\]
 
   A polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with $\Omega \in \hh_g$ is given by an alternating Riemann form $\sE: \C^g \times \C^g \to \R$ as in~\cite{rosen-avc}. The standard form $\sE$ is the unique map satisfying $\sE(u,\Omega v) = u^tv$ for all $u,v \in \Z^g$. 
   %We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
