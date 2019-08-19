@@ -92,11 +92,7 @@ We will prove the following result in \S\ref{sec:characteristic-p}.
 Our motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
 
 
-\begin{definition}\label{def:detl}
-If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
-\end{definition}
-
-If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. For every $A \in \detl$, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a uniqe principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
+If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a uniqe principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
 \begin{equation}\label{def:psimoddef}
 \psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
 \end{equation}
@@ -106,6 +102,10 @@ Let
 X_A=\psimod(Y_0(\det(A))).
 \end{equation}
 (For another construction of the maps $\psimod$, see \cite[p. 19 et seq.]{rains}.)
+
+\begin{definition}\label{def:detl}
+If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote the set of positive definite symmetric $g \times g$ integer matrices whose determinant is a power of $\ell$.
+\end{definition}
 
 \begin{theorem}\label{thm:Sg-dense}
   Suppose $\ell$ is a prime number, $g\in\Z_{\ge 2}$, and $k$ is an algebraically closed field. Suppose $A,A' \in \detl$. Then $\sg(k) \cap (X_A \times X_{A'})(k)$ is Zariski dense in $X_A \times X_{A'}$.
@@ -509,9 +509,12 @@ for the associated morphism. Let $d_1, \ldots, d_g$ be the diagonal entries of $
 where  $E_i := E/\frac{N}{d_i}C$.
 Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
 
-\begin{theorem}\label{thm:curves-dense-a1}
+\begin{definition}
   If $\ell$ is a prime number, let $W_\ell$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$. 
-  Then there exists a prime number $\ell$ not equal to the characteristic of the base ring such that $\bigcup_{A\in W_\ell} X^{(1)}_A$ is Zariski dense in $\ao^g$.
+\end{definition}
+
+\begin{theorem}\label{thm:curves-dense-a1}
+    Then there exists a prime number $\ell$ not equal to the characteristic of the base ring such that $\bigcup_{A\in W_\ell} X^{(1)}_A$ is Zariski dense in $\ao^g$.
 \end{theorem}
 \begin{proof}
  Let $k$ be an algebraically closed field containing the base ring. Let $E_0$ be an elliptic curve over $k$ with CM by $\sO_K$ for some imaginary quadratic field $K$. Choose a prime $\ell\neq\car(k)$ that is inert in $K$, and fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. As $\End(E_0)$ has no ideal of norm $\ell$, $\sC_0$ is not an  ideal subgroup of $E_0$ by Lemma~\ref{lemma:order-ideal-subgroup}. Theorem~\ref{thm:kani-20b} then implies that $\End(E_1) \cong \Z + \ell\sO_K$.
