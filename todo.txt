@@ -1,8 +1,7 @@
 
 * Shahed
-** Revise §5
-** Revise Faltings-Chai business (once written)
-** Fix proof of 5.1.
+** q-expansion—use psi_A(∞) is constant
+** Add intro material re pathological
 * Alice
 ** Edit introduction
 ** Edit §2
