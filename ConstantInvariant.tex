@@ -442,17 +442,21 @@ $\lambda_A = \lambda_U \lambda_D \lambda_V$. Since
 \end{proof}
 
 \begin{proposition}\label{prop:lim-degree}
-Let $k$ be an algebraically closed field containing the base ring.
-  Let $\ell$ be a prime not equal to $\car(k)$. 
-  Suppose $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$.
+Suppose $g\in\Z_{\ge 1}$ and $k$ is an algebraically closed field containing the base ring.
+  Then there are infinitely many rational primes $\ell\neq\car(k)$ such that if 
+   $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$,
   %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$.
-  Then there exists a sequence $x_i \in Y_0(\ell^n)(k)$ such that
+  then there exists a sequence $x_i \in Y_0(\ell^n)(k)$ such that
   \[
     \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m)(k) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
   \]
 \end{proposition}
 \begin{proof}
-  For every imaginary quadratic field $K$ as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ and rational primes $q_i$ as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for all $i$. Let $E$ be an elliptic curve over an algebraically closed field such that $\End(E) \cong \sO_K$.
+  Let $K$ be an imaginary quadratic field %as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ 
+with $\sO_K^\times = \{\pm 1\}$ and such that if $\car(k) > 0$ then $\car(k)$ splits in $K$.
+Let $\ell$ be any prime number not equal to $\car(k)$ that splits into principal primes, $\ell = \alpha{\bar \alpha}$ with $ \alpha\in \sO_K$.
+There are infinitely many such primes $\ell$ by the Chebotarev density theorem.
+Choose an infinite sequence $\{q_i\}$ of rational primes as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for all $i$. The condition on $\car(k)$ splitting ensures that there is an elliptic curve $E$ over $k$ such that $\End(E) \cong \sO_K$.
 
   If $\sC$ is a cyclic subgroup of $E$ of order prime to $\ell$, then $\alpha$ induces a chain of isogenies
   \[
