@@ -109,7 +109,9 @@ If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote th
 \end{definition}
 
 \begin{theorem}\label{thm:Sg-dense}
-  Suppose $\ell$ is a prime number, $g\in\Z_{\ge 2}$, and $k$ is an algebraically closed field. Suppose $A,A' \in \detl$. Then $\sg(k) \cap (X_A \times X_{A'})(k)$ is Zariski dense in $X_A \times X_{A'}$.
+  Suppose $g\in\Z_{\ge 2}$ and $k$ is an algebraically closed field. 
+  Then there are infinitely many prime numberd $\ell$ such that if
+  $A,A' \in \detl$, then $\sg(k) \cap (X_A \times X_{A'})(k)$ is Zariski dense in $X_A \times X_{A'}$.
 \end{theorem}
 
 \begin{theorem}\label{thm:curves-dense}
@@ -120,7 +122,7 @@ Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
 %Let $k$ be an algebraically closed field containing $R$.
-Fix a prime number $\ell\neq\car(k)$. We have
+Fix a prime number $\ell\neq\car(k)$ that satisfies the conclusion of Theorem \ref{thm:Sg-dense}. We have
 \begin{multline*}
 \bigcup_{A,A' \in \detl} \left(\sg(k) \cap (X_A \times X_{A'})(k)\right) \\
  =  \sg(k) \cap \left(\bigcup_{A,A' \in \detl} (X_A \times X_{A'})(k)\right)
@@ -212,18 +214,18 @@ Throughout this paper we assume that the base ring $R$ is a domain.
 %The main goal of this section is to prove Theorem~\ref{thm:Sg-dense}.
 
 The plan is to find a suitable infinite set of pairs $(x,y) \in \sg(k) \cap (X_A \times X_{A'})(k)$. We will explicitly construct these pairs by choosing $x,y \in \ag(k)$ that are products of isogenous CM elliptic curves. To ensure both that our products are weakly isomorphic and that there are enough pairs, we first establish basic observations about ideals in CM fields.
-\begin{lemma}\label{lem:silly}
-  Suppose $\ell$ is a prime number. Then there is an imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$ and $\ell$ splits into principal prime ideals in $K$.
-\end{lemma}
-\begin{proof}
-  Let $L$ denote the set of algebraic integers $\alpha \in \C$ whose minimal polynomial is of the form $x^2 - tx + \ell$ with $0 < |t| < 2\sqrt{\ell}$.
-  Then $\#L = 4\lfloor 2\sqrt{\ell} \rfloor$.
-  For any imaginary quadratic field $K$, there are at most $2\#(\sO_K^\times) \leq 12$ algebraic integers in $K$ of norm $\ell$.
- % Therefore $\#(K \cap L) \leq 12$.
-  If $\ell \geq 13$, then $4\lfloor 2\sqrt{\ell} \rfloor > 24$, so there is some $\alpha \in L$ that does not lie in $\Q(i)$ or $\Q(\sqrt{-3})$, and we can let
-   $K = \Q(\alpha)$.
-  The cases when $\ell < 13$ can be checked by hand.
-\end{proof}
+
+%\begin{lemma}\label{lem:silly}
+%  Suppose $\ell$ is a prime number. Then there is an imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$ and $\ell$ splits into principal prime ideals in $K$.
+%\end{lemma}
+%\begin{proof}
+%  Let $L$ denote the set of algebraic integers $\alpha \in \C$ whose minimal polynomial is of the form $x^2 - tx + \ell$ with $0 < |t| < 2\sqrt{\ell}$.
+%  Then $\#L = 4\lfloor 2\sqrt{\ell} \rfloor$.
+%  For any imaginary quadratic field $K$, there are at most $2\#(\sO_K^\times) \leq 12$ algebraic integers in $K$ of norm $\ell$.
+%  If $\ell \geq 13$, then $4\lfloor 2\sqrt{\ell} \rfloor > 24$, so there is some $\alpha \in L$ that does not lie in $\Q(i)$ or $\Q(\sqrt{-3})$, and we can let
+%   $K = \Q(\alpha)$.
+%  The cases when $\ell < 13$ can be checked by hand.
+%\end{proof}
 
 \begin{lemma}\label{lem:K-exists}
   Suppose $\ell$ is a prime number, $g$ is a positive integer, and $K$ is an imaginary quadratic field over which $\ell$ splits into principal prime ideals, namely $\ell = \alpha\overline{\alpha}$ with $\alpha\in \sO_K$.
