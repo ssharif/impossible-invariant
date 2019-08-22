@@ -508,6 +508,27 @@ Suppose $\ell$ is a prime as in Proposition \ref{prop:lim-degree}, and $A,A'\in\
 \section{Proof of Theorem \ref{thm:arbit-char}}
 \label{sec:characteristic-p}
 
+\begin{lemma}\label{lemma:travis-lemma}
+Suppose $p$ and $\ell$ are distinct prime numbers.  There are infinitely many 
+imaginary quadratic fields $K$ such that $p$ splits in $K$ and $\ell$ is inert in $K$.
+\end{lemma}
+
+\begin{proof}
+If $q$ is an odd prime not dividing an integer $d$, the $q$ splits (respectively, is inert) 
+in $\Q(\sqrt{d})$ if $d$ is a square (respectively, is a nonsquare) modulo $q$.  
+Thus if $p$ and $\ell$ are both odd, the lemma is satisfied with $K = \Q(\sqrt{d})$ 
+for any negative integer $d$ such that both
+\begin{itemize}
+\item
+$d \pmod{p}$ is a square in $(\Z/p\Z)^\times$, and 
+\item
+$d \pmod{\ell}$ is a nonsquare in $(\Z/\ell\Z)^\times$.
+\end{itemize}
+Clearly there are infintely many such $K$.
+If $p=2$ the argument is similar, just replace ``$(\Z/p\Z)^\times$'' by 
+``$(\Z/8\Z)^\times$'' in the first congruence.  If $\ell = 2$, replace 
+``$(\Z/\ell\Z)^\times$'' by ``$(\Z/8\Z)^\times$'' in the second congruence.
+\end{proof}
 
 
 Suppose $A$ is a $g \times g$ diagonal matrix whose diagonal entries are positive integers, and let $N = \det A$. Observe that the map $\psimod: Y_0(N) \to \ag$ factors through the map $\ao^g \to \ag$ that sends a tuple of polarized elliptic curves $(E_1,\dots,E_g)$ to the product $E_1 \times \cdots \times E_g$ with the product polarization. Write
