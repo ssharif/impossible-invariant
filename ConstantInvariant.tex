@@ -808,12 +808,12 @@ Suppose $g$ is a positive integer.
   Suppose  $g \in \Z_{\ge 1}$, $\ell$ is a prime number not equal to the characteristic of the base ring $R$,
   and $f : \ag \to R$ a Siegel modular form. 
   %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. 
-  Then for all $Q\in \sD$ there exists $c_Q \in R$ such that for all $A \in \detl$, the $q$-expansion of 
+  Then for all $Q\in \sD$ there exists $c_Q \in R$ such that for all but finitely many $A \in \detl$, the $q$-expansion of 
   %the modular form 
   $\psimod^*(f)$ at $\infty$ is
-  \[
-    \sum_{Q \in \sD} c_Q q^{\tr(AQ)}.
-  \]
+  \begin{equation}
+    \sum_{Q \in \sD} c_Q q^{\tr(AQ)}.\label{eq:q}
+  \end{equation}
 %  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{proposition}
 
@@ -829,12 +829,16 @@ Suppose $g$ is a positive integer.
 %  \end{align*}
  % The independence from $A$ is immediate.
 
-  Now consider an arbitrary base domain $R$. By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. Furthermore, the morphism $\psimod$ descends to a morphism $X_0(N) \to \agz \times \Z[1/\ell]$ of schemes over $\Z[1/\ell]$. \textcolor{red}{Why is this true?} By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
-  
-  Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove that $\psimod^*(f)$ has the desired $q$-expansion, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
-
-  We now show independence from $A$. The coefficients $c_Q$ depend only on the point $y_0 \in \overline{\ag} - \ag$ where we compute the $q$-expansion of $f$, and on the chosen basis $q_{ij}$ for $S^2(X)$. Over $\C$, $y_0 = \psi_A(\infty)$ is the point of $\overline{\ag}$ where all of the $q_{ij}$ vanish. Hence $y_0$ does not depend on $A$. Since $\psi_A$ and $\infty$ are defined over $\Z[1/\ell]$, we have $\psi_A(\infty) = y_0$ for all $A$ over $\Z[1/\ell]$. Extending to $R$, we again obtain $\psi_A(\infty) = y_0$ for all $A$. Finally, it is clear that the $q$-expansion for $\psi^*(f)$ does not depend on our choice of basis for $S^2(X)$. % The $q_{ij}$ may be viewed as local affine functions on $\overline{\ag}$---see IV.2.6 and Section IV.3 of~\cite{faltings1990degeneration}. Thus $y_0$ is characterized by $q_{ij}(y_0) = 0$ for all $i,j$. But the $q_{ij}$ are chosen independently of $A$ over $\C$, and so by functoriality the neighborhood $\Spec R[q_{ij}] \subset \overline{\ag}$ is independent of $A$. In particular, we have $\psi_A(\infty) = y_0$ for all $A$, and the claim follows. 
-% 
+    Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$. Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_j \Gamma(\overline{\ag}, \omega^{j}))$, where $\omega$ is the sheaf of Siegel modular forms of weight $j$. By our hypothesis on the genus of $X_0(N)$, we also have $X_0(N) = \textrm{Proj}(\oplus_j \Gamma(X_0(N), \omega'^j))$, where $\omega'^j$ are the modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\phi_A: X_0(N) \to \agm$ is characterized by the pullback map
+    \[
+      \phi_A^*: \oplus \Gamma(\overline{\ag}, \omega^j) \to \oplus \Gamma(X_0(N), \omega'^j).
+    \]
+    Both graded algebras are defined over $\Z[1/\ell]$, and hence $\phi_A$ descends to a morphism of schemes over $\Z[1/\ell]$. Furthermore, by functoriality of $q$-expansions, $\phi_A^*$ over $\Z[1/\ell]$ is given by the formula~\eqref{eq:q}. Now base-extend to $R$. Let $f$ be a Siegel modular form on $\ag$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm$ has a single $0$-dimensional cusp, and hence there is a unique $q$-expansion for $f$; say $\sum_{Q \in \sD} c_Q \prod_{i,j=1}^g q_{ij}^{Q_{ij}}$. Since $\phi_A^*$ over $R$ is obtained by base-extension from $\Z[1/\ell]$, the formula~\eqref{eq:q} holds over $R$ as well.
+    % By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. Furthermore, the morphism $\psimod$ descends to a morphism $X_0(N) \to \agz \times \Z[1/\ell]$ of schemes over $\Z[1/\ell]$. \textcolor{red}{Why is this true?} By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
+  % Now consider an arbitrary base domain $R$.
+  % Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove that $\psimod^*(f)$ has the desired $q$-expansion, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
+  % We now show independence from $A$. The coefficients $c_Q$ depend only on the point $y_0 \in \overline{\ag} - \ag$ where we compute the $q$-expansion of $f$, and on the chosen basis $q_{ij}$ for $S^2(X)$. Over $\C$, $y_0 = \psi_A(\infty)$ is the point of $\overline{\ag}$ where all of the $q_{ij}$ vanish. Hence $y_0$ does not depend on $A$. Since $\psi_A$ and $\infty$ are defined over $\Z[1/\ell]$, we have $\psi_A(\infty) = y_0$ for all $A$ over $\Z[1/\ell]$. Extending to $R$, we again obtain $\psi_A(\infty) = y_0$ for all $A$. Finally, it is clear that the $q$-expansion for $\psi^*(f)$ does not depend on our choice of basis for $S^2(X)$. % The $q_{ij}$ may be viewed as local affine functions 
+  % on $\overline{\ag}$---see IV.2.6 and Section IV.3 of~\cite{faltings1990degeneration}. Thus $y_0$ is characterized by $q_{ij}(y_0) = 0$ for all $i,j$. But the $q_{ij}$ are chosen independently of $A$ over $\C$, and so by functoriality the neighborhood $\Spec R[q_{ij}] \subset \overline{\ag}$ is independent of $A$. In particular, we have $\psi_A(\infty) = y_0$ for all $A$, and the claim follows. 
 % By choosing bases for $S^2(X)$ compatibly for all $A$, we can thus guarantee that the $c_Q$ are independent of $A$. 
   % Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
   % \[
@@ -851,12 +855,12 @@ Suppose $g$ is a positive integer.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero. View $f$ as a global section of the structure sheaf. Then by Proposition~\ref{prop:q-expansion}, there exist coefficients $c_Q \in R$ for $Q \in \sD$, such that for all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c_Q q^{\tr(AQ)}$.
+  Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero. View $f$ as a global section of the structure sheaf. Then by Proposition~\ref{prop:q-expansion}, there exist coefficients $c_Q \in R$ for $Q \in \sD$, such that for almost all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c_Q q^{\tr(AQ)}$.
   %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
 
   Let $S = \{ Q \in \sD :c_Q \neq 0\}$. By Proposition~\ref{prop:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
-  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$.
+  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. Furthermore, we may replace $A$ by $\ell^m A$ for any $m$, and thus we may assume the conclusion of Proposition~\ref{prop:q-expansion} holds.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the definition of $C$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   % Since $q$-expansions interact
