@@ -806,7 +806,7 @@ Suppose $g$ is a positive integer.
 
 \begin{proposition}\label{prop:q-expansion}
   Suppose  $g \in \Z_{\ge 1}$, $\ell$ is a prime number not equal to the characteristic of the base ring $R$,
-  and $f : \ag \to R$ a Siegel modular form. 
+  and $f$ an $R$-valued Siegel modular form on $\ag$. 
   %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. 
   Then for all $Q\in \sD$ there exists $c_Q \in R$ such that for all but finitely many $A \in \detl$, the $q$-expansion of 
   %the modular form 
@@ -829,9 +829,9 @@ Suppose $g$ is a positive integer.
 %  \end{align*}
  % The independence from $A$ is immediate.
 
-    Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$. Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_j \Gamma(\overline{\ag}, \omega^{j}))$, where $\omega$ is the sheaf of Siegel modular forms of weight $j$. Since the genus of $X_0(N)$ is at least $2$, we have $X_0(N) = \textrm{Proj}(\oplus_j \Gamma(X_0(N), \omega'^j))$, where $\omega'^j$ are the modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\phi_A: X_0(N) \to \agm$ is characterized by the pullback map
+    Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$. Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega_j))$, where $\omega_j$ is the sheaf of Siegel modular forms of weight $j$. Since the genus of $X_0(N)$ is at least $2$, we have $X_0(N) = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(X_0(N), \omega'_j))$, where $\omega'_j$ is the sheaf of modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\phi_A: X_0(N) \to \agm$ is characterized by the pullback map
     \[
-      \phi_A^*: \oplus \Gamma(\overline{\ag}, \omega^j) \to \oplus \Gamma(X_0(N), \omega'^j).
+      \phi_A^*: \bigoplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega_j) \to \bigoplus_{j=0}^\infty \Gamma(X_0(N), \omega'_j).
     \]
     Both graded algebras are finitely generated over $\Z[1/\ell]$, and furthermore $\phi_A^\ast$ is Galois equivariant. Hence $\phi_A$ descends to a morphism of schemes over $\Z[1/\ell]$. By functoriality of $q$-expansions, $\phi_A^*$ over $\Z[1/\ell]$ is given by formula~\eqref{eq:q}. Now base-extend to $R$. Let $f$ be a Siegel modular form on $\ag$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm$ has only one zero-dimensional cusp, so $f$ has a unique $q$-expansion, say $\sum_{Q \in \sD} c_Q \prod_{i,j=1}^g q_{ij}^{Q_{ij}}$. Since $\phi_A^*$ over $R$ is obtained by base-extension from $\Z[1/\ell]$, formula~\eqref{eq:q} holds over $R$ as well.
     % By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. Furthermore, the morphism $\psimod$ descends to a morphism $X_0(N) \to \agz \times \Z[1/\ell]$ of schemes over $\Z[1/\ell]$. \textcolor{red}{Why is this true?} By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
@@ -860,7 +860,7 @@ Suppose $g$ is a positive integer.
 
   Let $S = \{ Q \in \sD :c_Q \neq 0\}$. By Proposition~\ref{prop:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
-  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. Furthermore, we may replace $A$ by $\ell^m A$ for any $m$, and thus we may assume the conclusion of Proposition~\ref{prop:q-expansion} holds.
+  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. If $A$ does not satisfy the conclusion of Proposition~\ref{prop:q-expansion}, then we may replace $A$ with $\ell^m A$ for some positive integer $m$ until the latter proposition applies. Observe that $\ell^m A \in C$ also.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the definition of $C$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   % Since $q$-expansions interact
