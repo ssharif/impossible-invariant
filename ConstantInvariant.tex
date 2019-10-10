@@ -808,7 +808,8 @@ Suppose $g$ is a positive integer.
   Suppose  $g \in \Z_{\ge 1}$, $\ell$ is a prime number not equal to the characteristic of the base ring $R$,
   and $f$ an $R$-valued Siegel modular form on $\ag$. 
   %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. 
-  Then for all $Q\in \sD$ there exists $c_Q \in R$ such that for all but finitely many $A \in \detl$, the $q$-expansion of 
+  Then for all $Q\in \sD$ there exists $c_Q \in R$ such that for all % but finitely many
+  $A \in \detl$, the $q$-expansion of 
   %the modular form 
   $\psimod^*(f)$ at $\infty$ is
   \begin{equation}
@@ -829,7 +830,9 @@ Suppose $g$ is a positive integer.
 %  \end{align*}
  % The independence from $A$ is immediate.
 
-    Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$. Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j))$, where $\omega^j$ is the sheaf of Siegel modular forms of weight $j$. Since the genus of $X_0(N)$ is at least $2$, we have $X_0(N) = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j))$, where $\omega_0^j$ is the sheaf of modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\phi_A: X_0(N) \to \agm$ is characterized by the pullback map
+    % Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$.
+    Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j))$, where $\omega^j$ is the sheaf of Siegel modular forms of weight $j$. Since % the genus of $X_0(N)$ is at least $2$,
+    the sheaf of weight $2$ modular forms is ample, we have $X_0(N) = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j))$, where $\omega_0^j$ is the sheaf of modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\phi_A: X_0(N) \to \agm$ is characterized by the pullback map
     \[
       \phi_A^*: \bigoplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j) \to \bigoplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j).
     \]
@@ -860,7 +863,7 @@ Suppose $g$ is a positive integer.
 
   Let $S = \{ Q \in \sD :c_Q \neq 0\}$. By Proposition~\ref{prop:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
-  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. If $A$ does not satisfy~\eqref{eq:q}, then by Proposition~\ref{prop:q-expansion}, we may replace $A$ with $\ell^m A$ for some positive integer $m$ until the latter formula applies. Observe that $\ell^m A \in C$ also.
+  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. % If $A$ does not satisfy~\eqref{eq:q}, then by Proposition~\ref{prop:q-expansion}, we may replace $A$ with $\ell^m A$ for some positive integer $m$ until the latter formula applies. Observe that $\ell^m A \in C$ also.
 
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the definition of $C$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$. % If $k = \C$, one has that the $q$-expansion of $f \circ \psimod$ is $\sum_Q c_Q q^{\tr(AQ)}$. By functoriality, this holds when $k$ is an arbitrary algebraically closed field.
   % Since $q$-expansions interact
