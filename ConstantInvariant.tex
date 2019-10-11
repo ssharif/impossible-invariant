@@ -93,7 +93,7 @@ A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construct
 
 Theorem~\ref{thm:invariant-c-constant} can also be viewed as making precise the discussion in~\cite[p. 97]{git} about  ``pathologies'' that arise when considering the relation $\approx$.
 
-If $N$ is a positive integer, let $Y_0(N)$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a unique principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
+If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a unique principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
 \begin{equation}\label{def:psimoddef}
 \psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
 \end{equation}
@@ -247,7 +247,10 @@ Then there are infinitely many rational prime numbers $q$ such that
   Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (1).
   Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \pmod{g}$, giving (2).
 %To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\mathfrak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
-Since $\sigma$ has order $2$, we have $\sO_L/\mathfrak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, $\alpha^{1/g}$ is a $g$th root of $\alpha$ in $(\sO_K/q\sO_K)^\times$, giving (3).
+Since $\sigma$ has order $2$, we have $\sO_L/\mathfrak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, reducing $\alpha^{1/g}$
+modulo ${\frak q}$ gives a $g$th root of $\alpha$
+% $\alpha^{1/g}$ is a $g$th root of $\alpha$
+ in $(\sO_K/q\sO_K)^\times$, giving (3).
 %Moreover, if $\sigma$ satisfies these conditions, then so does every conjugate of $\sigma$.
 %By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
 %  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Since $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
@@ -456,7 +459,9 @@ Suppose $g\in\Z_{\ge 1}$ and $k$ is an algebraically closed field containing the
 with $\sO_K^\times = \{\pm 1\}$ and such that if $\car(k) > 0$ then $\car(k)$ splits in $K$.
 Let $\ell$ be any prime number not equal to $\car(k)$ that splits into principal primes, $\ell = \alpha{\bar \alpha}$ with $ \alpha\in \sO_K$.
 There are infinitely many such primes $\ell$ by the Chebotarev density theorem.
-Choose an infinite sequence $\{q_i\}$ of rational primes as in Lemma~\ref{lem:K-exists}. We may assume $q_i \neq \ell$ for all $i$. The condition on $\car(k)$ splitting ensures that there is an elliptic curve $E$ over $k$ such that $\End(E) \cong \sO_K$.
+Choose an infinite sequence $\{q_i\}$ of rational primes as in Lemma~\ref{lem:K-exists}. Since $\ell$ splits and the $q_i$ are
+inert in $K$, we have $q_i\ne \ell$ for all $i$. % We may assume $q_i \neq \ell$ for all $i$.
+The condition on $\car(k)$ splitting ensures that there is an elliptic curve $E$ over $k$ such that $\End(E) \cong \sO_K$.
 
   If $\sC$ is a cyclic subgroup of $E$ of order prime to $\ell$, then $\alpha$ induces a chain of isogenies
   \[
@@ -496,7 +501,7 @@ There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
 Suppose $\ell$ is a prime as in Proposition \ref{prop:lim-degree}, and $A,A'\in\detl$.
-  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})(k)$ in $X_A \times X_{A'}$. By Proposition~\ref{prop:lim-degree}, the set $\sg(k) \cap (X_A \times X_{A'})(k)$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Proposition~\ref{prop:lim-degree}. Let $S'$ be $S$ with the horizontal components removed. By Proposition~\ref{prop:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
+  Let $S$ denote the Zariski closure of $\sg(k) \cap (X_A \times X_{A'})(k)$ in $X_A \times X_{A'}$. By Proposition~\ref{prop:lim-degree}, the set $\sg(k) \cap (X_A \times X_{A'})(k)$ has an infinite number of geometric points. Thus $\dim S \geq 1$. Suppose $\dim S = 1$, so that $S$ is a finite union of curves $\cup S_i$ and isolated points. The $S_i$ cannot all be horizontal components---that is, of the form $X \times \{z\}$---since this would contradict Proposition~\ref{prop:lim-degree}. Let $S'$ be $S$ with the horizontal components and isolated points removed. By Proposition~\ref{prop:lim-degree}, the projection map $\pi_X: S' \to X$ has unbounded degree. But $\pi_X$ on each irreducible component of $S'$ is nonconstant, so $\pi_X|_{S'}$ has finite degree. This contradiction shows that $\dim S \geq 2$, and the desired result follows.
 \end{proof}
 
 
