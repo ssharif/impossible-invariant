@@ -32,13 +32,13 @@
 \email{asilverb@uci.edu}
 %\subjclass[2010]{??}
 \keywords{abelian varieties, polarizations}
-\thanks{Support for the research was provided by the Alfred P.~Sloan Foundation
-and the National Science Foundation.}
+\thanks{We thank the Alfred P.~Sloan Foundation and the National Science Foundation, which provided support for the research, and the June 2019 ICERM workshop on Arithmetic of Low-Dimensional Abelian Varieties, where this project began.}
 
 \begin{document}
 
 \begin{abstract}
-In this paper we show that if a morphism is constant on each isomorphism class of unpolarized abelian varieties of a given dimension, then it is a constant map. 
+We show that if a %morphism 
+rational map is constant on each isomorphism class of unpolarized abelian varieties of a given dimension, then it is a constant map. 
 \end{abstract}
 
 
@@ -51,7 +51,7 @@ In this paper we show that if a morphism is constant on each isomorphism class o
 \section{Introduction}
 \label{sec:introduction}
 
-If $A_1$ and $A_2$ are abelian varieties, we say $A_1$ and $A_2$ are \emph{weakly isomorphic}, written $A_1 \approx A_2$, if $A_1$ and $A_2$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. Our main result is the following.
+If $A_1$ and $A_2$ are abelian varieties, we say $A_1$ and $A_2$ are \emph{weakly isomorphic}, written $A_1 \approx A_2$, if $A_1$ and $A_2$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. One of our main results is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
   Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
 \end{theorem}
@@ -83,7 +83,11 @@ We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
   If $g\in\Z_{\ge 2}$, $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(k)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
 \end{theorem}
 
-%In arbitrary characteristic we have the following, which w
+It is widely acknowledged that in order to obtain a moduli space of abelian varieties, one must first fix a polarization.  However, the mere fact that isomorphism as unpolarized abelian varieties itself is not a well behaved equivalence relation does not {\it a priori} exclude the possibility that some slightly coarser equivalence relation {\em could} give rise to a moduli space. Theorem \ref{thm:sg-c-dense} implies that this cannot happen: the only coarser equivalence relation that is also Zariski closed is the trivial relation in which all elements are equivalent.
+Since the Zariski closure of an equivalence relation need not be an equivalence relation, Theorem \ref{thm:sg-c-dense} is somewhat stronger than this.
+%Theorem~\ref{thm:invariant-c-constant} 
+Our results can be viewed as making precise the discussion in~\cite[p. 97]{git} about  ``pathologies'' that arise when considering the relation $\approx$.
+
 We will prove the following result in \S\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
   Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
@@ -91,8 +95,7 @@ We will prove the following result in \S\ref{sec:characteristic-p}.
 
 A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
 
-Theorem~\ref{thm:invariant-c-constant} can also be viewed as making precise the discussion in~\cite[p. 97]{git} about  ``pathologies'' that arise when considering the relation $\approx$.
-
+We next discuss the proofs. 
 If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a unique principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
 \begin{equation}\label{def:psimoddef}
 \psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
@@ -120,7 +123,8 @@ If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote th
 
 Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:step-2} and \S\ref{sec:step-1}, respectively.
 
-Theorem~\ref{thm:invariant-c-constant} implies the same result even if we impose level structure:
+Since ${\cal A}_g$ is only a coarse moduli space, one might wonder whether Theorem~\ref{thm:invariant-c-constant} still holds if ${\cal A}_g$ is replaced by the fine moduli space of abelian varieties with full level $n$ structure with $n\ge 3$ and invertible in $R$. The following generalization of 
+Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even for the fine moduli space.
 \begin{corollary}\label{cor:agn}
   Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. Denote points of $\agn$ as pairs $(A,L)$, where $A$ is a principally polarized abelian variety and $L$ is a symplectic basis for the $n$-torsion $A[n]$. Suppose $f((A_1, L_1)) = f((A_2, L_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
 \end{corollary}
