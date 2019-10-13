@@ -167,6 +167,16 @@ $$
   Since $\df$ is a closed subscheme of $\ag \times \ag$, Theorem~\ref{thm:sg-c-dense} implies that $\df = \ag \times \ag$, as desired.
 \end{proof}
 
+\begin{proof}[Proof of Theorem~\ref{thm:invariant-c-constant}]
+  Let $U$ be the domain of definition of $f$, so $f: U \to X$ is a morphism. Consider the fiber product $\df = U \times_X U$.
+  The universal property of $\df$ says that for any scheme $W$ and morphisms $h_1$ and $h_2$ from $W$ to $U$ such that $f \circ h_1 = f \circ h_2$, there is a unique morphism $h: W \to \df$ such that $h_1$ and $h_2$ factor through $h$.
+
+  Let $k$ be an algebraically closed field containing $R$.
+  Applying the universal property with $W = \Spec k$ shows that $\df(k)$ consists of the pairs $(A_1,A_2) \in U \times U$ of abelian varieties over $k$ such that $f(A_1) = f(A_2)$.
+  By the hypothesis on $f$, if $A_1 \approx A_2$ then $f(A_1) = f(A_2)$. Hence $(\sg \cap (U \times U))(k) \subseteq \df(k)$.
+  Since $\df$ is a closed subscheme of $U \times U$, Theorem~\ref{thm:sg-c-dense} implies that $\df = U \times U$, as desired.
+\end{proof}
+
 \begin{remark}
 Throughout this paper we assume that the base ring $R$ is a domain.
   All of the above theorems apply when the base ring is a geometrically reduced scheme as well. To see this, note that when $R$ is geometrically integral, we can use the fact that the generic point is dense in $R$. For $R$ geometrically reduced, instead take the union of the generic points of the irreducible components.
