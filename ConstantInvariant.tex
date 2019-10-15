@@ -95,6 +95,22 @@ We will prove the following result in \S\ref{sec:characteristic-p}.
 
 A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
 
+
+Since $\ag$ is only a coarse moduli space, one might wonder whether Theorem~\ref{thm:invariant-c-constant} still holds if $\ag$  is replaced by the fine moduli space of abelian varieties with full level $n$ structure with $n\ge 3$ and invertible in $R$. The following generalization of 
+Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even for the fine moduli space.
+
+\begin{corollary}\label{cor:agn}
+  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as pairs $(A,L)$, where $A$ is a principally polarized abelian variety and $L$ is a symplectic basis for the $n$-torsion $A[n]$. Suppose $f((A_1, L_1)) = f((A_2, L_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+\end{corollary}
+
+
+Next, we obtain a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a non-principal polarization type.
+\begin{corollary}\label{cor:agpol}
+  Let $g \in \Z_{\geq 2}$, and let ${d} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${d}$. Suppose that $R$ is a domain with $d_g$ invertible in $R$ and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. Denote points of $\agd$ as pairs $(A,\lambda)$, where $A$ is an abelian variety and $\lambda$ is a polarization of type ${d}$. Suppose $f((A_1, \lambda_1)) = f((A_2, \lambda_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+\end{corollary}
+
+
+
 We next discuss the proofs. 
 If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a unique principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
 \begin{equation}\label{def:psimoddef}
@@ -123,32 +139,7 @@ If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote th
 
 Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:step-2} and \S\ref{sec:step-1}, respectively.
 
-Since $\ag$ is only a coarse moduli space, one might wonder whether Theorem~\ref{thm:invariant-c-constant} still holds if $\ag$  is replaced by the fine moduli space of abelian varieties with full level $n$ structure with $n\ge 3$ and invertible in $R$. The following generalization of 
-Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even for the fine moduli space.
-
-\begin{corollary}\label{cor:agn}
-  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. Denote points of $\agn$ as pairs $(A,L)$, where $A$ is a principally polarized abelian variety and $L$ is a symplectic basis for the $n$-torsion $A[n]$. Suppose $f((A_1, L_1)) = f((A_2, L_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
-\end{corollary}
-
-\begin{proof}
-  Let $\pi: \agn \to \ag$ be the canonical map; that is, the map that ``forgets'' the level $n$ structure. The space $\agn$ is Galois over $\ag$; let $G$ be the Galois group, so that if $R$ is an algebraically closed field, then $G = \Sp_{2g}(\Z/n\Z)$. Let $X^G$ be the product of $\# G$ copies of $X$, indexed by $G$. The group $G$ acts on $X^G$ by permuting the factors: for $x \in X^G$, $h,g \in G$, if the $g$th coordinate of $x$ is $x_g$, then the $g$th coordinate of $h(x)$ is $x_{h^{-1}g}$.
-  Let $S_G(X)$ be the quotient of $X^G$ by $G$.
-
-  Let $V$ be the domain of definition of $f$, and let $U = \pi(V)$, which is an open subset of $\ag$. Define a map $f_G: U \to S_G(X)$ as follows. For $x \in U$, choose  $y_1 \in \pi^{-1}(x)$, and for $g \in G$ let $y_g = g(y_1)$. Observe that $\pi^{-1}(x) = \{y_g\}_{g \in G}$. Let $\tilde{z} = (f(y_g))_{g \in G} \in X^G$, and let $z$ be the corresponding point of $S_G(X)$. Then define $f_G(x) = z$.
-
-  Since on the level of moduli, $\pi((A,L)) = A$, we certainly have $f_G(A_1) = f_G(A_2)$ whenever $A_1 \approx A_2$, $A_1,A_2 \in U$. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is constant. It follows that $f$ is constant.
-\end{proof}
-
-Next, we obtain a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a non-principal polarization type.
-\begin{corollary}
-  Let $g \in \Z_{\geq 2}$, and let ${d} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${d}$. Suppose that $R$ is a domain with $d_g$ invertible in $R$ and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. Denote points of $\agd$ as pairs $(A,\lambda)$, where $A$ is an abelian variety and $\lambda$ is a polarization of type ${d}$. Suppose $f((A_1, \lambda_1)) = f((A_2, \lambda_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
-\end{corollary}
-
-\begin{proof}
-  Let $n = d_g$. There is a surjective morphism $\pi_d: \agn \to \agd$ defined as follows. ???
-\end{proof}
-
-We now derive Theorem \ref{thm:sg-c-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense}, and we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense}.
+Next we derive Theorem \ref{thm:sg-c-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense},  we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense},  we derive Corollary \ref{cor:agn} from Theorem \ref{thm:invariant-c-constant}, and we derive Corollary \ref{cor:agpol} from Corollary \ref{cor:agn}.
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
 %Let $k$ be an algebraically closed field containing $R$.
@@ -195,6 +186,19 @@ $$
   Applying the universal property with $W = \Spec k$ shows that $\df(k)$ consists of the pairs $(A_1,A_2) \in U \times U$ of abelian varieties over $k$ such that $f(A_1) = f(A_2)$.
   By the hypothesis on $f$, if $A_1 \approx A_2$ then $f(A_1) = f(A_2)$. Hence $(\sg \cap (U \times U))(k) \subseteq \df(k)$.
   Since $\df$ is a closed subscheme of $U \times U$, Theorem~\ref{thm:sg-c-dense} implies that $\df = U \times U$, as desired.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:agn}]
+  Let $\pi: \agn \to \ag$ be the canonical map that ``forgets'' the level $n$ structure. The space $\agn$ is Galois over $\ag$; let $G$ denote the Galois group, so that if $R$ is an algebraically closed field, then $G = \Sp_{2g}(\Z/n\Z)$. Letting $X^G$ denote the product of $\# G$ copies of $X$, indexed by $G$, then the group $G$ acts on $X^G$ by permuting the factors: for $x \in X^G$ and $h,g \in G$, if the $g$th coordinate of $x$ is $x_g$, then the $g$th coordinate of $h(x)$ is $x_{h^{-1}g}$.
+  Let $X^G/G$ denote the quotient of $X^G$ by this action.
+
+  Let $V$ denote the domain of definition of $f$, and let $U = \pi(V)$, which is an open subset of $\ag$. Define a map $f_G: U \to X^G/G$ as follows. For $u \in U$, choose  $v \in \pi^{-1}(x)$. Then $\pi^{-1}(u) = \{g(v)\}_{g \in G} \subset \agn$. Let $z = (f(g(v)))_{g \in G} \in X^G$, and let $f_G(u)$ be the image of $z$ in $X^G/G$.
+
+  Since $\pi((A,L)) = A$, we have $f_G(A_1) = f_G(A_2)$ whenever $A_1 \approx A_2$ with $A_1,A_2 \in U$. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is constant. It follows that $f$ is constant.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:agpol}]
+  Let $n = d_g$. There is a surjective morphism $\pi_d: \agn \to \agd$ defined as follows. ???
 \end{proof}
 
 \begin{remark}
