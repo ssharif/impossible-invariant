@@ -194,11 +194,40 @@ $$
 
   Let $V$ denote the domain of definition of $f$, and let $U = \pi(V)$, which is an open subset of $\ag$. Define a map $f_G: U \to X^G/G$ as follows. For $u \in U$, choose  $v \in \pi^{-1}(x)$. Then $\pi^{-1}(u) = \{g(v)\}_{g \in G} \subset \agn$. Let $z = (f(g(v)))_{g \in G} \in X^G$, and let $f_G(u)$ be the image of $z$ in $X^G/G$.
 
-  Since $\pi((A,L)) = A$, we have $f_G(A_1) = f_G(A_2)$ whenever $A_1 \approx A_2$ with $A_1,A_2 \in U$. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is constant. It follows that $f$ is constant.
+  Since $\pi((A,L)) = A$, we have $f_G(A_1) = f_G(A_2)$ whenever $A_1 \approx A_2$ with $A_1,A_2 \in U$. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is constant. Since $\agn$ is connected, it follows that $f$ is constant.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{cor:agpol}]
-  Let $n = d_g$. There is a surjective morphism $\pi_d: \agn \to \agd$ defined as follows. ???
+  Let $n = d_g$. Let $\agphi$ be the moduli space for triples $(A,\lambda,\phi)$ where $A$ is an abelian variety, $\lambda$ is a type $d$ polarization on $A$, and $\phi$ is an injective homomorphism
+  \[
+    \phi: \Z/d_1\Z \times \cdots \times \Z/d_g\Z \to \ker \lambda.
+  \]
+  There is a natural forgetful map $\pi_\phi: \agphi \to \agd$. Observe that if $A_1 \approx A_2$, then $(f\pi_\phi)(A_1,\lambda_1,\phi_1) = (f\pi_\phi)(A_2,\lambda_2,\phi_2)$. Thus we may replace $\agd$ and $f$ in the statement of the Corollary with $\agphi$ and $f\pi_\phi$. We first assume that $f$ is a morphism.
+
+  Let $\agn$ be the moduli space for triples $(A,\lambda,L)$, where $\lambda$ is a principal polarization on $A$ and $L$ is a level $n$ structure; that is, a symplectic basis $(P_1,\ldots,P_g,Q_1,\ldots,Q_g)$ for the $n$-torsion $A[n]$. There are maps
+  \[
+    \agn \stackrel{\pi_2}{\longrightarrow} \agphi \stackrel{\pi_1}{\longrightarrow} \ag
+  \]
+  defined as follows. For $(A,\lambda,L) \in \agn$, define $B$ as the quotient of $A$ by the subgroup $\langle P_1,\ldots,P_g,d_1Q_1,\ldots,d_gQ_g \rangle$. Let $R_i$ be the image of $Q_i$ in $B$. Let $\rho: B \to A$ be the dual isogeny, and define $\lambda'$ to be the pull-back polarization $\rho^*\lambda$. Define $\phi$ by sending the $i$th standard basis vector to $R_i$. Since $R_i \in \ker \rho$, we see that $R_i \in \ker \lambda$. Define $\pi_2(A,\lambda,L) = (B,\lambda',\phi)$.
+
+  For $\pi_1$, given $(B,\lambda',\phi) \in \agphi$, let $A = B/\im(\phi)$. Then $\lambda'$ descends to a unique polarization $\lambda$ on $A$. Set $\pi_1(B,\lambda',\phi) = (A,\lambda)$.
+  Let $\pi = \pi_1\pi_2$. One checks that $\pi(A,\lambda,L) = (A,\lambda)$.
+
+  Let $\sg(X)$ be the symmetric quotient of $X^G$, where $G$ is the Galois group for $\agn/\ag$. Geometrically closed points of $\sg(X)$ can be viewed as degree $\# G$ zero cycles on $X$. We define a map $f_G: \ag \to \sg(X)$ as follows. For $z \in \ag$, fix $y \in \agn$ for which $\pi(y) = x$. Define $f_G(z) = \sum_{g \in G} (f\pi_2)(gy)$.
+
+  Now suppose $(A_1,\lambda_1), (A_2,\lambda_2) \in \ag$ with $A_1 \approx A_2$. I claim that $f_G(A_1,\lambda_1) = f_G(A_2,\lambda_2)$. To see this, let us first define, for $(A,\lambda) \in \ag$, $S_d(A,\lambda)$ to be the set of pairs $(H_1,H_2)$ where $H_i$ is an isotropic subgroup of $A[n]$ and
+  \[
+    H_1 \cong (\Z/n\Z)^g, H_2 \cong d_1\Z/n\Z \times \cdots \times d_g\Z/n\Z.
+  \]
+  Note that our notion of ``isotropic'' depends on the polarization $\lambda$.
+  
+  Observe that $f_G(A_1,\lambda_1) = \sum (B_1,\lambda_1',\phi_1)$, where in the sum the $B_1$ vary over quotients of $A_1$ by subgroups $H_1 + H_2$, $(H_1,H_2) \in S_d(A_1,\lambda_1)$. (Note that each $B_1$ will appear with some multiplicity, which generically depends only on $d$ and $g$.) Similarly, $f_g(A_2) = \sum (B_2, \lambda_2', \phi_2)$ where the $B_2$ varies over quotients $A_2/(H_1' + H_2')$, $(H_1',H_2') \in S_d(A_2,\lambda_2)$. Fix a weak isomorphism between $A_1$ and $A_2$. Then $\lambda_2^{-1} \circ \lambda_1 \in \End(A_1) = \End(A_2)$ induces a bijection
+  \[
+    S_d(A_1,\lambda_1) \to S_d(A_2,\lambda_2).
+  \]
+  Therefore for each $B_1$ appearing in $f_G(A_1,\lambda_2)$, there is a $B_2$ appearing in $f_G(A_2,\lambda_2)$ for which $B_1 \approx B_2$, and conversely. Since $f$ is constant on weak isomorphism classes, $f_G$ is also. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is a constant morphism. The space $\agn$ is connected and $\pi_2$ is surjective, so $\agphi$ is also connected. Therefore $f$ is constant.
+
+  If $f$ is a rational map, we repeat the above proof, but replacing moduli spaces with the appropriate domains of definition.
 \end{proof}
 
 \begin{remark}
