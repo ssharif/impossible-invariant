@@ -104,9 +104,13 @@ Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even f
 \end{corollary}
 
 
-Next, we obtain a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a non-principal polarization type.
+Next, we obtain a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a non-principal polarization type. Let $k$ be an algebraically closed field. Recall from~\cite[Theorem 1 et seq.]{mumford1966} that if $\mu: A \to A^\vee$ is a polarization on a $g$-dimensional abelian variety over $k$ of degree not divisible by $\car(k)$, then 
+\[
+  \ker \mu \cong (\Z/d_1\Z \times \cdots \times \Z/d_g\Z)^2
+\]
+for some positive integers $d_1 \mid \cdots \mid d_g$, $\car(k) \nmid d_g$. Letting $D = (d_1, \ldots, d_g)$, we say that $D$ is the \emph{type} of $\mu$. 
 \begin{corollary}\label{cor:agpol}
-  Let $g \in \Z_{\geq 2}$, and let ${d} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${d}$. Suppose that $R$ is a domain with $d_g$ invertible in $R$ and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agd$ as pairs $(A,\lambda)$, where $A$ is an abelian variety and $\lambda$ is a polarization of type ${d}$. Suppose $f((A_1, \lambda_1)) = f((A_2, \lambda_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+  Let $g \in \Z_{\geq 2}$, and let ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${D}$. Suppose that $R$ is a domain with $d_g$ invertible in $R$ and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
 \end{corollary}
 
 
