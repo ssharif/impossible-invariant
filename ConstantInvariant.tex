@@ -208,7 +208,7 @@ $$
   \[
     \agn \stackrel{\pi_2}{\longrightarrow} \agphi \stackrel{\pi_1}{\longrightarrow} \ag
   \]
-  defined as follows. For $(A,\lambda,L) \in \agn$, define $B$ as the quotient of $A$ by the subgroup $\langle P_1,\ldots,P_g,d_1Q_1,\ldots,d_gQ_g \rangle$. Let $R_i$ be the image of $Q_i$ in $B$. Let $\rho: B \to A$ be the dual isogeny, and define $\lambda'$ to be the pull-back polarization $\rho^*\lambda$. Define $\phi$ by sending the $i$th standard basis vector to $R_i$. Since $R_i \in \ker \rho$, we see that $R_i \in \ker \lambda$. Define $\pi_2(A,\lambda,L) = (B,\lambda',\phi)$.
+  defined as follows. For $(A,\lambda,L) \in \agn$, define $B$ as the quotient of $A$ by the subgroup $\langle P_1,\ldots,P_g,d_1Q_1,\ldots,d_gQ_g \rangle$. Let $R_i$ be the image of $Q_i$ in $B$. Let $\psi: A \to B$ be the quotient map. Since $\ker(\psi) \subset A[n]$, there exists an isogeny $\rho: B \to A$ such that $\rho \circ \psi = [n]$, the multiplication-by-$n$ map. Define $\lambda'$ to be the pull-back polarization $\rho^*\lambda$. Define $\phi$ by sending the $i$th standard basis vector to $R_i$. Since $R_i \in \ker \rho$, we see that $R_i \in \ker \lambda$. Define $\pi_2(A,\lambda,L) = (B,\lambda',\phi)$.
 
   For $\pi_1$, given $(B,\lambda',\phi) \in \agphi$, let $A = B/\im(\phi)$. Then $\lambda'$ descends to a unique polarization $\lambda$ on $A$. Set $\pi_1(B,\lambda',\phi) = (A,\lambda)$.
   Let $\pi = \pi_1\pi_2$. One checks that $\pi(A,\lambda,L) = (A,\lambda)$.
