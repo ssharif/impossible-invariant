@@ -53,7 +53,7 @@ rational map is constant on each isomorphism class of unpolarized abelian variet
 
 If $A_1$ and $A_2$ are abelian varieties, we say $A_1$ and $A_2$ are \emph{weakly isomorphic}, written $A_1 \approx A_2$, if $A_1$ and $A_2$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the moduli space of principally polarized abelian varieties of dimension $g$. One of our main results is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{theorem}
 
 It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
@@ -90,7 +90,7 @@ Our results can be viewed as making precise the discussion in~\cite[p. 97]{git} 
 
 We will prove the following result in \S\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ao^g \to X$ is a morphism of $R$-schemes. Suppose $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ao^g \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{theorem}
 
 A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
@@ -100,17 +100,17 @@ Since $\ag$ is only a coarse moduli space, one might wonder whether Theorem~\ref
 Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even for the fine moduli space.
 
 \begin{corollary}\label{cor:agn}
-  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as pairs $(A,L)$, where $A$ is a principally polarized abelian variety and $L$ is a symplectic basis for the $n$-torsion $A[n]$. Suppose $f((A_1, L_1)) = f((A_2, L_2))$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as pairs $(A,L)$, where $A$ is a principally polarized abelian variety and $L$ is a symplectic basis for the $n$-torsion $A[n]$. Suppose $f(A_1,\lambda_1, L_1) = f(A_2,\lambda_2, L_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1, L_1)$ and $(A_2,\lambda_2, L_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{corollary}
 
 
-Next, we obtain a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a non-principal polarization type. Let $k$ be an algebraically closed field. Recall from~\cite[Theorem 1 et seq.]{mumford1966} that if $\mu: A \to A^\vee$ is a polarization on a $g$-dimensional abelian variety over $k$ of degree not divisible by $\car(k)$, then 
+The following result, which we prove in \S\ref{sec:Cor15proof} below, is a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a fixed non-principal polarization type. Let $k$ be an algebraically closed field. Recall from~\cite[Theorem 1 et seq.]{mumford1966} that if $\mu: A \to A^\vee$ is a polarization on a $g$-dimensional abelian variety over $k$ of degree not divisible by $\car(k)$, then 
 \[
   \ker \mu \cong (\Z/d_1\Z \times \cdots \times \Z/d_g\Z)^2
 \]
-for some positive integers $d_1 \mid \cdots \mid d_g$, $\car(k) \nmid d_g$. Letting $D = (d_1, \ldots, d_g)$, we say that $D$ is the \emph{type} of $\mu$. 
+for some positive integers $d_1 \mid \cdots \mid d_g$, $\car(k) \nmid d_g$. Letting $D = (d_1, \ldots, d_g)$, we say that $D$ is the \emph{type} of the polarization $\mu$. 
 \begin{corollary}\label{cor:agpol}
-  Let $g \in \Z_{\geq 2}$, and let ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${D}$. Suppose that $R$ is a domain with $d_g$ invertible in $R$ and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$. Then $f$ is a constant function.
+  Let $g \in \Z_{\geq 2}$, and let ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${D}$. Suppose that $R$ is a domain and that $d_g$ invertible in $R$, and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{corollary}
 
 
@@ -201,7 +201,17 @@ $$
   Since $\pi((A,L)) = A$, we have $f_G(A_1) = f_G(A_2)$ whenever $A_1 \approx A_2$ with $A_1,A_2 \in U$. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is constant. Since $\agn$ is connected, it follows that $f$ is constant.
 \end{proof}
 
-\begin{proof}[Proof of Corollary~\ref{cor:agpol}]
+\begin{remark}
+Throughout this paper we assume that the base ring $R$ is a domain.
+  All of the above theorems apply when the base ring is a geometrically reduced scheme as well. To see this, note that when $R$ is geometrically integral, we can use the fact that the generic point is dense in $R$. For $R$ geometrically reduced, instead take the union of the generic points of the irreducible components.
+\end{remark}
+
+
+
+\section{Proof of Corollary~\ref{cor:agpol}}
+\label{sec:Cor15proof}
+
+%\begin{proof}[Proof of Corollary~\ref{cor:agpol}]
   Let $n = d_g$. If $\mu$ is a type $D$ polarization on $A$, then by \cite[Theorem 1]{mumford1966}, $\mu$ induces a nondegenerate skew-symmetric bilinear pairing $e^\mu$ on $\ker \mu$. Let $\agphi$ be the moduli space for triples $(A,\mu,\phi)$ where $A$ is an abelian variety, $\mu$ is a type $D$ polarization on $A$, and $\phi$ is an injective homomorphism
   \[
     \phi: \Z/d_1\Z \times \cdots \times \Z/d_g\Z \to \ker \mu
@@ -253,10 +263,6 @@ $$
     where $f_G$ is defined in the same way as above. The rest of the proof then goes through unchanged.
 \end{proof}
 
-\begin{remark}
-Throughout this paper we assume that the base ring $R$ is a domain.
-  All of the above theorems apply when the base ring is a geometrically reduced scheme as well. To see this, note that when $R$ is geometrically integral, we can use the fact that the generic point is dense in $R$. For $R$ geometrically reduced, instead take the union of the generic points of the irreducible components.
-\end{remark}
 
 %\section{The curves $X_{A}$}
 %\label{sec:curves-on-Ag}
