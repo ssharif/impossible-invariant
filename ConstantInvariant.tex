@@ -55,6 +55,7 @@ If $A_1$ and $A_2$ are abelian varieties, we say $A_1$ and $A_2$ are \emph{weakl
 \begin{theorem}\label{thm:invariant-c-constant}
   Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{theorem}
+Note that Theorem~\ref{thm:invariant-c-constant} fails when $g = 1$; the $j$-invariant gives a nonconstant morphism $\mathcal{A}_1 \to \Pro^1$ such that $j(E_1) = j(E_2)$ whenever $E_1 \approx E_2$.
 
 It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
 
@@ -141,7 +142,7 @@ If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote th
     Suppose $\ell$ is a prime number and $g\in\Z_{\ge 1}$. Then $\bigcup_{A \in \detl} X_A$ is Zariski dense in $\ag$.
 \end{theorem}
 
-Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:step-2} and \S\ref{sec:step-1}, respectively.
+Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:step-2} and \S\ref{sec:step-1}, respectively. Proposition~\ref{prop:lim-degree} is the only place where we require that $g > 1$.
 
 Next we derive Theorem \ref{thm:sg-c-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense},  we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense}, and we derive Corollary \ref{cor:agn} from Theorem \ref{thm:invariant-c-constant}.
 
@@ -484,11 +485,11 @@ $\lambda_A = \lambda_U \lambda_D \lambda_V$. Since
 \end{proof}
 
 \begin{proposition}\label{prop:lim-degree}
-Suppose $g\in\Z_{\ge 1}$ and $k$ is an algebraically closed field containing the base ring.
+Suppose $g\in\Z_{\ge 2}$ and $k$ is an algebraically closed field containing the base ring.
   Then there are infinitely many rational primes $\ell\neq\car(k)$ such that if 
    $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$,
   %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$.
-  then there exists a sequence $x_i \in Y_0(\ell^n)(k)$ such that
+  then there exists an infinite sequence $x_i \in Y_0(\ell^n)(k)$ such that
   \[
     \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m)(k) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
   \]
@@ -535,7 +536,7 @@ Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides
     \text{ in } \Gt_{q_1} \times \Gt_{q_2}.
   \]
 %  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$.
-There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i=3,4,\dots$, we find that for each $i$ there are $g^i$ points $y \in Y_0(\ell^m)(k)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$.
+There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i=3,4,\dots$, we find that for each $i$ there are $g^i$ points $y \in Y_0(\ell^m)(k)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$. Since $g > 1$, the result follows.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:Sg-dense}]
