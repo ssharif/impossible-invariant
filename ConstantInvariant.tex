@@ -114,6 +114,17 @@ and $\car(k) \nmid d_g$ (see \cite[Theorem 1 et seq.]{mumford1966}). Letting $D 
   Let $g \in \Z_{\geq 2}$, and let ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${D}$. Suppose that $R$ is a domain and that $d_g$ invertible in $R$, and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{corollary}
 
+Let
+%\[
+  $\alld = \bigcup_{D} \agd$
+%\]
+where $D$ runs over all polarization types. We view $\alld$ as an $R$-scheme.
+\begin{cor}
+label{cor:alldcor}
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \alld \to X$ is a morphism of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+\end{cor}
+
+
 
 
 We next discuss the proofs. 
@@ -144,7 +155,7 @@ If $\ell$ is a prime number and $g$ is a positive integer, let $\detl$ denote th
 
 Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:step-2} and \S\ref{sec:step-1}, respectively. Proposition~\ref{prop:lim-degree} is the only place where we require that $g > 1$.
 
-Next we derive Theorem \ref{thm:sg-c-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense},  we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense}, and we derive Corollary \ref{cor:agn} from Theorem \ref{thm:invariant-c-constant}.
+Next we derive Theorem \ref{thm:sg-c-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense},  we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense},  we derive Corollary \ref{cor:agn} from Theorem \ref{thm:invariant-c-constant}, and we derive Corollary \ref{cor:alldcor} from Corollary \ref{cor:agn}.
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
 %Let $k$ be an algebraically closed field containing $R$.
@@ -201,6 +212,12 @@ $$
 
   Since $\pi(A,L) = A$, we have $f_G(A_1) = f_G(A_2)$ whenever $A_1 \approx A_2$ with $A_1,A_2 \in U$. By Theorem~\ref{thm:invariant-c-constant}, $f_G$ is constant. Since $\agn$ is connected, it follows that $f$ is constant.
 \end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:alldcor}]
+  By Corollary~\ref{cor:agpol}, $f$ is constant on each $\agd$. Thus we can naturally extend $f$ to a morphism on $\alld$. Fix two polarization types $D$ and $D'$. Our goal is to show that $f(\agd) = f(\agdp)$. Choose an elliptic curve $E$ defined over $R$. Then $E^g$ has polarizations $\mu$ and $\mu'$ defined over $R$ of types $D$ and $D'$, respectively, so $(E^g, \mu) \in \agd(R)$ and $(E^g,\mu') \in \agdp(R)$. Since $E^g \weak E^g$, by our hypothesis we have $f(E^g, \mu) = f(E^g, \mu')$. Thus $f(\agd) = f(\agdp)$, as desired. 
+  %\textcolor{red}{What if $E^g$ is not in domain of definition?}
+\end{proof}
+
 
 \begin{remark}
 Throughout this paper we assume that the base ring $R$ is a domain.
@@ -969,21 +986,6 @@ Set $\pi_D(A,\lambda,L) = (B,\mu)$.
   The morphism $\pi_D$ is surjective. Proposition~\ref{prop:medium-isomorphic} then implies the claim.
 \end{proof}
 The proof of Corollary~\ref{cor:agpol} now follows fthe proof of Theorem~\ref{thm:invariant-c-constant}, replacing the use of Theorem \ref{thm:sg-c-dense} with the use of Proposition \ref{prop:whatever}.
-
-Let
-%\[
-  $\alld = \bigcup_{D} \agd$
-%\]
-where $D$ runs over all polarization types. We view $\alld$ as an $R$-scheme.
-\begin{cor}
-label{cor:alldcor}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \alld \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
-\end{cor}
-
-\begin{proof}
-  By Corollary~\ref{cor:agpol}, $f$ is constant on each $\agd$. Thus we can naturally extend $f$ to a morphism on $\alld$. Fix two polarization types $D$ and $D'$. Our goal is to show that $f(\agd) = f(\agdp)$. Choose an elliptic curve $E$ defined over $R$. Then $E^g$ has polarizations $\mu$ and $\mu'$ defined over $R$ of types $D$ and $D'$, respectively, so $(E^g, \mu) \in \agd(R)$ and $(E^g,\mu') \in \agdp(R)$. Since $E^g \weak E^g$, by our hypothesis we have $f(E^g, \mu) = f(E^g, \mu')$. Thus $f(\agd) = f(\agdp)$, as desired. 
-  %\textcolor{red}{What if $E^g$ is not in domain of definition?}
-\end{proof}
 
 \bibliographystyle{halpha}
 \bibliography{./references}
