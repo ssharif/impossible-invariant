@@ -105,24 +105,22 @@ Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even f
 \end{corollary}
 
 
-The following result, which we prove in \S\ref{sec:Cor15proof} below, is a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a fixed non-principal polarization type. Suppose $k$ is an algebraically closed field. If $\mu: A \to A^\vee$ is a polarization on a $g$-dimensional abelian variety over $k$ of degree not divisible by $\car(k)$, then there are unique positive integers $d_1 \mid \cdots \mid d_g$ such that
+Suppose $k$ is an algebraically closed field. If $\mu: A \to A^\vee$ is a polarization on a $g$-dimensional abelian variety $A$ over $k$ of degree not divisible by $\car(k)$, then there are unique positive integers $d_1 \mid \cdots \mid d_g$ such that
 \[
   \ker \mu \cong (\Z/d_1\Z \times \cdots \times \Z/d_g\Z)^2
 \]
 and $\car(k) \nmid d_g$ (see \cite[Theorem 1 et seq.]{mumford1966}). Letting $D = (d_1, \ldots, d_g)$, we say that the polarization $\mu$ has \emph{type} $D$. 
-\begin{corollary}\label{cor:agpol}
-  Let $g \in \Z_{\geq 2}$, and let ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers satisfying $d_1 \mid \cdots \mid d_g$. Let $\agd$ be the moduli space of abelian varieties with a polarization of type ${D}$. Suppose that $R$ is a domain and that $d_g$ invertible in $R$, and suppose $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
-\end{corollary}
+A \emph{polarization type} is a tuple ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers such that $d_1 \mid \cdots \mid d_g$. If $D$ is a polarization type, let $\agd$ denote the moduli space of abelian varieties with a polarization of type ${D}$. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. 
 
-With $\agd$ defined as in Corollary \ref{cor:agpol}, let
-%\[
-  $\alld = \bigcup_{D} \agd$,
-%\]
-where $D$ runs over all polarization types. We view $\alld$ as an $R$-scheme.
+The following result, which we prove in \S\ref{sec:Cor15proof} below, is a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a fixed non-principal polarization type. 
+
+\begin{corollary}\label{cor:agpol}
+  Suppose that $g \in \Z_{\geq 2}$, ${D} = (d_1, \ldots, d_g)$ is a polarization type, $R$ is a domain, $d_g$ is invertible in $R$, and  $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+\end{corollary}
 
 \begin{corollary}
 \label{cor:alldcor}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \alld \to X$ is a morphism of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \cup_{D} \agd \to X$ is a morphism of $R$-schemes, where $D$ runs over all polarization types. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$. Then $f$ is a constant function.
 \end{corollary}
 
 
@@ -215,7 +213,7 @@ $$
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{cor:alldcor}]
-  By Corollary~\ref{cor:agpol}, $f$ is constant on each $\agd$. %Thus we can naturally extend $f$ to a morphism on $\alld$. 
+  By Corollary~\ref{cor:agpol}, $f$ is constant on each $\agd$. 
  Fix two polarization types $D$ and $D'$. Our goal is to show that $f(\agd) = f(\agdp)$. Choose an elliptic curve $E$ defined over $R$. Then $E^g$ has polarizations $\mu$ and $\mu'$ defined over $R$ of types $D$ and $D'$, respectively, so $(E^g, \mu) \in \agd(R)$ and $(E^g,\mu') \in \agdp(R)$. Since $E^g \weak E^g$, by our hypothesis we have $f(E^g, \mu) = f(E^g, \mu')$. Thus $f(\agd) = f(\agdp)$, as desired. 
   %\textcolor{red}{What if $E^g$ is not in domain of definition?}
 \end{proof}
