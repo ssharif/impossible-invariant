@@ -102,7 +102,7 @@ Since $\ag$ is only a coarse moduli space, one might wonder whether Theorem~\ref
 Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even for the fine moduli space.
 
 \begin{corollary}\label{cor:agn}
-  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as triples  $(A, \lambda,L)$, where $A$ is an abelian variety with principal polarization $\lambda$, and $L$ is a symplectic basis for the $n$-torsion $A[n]$. Here, symplectic means with respect to the Weil pairing induced by $\lambda$. Suppose $f(A_1,\lambda_1, L_1) = f(A_2,\lambda_2, L_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1, L_1)$ and $(A_2,\lambda_2, L_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as triples  $(A, \lambda,L)$, where $A$ is an abelian variety with principal polarization $\lambda$, and $L$ is a symplectic basis for the $n$-torsion $A[n]$ (where symplectic means with respect to the Weil pairing induced by $\lambda$). Suppose $f(A_1,\lambda_1, L_1) = f(A_2,\lambda_2, L_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1, L_1)$ and $(A_2,\lambda_2, L_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{corollary}
 
 
@@ -129,7 +129,7 @@ polarization type.
 
 
 We next discuss the proofs. 
-If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop. 16.8]{milne-av} there is a unique principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
+If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop.~16.8]{milne-av} there is a unique principal polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Define
 \begin{equation}\label{def:psimoddef}
 \psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
 \end{equation}
@@ -252,7 +252,7 @@ Throughout this paper we assume that the base ring $R$ is a domain.
 %  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Further, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
 %\end{proof}
 
-%Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop. 16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
+%Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop.~16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
 
 %\begin{definition}\label{def:psimod-def}
 %Define
@@ -923,7 +923,7 @@ Suppose $g$ is a positive integer.
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero. View $f$ as a global section of the structure sheaf. Then by Proposition~\ref{prop:q-expansion}, there exist coefficients $c_Q \in R$ for $Q \in \sD$, such that for almost all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c_Q q^{\tr(AQ)}$.
-  %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop. V.1.5]{faltings1990degeneration}.
+  %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop.~V.1.5]{faltings1990degeneration}.
 
   Let $S = \{ Q \in \sD :c_Q \neq 0\}$. By Proposition~\ref{prop:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
@@ -980,12 +980,14 @@ Let $n = d_g$. Define a morphism
 %\[
   $\pi_D:\agn \longrightarrow \agd$
 %\]
-  as follows. If $(A,\lambda,L) \in \agn$, let $B$ denote the quotient of $A$ by the subgroup generated by $\{ P_1,\ldots,P_g,d_1Q_1,\ldots,d_gQ_g \}$ and let $\psi: A \to B$ be the quotient map. Since $\ker(\psi) \subseteq A[n]$, there exists an isogeny $\rho: B \to A$ such that the map $\rho \circ \psi$ is multiplication by $n$. Let $\mu$ be the pull-back polarization $\rho^*(\lambda)$. There is a perfect skew-symmetric pairing $e^\mu$ on $\ker \mu$, and by \cite[Prop. 16.8]{milne-av}, $\ker \rho$ is a maximal isotropic subgroup of $\ker \mu$. Since
+  as follows. If $(A,\lambda,L) \in \agn$, let $B$ denote the quotient of $A$ by the subgroup generated by $\{ P_1,\ldots,P_g,d_1Q_1,\ldots,d_gQ_g \}$ and let $\psi: A \to B$ be the quotient map. Since $\ker(\psi) \subseteq A[n]$, there exists an isogeny $\rho: B \to A$ such that the map $\rho \circ \psi$ is multiplication by $n$. Let $\mu$ be the pull-back polarization $\rho^*(\lambda)$. By \cite[Prop.~16.8]{milne-av}, there is a perfect skew-symmetric pairing %$e^\mu$ 
+  on $\ker \mu$ with respect to which $\ker \rho$ is a maximal isotropic subgroup of $\ker \mu$. Since
   \[
-    \ker \rho = \langle \psi(Q_1), \ldots, \psi(Q_g)\rangle \cong \Z/d_1 \Z \times \cdots \times \Z/d_g \Z
+    \ker \rho = \langle \psi(Q_1), \ldots, \psi(Q_g)\rangle \cong \Z/d_1 \Z \times \cdots \times \Z/d_g \Z,
   \]
-  we see that $\mu$ is in fact type $D$. Set $\pi_D(A,\lambda,L) = (B,\mu)$.
-  Also by \cite[Prop. 16.8]{milne-av}, if $(B,\mu) \in \agd$, then for any choice of maximal isotropic subgroup $H \subset \ker \mu$, the quotient $\rho: B \to B/H$ is an abelian variety which has a principal polarization $\lambda$ satisfying $\rho^*(\lambda) = \mu$. There is then an appropriate choice of level structure $L$ such that $\pi_D(B/H, \lambda, L) = (B,\mu)$, and so $\pi_D$ is surjective.
+  the polarization $\mu$ has type $D$. Set $\pi_D(A,\lambda,L) = (B,\mu)$.
+  Also by \cite[Prop.~16.8]{milne-av}, if $(B,\mu) \in \agd$, then for every choice of maximal isotropic subgroup $H \subseteq \ker \mu$, the quotient %$\rho: B \to 
+  $B/H$ is an abelian variety that has a principal polarization $\lambda$ such that $\rho^*(\lambda) = \mu$. There is then an appropriate choice of level structure $L$ such that $\pi_D(B/H, \lambda, L) \cong (B,\mu)$, and so $\pi_D$ is surjective.
   % Define $\phi: \Z/d_1\Z \times \cdots \times \Z/d_g\Z \to \ker \mu$ by sending the $i$th standard basis vector to $\psi(Q_i)$; since $\psi(Q_i) \in \ker \rho$, it follows that $\psi(Q_i) \in \ker \mu$. By \cite[Proposition 1]{mumford1966}, $\im(\phi)$ is isotropic with respect to $e^\mu$. Set $\pi_D_2(A,\lambda,L) = (B,\mu,\phi)$.
 
 Suppose $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ in $\agn$. Let $(B_i, \mu_i) = \pi_D(A_i, \lambda_i, L_i)$. Then $B_i = A_i/H_i$ for some subgroup $H_i \subset A_i[n]$. By the definition of $\medium$, there is a weak isomorphism $A_1 \to A_2$ that sends $H_1$ isomorphically onto $H_2$, and hence %$(B_1, \mu_1) \weak (B_2, \mu_2)$. Therefore
@@ -993,9 +995,10 @@ Suppose $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ in $\agn$. Let $(B
 %  \[
     $(\pi_D\times\pi_D)(\mg(k)) \subseteq \sgd(k).$
 %  \]
-  % Since ??, we have $(\pi_D\times\pi_D)(\mg(k)) = \sgd(k)$.
-By Proposition~\ref{prop:medium-isomorphic}, the closure of $\mg(k)$ is $\agn \times \agn$. Therefore the preimage of the closure of $\sgd(k)$ is $\agn \times \agn$.  Since the morphism $\pi_D$ is surjective, $\pi_D \times \pi_D$ is also surjective, and %we have $(\pi_D\times\pi_D)(\mg(k)) = \sgd(k)$.
-  the claim follows.
+By Proposition~\ref{prop:medium-isomorphic}, the Zariski closure of $\mg(k)$ is $\agn \times \agn$. 
+%Therefore the preimage of the closure of $\sgd(k)$ is $\agn \times \agn$.  Since the morphism $\pi_D$ is surjective, $\pi_D \times \pi_D$ is also surjective, and %we have $(\pi_D\times\pi_D)(\mg(k)) = \sgd(k)$.
+  %the claim follows.
+  Since $\pi_D:\agn \longrightarrow \agd$ is surjective, it follows that $\sgd(k)$ is Zariski dense in $\agd \times \agd$.
 \end{proof}
 The proof of Corollary~\ref{cor:agpol} is now the same as the proof of Theorem~\ref{thm:invariant-c-constant}, replacing the use of Theorem \ref{thm:sg-c-dense} with the use of Proposition \ref{prop:whatever}.
 
