@@ -966,24 +966,37 @@ The polarization $\mu$ has type $D$.
 \[
   \Z/d_1 \Z \times \cdots \times \Z/d_g \Z  \cong  \langle \psi(Q_1), \ldots, \psi(Q_g)\rangle =  \ker \rho \subseteq \ker \mu.
   \]
-Take $P_i' \in A$ such that $nP_i' = P_i$. Let $e_i=n/d_i$. We will show that $\psi(e_iP_i') \in \ker \mu$ for all $i$. Since 
+Take $P_i' \in A$ such that $nP_i' = P_i$. Let $e_i=n/d_i$. 
+
+We will show that $\psi(e_iP_i') \in \ker \mu$ for all $i$. Since 
 $$
 \mu\psi(e_iP_i') = \rho^\vee \lambda\rho\psi(e_iP_i') = \rho^\vee \lambda(ne_iP_i') = \rho^\vee \lambda(e_iP_i),
 $$
 it suffices to show that
 $e_B(T,\rho^\vee \lambda(e_iP_i))=1$
-for all such $T\in B[n]$, where $e_B: B[n] \times B^\vee[n] \to \bmu_n$ is the Weil pairing.
+for all such $T\in B[n]$, where $e_B: B[n] \times B^\vee[n] \to \mu_n$ is the Weil pairing.
+Since $\rho(B[n]) = \ker(\psi)$, and $e_B(T,\rho^\vee \lambda(e_iP_i))=e_A(\rho(T),\lambda(e_iP_i))$,
+where $e_A: A[n] \times A^\vee[n] \to \mu_n$ is the Weil pairing, 
+it suffices to show that
+$e_A(P_j,\lambda(e_iP_i))=1$ and $e_A(d_jQ_j,\lambda(e_iP_i))=1$
+for all such $i$ and $j$. This follows from the fact that $L$ is a symplectic basis with respect to the pairing induced by $e_A$ and $\lambda$.
 
+Letting
+$$
+S = \langle \psi(Q_i), \psi(e_iP_i') : 1\le i \le g \rangle \cong (\Z/d_1 \Z \times \cdots \times \Z/d_g \Z)^2,
+$$
+we now have $S \subseteq \ker \mu$. Since $\deg \mu = (\deg \rho)^2 =(\prod_{i=1}^g d_i)^2$, we have $\ker \mu = S$.
+Thus $\mu$ has type $D$, as desired.
 \end{proof}
 
 \begin{lemma}\label{lem:piDsurjlem}
 The map $\pi_D$ is surjective.
 \end{lemma}
 \begin{proof}
-By \cite[Prop.~16.8]{milne-av}, there is a perfect skew-symmetric pairing %$e^\mu$ 
-  on $\ker \mu$ with respect to which $\ker \rho$ is a maximal isotropic subgroup of $\ker \mu$.
-  Also by \cite[Prop.~16.8]{milne-av}, if $(B,\mu) \in \agd$, then for every choice of maximal isotropic subgroup $H \subseteq \ker \mu$, the quotient  
-  $B/H$ is an abelian variety that has a principal polarization $\lambda$ such that $\rho^*(\lambda) = \mu$. There is then an appropriate choice of level structure $L$ such that $\pi_D(B/H, \lambda, L) \cong (B,\mu)$, so $\pi_D$ is surjective.
+Suppose $(B,\mu) \in \agd$. For the perfect skew-symmetric pairing %$e^\mu$ 
+  on $\ker \mu$ defined above  \cite[Prop.~16.8]{milne-av}, 
+  for every choice of maximal isotropic subgroup $H \subseteq \ker \mu$, the quotient  
+  $B/H$ is an abelian variety that has a principal polarization $\lambda$ such that $\rho^*(\lambda) = \mu$, by \cite[Prop.~16.8]{milne-av}. There is then an appropriate choice of level structure $L$ such that $\pi_D(B/H, \lambda, L) \cong (B,\mu)$, so $\pi_D$ is surjective.
   % Define $\phi: \Z/d_1\Z \times \cdots \times \Z/d_g\Z \to \ker \mu$ by sending the $i$th standard basis vector to $\psi(Q_i)$; since $\psi(Q_i) \in \ker \rho$, it follows that $\psi(Q_i) \in \ker \mu$. By \cite[Proposition 1]{mumford1966}, $\im(\phi)$ is isotropic with respect to $e^\mu$. Set $\pi_D_2(A,\lambda,L) = (B,\mu,\phi)$.
 \end{proof}
 
