@@ -1039,6 +1039,23 @@ Suppose $(B,\mu) \in \agd$. Let $\mu': B^\vee \to B$ be the unique isogeny for w
   on $\ker \mu'$ defined on p.~135 of~\cite{milne-av}.
   Let $A^\vee = B^\vee/J$, and write $\psi^\vee$ for the quotient map. Let $A = (A^\vee)^\vee$ and $\psi: A \to B$ the dual isogeny to $\psi^\vee$. There is then a principal polarization $\lambda': A^\vee \to A$ for which $\mu' = \psi\lambda'\psi^\vee$. Let $\lambda = \lambda'^{-1}$. We wish to find a level structure $L$ on $A$ for which $\pi_D(A,\lambda,L) = (B,\mu)$.
 
+Let $J' \subset \ker \mu'$ be a subgroup such that $J \oplus J' = \ker \mu'$. Necessarily $J'$ is an isotropic subgroup isomorphic to $\Z/e_1\Z \times \cdots \times \Z/e_g\Z$. Let $I = \lambda'\psi^\vee(J')$.
+\begin{lemma}
+  $I \subset A[n]$ is isotropic for $e_n^\lambda$.
+\end{lemma}
+
+\begin{proof}
+  Let $T, T' \in I$. There exist $R,R' \in J'$ such that $\lambda'\psi^\vee(R) = T$ and $\lambda'\psi^\vee(R') = T'$. Then
+  \begin{align*}
+    e_n^\lambda(T,T') &= e_n(T, \lambda(T')) \\
+                    &= e_A(\lambda'\psi^\vee(R), \lambda\lambda'\psi^\vee(R')) \\
+                    &= e_A(\lambda'\psi^\vee(R), \psi^\vee(R')) \\
+                    &= e_B(\psi\lambda'\psi^\vee(R), R') \\
+                    &= e_B(\mu'(R), R').
+  \end{align*}
+  But $R \in J' \subset \ker \mu'$, and hence the pairing is trivial.
+\end{proof}
+
 \begin{lemma}\label{lem:piDsurjlem}
 The map $\pi_D$ is surjective.
 \end{lemma}
