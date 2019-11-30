@@ -1030,6 +1030,15 @@ Thus $\mu$ has type $D$, as desired.
 \end{proof}
 
 REDO PROOF THAT $\pi_D$ IS SURJECTIVE
+Suppose $(B,\mu) \in \agd$. Let $\mu': B^\vee \to B$ be the unique isogeny for which $\mu\mu' = [n]$. \textcolor{red}{Is it obvious that $\mu'$ is a polarization?} Letting $e_i = n/d_i$, we have that
+\[
+  \ker \mu' \cong (\Z/e_1\Z \times \cdots \Z/e_g\Z)^2.
+\]
+  Fix a subgroup $J$ of $\ker \mu'$ such that $$H \isom  \Z/e_1 \Z \times \cdots \times \Z/e_g \Z$$ and such that
+ $J$ is isotropic with respect to the skew-symmetric pairing %$e^\mu$ 
+  on $\ker \mu'$ defined on p.~135 of~\cite{milne-av}.
+  Let $A^\vee = B^\vee/J$, and write $\psi^\vee$ for the quotient map. Let $A = (A^\vee)^\vee$ and $\psi: A \to B$ the dual isogeny to $\psi^\vee$. There is then a principal polarization $\lambda': A^\vee \to A$ for which $\mu' = \psi\lambda'\psi^\vee$. Let $\lambda = \lambda'^{-1}$. We wish to find a level structure $L$ on $A$ for which $\pi_D(A,\lambda,L) = (B,\mu)$.
+
 \begin{lemma}\label{lem:piDsurjlem}
 The map $\pi_D$ is surjective.
 \end{lemma}
