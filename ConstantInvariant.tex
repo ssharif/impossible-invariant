@@ -7,10 +7,6 @@
 \usepackage{xcolor}
 \usepackage{tikz-cd}
 \usepackage{verbatim}
-%\usepackage{lineno}
-%\linenumbers
-
-%\numberwithin{equation}{section}
 
 
 \title[Algebraic maps constant on unpolarized isomorphism classes]{Algebraic maps constant on isomorphism classes of unpolarized abelian varieties are constant}
@@ -30,23 +26,21 @@
 \author[A.\ Silverberg]{A.\ Silverberg}
 \address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
 \email{asilverb@uci.edu}
-%\subjclass[2010]{??}
+\subjclass[2010]{Primary: 14K05, Secondary: 11G10,11G15}
 \keywords{abelian varieties, polarizations}
 \thanks{We thank the Alfred P.~Sloan Foundation and the National Science Foundation, which provided support for the research, and the June 2019 ICERM workshop on Arithmetic of Low-Dimensional Abelian Varieties, where this project began.}
 
 \begin{document}
 
 \begin{abstract}
-We show that if a %morphism 
+We show that if a 
 rational map is constant on each isomorphism class of unpolarized abelian varieties of a given dimension, then it is a constant map. 
-Our results shed light on a question raised in \cite{multiparty} concerning a proposal for multiparty non-interactive key exchange.
+Our results were motivated by and shed light on a proposed construction of a cryptographic protocol for multiparty non-interactive key exchange.
 \end{abstract}
 
 
-%\today
 \maketitle
 
-%\tableofcontents
 
 
 \section{Introduction}
@@ -61,18 +55,6 @@ Note that Theorem~\ref{thm:invariant-c-constant} fails when $g = 1$; the $j$-inv
 It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
 
 
-% Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
-% \[
-%   \dlim_{T/R} S(T)
-% \]
-% where the limit is over all $R$-schemes $T$. Let
-% \[
-%   \sg: \rschemes \to \mathcal{P}((\ag \times \ag)[R])
-% \]
-% be the functor from $R$-schemes to the power set of $(\ag \times \ag)[R]$ that sends an $R$-scheme $T$ to the set
-% \[
-%   \sg(T) = \{(A,B) \in (\ag \times \ag)(T) | A \approx B\}.
-% \]
 
 
 If $R$ is a scheme, let
@@ -87,7 +69,6 @@ We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
 It is widely acknowledged that in order to obtain a moduli space of abelian varieties, one must first fix a polarization.  However, the mere fact that isomorphism as unpolarized abelian varieties itself is not a well behaved equivalence relation does not {\it a priori} exclude the possibility that some slightly coarser equivalence relation {\em could} give rise to a moduli space. Theorem \ref{thm:sg-c-dense} implies that this cannot happen: the only coarser equivalence relation that is also Zariski closed is the trivial relation in which all elements are equivalent.
 (Since the Zariski closure of an equivalence relation need not be an equivalence relation, Theorem \ref{thm:sg-c-dense} is somewhat stronger than this.)
-%Theorem~\ref{thm:invariant-c-constant} 
 Our results can be viewed as making precise the discussion in~\cite[p. 97]{git} about  ``pathologies'' that arise when considering the relation $\approx$.
 
 We will prove the following result in \S\ref{sec:characteristic-p}.
@@ -113,7 +94,7 @@ Suppose $k$ is an algebraically closed field. If $\mu: A \to A^\vee$ is a polari
 and $\car(k) \nmid d_g$ (see \cite[Theorem 1 et seq.]{mumford1966}). Letting $D = (d_1, \ldots, d_g)$, we say that the polarization $\mu$ has \emph{type} $D$. 
 A \emph{polarization type} is a tuple ${D} = (d_1, \ldots, d_g)$ where the $d_i$ are positive integers such that $d_1 \mid \cdots \mid d_g$. If $D$ is a polarization type, let $\agd$ denote the moduli space of abelian varieties with a polarization of type ${D}$. View points of $\agd$ as pairs $(A,\mu)$, where $A$ is an abelian variety and $\mu$ is a polarization of type ${D}$. 
 
-The following result, which we prove in \S\ref{sec:Cor15proof} below, is a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a fixed %non-principal 
+The following result, which we prove in \S\ref{sec:Cor15proof} below, is a generalization of Theorem \ref{thm:invariant-c-constant} with $\ag$ replaced by the moduli space of  abelian varieties with a fixed  
 polarization type. 
 
 \begin{corollary}\label{cor:agpol}
@@ -133,11 +114,8 @@ If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular cur
 \begin{equation}\label{def:psimoddef}
 \psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
 \end{equation}
-%by sending $(E,C) \in Y_0(N)$ to the abelian variety $B$ with principal polarization $\lambda$, and l
 Let
-%\begin{equation}\label{def:XAdef}
 $$X_A=\psimod(Y_0(\det(A))).$$
-%\end{equation}
 (For a different viewpoint on the maps $\psimod$, see \cite[p. 19 et seq.]{rains}.)
 
 \begin{definition}\label{def:detl}
@@ -159,7 +137,6 @@ Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense} are proved in \S\ref{sec:
 Next we derive Theorem \ref{thm:sg-c-dense} from Theorems \ref{thm:Sg-dense} and \ref{thm:curves-dense},  we derive Theorem \ref{thm:invariant-c-constant} from Theorem \ref{thm:sg-c-dense},  we derive Corollary \ref{cor:agn} from Theorem \ref{thm:invariant-c-constant}, and we derive Corollary \ref{cor:alldcor} from Corollary~\ref{cor:agpol}.
 
 \begin{proof}[Proof of Theorem~\ref{thm:sg-c-dense}]
-%Let $k$ be an algebraically closed field containing $R$.
 Fix a prime number $\ell\neq\car(k)$ that satisfies the conclusion of Theorem \ref{thm:Sg-dense}. We have
 \begin{multline*}
 \bigcup_{A,A' \in \detl} \left(\sg(k) \cap (X_A \times X_{A'})(k)\right) \\
@@ -173,25 +150,7 @@ $$
     \left(\bigcup_{A \in \detl} X_A\right) \times \left(\bigcup_{A' \in \detl} X_{A'}\right),
     $$
     which by Theorem~\ref{thm:curves-dense} is Zariski dense in $\ag \times \ag$.
-%  \begin{align*}
-%    \sg(\C)
-%    &\supseteq
-%    \sg(\C) \cap \left(\bigcup_{A,A'} X_A \times X_{A'}\right)
-%    \\
-%    &=
-%    \bigcup_{A,A'} \sg(\C) \cap (X_A \times X_{A'})
-%    \\
-%    &\prec
-%    \bigcup_{A,A'} X_{A} \times X_{A'}
-%    &&\text{By Theorem~\ref{thm:sg-c-dense}}
-%    \\
-%    &=
-%    \left(\bigcup_{A} X_A\right) \times \left(\bigcup_{A'} X_{A'}\right)
-%    \\
-%    &\prec
-%    \ag \times \ag
-%    &&\text{By Theorem~\ref{thm:Sg-dense}}.
-%  \end{align*}
+
 \end{proof}
 
 
@@ -217,7 +176,6 @@ $$
 \begin{proof}[Proof of Corollary~\ref{cor:alldcor}]
   By Corollary~\ref{cor:agpol}, $f$ is constant on each $\agd$. 
  Fix two polarization types $D$ and $D'$. Our goal is to show that $f(\agd) = f(\agdp)$. Choose an elliptic curve $E$ defined over $R$. Then $E^g$ has polarizations $\mu$ and $\mu'$ defined over $R$ of types $D$ and $D'$, respectively, so $(E^g, \mu) \in \agd(R)$ and $(E^g,\mu') \in \agdp(R)$. Since $E^g \weak E^g$, by our hypothesis we have $f(E^g, \mu) = f(E^g, \mu')$. Thus $f(\agd) = f(\agdp)$, as desired. 
-  %\textcolor{red}{What if $E^g$ is not in domain of definition?}
 \end{proof}
 
 
@@ -231,95 +189,39 @@ Throughout this paper we assume that the base ring $R$ is a domain.
 
 
 
-%\section{The curves $X_{A}$}
-%\label{sec:curves-on-Ag}
-
-
-
-%\textcolor{red}{TODO: what constraints are required for $n$?}. In this section we will construct the curves $X_A \subset \ag$. % mentioned in Section~\ref{sec:introduction}.
-
-%We will define the maps $Y_0(\ell^n) \to \ag$ in two ways: geometrically based on the moduli interpretation, and complex analytically. We will use that these two interpretations are the same in the proof of Theorem~\ref{thm:sg-c-dense}. We will apply the moduli interpretation to prove Theorem~\ref{thm:Sg-dense}, and the complex analytic version to prove Theorem~\ref{thm:curves-dense}. Since the latter result does not directly carry over to positive characteristic, we will use a variant that shows density in $\ao^g$; see \ref{sec:characteristic-p}.
-
-
-
-
-%Where is the next result used? If we use it, we should refer to it. If we don't use it, let's comment it out, for now.
-%\begin{lemma}
-%  The subgroup $K(A)$ is a maximal isotropic subgroup of $\ker \lambda_A$.
-%\end{lemma}
-%
-%\begin{proof}
-%  Let $P$ be a generator of $C$, defined over the algebraic closure of our base field. Identify $C^g$ with $(\Z/N)^g$ via the map $(a_iP) \mapsto (a_i)$. Then multiplication by the matrix $A$ induces a map $\lambda_A^{(C)}:C^g \to C^g$. One sees (how??) that $\#(\ker \lambda_A^{(C)}) = \sqrt{\#(\ker \lambda_A})$. Further, $\ker \lambda_A^{(C)} \subset C^g$ is isotropic (why?). The claim follows.
-%\end{proof}
-
-%Let $B = E^g/K(A)$, and let $\pi: E^g \to B$ be the quotient map. Then by \cite[Prop.~16.8]{milne-av}, there is a principal polarization $\lambda$ on $B$ for which $\pi^*(\lambda) = \lambda_A$. If $X$ is an abelian variety, let $NS(X)$ denote its N\'eron-Severi group. Since $\pi^*: NS(B) \to NS(E^g)$ is injective, $\lambda$ is unique.
-
-%\begin{definition}\label{def:psimod-def}
-%Define
-%\[
-%\psimod: Y_0(N) \to \ag, \quad (E,C) \mapsto (B,\lambda).
-%\]
-%\end{definition}
-
-
 
 \section{Proof of Theorem~\ref{thm:Sg-dense}}
 \label{sec:step-2}
 
-%The main goal of this section is to prove Theorem~\ref{thm:Sg-dense}.
-
 The plan is to find a suitable infinite set of pairs $(x,y) \in \sg(k) \cap (X_A \times X_{A'})(k)$. We will explicitly construct these pairs by choosing $x,y \in \ag(k)$ that are products of isogenous CM elliptic curves. To ensure both that our products are weakly isomorphic and that there are enough pairs, we first establish basic observations about primes in CM fields.
 
-%\begin{lemma}\label{lem:silly}
-%  Suppose $\ell$ is a prime number. Then there is an imaginary quadratic field $K$ such that $\sO_K^\times = \{\pm 1\}$ and $\ell$ splits into principal prime ideals in $K$.
-%\end{lemma}
-%\begin{proof}
-%  Let $L$ denote the set of algebraic integers $\alpha \in \C$ whose minimal polynomial is of the form $x^2 - tx + \ell$ with $0 < |t| < 2\sqrt{\ell}$.
-%  Then $\#L = 4\lfloor 2\sqrt{\ell} \rfloor$.
-%  For any imaginary quadratic field $K$, there are at most $2\#(\sO_K^\times) \leq 12$ algebraic integers in $K$ of norm $\ell$.
-%  If $\ell \geq 13$, then $4\lfloor 2\sqrt{\ell} \rfloor > 24$, so there is some $\alpha \in L$ that does not lie in $\Q(i)$ or $\Q(\sqrt{-3})$, and we can let
-%   $K = \Q(\alpha)$.
-%  The cases when $\ell < 13$ can be checked by hand.
-%\end{proof}
 
 \begin{lemma}\label{lem:K-exists}
-  Suppose $\ell$ is a prime number, %$g$ is a positive integer, 
+  Suppose $\ell$ is a prime number, 
   $g \in\Z_{\ge 1}$, and $K$ is an imaginary quadratic field over which $\ell$ splits into principal prime ideals, namely $\ell = \alpha\overline{\alpha}$ with $\alpha\in \sO_K$.
-%  \begin{enumerate}
-%    \item $\sO_K^\times = \{\pm 1\}$,
-%    \item $\ell$ splits in $K$ into principal primes $\alpha\sO_K \cdot \overline{\alpha}\sO_K$ with $\alpha\in \sO_K$,
-%    \item
 Then there are infinitely many rational prime numbers $q$ such that
     \begin{enumerate}
       \item $q$ is inert in $K$,
       \item $q \equiv -1 \mod{g}$, and
       \item $\alpha \mod q\sO_K \in (\sO_K/q\sO_K)^\times$ is a $g$th power.
     \end{enumerate}
-%  \end{enumerate}
 \end{lemma}
 \begin{proof}
-  %By Lemma~\ref{lem:silly}, we can find a $K$ satisfying (1) and (2).
   Let $L = K(\zeta_g,\alpha^{1/g},\overline{\alpha}^{1/g})$.
   Let $\sigma$ be any complex conjugation in $\Gal(L/\Q)$.
   Let $\mathfrak{q}$ be any prime of $L$ unramified in $L/\Q$ whose Frobenius $\mathrm{Frob}(\mathfrak{q}) \in \Gal(L/\Q)$ is $\sigma$. The Chebotarev density theorem guarantees that there are infinitely many such $\mathfrak{q}$.
   Let $q$ be the rational prime below $\mathfrak{q}$.
   Since $\sigma|_K$ is complex conjugation, $q$ is inert in $K$, giving (1).
   Since $\sigma|_{\Q(\zeta_g)}$ is complex conjugation, $q \equiv -1 \pmod{g}$, giving (2).
-%To see this, note that under the usual isomorphism $\Gal(\Q(\zeta_g)/\Q) \cong (\Z/g\Z)^\times$, complex conjugation is associated to $-1$. The map Frobenius element corresponding to $\mathfrak{q} \cap \Q(\zeta_g)$ sends $\zeta_g \mapsto \zeta_g^c$.
 Since $\sigma$ has order $2$, we have $\sO_L/\mathfrak{q} \cong \sO_K/q\sO_K \cong \F_{q^2}$. In particular, reducing $\alpha^{1/g}$
 modulo ${\mathfrak q}$ gives a $g$th root of $\alpha$
-% $\alpha^{1/g}$ is a $g$th root of $\alpha$
  in $(\sO_K/q\sO_K)^\times$, giving (3).
-%Moreover, if $\sigma$ satisfies these conditions, then so does every conjugate of $\sigma$.
-%By Chebotarev's density theorem, it remains to show that there exists some $\sigma \in \Gal(L/\Q)$ of order $2$ that restricts to complex conjugation in $K$ and $\Q(\zeta_g)$. Every complex conjugation in $\Gal(L/\Q)$ has these properties.
-%  Choose any embedding $\iota: L \to \C$ and define $\sigma \in \Gal(L/\Q)$ by $a \mapsto \iota^{-1}(\overline{\iota(a)})$. Note that $\sigma$ has order $2$. Since $K$ and $\Q(\zeta_g)$ are CM fields, $\sigma$ restricts to the usual complex conjugation on them. Therefore $\sigma$ has the desired properties.
 \end{proof}
 
 We now establish some properties of CM elliptic curves that we will use in Proposition \ref{prop:lim-degree}.
 \begin{definition}
   If $K$ is an imaginary quadratic field and $q$ is a prime number that is inert in $K$, let
   $$\Gt_q=(\sO_K/q\sO_K)^\times/(\Z/q\Z)^\times. $$
-  %The field $K$ should be clear from the context.
 \end{definition}
 
 \begin{lemma}\label{lem:c-torsor}
@@ -338,10 +240,9 @@ We now establish some properties of CM elliptic curves that we will use in Propo
 \end{lemma}
 
 \begin{theorem}[{\cite[Thm.~20b]{kani2011products}}]\label{thm:kani-20b}
-  Suppose $E$ is a CM elliptic curve over an algebraically closed field and $H$ is a finite subgroup scheme of $E$. Then $H$ is an ideal %kernel
-  subgroup if and only if %there is an inclusion $\End(E) \hookrightarrow \End(E/H)$.
+  Suppose $E$ is a CM elliptic curve over an algebraically closed field and $H$ is a finite subgroup scheme of $E$. Then $H$ is an ideal 
+  subgroup if and only if 
   $\End(E) \subseteq \End(E/H)$. Moreover, if $H_1$ and $H_2$ are ideal subgroups of $E$, then $E/H_1 \approx E/H_2$ if and only if $I(H_1)$ and $I(H_2)$ are isomorphic as $\End(E)$-modules.
-  %$f_{E_H} \mid f_E$
 \end{theorem}
 
 \begin{lemma}\label{lem:c-end}
@@ -349,7 +250,6 @@ We now establish some properties of CM elliptic curves that we will use in Propo
 \end{lemma}
 \begin{proof}
   Let $q = \prod_{i=1}^n q_i$ be the prime factorization of $q$.
-  %, where each $q_i$ is a prime inert in $K$ and not equal to the characteristic of the base field. We can write
   Then $\sC = \sum_{i=1}^n \sC_i$ where each $\sC_i$ is a subgroup of $E$ of order $q_i$. Let $E_j = E/\sum_{i=1}^j\sC_i$.
  
   The isogeny $\pi: E \to E/\sC$ factors into a chain of isogenies
@@ -364,21 +264,9 @@ We now establish some properties of CM elliptic curves that we will use in Propo
     \xrightarrow{\pi_n}
     E_n = E/\sC.
   \]
-% \[
-%    E
-%    \xrightarrow{\pi_1}
-%    E/\sC_1
-%    \xrightarrow{\pi_2}
-%    E/(\sC_1 + \sC_2)
-%    \xrightarrow{\pi_3}
-%    \cdots
-%    \xrightarrow{\pi_n}
-%    E/\sum_{i=1}^n\sC_i.
-%  \]
   Let $\sO_j$ be the order $\End(E_j)$ in $K$, and let $f_j$ be its conductor, i.e., $f_j = [\sO_{K} : \sO_j]$. Since the isogeny $\pi_j$ has degree $q_j$, either $[\sO_j : \sO_{j-1}] = q_j$, or $[\sO_{j-1} : \sO_j] = q_j$, or $\sO_{j-1} = \sO_j$ \cite[Prop.~5]{kohel1996endomorphism}. Thus $f_j$ divides $\prod_{i=1}^{j}q_i$. Since the $q_i$ are distinct, $q_{j+1} \nmid f_j$. 
-  % = [\sO_K : \sO_j]
   Since $q_j$ is inert in $K$, $\sO_K$ has no prime ideal of norm $q_j$. There is a norm-preserving bijection between prime ideals of $\sO_{j}$ that do not divide $f_{j}$ and prime ideals of $\sO_K$ that do not divide $f_{j}$ \cite[Prop.~7.20]{cox2011primes}. Thus, $\sO_{j-1}$ has no prime ideal of norm $q_j$. 
-By Lemma \ref{lemma:order-ideal-subgroup}, it follows that $\ker\pi_j$ is not an ideal subgroup of $E_{j-1}$. % \cite[Prop.~23]{kani2011products}. 
+By Lemma \ref{lemma:order-ideal-subgroup}, it follows that $\ker\pi_j$ is not an ideal subgroup of $E_{j-1}$. 
 Now by Theorem~\ref{thm:kani-20b}, we must have $[\sO_{j-1} : \sO_j] = q_j$. Then $[\sO_K : \sO_n] = \prod_{i=1}^n q_i = q$, as required.
 \end{proof}
 
@@ -390,9 +278,8 @@ Now by Theorem~\ref{thm:kani-20b}, we must have $[\sO_{j-1} : \sO_j] = q_j$. The
 
   If $\alpha(\sC) = \sC$, then $E/\alpha(\sC) \approx E/\sC$, so it suffices to show the converse.
 
-  Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. %We want to show that $\sC = \alpha(\sC)$.
+  Let $\tilde{u}: E/\alpha(\sC) \to E/\sC$ be an isomorphism. 
 If $D$ is a subgroup of $E$, let $\pi_{D}$ denote the quotient map $E \to E/D$. Then $\alpha$ induces an isogeny $\tilde{\alpha}$
-%: E/\sC \to E/\alpha(\sC)$ such that $\tilde{\alpha}\circ\pi_{\sC} = \pi_{\alpha(\sC)} \circ \alpha$. 
 such that the left-hand square of the following diagram commutes.
 $$
 \xymatrix{
@@ -401,7 +288,6 @@ E/\sC \ar^-{\tilde{\alpha}}[r] & E/\alpha(\sC) \ar^-{\tilde{u}}[r] & E/\sC
 }
 $$
 The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\ref{lem:c-end}, $\tilde{u}\circ\tilde{\alpha}$ is induced by some $\alpha' \in \sO_K$ such that $\alpha'(\sC) = \sC$. That is, $\pi_{\sC}\circ\alpha' = \tilde{u}\circ\tilde{\alpha}\circ\pi_{\sC} = \tilde{u}\circ\pi_{\alpha(\sC)}\circ\alpha$.
-  %This shows that $\deg(\alpha) = \deg(\alpha')$.
   Since $\alpha$ and $\alpha'$ are prime to $q = \#\sC$, we have
   \[
     \sC + \ker(\alpha')
@@ -415,8 +301,6 @@ The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\
     \sC + \ker(\alpha),
   \]
   and $\ker(\alpha) = \ker(\alpha')$. Thus $\alpha' = u\alpha$ for some $u \in \sO_K^\times = \{\pm 1\}$. So $\alpha(\sC) = \pm\alpha'(\sC) = \pm\sC = \sC$, as desired.
-
-  %Alternate proof of existence of u: $E/\alpha(\sC)$ and $E/\sC$ have a unique ascending isogeny. As $\tilde{u}$ is an isomorphism, it must send the ascending kernel of $E/\alpha(\sC)$ to that of $E/\sC$. The ascending kernel is the image of $E[c]$ under the quotient. Therefore $\pi^{\vee}\circ\tilde{u}\circ\pi_{\alpha(\sC)}$ is divisible by $c$, and so factors through an automorphism of $E$.
 \end{proof}
 
 \begin{proposition}\label{prop:prod-equiv-torsor}
@@ -437,7 +321,6 @@ The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\
 
   Note that $\alpha$ induces an isogeny $\tilde{\alpha}: E/\sC \to E/\alpha(\sC)$. Let $\sO = \Z + q\sO_K$. By Lemma~\ref{lem:c-end} we have $\sO \cong \End(E/\sC)\cong \End(E/\alpha(\sC))\cong \End(E/\beta(\sC))$. Thus $\ker\tilde{\alpha}$ is an ideal subgroup by Theorem~\ref{thm:kani-20b}. The same holds for $\beta$ in place of $\alpha$.
 
-  %I(\phi) = \{f \in \End(E/\sC) \colon \ker f \supseteq \ker \phi \}
   For an isogeny $\phi$ with domain $E/\sC$, let $I_\phi$ denote the kernel ideal of $\ker(\phi)$, i.e., $I_\phi = \{f \in \End(E/\sC) \colon f(\ker(\phi)) = 0\}$.
   By \cite[Thm.~46]{kani2011products},
   \begin{multline*}
@@ -446,7 +329,6 @@ The map $\tilde{u}\circ\tilde{\alpha}$ is an endomorphism of $E/\sC$. By Lemma~\
     \Leftrightarrow
     \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\alpha}} \cong \left(\bigoplus_{i=1}^{g-1} \sO\right) \oplus I_{\tilde{\beta}} \text{  as $\sO$-modules}.
   \end{multline*}
-%  where the second isomorphism is as $\sO$-modules.
 By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products}), the latter isomorphism is equivalent to $I_{\tilde{\alpha}} \cong I_{\tilde{\beta}}$.
   By Theorem~\ref{thm:kani-20b},
   \[
@@ -466,7 +348,7 @@ By \cite[Thm.~48]{kani2011products} (see also \cite[Rem.~49b]{kani2011products})
 Recall the map $\psimod$ defined in \eqref{def:psimoddef}.
 
 \begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
-Suppose $g\in\Z_{\ge 1}$, and $A$ is a $g \times g$ symmetric, positive definite integer matrix whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
+Suppose $g\in\Z_{\ge 1}$, and $A$ is a $g \times g$ symmetric, positive definite integer matrix whose determinant $N$ is not divisible by the characteristic of our base. 
 Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$.  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/(N/d_i)C$. Then
 $
     B \approx E_1 \times \cdots \times E_g.
@@ -475,18 +357,9 @@ $
 
 \begin{proof}
   Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
-%   \[
-%     D =
-%    \begin{bmatrix}
-%      {d_1} & & & \\
-%      & {d_2} & & \\
-%      & & \ddots & \\
-%      & & & {d_{g}}
-%    \end{bmatrix}
-%  \]
 Then $D$ is the Smith normal form of $A$, and there exist $U,V \in \Gl_g(\Z)$ such that $A = UDV$.
 If $M \in \Gl_g(\Z)$, let $\lambda_M$ denote the natural endomorphism of $E^g$ induced by $M$.
-Then %$\lambda_U$ and $\lambda_V$ are automorphisms of $E^g$ induced by $U$ and $V$, respectively, and
+Then 
 $\lambda_A = \lambda_U \lambda_D \lambda_V$. Since
   \begin{align*}
     \ker \lambda_D &= E[d_1] \times E[d_2] \times \cdots \times E[d_g]
@@ -500,27 +373,24 @@ $\lambda_A = \lambda_U \lambda_D \lambda_V$. Since
   $$
   B = E^g/((\ker \lambda_A) \cap C^g) \approx E^g/((\ker \lambda_D) \cap C^g) = E_1 \times \cdots \times E_g.
   $$
-  %the quotients of $E^g$ by $(\ker \lambda_A) \cap C^g$ and by $(\ker \lambda_D) \cap C^g$ are weakly isomorphic. The lemma follows.
 \end{proof}
 
 \begin{proposition}\label{prop:lim-degree}
 Suppose $g\in\Z_{\ge 2}$ and $k$ is an algebraically closed field containing the base ring.
   Then there are infinitely many rational primes $\ell\neq\car(k)$ such that if 
    $A,A' \in \detl$, $\det(A) = \ell^n$, and $\det(A') = \ell^m$,
-  %M_{g \times g}(\Z)$ be positive definite symmetric matrices such that $\det(A) = \ell^n$ and $\det(A') = \ell^m$ for a prime $\ell$. Let $X_A$ and $X_{A'}$ denote the images of the maps $\psi_A: Y_0(\ell^n) \to \ag$ and $\psi_{A'}: Y_0(\ell^m) \to \ag$.
   then there exists an infinite sequence $x_i \in Y_0(\ell^n)(k)$ such that
   \[
     \lim_{i \to \infty}\#\left\{ y \in Y_0(\ell^m)(k) \colon \psi_A(x_i) \approx \psi_{A'}(y) \right\} = \infty.
   \]
 \end{proposition}
 \begin{proof}
-  Let $K$ be an imaginary quadratic field %as in Lemma~\ref{lem:silly}, there exist a principal prime $\alpha\sO_K$ lying over $\ell$ 
+  Let $K$ be an imaginary quadratic field  
 with $\sO_K^\times = \{\pm 1\}$ and such that if $\car(k) > 0$ then $\car(k)$ splits in $K$.
 Let $\ell$ be any prime number not equal to $\car(k)$ that splits into principal primes, $\ell = \alpha{\bar \alpha}$ with $ \alpha\in \sO_K$.
 There are infinitely many such primes $\ell$ by the Chebotarev density theorem.
 Choose an infinite sequence $\{q_i\}$ of rational primes as in Lemma~\ref{lem:K-exists}. Since $\ell$ splits and the $q_i$ are
-inert in $K$, we have $q_i\ne \ell$ for all $i$. % We may assume $q_i \neq \ell$ for all $i$.
-The condition on $\car(k)$ splitting ensures that there is an elliptic curve $E$ over $k$ such that $\End(E) \cong \sO_K$.
+inert in $K$, we have $q_i\ne \ell$ for all $i$. The condition on $\car(k)$ splitting ensures that there is an elliptic curve $E$ over $k$ such that $\End(E) \cong \sO_K$.
 
   If $\sC$ is a cyclic subgroup of $E$ of order prime to $\ell$, then $\alpha$ induces a chain of isogenies
   \[
@@ -530,15 +400,10 @@ The condition on $\car(k)$ splitting ensures that there is an elliptic curve $E$
 
     For each $i$, fix a cyclic subgroup $\sC_i$ of $E$ of order $q_i$. Define $x_1$ to be $(E/\sC_1,\alpha_{\sC_1,n})$, $x_2$ to be $(E/(\sC_1 + \sC_2), \alpha_{\sC_1 + \sC_2,n})$, and so on. The $x_i$ are distinct points, since the curves all have different endomorphism rings by Lemma~\ref{lem:c-end}.
 
-%    Next we will construct the values of $y \in Y_0(\ell^m)$ such that $\psi_{A'}(y) \approx \psi_{A}(x_i)$. We first focus on the case $i = 1$.
 Let $\ell^{n_1},\dots,\ell^{n_g}$ be the elementary divisors of $A$  and let $\ell^{n_1'},\dots,\ell^{n_g'}$ be the elementary divisors of $A'$.
 By Lemma~\ref{lem:psimod-weakly-isomorphic-to-product} we have $$\psi_{A}(x_1) \approx E/\alpha^{n_1}(\sC_1) \times \cdots \times E/\alpha^{n_g}(\sC_1).$$
-    %By our choice of $K$, $\alpha$ is a $g$th power in $\sO_K/q_1\sO_K$, so we can find $\gamma \in \sO_K$ such that $\alpha \equiv \gamma^g \mod{q_1\sO_K}$. By Lemma~\ref{lem:c-torsor}, $\alpha(\sC_1) = \gamma^g(\sC_1)$ and
-%    \[
-%      \psi_{A}(x_1) \approx E/\gamma^{gn_1}(\sC_1) \times \cdots \times E/\gamma^{gn_g}(\sC_1).
-%    \]
-    Let $S$ denote a set of representatives $\beta \in \sO_K$ of the solutions to %the equation
-    \[
+    Let $S$ denote a set of representatives $\beta \in \sO_K$ of the solutions to 
+        \[
       \alpha^{n_1 + \cdots + n_g} \equiv \beta^g\alpha^{n_1' + \cdots + n_g'}
       \text{ in } \Gt_{q_1}.
     \]
@@ -549,12 +414,11 @@ Since $\alpha$ is a $g$-th power in  $(\sO_K/q_1\sO_K)^\times$, and  $g$ divides
   \[
     \psi_{A}(x_2) \approx \psi_{A'}\left(E/\beta(\sC_1+\sC_2),\alpha_{\beta(\sC_1+\sC_2),m}\right)
   \]
-  reduces to finding solutions $\beta$ to %the equation
+  reduces to finding solutions $\beta$ to 
   \[
     \alpha^{n_1 + \cdots + n_g} \equiv \beta^g\alpha^{n_1' + \cdots + n_g'}
     \text{ in } \Gt_{q_1} \times \Gt_{q_2}.
   \]
-%  Here $\gamma$ is chosen such that $\alpha \equiv \gamma^g \mod{q_1q_2\sO_K}$.
 There are precisely $g^2$ solutions $\beta$. Continuing this construction for $i=3,4,\dots$, we find that for each $i$ there are $g^i$ points $y \in Y_0(\ell^m)(k)$ such that $\psi_{A}(x_i) \approx \psi_{A'}(y)$. Since $g > 1$, the result follows.
 \end{proof}
 
@@ -606,9 +470,7 @@ for the associated morphism. Let $d_1, \ldots, d_g$ be the diagonal entries of $
 where  $E_i := E/\frac{N}{d_i}C$.
 Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
 
-%\begin{definition}
   If $g$ is a positive integer and $\ell$ is a prime number, let $W_{\ell,g}$ denote the set of all $g \times g$ diagonal matrices with diagonal entries $\ell^{n_1},\dots,\ell^{n_g}$ for some positive integers $n_1,\dots,n_g$. 
-%\end{definition}
 
 \begin{theorem}\label{thm:curves-dense-a1}
     If $g \in \Z_{\ge 1}$ and $\ell$ is a
@@ -620,7 +482,6 @@ Let $$X^{(1)}_A = \psidiag(Y_0(N)).$$
   $K$ be an imaginary quadratic field in which $\car(k)$ splits and $\ell$ is inert.
   Such a $K$ exists by Lemma \ref{lemma:travis-lemma}.
  Let $E_0$ be an elliptic curve over $k$ with CM by $\sO_K$. 
- %Let $\ell$ be  a prime not equal to $\car(k)$ that is inert in $K$. There are infinitely many such primes $\ell$. 
  Fix a subgroup $\sC_0$ of $E_0$ of order $\ell$. Let $\pi_0$ denote the quotient map $E_0 \to E_0/\sC_0 =: E_1$. Since $\End(E_0)$ has no ideal of norm $\ell$, $\sC_0$ is not an  ideal subgroup of $E_0$ by Lemma~\ref{lemma:order-ideal-subgroup}. Theorem~\ref{thm:kani-20b} and~\cite[Prop.~5]{kohel1996endomorphism} now imply that $\End(E_1) = \Z + \ell\sO_K$.
 
  For $i \ge 1$, let $\sC_i$ be any subgroup of $E_i$ of order $\ell$ other than the kernel of the dual isogeny $\pi_{i-1}^\vee$, and let $\pi_i$ be the quotient map $E_i \to E_i/\sC_i =: E_{i+1}$. In order to show that the $E_i$ are non-isomorphic, we will show inductively that $\End(E_{i+1}) = \Z + \ell^{i+1}\sO_{K}$. Since $\End(E_{i}) \subset \End(E_{i-1})$, Theorem~\ref{thm:kani-20b} implies that $\ker \pi_{i-1}^\vee$ is an ideal subgroup. Since $\End(E_{i}) = \Z + \ell^{i}\sO_{K}$, the only ideal of index $\ell$ in $\End(E_{i})$ is $\ell\Z + \ell^i\sO_K$. From Lemma~\ref{lemma:order-ideal-subgroup} and the uniqueness of the ideal of index $\ell$, it follows that $\ker \pi_{i-1}^\vee$ is the unique ideal subgroup of order $\ell$, namely $H(\ell\Z + \ell^i\sO_K)$. The subgroup $\sC_i$ therefore cannot also be an ideal subgroup of $E_i$. By Theorem~\ref{thm:kani-20b}, $\End(E_{i+1})$ must be strictly smaller than $\End(E_{i})$. The latter observation together with \cite[Prop.~5]{kohel1996endomorphism} implies $[\End(E_i):\End(E_{i+1})] = \ell$, and hence $\End(E_{i+1}) = \Z + \ell^{i+1}\sO_{K}$.
@@ -642,7 +503,6 @@ Thus, $S \subset \bigcup_A X^{(1)}_A(k)$. Since $S$ is an infinite set of non-is
 
 \begin{proof}[Proof of Theorem~\ref{thm:arbit-char}]
   The proof of Theorem~\ref{thm:arbit-char} is almost the same as that of Theorem~\ref{thm:invariant-c-constant}, replacing $\ag$  with $\ao^g$, and invoking Theorems~\ref{thm:Sg-dense-a1} and  Theorem~\ref{thm:curves-dense-a1} in place of Theorems~\ref{thm:Sg-dense} and \ref{thm:curves-dense}, respectively.
-  %with analogs that work with $\ao^g$ instead of $\ag$. Theorem~\ref{thm:curves-dense-a1} is an analogue of Theorem~\ref{thm:curves-dense}, and Theorem~\ref{thm:Sg-dense-a1} is an analog of Theorem~\ref{thm:Sg-dense}.
 \end{proof}
 
 
@@ -692,25 +552,6 @@ is dense in the set of $g \times g$ real, symmetric, positive definite matrices.
   This shows that $Q$, as a vector in $\R^{g^2}$, lies in the ball of radius $t$. Thus the number of possible $Q$ is bounded by the number of half-integral points in the ball of radius $t$ in $\R^{g^2}$, which is finite.
 \end{proof}
 
-% \begin{lemma}\label{lem:bound-trace-finite}
-%  For any positive definite symmetric real $g \times g$ matrix $A$ and $t \in \R$, the set of symmetric, positive semi-definite, half-integral $g \times g$ matrices $Q$ such that $\tr(AQ) \leq t$ is finite.
-% \end{lemma}
-% \begin{proof}
-%  Recall that $\langle x,y \rangle = \tr(xy^t)$ is an inner product on the space of real matrices. Moreover, if $B$ is any positive semidefinite matrix, then $\tr(B^2) \leq \tr(B)^2$. So
-%  \begin{align*}
-%    \tr(BQ)^2 &\leq \tr(B^2)\tr(Q^2)
-%    &&\text{by Cauchy–Schwarz}
-%    \\
-%    &\leq \tr(B)^2\tr(Q)^2
-%    &&\text{By positive semidefinite.}
-%    %\tr(B^2) = \sum \lambda_i^2 \leq \left(\sum \lambda_i\right)^2 = \tr(B)^2.
-%  \end{align*}
-%  Therefore, if $\tr(AQ) \leq t$, then
-%  \[
-%    \tr(Q) = \tr(A^{-1}AQ) \leq \tr(A^{-1})\tr(AQ) \leq \tr(A^{-1})t.
-%  \]
-%  The claim then follows from Lemma~\ref{lem:finite-fixed-trace}.
-% \end{proof}
 
 \begin{proposition}\label{prop:unique-minimizer}
   Suppose $g\in\Z_{\ge 1}$ and $S$ is a nonempty set of $g \times g$ symmetric, positive semi-definite, half-integral matrices. Then there exists an open cone of $g \times g$, positive definite, real, symmetric matrices $A$ such that $\displaystyle\min_{Q \in S}\tr(AQ)$ is achieved by a unique $Q\in S$.
@@ -724,7 +565,6 @@ Let $t_0 = \min_{Q \in S}\tr(Q)$.
   \begin{enumerate}
     \item $\tr(EQ_i) \neq \tr(EQ_j)$ for all distinct $Q_i,Q_j \in S_0$,
     \item $E$ is positive definite, and
-%    \item $I+E$ is positive definite (this follows from (2), so omit it),
     \item $\tr(EQ) < t_1 - t_0$ for all $Q\in S_0$.
   \end{enumerate}
   To see that $\mathfrak{S}$ is non-empty, observe that (1) describes the complement of a finite union of hyperplanes, which is a dense set. Therefore there is a real symmetric matrix $E$ satisfying both (1) and (2). Scaling by a sufficiently small $\varepsilon > 0$, we can guarantee (3) as well.
@@ -734,7 +574,6 @@ Let $t_0 = \min_{Q \in S}\tr(Q)$.
   Suppose $A \in C$; that is, $A = r(I+E)$ for some $r \in \R^+$ and $E \in \mathfrak{S}$. Let $Q \in S$. Since $E$ and $Q$ are positive semi-definite, $\tr(EQ)\ge 0$. Property (3) now implies that $\tr((I+E)Q)$ is minimized only when $Q \in S_0$. Hence by (1) we have that $\tr((I+E)Q)$ is minimized for a unique $Q \in S$. Since $E$ is positive definite, so is $I+E$, and hence $I + E$ satisfies the conclusion of the proposition. By linearity of the trace, $A$ also satisfies the conclusion of the proposition, and the desired result follows.
 \end{proof}
 
-%In ?? we will compute pullbacks of modular forms. It is convenient (instead, say what we mean?) to reduce the computation [what computation?] to one over $\C$.
 Let $\hh$ denote the complex upper half plane and let $\hh_g$ denote the degree $g$ Siegel upper half space. Recall that $\Sp_{2g}(\Z)$ (resp., $\Gamma_0(N)$) acts on $\hh_g$ (resp., $\hh$) by fractional linear transformations,
  $Y_0(N) = \hh/\Gamma_0(N)$, and $\ag = \hh_g/\Sp_{2g}(\Z)$.
 \begin{lemma}\label{lem:psi-A-n}
@@ -742,7 +581,6 @@ Suppose that $A$ is a $g \times g$ symmetric, positive definite integer matrix a
 Then the map \[
   \hh \to \hh_g, \quad  \tau \mapsto \tau A
 \]
-%descends to 
 induces a morphism of $\C$-schemes
 $
   \psimodt: Y_0(N) \longrightarrow \ag.
@@ -756,16 +594,11 @@ Let
 \]
 where $I_g$ denotes the $g \times g$ identity matrix.
 If $\tau \in \hh$, a direct computation shows that $M \in\Sp_{2g}(\Z)$
-% it is integral because \det(A) | c, so cA^{-1} is integral.
-% M is in Sp because then M^t*\Omega*M = M
-% where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
 and  $\sigma(\tau)A = M(\tau A)$.
-%(It's well-defined. Why is it a morphism?)
 \end{proof}
 
 Recall the definition of $\psimod$ in \eqref{def:psimoddef}.
 
-%In fact, $\psimodt$ is none other than $\psimod$, from which one can obtain an alternative proof of Lemma \ref{lem:psi-A-n}.
 \begin{proposition}\label{prop:psimod-over-c}
 Suppose that $g\in\Z_{\ge 1}$, $\ell$ is a prime, $A \in \detl$, and
  the base scheme is $\C$. Then $\psimod = \psimodt$.
@@ -775,19 +608,11 @@ Suppose that $g\in\Z_{\ge 1}$, $\ell$ is a prime, $A \in \detl$, and
 Let  $N = \det A$.  Suppose $(E, C) \in Y_0(N)$. There exists $\tau \in \hh$ such that $E = \C/(\Z + \tau \Z)$ and $C = \langle 1/N \rangle$. We first show that $\psimodt(E,C) \approx \psimod(E,C)$.
 
   Let $\Lambda = \Z^g + \tau \Z^g \subset \C^g$. Then $\C^g/\Lambda = E^g$.
-  %, where projection on the $i$th complex coordinate is the same as projection onto the $i$th factor of $E^g$. 
   Let
   \[
     \tla = \Z^g + \tau A \Z^g \quad \text{ and } \quad     \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
   \]
 By definition, $\psimodt(E,C) \approx \C^g/\tla$.
-%  \[
-%    \Lambda_A = A^{-1}\Z^g + \tau \Z^g.
-%  \]
-%  Multiplication by $A^{-1}: \C^g \to \C^g$ induces an isomorphism
-%  \[
- %   \C^g/\tla \xrightarrow{\sim} \C^g/\Lambda_A.
- % \]
  Since $\Lambda \subset \Lambda_A$, there is a natural isogeny
   \[
     \rho: E^g = \C^g/\Lambda \to \C^g/\Lambda_A.
@@ -806,12 +631,11 @@ and an isogeny
 \[
 \ker \lambda_A = A^{-1}\Z^g + \tau A^{-1} \Z^g \pmod{\Lambda}
 \]
-%With our identification $E = \C/(\Z + \tau\Z)$, recall that the distinguished subgroup $C \subset E$ is $\langle 1/N \rangle$. Then $C^g \subset E^g$ is $\frac{1}{N}\Z^g \pmod{\Lambda}$. It follows that
 and
 \[
-\ker \rho = (\ker \lambda_A) \cap C^g. % = (\ker \lambda_A) \cap C^g.
+\ker \rho = (\ker \lambda_A) \cap C^g. 
 \]
-Now %$\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho)$, it follows that
+Now 
 \[
   \psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho) 
   \cong \C^g/\Lambda_A 
@@ -820,66 +644,44 @@ Now %$\psimod(E,C) \approx E^g/((\ker \lambda_A) \cap C^g) = E^g/(\ker \rho)$, i
 \]
 
   Elements of $\ag$ can be viewed as pairs $(\C^g/(\Z^g + \Omega \Z^g,\sE)$ where
-  %polarization on a $g$-dimensional complex abelian variety $\C^g/(\Z^g + \Omega \Z^g)$ with 
   $\Omega \in \hh_g$ and where $\sE: \C^g \times \C^g \to \R$ is the alternating Riemann form that
  satisfies $\sE(u,\Omega v) = u^tv$ for all $u,v \in \R^g$.
 See for example \cite{rosen-avc}. 
-%The standard form $\sE$ is the unique map satisfying $\sE(u,\Omega v) = u^tv$ for all $u,v \in \R^g$. 
-  %We call this form the \emph{Siegel alternating form} arising from $\Omega \in \hh_g$; this form specifies the principal polarization for the class of $\Omega$ in $\ag$. %For example, if $\Omega = \tau I$ for $\tau \in \hh$, so that the abelian variety is $E^g$, then the Siegel alternating form represents the product principal polarization.
 
 The (non-principal) polarization $\lambda_A$ on $E^g = \C^g/\Lambda$ corresponds to the alternating Riemann form that satisfies $\sE_A(u,\tau v) = u^tAv$ for all $u,v \in \R^g$. Since $\sE_A(\Lambda_A \times \Lambda_A) \subseteq \Z$, it follows that $\sE_A$ is an alternating Riemann form for $\C^g/\Lambda_A$ as well. 
-%Write $\lambda$ for the polarization of $\C^g/\Lambda_A$ given by $E_A$. 
 Since the polarization $\sE_A$ descends from $\lambda_A$, and the polarization coming from $\psimod$ is the unique polarization also descending from $\lambda_A$, we have
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \sE_A).
 \]
-%Let $\tilde{\lambda}$ be 
 We have $\psimodt(E,C) = (\C^g/\tla, \tilde{\sE})$ where
- $\tilde{\sE}$ denotes the %polarization coming from the 
-%Siegel alternating form for $\tau A$; that is, given by the 
-alternating Riemann form %$E_{\tau A}$ 
-that satisfies %$E_{\tau A}(u, \tau A v) = u^tv$
+ $\tilde{\sE}$ denotes the 
+alternating Riemann form 
+that satisfies 
 $\tilde{\sE}(u, \tau A v) = u^tv$ for all $u,v \in \R^g$. If $u, v \in \R^g$, then
-%\begin{align*}
 $$  \tilde{\sE}(u, \tau A v) = u^tv 
                           = \sE_A(A^{-1}u, \tau v) 
                           = \sE_{A}(A^{-1}u, A^{-1}\tau Av).$$
-%\end{align*}
 Thus multiplication by $A$ on $\C^g$ induces an isomorphism of polarized abelian varieties
 \[
   \psimod(E,C) = (\C^g/\Lambda_A, \sE_A) \xrightarrow{\sim} (\C^g/\tla, \tilde{\sE}) = \psimodt(E,C),
 \]
-%Since $\psimodt(E,C) = (\C^g/\tla, \tilde{\lambda})$,
 as desired.
- % Further, this polarization is specified by letting the columns be a symplectic basis for the associated Riemann form $H: \C^g \times \C^g \to \C$; this is precisely the product polarization.
- %  The abelian variety $B$ associated to $\psic(\tau)$ is $\C^g/\tilde{\Lambda}$, where $\tilde{\Lambda}$ is the lattice generated by the columns of
- %  \[
- %    \begin{bmatrix}
- %      I | \tau A
- %    \end{bmatrix},
- %  \]
- %  and with the associated principal polarization.
 \end{proof}
 
-%\begin{definition}
 Suppose $g$ is a positive integer.
    Let $\sD$ denote the set of $g \times g$ symmetric, half-integral, positive semidefinite matrices. 
    If $f$ is a Siegel modular form on $\ag$, $\ell$ is a prime not equal to the characteristic of the base, and $A\in \detl$, let $\psimod^*(f) = f \circ \psimod$ denote the pullback modular form on $X_0(\det(A))$.
      Note that the cusp $\infty$ on $X_0(\det(A))$ is characterized by the fact that the universal elliptic curve has type $I_1$ reduction there.
-%\end{definition}
 
 \begin{proposition}\label{prop:q-expansion}
   Suppose  $g \in \Z_{\ge 1}$, $\ell$ is a prime number not equal to the characteristic of the base ring $R$,
   and $f$ an $R$-valued Siegel modular form on $\ag$. 
-  %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction. 
-  Then there is a function  $c : \sD \to R$ such that for all % but finitely many
+  Then there is a function  $c : \sD \to R$ such that for all 
   $A \in \detl$, the $q$-expansion of 
-  %the modular form 
   $\psimod^*(f)$ at $\infty$ is
   \begin{equation}
     \sum_{Q \in \sD} c(Q) q^{\tr(AQ)}.\label{eq:q}
   \end{equation}
-%  where the sum is over symmetric half-integral positive semidefinite matrices $Q$.
 \end{proposition}
 
 \begin{proof}
@@ -888,47 +690,24 @@ Suppose $g$ is a positive integer.
       \sum_{Q \in \sD} c(Q) \prod_{i,j=1}^g q_{ij}^{Q_{ij}}.
     \]
     Thus at the cusp $\infty$ of $X_0(N)$, the $q$-expansion of $\psimod^*(f)$ is
-%  \begin{align*}
     $$\sum_{Q \in \sD} c(Q) \prod_{i,j=1}^g q^{A_{ij}Q_{ij}} = \sum_{Q \in \sD} c(Q) q^{\sum_{i,j=1}^g A_{ij}Q_{ij}} 
     = \sum_{Q \in \sD} c(Q) q^{\tr(AQ)}.$$
-%  \end{align*}
- % The independence from $A$ is immediate.
 
-    % Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$.
-    Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j))$, where $\omega^j$ is the sheaf of Siegel modular forms of weight $j$. Since % the genus of $X_0(N)$ is at least $2$,
+    Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\phi_A$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\phi_A$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j))$, where $\omega^j$ is the sheaf of Siegel modular forms of weight $j$. Since 
     the sheaf of weight $2$ modular forms is ample, we have $X_0(N) = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j))$, where $\omega_0^j$ is the sheaf of modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\phi_A: X_0(N) \to \agm$ is characterized by the pullback map
     \[
       \phi_A^*: \bigoplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j) \to \bigoplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j).
     \]
     Both graded algebras are finitely generated over $\Z[1/\ell]$, and furthermore $\phi_A^\ast$ is Galois equivariant. Hence $\phi_A$ descends to a morphism of schemes over $\Z[1/\ell]$. By functoriality of $q$-expansions, $\phi_A^*$ over $\Z[1/\ell]$ is given by formula~\eqref{eq:q}. Now base-extend to $R$. Let $f$ be a Siegel modular form on $\ag$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm$ has only one zero-dimensional cusp, so $f$ has a unique $q$-expansion, say $\sum_{Q \in \sD} c(Q) \prod_{i,j=1}^g q_{ij}^{Q_{ij}}$. Since $\phi_A^*$ over $R$ is obtained by base-extension from $\Z[1/\ell]$, formula~\eqref{eq:q} holds over $R$ as well.
-    % By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. Furthermore, the morphism $\psimod$ descends to a morphism $X_0(N) \to \agz \times \Z[1/\ell]$ of schemes over $\Z[1/\ell]$. \textcolor{red}{Why is this true?} By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
-  % Now consider an arbitrary base domain $R$.
-  % Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove that $\psimod^*(f)$ has the desired $q$-expansion, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
-  % We now show independence from $A$. The coefficients $c(Q)$ depend only on the point $y_0 \in \overline{\ag} - \ag$ where we compute the $q$-expansion of $f$, and on the chosen basis $q_{ij}$ for $S^2(X)$. Over $\C$, $y_0 = \psi_A(\infty)$ is the point of $\overline{\ag}$ where all of the $q_{ij}$ vanish. Hence $y_0$ does not depend on $A$. Since $\psi_A$ and $\infty$ are defined over $\Z[1/\ell]$, we have $\psi_A(\infty) = y_0$ for all $A$ over $\Z[1/\ell]$. Extending to $R$, we again obtain $\psi_A(\infty) = y_0$ for all $A$. Finally, it is clear that the $q$-expansion for $\psi^*(f)$ does not depend on our choice of basis for $S^2(X)$. % The $q_{ij}$ may be viewed as local affine functions 
-  % on $\overline{\ag}$---see IV.2.6 and Section IV.3 of~\cite{faltings1990degeneration}. Thus $y_0$ is characterized by $q_{ij}(y_0) = 0$ for all $i,j$. But the $q_{ij}$ are chosen independently of $A$ over $\C$, and so by functoriality the neighborhood $\Spec R[q_{ij}] \subset \overline{\ag}$ is independent of $A$. In particular, we have $\psi_A(\infty) = y_0$ for all $A$, and the claim follows. 
-% By choosing bases for $S^2(X)$ compatibly for all $A$, we can thus guarantee that the $c(Q)$ are independent of $A$. 
-  % Set $q_{ji} = q_{ij}$. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is of the form
-  % \[
-  %   \sum_{Q \in \sD} c(Q) \prod q_{ij}^{Q_{ij}}.
-  % \]
- % where $Q$ ranges over $g \times g$ symmetric, half-integral, positive semidefinite matrices.
-  % The morphism $\psimod$ induces a morphism $X_0(N) \to \overline{\ag}$ on the toroidal compactifications. We consider $\psimod$ in a formal neighborhood of the $I_1$ cusp of $X_0(N)$.
-  % Here, $\Delta: \G_m \to \G_m^g$ is the diagonal map, and $\lambda_A: \G_m^g \to \G_m^g$ is the natural map induced by $A$.
-  % Let $E$ be the split torus with character group $S^2(Y)$ and $F$ the split torus with character group $S^2(X)$; see~\cite[IV.2.6]{faltings1990degeneration}. These split tori are essentially parameter spaces for the periods, so $E$ is analogous to the upper half-plane $\hh$ and $F$ to the Siegel upper half-space $\hh_g$. Then $\psimod$ induces a map $E \to F$ characterized by the property that the pullback of $q_{ij}$ is $q^{A_{ij}}$. Since $q$-expansions are compatible with pullbacks, the $q$-expansion of $\psimod^*(f)$ is
-  % \begin{align*}
-  %   \sum_{Q \in \sD} c(Q) \prod q^{A_{ij}Q_{ij}} &= \sum_{Q \in \sD} c(Q) q^{\sum A_{ij}Q_{ij}} \\
-  %   &= \sum_{Q \in \sD} c(Q) q^{\tr(AQ)}.
-  % \end{align*}
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
   Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero. View $f$ as a global section of the structure sheaf. Then by Proposition~\ref{prop:q-expansion}, there exist coefficients $c(Q) \in R$ for $Q \in \sD$, such that for almost all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c(Q) q^{\tr(AQ)}$.
-  %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop.~V.1.5]{faltings1990degeneration}.
 
   Let $S = \{ Q \in \sD :c(Q) \neq 0\}$. By Proposition~\ref{prop:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
 
-  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. % If $A$ does not satisfy~\eqref{eq:q}, then by Proposition~\ref{prop:q-expansion}, we may replace $A$ with $\ell^m A$ for some positive integer $m$ until the latter formula applies. Observe that $\ell^m A \in C$ also.
-
+  By Lemma~\ref{lem:rggt-dense}, there exists an element of $C$ of the form $rGG^t$ with $r \in \R^+$ and $G \in \Sl_g(\Z[1/\ell])$. Since $C$ is a cone, we may scale this element to obtain a matrix $A \in \detl \cap C$. 
+  
   Let $n = \min \{\tr(AQ) \colon Q \in S\}$. By the definition of $C$, there is a unique $Q_0 \in S$ such that $\tr(AQ_0) = n$.
     Thus, the coefficient of $q^n$ in the $q$-expansion of $\psimod^*(f)$ is $c(Q_0)$. Since $Q_0 \in S$, we have $c(Q_0) \ne 0$. Hence $\psimod^*(f) \neq 0$, as desired.
 \end{proof}
@@ -942,7 +721,7 @@ Let $\agn$ denote the moduli space for triples $(A,\lambda,L)$, where $A$ is a $
 
  Define an equivalence relation $\medium$ on $\agn$ by $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ if and only if $A_1 \weak A_2$ and there is an isomorphism $\phi: A_1 \to A_2$ such that $\phi(L_1) = L_2$. If $k$ is an algebraically closed field that contains the base ring $R$, define a set $\mg(k)  \subseteq (\agn \times \agn)(k)$ by
 \[
-\mg(k) =  \{(x_1,x_2) \in \agn(k) \times \agn(k) \mid x_1 \medium x_2 \}. %  \subseteq (\agn \times \agn)(k)
+\mg(k) =  \{(x_1,x_2) \in \agn(k) \times \agn(k) \mid x_1 \medium x_2 \}. 
 \]
 \begin{proposition}\label{prop:medium-isomorphic}
   If $g\in\Z_{\ge 2}$, $R$ is a domain, $n$ is an integer that is invertible in $R$, and $k$ is an algebraically closed field that contains $R$, then the set $\mg(k)$ 
@@ -973,21 +752,17 @@ Zariski closure of $\xi$.
 Then $\mg(k) \subseteq (\pi_D\times\pi_D)^{-1}(\overline{\xi}) = \overline{\xi'}$.
 By Proposition~\ref{prop:medium-isomorphic}, the Zariski closure of $\mg(k)$ is $\agn \times \agn$. 
 It follows that $\overline{\xi'} = \agn \times \agn$.
-%is a geometric generic point for $\agn \times \agn$. 
 Since $\pi_D\times\pi_D$ is finite, we have
 $$\dim(\overline{\xi}) = \dim(\overline{\xi'}) = \dim(\agn \times \agn) = \dim(\agd \times \agd).
 $$ 
 By~\cite[Prop. 1.11]{dejong}, $\agd$ is irreducible.
 It follows that $\agd \times \agd = \overline{\xi}$, which is
-%and hence $\xi$ must be a geometric generic point of $\agd \times \agd$. 
  the Zariski closure of $(\pi_D \times \pi_D)(\mg(k))$.
  Thus, $(\pi_D \times \pi_D)(\mg(k))$ is Zariski dense in $\agd \times \agd$.
 
-Suppose $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ in $\agn$. Let $(B_i, \mu_i) = \pi_D(A_i, \lambda_i, L_i)$. From the definition of $\pi_D$, we have $B_i^\vee = A_i^\vee/H_i$ for some subgroup $H_i \subset A^\vee_i[n]$. By the definition of $\medium$, there is a weak isomorphism $A_2 \xrightarrow{\sim} A_1$ whose dual sends $H_1$ isomorphically onto $H_2$, and hence %$(B_1, \mu_1) \weak (B_2, \mu_2)$. Therefore
+Suppose $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ in $\agn$. Let $(B_i, \mu_i) = \pi_D(A_i, \lambda_i, L_i)$. From the definition of $\pi_D$, we have $B_i^\vee = A_i^\vee/H_i$ for some subgroup $H_i \subset A^\vee_i[n]$. By the definition of $\medium$, there is a weak isomorphism $A_2 \xrightarrow{\sim} A_1$ whose dual sends $H_1$ isomorphically onto $H_2$, and hence 
   $B_1^\vee \weak B_2^\vee$. It follows that $B_1 \weak B_2$, and therefore
-%  \[
     $(\pi_D\times\pi_D)(\mg(k)) \subseteq \sgd(k).$
-%  \]
 The desired result now follows.
 \end{proof}
 The proof of Corollary~\ref{cor:agpol} is now the same as the proof of Theorem~\ref{thm:invariant-c-constant}, replacing the use of Theorem \ref{thm:sg-c-dense} with the use of Proposition \ref{prop:whatever}.
