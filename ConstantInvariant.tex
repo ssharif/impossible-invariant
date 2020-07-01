@@ -898,10 +898,10 @@ Suppose $g$ is a positive integer.
 %\end{definition}
 
 \begin{proposition}\label{prop:q-expansion}
-  Suppose  $g \in \Z_{\ge 1}$, $\ell$ is invertible in the base ring $R$,
+  Suppose  $g \in \Z_{\ge 1}$, $k$ an algebraically closed field with $\car(k) \neq \ell$, % is invertible in the base ring $R$
   and $f$ an $R$-valued Siegel modular form on $\ag$.
   %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction.
-  Then there is a function  $c : \sD \to R$ such that for all % but finitely many
+  Then there is a function  $c : \sD \to k$ such that for all % but finitely many
   $A \in \detl$, the $q$-expansion of
   %the modular form
   $\psimod^*(f)$ at $\infty$ is
@@ -929,7 +929,7 @@ Suppose $g$ is a positive integer.
     \[
       \phi_A^*: \bigoplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j) \to \bigoplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j).
     \]
-    Both graded algebras are finitely generated over $\Z[1/\ell]$, and furthermore $\phi_A^\ast$ is Galois equivariant. Hence $\phi_A$ descends to a morphism of schemes over $\Z[1/\ell]$. By functoriality of $q$-expansions, $\phi_A^*$ over $\Z[1/\ell]$ is given by formula~\eqref{eq:q}. Now base-extend to $R$. Let $f$ be a Siegel modular form on $\ag$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm$ has only one zero-dimensional cusp, so $f$ has a unique $q$-expansion, say $\sum_{Q \in \sD} c(Q) \prod_{i,j=1}^g q_{ij}^{Q_{ij}}$. Since $\phi_A^*$ over $R$ is obtained by base-extension from $\Z[1/\ell]$, formula~\eqref{eq:q} holds over $R$ as well.
+    Both graded algebras are finitely generated over $\Z[1/\ell]$, and furthermore $\phi_A^\ast$ is Galois equivariant. Hence $\phi_A$ descends to a morphism of schemes over $\Z[1/\ell]$. By functoriality of $q$-expansions, $\phi_A^*$ over $\Z[1/\ell]$ is given by formula~\eqref{eq:q}. Now base-extend to $k$. Let $f$ be a Siegel modular form on $\ag$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm$ has only one zero-dimensional cusp, so $f$ has a unique $q$-expansion, say $\sum_{Q \in \sD} c(Q) \prod_{i,j=1}^g q_{ij}^{Q_{ij}}$. Since $\phi_A^*$ over $k$ is obtained by base-extension from $\Z[1/\ell]$, formula~\eqref{eq:q} holds over $k$ as well.
     % By~\cite[IV.5.15]{faltings1990degeneration}, there is a toroidal compactification $\agz$ for $\ag$ over $\Z$ whose base-extension to $\C$ is $\overline{\ag}$. Furthermore, the morphism $\psimod$ descends to a morphism $X_0(N) \to \agz \times \Z[1/\ell]$ of schemes over $\Z[1/\ell]$. \textcolor{red}{Why is this true?} By abuse of notation, we will write $\overline{\ag}$ for the base-extension of $\agz$ to $R$. As before, the rational map $\psimod$ extends to a morphism $X_0(N) \to \overline{\ag}$.
   % Now consider an arbitrary base domain $R$.
   % Let $Y = \Z$ be the character group of the torus $\G_m$, and $X = \Z^g$ the character group of the torus $\G_m^g$. Let $\{ q_{ij}\}_{1 \leq i \leq j \leq g}$ be a basis for $S^2(X)$, the symmetric quotient of $X \otimes X$, and let $q$ be a basis for $S^2(Y)$. Here, we write $S^2(X)$ and $S^2(Y)$ as multiplicative groups. As in \cite[Section V.1]{faltings1990degeneration}, a $q$-expansion for $f$ is a power series in $R[[S^2(X)]]$, and similarly a $q$-expansion for $\psimod^*(f)$ is a power series in $R[[S^2(Y)]]$. To prove that $\psimod^*(f)$ has the desired $q$-expansion, we need to know the induced map $\psimod^*: S^2(X) \to S^2(Y)$. But pullbacks and $q$-expansions are both compatible with base change. Therefore, it suffices to compute the induced map $S^2(X) \to S^2(Y)$ when the base field is $\C$. But we have already shown that there are choices of the $q_{ij}, q$ such that $\psimod^*(q_{ij}) = q^{A_{ij}}$. The claim follows.
@@ -951,7 +951,8 @@ Suppose $g$ is a positive integer.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:curves-dense}]
-  Let $R$ denote the base ring. We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to R$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero. View $f$ as a global section of the structure sheaf. Then by Proposition~\ref{prop:q-expansion}, there exist coefficients $c(Q) \in R$ for $Q \in \sD$, such that for almost all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c(Q) q^{\tr(AQ)}$.
+  % Let $R$ denote the base ring. 
+  We claim that $\cup X_A$ is Zariski dense in $\ag$. The claim is trivial when $g = 1$, so we assume $g \geq 2$. It suffices to show that for all non-zero Siegel modular functions $f: \ag \to k$, there exists $A \in \detl$ such that the pullback $\psimod^*(f)$ is non-zero. View $f$ as a global section of the structure sheaf. Then by Proposition~\ref{prop:q-expansion}, there exist coefficients $c(Q) \in k$ for $Q \in \sD$, such that for almost all $A \in \detl$, $\psimod^*(f)$ admits a $q$-expansion $\sum_{Q \in \sD} c(Q) q^{\tr(AQ)}$.
   %where $Q$ ranges over thet set $\mathfrak{Q}$ of all symmetric half-integral positive semi-definite matrices. % \cite[Prop.~V.1.5]{faltings1990degeneration}.
 
   Let $S = \{ Q \in \sD :c(Q) \neq 0\}$. By Proposition~\ref{prop:unique-minimizer} applied to the set $S$, there is an open cone $C$ of $g \times g$ real, symmetric, positive definite matrices $A$ such that $\tr(AQ)$ is minimized by a unique $Q \in S$.
@@ -969,13 +970,18 @@ Suppose $g$ is a positive integer.
 Suppose that $g$ and $n$ are positive integers.
 Let $\agn$ denote the moduli space for triples $(A,\lambda,L)$, where $A$ is a $g$-dimensional abelian variety, $\lambda$ is a principal polarization on $A$, and $L$ is a level $n$ structure, i.e., $L$ is a symplectic basis $(P_1,\ldots,P_g,Q_1,\ldots,Q_g)$ for the $n$-torsion $A[n]$.
 
- Define an equivalence relation $\medium$ on $\agn$ by $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ if and only if $A_1 \weak A_2$ and there is an isomorphism $\phi: A_1 \to A_2$ such that $\phi(L_1) = L_2$. If $k$ is an algebraically closed field that contains the base ring $R$, define a set $\mg(k)  \subseteq (\agn \times \agn)(k)$ by
+ Define an equivalence relation $\medium$ on $\agn$ by $(A_1, \lambda_1, L_1) \medium (A_2, \lambda_2, L_2)$ if and only if $A_1 \weak A_2$ and there is an isomorphism $\phi: A_1 \to A_2$ such that $\phi(L_1) = L_2$. % If $k$ is an algebraically closed field that contains the base ring $R$, d
+ Define a set $\mg(k)  \subseteq (\agn \times \agn)(k)$ by
 \[
 \mg(k) =  \{(x_1,x_2) \in \agn(k) \times \agn(k) \mid x_1 \medium x_2 \}. %  \subseteq (\agn \times \agn)(k)
 \]
 \begin{proposition}\label{prop:medium-isomorphic}
-  If $g\in\Z_{\ge 2}$, $R$ is a domain, $n$ is an integer that is invertible in $R$, and $k$ is an algebraically closed field that contains $R$, then the set $\mg(k)$
-  is Zariski dense in the $R$-scheme $\agn \times \agn$.
+  If $g\in\Z_{\ge 2}$, % $R$ is a domain, 
+  % $n$ is an integer
+  % that is invertible in $R$, and
+  $k$ is an algebraically closed field, and $n$ is an integer with $\car(k) \nmid n$, % that contains $R$,
+  then the set $\mg(k)$
+  is Zariski dense in the $k$-scheme $\agn \times \agn$.
 \end{proposition}
 
 \begin{proof}
@@ -989,7 +995,10 @@ If $D$ is a polarization type, define a set $\sgd(k)  \subseteq (\agd \times \ag
 
 \begin{proposition}
 \label{prop:whatever}
-  If $g\in\Z_{\ge 2}$, $R$ is a domain,  $D=(d_1,\ldots,d_g)$ is a polarization type, $d_g$ is invertible in $R$, and $k$ is an algebraically closed field that contains $R$, then the set $\sgd(k)$
+  If $g\in\Z_{\ge 2}$, % $R$ is a domain, 
+  $k$ is an algebraically closed field, $D=(d_1,\ldots,d_g)$ is a polarization type, and $\car(k) \nmid d_g$ % is invertible in $R$
+  % , and $k$ is an algebraically closed field that contains $R$,
+  then the set $\sgd(k)$
 is Zariski dense in the $R$-scheme $\agd \times \agd$.
 \end{proposition}
 
