@@ -54,11 +54,11 @@ Our results shed light on a question raised in \cite{multiparty} concerning a pr
 
 If $A_1$ and $A_2$ are abelian varieties, we say $A_1$ and $A_2$ are \emph{weakly isomorphic}, written $A_1 \approx A_2$, if $A_1$ and $A_2$ are isomorphic as unpolarized abelian varieties. Let $\ag$ denote the coarse moduli scheme of principally polarized abelian varieties of dimension $g$. One of our main results is the following.
 \begin{theorem}\label{thm:invariant-c-constant}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ag \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $k$ is an algebraically closed field, and $f: \ag \dashrightarrow X$ is a rational map of $k$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{theorem}
 Note that Theorem~\ref{thm:invariant-c-constant} fails when $g = 1$; the $j$-invariant gives a nonconstant morphism $\mathcal{A}_1 \to \Pro^1$ such that $j(E_1) = j(E_2)$ whenever $E_1 \approx E_2$.
 
-It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
+% It suffices to prove Theorem \ref{thm:invariant-c-constant} when $R$ is an algebraically closed field, since a scheme over an algebraically closed field $k$ is also a scheme over every subring of $k$.
 
 
 % Let $R$ be a scheme, and for an $R$-scheme $S$ write $S[R]$\textcolor{red}{TODO: is this necessary?} to be the set
@@ -82,8 +82,12 @@ $$
 We will deduce Theorem \ref{thm:invariant-c-constant} from the following result.
 
 \begin{theorem}\label{thm:sg-c-dense}
-  If $g\in\Z_{\ge 2}$, $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(k)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
+  If $g\in\Z_{\ge 2}$ and $k$ is an algebraically closed field, then the set $\sg(k)$ is Zariski dense in the $k$-scheme $\ag \times \ag$.
 \end{theorem}
+Furthermore, all of the results stated in this section hold even when $k$ is replaced by a geometrically reduced scheme; see Remark~\ref{rmk:replace-with-scheme}.
+% \begin{theorem}\label{thm:sg-c-dense}
+%   If $g\in\Z_{\ge 2}$, $R$ is a domain, $k$ is an algebraically closed field, and $R \subseteq k$, then the set $\sg(k)$ is Zariski dense in the $R$-scheme $\ag \times \ag$.
+% \end{theorem}
 
 It is widely acknowledged that in order to obtain a moduli space of abelian varieties, one must first fix a polarization.  However, the mere fact that isomorphism as unpolarized abelian varieties itself is not a well behaved equivalence relation does not {\it a priori} exclude the possibility that some slightly coarser equivalence relation {\em could} give rise to a moduli space. Theorem \ref{thm:sg-c-dense} implies that this cannot happen: the only coarser equivalence relation that is also Zariski closed is the trivial relation in which all elements are equivalent.
 (Since the Zariski closure of an equivalence relation need not be an equivalence relation, Theorem \ref{thm:sg-c-dense} is somewhat stronger than this.)
@@ -92,18 +96,26 @@ Our results can be viewed as making precise the discussion in~\cite[p. 97]{git} 
 
 We will prove the following result in \S\ref{sec:characteristic-p}.
 \begin{theorem}\label{thm:arbit-char}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ao^g \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $k$ is an algebraically closed field, and $f: \ao^g \dashrightarrow X$ is a rational map of $k$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{theorem}
+
+% \begin{theorem}\label{thm:arbit-char}
+%   Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \ao^g \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1)$ and $(A_2,\lambda_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+% \end{theorem}
 
 A motivation behind Theorem \ref{thm:arbit-char} is the proposal for a construction of a cryptographic protocol in~\cite{multiparty}. In that protocol, $n$ parties each construct a product of elliptic curves over a finite field such that any pair of products is isomorphic. Put another way, each party computes a point of $\ao^g$ so that the chosen points are weakly isomorphic to each other. However, the proposal for a protocol was incomplete. The open question in~\cite{multiparty} was whether one can extract a numerical invariant of the product of elliptic curves that respects weak isomorphism, that is, a non-constant map $f: \ao^g \to X$ for a suitable space $X$ such that $f(A_1) = f(A_2)$ whenever $A_1 \approx A_2$. In this context, Theorem~\ref{thm:arbit-char} shows that if $f$ is algebraic, then it is constant, and thus not useful cryptographically. It remains an open problem whether there is a useful non-algebraic invariant of (isomorphism classes of non-polarized) products of elliptic curves.
 
 
-Since $\ag$ is only a coarse moduli space, one might wonder whether Theorem~\ref{thm:invariant-c-constant} still holds if $\ag$  is replaced by the fine moduli space of abelian varieties with full level $n$ structure with $n\ge 3$ and invertible in $R$. The following generalization of
+Since $\ag$ is only a coarse moduli space, one might wonder whether Theorem~\ref{thm:invariant-c-constant} still holds if $\ag$  is replaced by the fine moduli space of abelian varieties with full level $n$ structure with $n\ge 3$ and not divisible by $\car(k)$. The following generalization of
 Theorem~\ref{thm:invariant-c-constant} shows that the phenomenon persists even for the fine moduli space.
 
 \begin{corollary}\label{cor:agn}
-  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as triples  $(A, \lambda,L)$, where $A$ is an abelian variety with principal polarization $\lambda$, and $L$ is a symplectic basis for the $n$-torsion $A[n]$ (where symplectic means with respect to the Weil pairing induced by $\lambda$). Suppose $f(A_1,\lambda_1, L_1) = f(A_2,\lambda_2, L_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1, L_1)$ and $(A_2,\lambda_2, L_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+  Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $k$ is an algebraically closed field with $\car(k) \nmid n$,  and $f: \agn \dashrightarrow X$ is a rational map of $k$-schemes. View points of $\agn$ as triples  $(A, \lambda,L)$, where $A$ is an abelian variety with principal polarization $\lambda$, and $L$ is a symplectic basis for the $n$-torsion $A[n]$ (where symplectic means with respect to the Weil pairing induced by $\lambda$). Suppose $f(A_1,\lambda_1, L_1) = f(A_2,\lambda_2, L_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1, L_1)$ and $(A_2,\lambda_2, L_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{corollary}
+
+% \begin{corollary}\label{cor:agn}
+%   Let $g,n \in \Z_{\geq 2}$, and let $\agn$ be the moduli space of principally polarized abelian varieties with full level $n$ structure. Suppose that $R$ is a domain with $n$ invertible in $R$, and $f: \agn \dashrightarrow X$ is a rational map of $R$-schemes. View points of $\agn$ as triples  $(A, \lambda,L)$, where $A$ is an abelian variety with principal polarization $\lambda$, and $L$ is a symplectic basis for the $n$-torsion $A[n]$ (where symplectic means with respect to the Weil pairing induced by $\lambda$). Suppose $f(A_1,\lambda_1, L_1) = f(A_2,\lambda_2, L_2)$ whenever $A_1 \approx A_2$ and $(A_1,\lambda_1, L_1)$ and $(A_2,\lambda_2, L_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+% \end{corollary}
 
 
 Suppose $k$ is an algebraically closed field. If $\mu: A \to A^\vee$ is a polarization on a $g$-dimensional abelian variety $A$ over $k$ of degree not divisible by $\car(k)$, then there are unique positive integers $d_1 \mid \cdots \mid d_g$ such that
@@ -117,13 +129,22 @@ The following result, which we prove in \S\ref{sec:Cor15proof} below, is a gener
 polarization type.
 
 \begin{corollary}\label{cor:agpol}
-  Suppose that $g \in \Z_{\geq 2}$, ${D} = (d_1, \ldots, d_g)$ is a polarization type, $R$ is a domain, $d_g$ is invertible in $R$, and  $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+  Suppose that $g \in \Z_{\geq 2}$, ${D} = (d_1, \ldots, d_g)$ is a polarization type, $k$ is an algebraically closed field, $\car(k) \nmid d_g$, and  $f: \agd \dashrightarrow X$ is a rational map of $k$-schemes. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
 \end{corollary}
 
 \begin{corollary}
 \label{cor:alldcor}
-  Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \cup_{D} \agd \to X$ is a morphism of $R$-schemes, where $D$ runs over all polarization types $(d_1, \ldots, d_g)$ for which $d_g$ is invertible in $R$. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$. Then $f$ is a constant function.
+  Suppose that $g\in\Z_{\ge 2}$, $k$ is an algebraically closed field, and $f: \cup_{D} \agd \to X$ is a morphism of $k$-schemes, where $D$ runs over all polarization types $(d_1, \ldots, d_g)$ for which $\car(k) \nmid d_g$. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$. Then $f$ is a constant function.
 \end{corollary}
+
+% \begin{corollary}\label{cor:agpol}
+%   Suppose that $g \in \Z_{\geq 2}$, ${D} = (d_1, \ldots, d_g)$ is a polarization type, $R$ is a domain, $d_g$ is invertible in $R$, and  $f: \agd \dashrightarrow X$ is a rational map of $R$-schemes. Suppose $f(A_1, \mu_1) = f(A_2, \mu_2)$ whenever $A_1 \approx A_2$ and $(A_1,\mu_1)$ and $(A_2,\mu_2)$ are in the domain of definition of $f$. Then $f$ is a constant function.
+% \end{corollary}
+
+% \begin{corollary}
+% \label{cor:alldcor}
+%   Suppose that $g\in\Z_{\ge 2}$, $R$ is a domain, and $f: \cup_{D} \agd \to X$ is a morphism of $R$-schemes, where $D$ runs over all polarization types $(d_1, \ldots, d_g)$ for which $d_g$ is invertible in $R$. Suppose $f(A_1,\lambda_1) = f(A_2,\lambda_2)$ whenever $A_1 \weak A_2$. Then $f$ is a constant function.
+% \end{corollary}
 
 
 
@@ -200,7 +221,7 @@ $$
   Let $U$ be the domain of definition of $f$, so $f: U \to X$ is a morphism. Consider the fiber product $\df = U \times_X U$.
   The universal property of $\df$ says that for any scheme $W$ and morphisms $h_1$ and $h_2$ from $W$ to $U$ such that $f \circ h_1 = f \circ h_2$, there is a unique morphism $h: W \to \df$ such that $h_1$ and $h_2$ factor through $h$.
 
-  Let $k$ be an algebraically closed field containing $R$.
+  % Let $k$ be an algebraically closed field containing $R$.
   Applying the universal property with $W = \Spec k$ shows that $\df(k)$ consists of the pairs $(A_1,A_2) \in U \times U$ of abelian varieties over $k$ such that $f(A_1) = f(A_2)$.
   By the hypothesis on $f$, if $A_1 \approx A_2$ then $f(A_1) = f(A_2)$. Hence $(\sg \cap (U \times U))(k) \subseteq \df(k)$.
   Since $\df$ is a closed subscheme of $U \times U$, Theorem~\ref{thm:sg-c-dense} implies that $\df = U \times U$, as desired.
@@ -217,12 +238,12 @@ $$
 
 \begin{proof}[Proof of Corollary~\ref{cor:alldcor}]
   By Corollary~\ref{cor:agpol}, $f$ is constant on each $\agd$.
- Fix two polarization types $D$ and $D'$. Our goal is to show that $f(\agd) = f(\agdp)$. Choose an elliptic curve $E$ defined over $R$. Then $E^g$ has polarizations $\mu$ and $\mu'$ defined over $R$ of types $D$ and $D'$, respectively, so $(E^g, \mu) \in \agd(R)$ and $(E^g,\mu') \in \agdp(R)$. Since $E^g \weak E^g$, by our hypothesis we have $f(E^g, \mu) = f(E^g, \mu')$. Thus $f(\agd) = f(\agdp)$, as desired.
+ Fix two polarization types $D$ and $D'$. Our goal is to show that $f(\agd) = f(\agdp)$. Choose an elliptic curve $E$ over $k$. Then $E^g$ has polarizations $\mu$ and $\mu'$ over $k$ of types $D$ and $D'$, respectively, so $(E^g, \mu) \in \agd(R)$ and $(E^g,\mu') \in \agdp(k)$. Since $E^g \weak E^g$, by our hypothesis we have $f(E^g, \mu) = f(E^g, \mu')$. Thus $f(\agd) = f(\agdp)$, as desired.
   %\textcolor{red}{What if $E^g$ is not in domain of definition?}
 \end{proof}
 
 
-\begin{remark}
+\begin{remark}\label{rmk:replace-with-scheme}
   All of the above theorems apply if we replace the algebraically closed field $k$ with a geometrically reduced scheme $S$; for example, if we replace $k$ with (Spec of) an integral domain. To see this, note that when $S$ is geometrically integral, we can use the fact that the generic point is dense in $S$. For $S$ geometrically reduced, instead consider the union of the generic points of the irreducible components.
 \end{remark}
 
