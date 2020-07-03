@@ -492,16 +492,16 @@ Recall the map $\psimod$ defined in \eqref{def:psimoddef}.
 
 \begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
 Suppose $g\in\Z_{\ge 1}$, and $A$ is a $g \times g$ symmetric, positive definite integer matrix whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
-Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$. Then $\lambda$ is a principal polarization.  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/(N/d_i)C$. Then
+Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$. Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/(N/d_i)C$. Then $\lambda$ is a principal polarization and 
 $
     B \approx E_1 \times \cdots \times E_g.
 $
 \end{lemma}
 
 \begin{proof}
-  For the first claim, we have that $\lambda_A = \pi^\vee \circ \lambda \circ \pi$ where $\pi^\vee$ is the dual isogeny, and hence $\deg(\lambda_A) = \deg(\pi)^2 \cdot \deg(\lambda)$. Therefore $\lambda$ is a principal polarization.
+Since $\lambda_A = \pi^*(\lambda) = \pi^\vee \circ \lambda \circ \pi$, where $\pi^\vee$ is the dual isogeny, we have $\deg(\lambda_A) = \deg(\pi)^2 \cdot \deg(\lambda)$. Therefore $\lambda$ is a principal polarization.
   
-  For the second claim, let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
+Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
 %   \[
 %     D =
 %    \begin{bmatrix}
