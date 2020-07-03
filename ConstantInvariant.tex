@@ -548,8 +548,8 @@ inert in $K$, we have $q_i\ne \ell$ for all $i$. % We may assume $q_i \neq \ell$
 
   The classical theory of complex multiplication shows that there is an elliptic curve $E_0$ defined over a number field $L$ with good reduction everywhere and with $\End(E_0) \cong \sO_K$.
   If $\car(k) = 0$, then the base change $E$ of $E_0$ to $k$ via any embedding of $L$ into $k$ is an elliptic curve over $k$ with $\End(E) \cong \sO_K$.
-  If $p:= \car(k) > 0$, then since $p$ splits in $K$, the curve $E_0$ has ordinary reduction at all primes above $p$.
-  Now if $E$ is the base change of $E_0$ to $k$ via any reduction map of $\sO_L$ to $k$, then $E$ is an ordinary elliptic curve and $\End(E)$ contains a copy of $\sO_K$, so $\End(E) \cong \sO_K$.
+  If $p:= \car(k) > 0$, then since $p$ splits in $K$, the curve $E_0$ has ordinary reduction at all primes above $p$;
+   if $E$ is the base change of $E_0$ to $k$ via any reduction map of $\sO_L$ to $k$, then $E$ is an ordinary elliptic curve and $\End(E)$ contains a copy of $\sO_K$, so $\End(E) \cong \sO_K$. Thus, there is an elliptic curve $E$ over $k$ such that $\End(E_0) \cong \sO_K$.
   Fix such a curve $E$.
 
   If $\sC$ is a cyclic subgroup of $E$ of order prime to $\ell$, then $\alpha$ induces a chain of isogenies
@@ -781,14 +781,13 @@ $
 \end{lemma}
 
 \begin{proof}
-  Since the imaginary part of $\tau$ is positive and $A$ is symmetric positive definite, it is indeed the case that $\tau A \in \hh_g$.
-
 Let
 \[
 \sigma = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \in \Gamma_0(N) \text{ and } M = \begin{bmatrix} aI_g & bA \\ cA^{-1} & dI_g \end{bmatrix}
 \]
 where $I_g$ denotes the $g \times g$ identity matrix.
-If $\tau \in \hh$, a direct computation shows that $M \in\Sp_{2g}(\Z)$
+Suppose $\tau \in \hh$. Then $\tau A$ is symmetric and its imaginary part is positive definite, so $\tau A \in \hh_g$.
+A direct computation shows that $M \in\Sp_{2g}(\Z)$
 % it is integral because \det(A) | c, so cA^{-1} is integral.
 % M is in Sp because then M^t*\Omega*M = M
 % where \Omega = \begin{matrix} 0 & I \\ -I & 0 \end{matrix}
