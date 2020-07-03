@@ -901,7 +901,8 @@ Suppose $g$ is a positive integer.
 %\end{definition}
 
 \begin{proposition}\label{prop:q-expansion}
-  Suppose  $g \in \Z_{\ge 1}$, $k$ an algebraically closed field with $\car(k) \neq \ell$, % is invertible in the base ring $R$
+  Suppose  $g \in \Z_{\ge 1}$, $\ell$ is a prime number,
+  $k$ an algebraically closed field with $\car(k) \neq \ell$, % is invertible in the base ring $R$
   and $f$ a $k$-valued Siegel modular form on $\ag$.
   %Let $\infty \in X_0(N)$ be the unique cusp with type $I_1$ reduction.
   Then there is a function  $c : \sD \to k$ such that for all % but finitely many
@@ -927,8 +928,12 @@ Suppose $g$ is a positive integer.
  % The independence from $A$ is immediate.
 
     % Suppose that the genus of $X_0(N)$ is at least $2$; this holds for all but finitely many $A \in \detl$.
-    Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\psimod$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\psimod$. By~\cite[Theorem V.2.3]{faltings1990degeneration}, $\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j))$, where $\omega^j$ is the sheaf of Siegel modular forms of weight $j$. Since % the genus of $X_0(N)$ is at least $2$,
-    the sheaf of weight $2$ modular forms is ample, we have $X_0(N) = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j))$, where $\omega_0^j$ is the sheaf of modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\psimod: X_0(N) \to \agm$ is characterized by the pullback map
+    Let $\agm$ be the minimal compactification of $\ag$. There is a contraction map $\overline{\ag} \to \agm$. Composing $\psimod$ with this contraction, we obtain a morphism $X_0(N) \to \agm$, which we will also call $\psimod$. By~\cite[Theorem V.2.3]{faltings1990degeneration} we have 
+    $$\agm = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j)),$$ 
+    where $\omega^j$ is the sheaf of Siegel modular forms of weight $j$. Since % the genus of $X_0(N)$ is at least $2$,
+    the sheaf of weight $2$ modular forms is ample, we have 
+    $$X_0(N) = \textrm{Proj}(\oplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j)),$$ 
+    where $\omega_0^j$ is the sheaf of modular forms of weight $j$ on $X_0(N)$. Therefore the morphism $\psimod: X_0(N) \to \agm$ is characterized by the pullback map
     \[
       \psimod^*: \bigoplus_{j=0}^\infty \Gamma(\overline{\ag}, \omega^j) \to \bigoplus_{j=0}^\infty \Gamma(X_0(N), \omega_0^j).
     \]
