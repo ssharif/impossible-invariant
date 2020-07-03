@@ -149,7 +149,7 @@ polarization type.
 
 
 We next discuss the proofs.
-If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop.~16.8]{milne-av} there is a unique polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. Since $\deg(\lambda_A) = \deg(\pi)^2 \cdot \deg(\lambda)$, it follows that $\lambda$ is a principal polarization. As we shall see in Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, the abelian variety $B$ is weakly isomorphic to a product of elliptic curves.  Define
+If $N$ is a positive integer, let $Y_0(N)/\Spec(\Z[1/N])$ denote the modular curve parametrizing pairs $(E, C)$, where $E$ is an elliptic curve and $C \subset E$ is a cyclic subgroup of $E$ of order $N$. If $A$ is a positive definite, symmetric, integer $g\times g$ matrix, define a map $\psimod: Y_0(\det(A)) \to \ag$ as follows. Suppose $(E, C) \in Y_0(\det(A))$. The matrix $A$ induces a natural endomorphism $\lambda_A$ of $E^g$. Since $A$ is symmetric and positive definite, we can view $\lambda_A$ as a polarization on $E^g$. Let $B = E^g/((\ker \lambda_A) \cap C^g)$ and let $\pi: E^g \to B$ be the quotient map. Then by~\cite[Prop.~16.8]{milne-av} there is a unique polarization $\lambda$ on $B$ such that $\pi^*(\lambda) = \lambda_A$. As we shall see in Lemma~\ref{lem:psimod-weakly-isomorphic-to-product}, $\lambda$ is a principal polarization, and $B$ is weakly isomorphic to a product of elliptic curves.  Define
 \begin{equation}\label{def:psimoddef}
 \psimod: Y_0(\det(A)) \to \ag  \text{ by } \psimod(E,C) = (B,\lambda).
 \end{equation}
@@ -492,14 +492,16 @@ Recall the map $\psimod$ defined in \eqref{def:psimoddef}.
 
 \begin{lemma}\label{lem:psimod-weakly-isomorphic-to-product}
 Suppose $g\in\Z_{\ge 1}$, and $A$ is a $g \times g$ symmetric, positive definite integer matrix whose determinant $N$ is not divisible by the characteristic of our base. %(Later we will take $N$ to be a power of a prime $\ell$.)
-Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$.  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/(N/d_i)C$. Then
+Suppose $(E,C) \in Y_0(N)$, and let $\psimod(E,C) = (B,\lambda)$. Then $\lambda$ is a principal polarization.  Let $d_1, \cdots, d_g$ be the elementary divisors of $A$, and for $1 \le i \le g$ let $E_i = E/(N/d_i)C$. Then
 $
     B \approx E_1 \times \cdots \times E_g.
 $
 \end{lemma}
 
 \begin{proof}
-  Let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
+  For the first claim, we have that $\lambda_A = \pi^\vee \circ \lambda \circ \pi$, and hence $\deg(\lambda_A) = \deg(\pi)^2 \cdot \deg(\lambda)$. Therefore $\lambda$ is a principal polarization.
+  
+  For the second claim, let $D$ be the diagonal matrix with $d_1, \cdots, d_g$ on the diagonal.
 %   \[
 %     D =
 %    \begin{bmatrix}
