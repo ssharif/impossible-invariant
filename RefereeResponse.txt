@@ -1,0 +1,15 @@
+Dear Dr. Olsson,
+
+First of all, thanks to the referee for the comments. We have incorporated all of the comments. Some notes on our revisions:
+
+- The referee notes that Remark 1.11 does the work of generalizing from an algebraically closed field to a geometrically reduced base. We have expanded that remark to make this clear. As suggested by the referee, we have changed the hypotheses of main results to require the base to be an algebraically closed field.
+
+- The referee mentioned that only Proposition 4.8 requires a general base R. With the changes to Remark 1.11 and to the statements of the main results throughout, this is no long true, and so the statement of 4.8 now assumes only that the base is an algebraically closed field.
+
+- The referee requested a reference to Siegel modular forms (over an arbitrary ring). This has been provided at the start of §4, on page 10.
+
+- The last comment asked if there is a simpler, analytic proof of Theorem 1.10. We do not know of such a proof.
+
+Best,
+
+Eric Rains, Karl Rubin, Travis Scholl, Shahed Sharif, and Alice Silverberg
