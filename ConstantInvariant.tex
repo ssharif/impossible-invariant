@@ -974,7 +974,14 @@ Suppose $g$ is a positive integer.
 \end{proof}
 
 \begin{remark}
-  Over $\C$, there is an easier proof of Theorem~\ref{thm:curves-dense}. Recall the map $\hh \to \hh_g$ given by $\tau \mapsto \tau A$. Let $V$ be the union of the images of these maps as $A$ varies. By Lemma~\ref{lem:rggt-dense}, the topological closure of $V$ in $\hh_g$ contains the totally imaginary locus; that is, the set of matrices of the form $iA$, where $A$ is a real, symmetric, positive definite matrix. But any holomorphic function which vanishes on the totally imaginary locus must be zero. In particular, the image of $V$ in $\ag$ is Zariski dense.
+  We can give a simpler proof of Theorem~\ref{thm:curves-dense} in the case when $k=\C$. 
+  By Lemma~\ref{lem:psi-A-n} and Proposition!\ref{prop:psimod-over-c}, if $A \in \detl$ then 
+the map $\hh \to \hh_g$ defined by $\tau \mapsto \tau A$
+induces the map
+$\psimod: Y_0(\det(A)) \to \ag$.     
+Let $$V = \{\tau A :  \tau\in\hh, A \in \detl \} \subseteq \hh_g.$$
+%Let $V$ be the union of the images of these maps as $A$ varies. 
+By Lemma~\ref{lem:rggt-dense}, the topological closure of $V$ in $\hh_g$ contains the purely imaginary locus, i.e., the set of matrices of the form $iB$ where $B$ is a real, symmetric, positive definite matrix. But any holomorphic function that vanishes on the purely imaginary locus must be the zero map. It follows that the image of $V$ in $\ag$ is Zariski dense, as desired.
 \end{remark}
 
 \section{Proof of Corollary~\ref{cor:agpol}}
